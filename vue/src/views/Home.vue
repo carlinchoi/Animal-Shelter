@@ -1,7 +1,8 @@
 <template>
   <div class="home">
+     <div class="background-image"></div>
     <h1>Home</h1>
-    <p>You must be authenticated to see this</p>
+   <p class="message">You must be authenticated to see this</p> 
     <viewpets />
   </div>
 </template>
@@ -18,10 +19,26 @@ export default {
 </script>
 
 <style>
-html, body {
+
+.home {
+  position: relative;
+  width: 100%;
   height: 100%;
 }
-.home {
- 
+.background-image {
+   position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  background-image: url('../assets/background2.png');
+  background-repeat: repeat;
+  background-size: contain;
+  transform: rotate(45deg);
+  z-index: -1;
+}
+.message {
+  position: relative;
+  z-index: 1;
 }
 </style>
