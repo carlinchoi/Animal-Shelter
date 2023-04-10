@@ -2,7 +2,8 @@
 
 ## Database
 
-Inside the `<project-root>/database/` directory, you'll find an executable Bash script (`.sh` file) and several SQL scripts (`.sql` files). These can be used to build and rebuild a PostgreSQL database for the capstone project.
+Inside the `<project-root>/database/` directory, you'll find an executable Bash script (`.sh` file) and several SQL scripts (`.sql` files). 
+These can be used to build and rebuild a PostgreSQL database for the capstone project.
 
 From a terminal session, execute the following commands:
 
@@ -11,7 +12,8 @@ cd <project-root>/database/
 ./create.sh
 ```
 
-This Bash script drops the existing database, if necessary, creates a new database named `final_capstone`, and runs the various SQL scripts in the correct order. You don't need to modify the Bash script unless you want to change the database name.
+This Bash script drops the existing database, if necessary, creates a new database named `final_capstone`, and runs the various SQL scripts in the correct order.
+You don't need to modify the Bash script unless you want to change the database name.
 
 Each SQL script has a specific purpose as described here:
 
@@ -24,8 +26,9 @@ Each SQL script has a specific purpose as described here:
 
 ### Database users
 
-The database superuser—meaning `postgres`—must only be used for database administration. It must not be used by applications. As such, two database users are created for the capstone application to use as described here:
-
+The database superuser—meaning `postgres`—must only be used for database administration. It must not be used by applications. As such, 
+two database users are created for the capstone application to use as described here:
+![](../../../../AppData/Roaming/Zoom/data/0a2e66fecf6d88a970a678ed64ab929e287ff862f8f626369fdc4bc788a19888/database(1).jpg)
 | Username | Description |
 | -------- | ----------- |
 | `final_capstone_owner` | This user is the schema owner. It has full access—meaning granted all privileges—to all database objects within the `capstone` schema and also has privileges to create new schema objects. This user can be used to connect to the database from PGAdmin for administrative purposes. |
@@ -33,11 +36,14 @@ The database superuser—meaning `postgres`—must only be used for database adm
 
 
 ## Spring Boot
-Note: Spring Boot has been configured to run on port `9000` for this project. You might be used to port `8080` from earlier in the cohort, but it's changed so as not to conflict with the Vue server that you'll be running concurrently.
+Note: Spring Boot has been configured to run on port `9000` for this project. You might be used to port `8080` from earlier in the cohort, but it's changed so as not to conflict with the 
+Vue server that you'll be running concurrently.
 
 ### Datasource
 
-A Datasource has been configured for you in `/src/resources/application.properties`. It connects to the database using the `capstone_appuser` database user. You can change the name of this database if you want, but remember to change it here and in the `create.sh` script in the database folder:
+A Datasource has been configured for you in `/src/resources/application.properties`. 
+It connects to the database using the `capstone_appuser` database user. You can change the name of this database if you want, but remember to change it here and in the `create.sh` 
+script in the database folder:
 
 ```
 # datasource connection properties
