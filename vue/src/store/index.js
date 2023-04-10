@@ -20,7 +20,7 @@ export default new Vuex.Store({
   state: {
     token: currentToken || '',
     user: currentUser || {},
-    petInfo: { 
+    petInfo: [{ 
       petId: '',
       petName: '',
       petPhoto: '',
@@ -30,7 +30,13 @@ export default new Vuex.Store({
       breed:'',
       age:'',
       description:''
-    }
+    }],
+
+    pets:[{
+      breed: 'bulldog',
+      petId: 0,
+      adopted: 'yes'
+    }]
   },
   mutations: {
     SET_AUTH_TOKEN(state, token) {

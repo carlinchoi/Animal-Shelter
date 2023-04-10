@@ -3,10 +3,7 @@ package com.techelevator.controller;
 import com.techelevator.dao.PetDao;
 import com.techelevator.model.Pet;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.security.PublicKey;
 import java.util.ArrayList;
@@ -14,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path="/pet")
+@CrossOrigin
 //TODO preAuthorize??
 public class PetController {
     //private Pet pet;

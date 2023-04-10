@@ -7,9 +7,12 @@
               </tr>
           </thead>
           <tbody>
-              <tr v-for="petInfo in this.$store.state.petInfo" :key="petInfo.PetId">
-                  <td>{{ petInfo.breed }}</td>      
+              <tr v-for="pet in pets" :key="pet.petId">
+                  <td>
+                       {{ pet.breed }} 
+                </td>      
               </tr>
+           
           </tbody>
       </table>
   </div>
@@ -19,15 +22,17 @@
 import petservice from '../services/PetService.js';
 export default {
   name: "view-pets",
-  props: {
-      pet: Object
-  },
   methods: {
     retrievePets(){
       petservice.findAllPets().then((response) => {
         this.$store.commit("SET_PET_INFO", response.data);
-      })
+      });
     }
+  },
+  computed: {
+      pets() {
+          return this.$store.state.petInfo;
+      }
   },
   created(){
     this.retrievePets().then((response) => {
