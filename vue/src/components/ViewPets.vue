@@ -16,10 +16,27 @@
 </template>
 
 <script>
+import petservice from '../services/PetService.js';
 export default {
-
-}
+  name: "view-pets",
+  props: {
+      pet: Object
+  },
+  methods: {
+    retrievePets(){
+      petservice.findAllPets().then((response) => {
+        this.$store.commit("SET_PET_INFO", response.data);
+      })
+    }
+  },
+  created(){
+    this.retrievePets().then((response) => {
+      this.pets = response.data;
+    })
+  }
+};
 </script>
+
 
 <style>
 
