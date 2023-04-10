@@ -13,7 +13,7 @@ public class Pet {
     private int age;
     private String description;
     private boolean isAdopted;
-
+    private String petPhoto;
     public Pet(){
 
     }
@@ -30,10 +30,11 @@ public class Pet {
                 ", age=" + age +
                 ", description='" + description + '\'' +
                 ", isAdopted=" + isAdopted +
+                ", petPhoto=" + petPhoto +
                 '}';
     }
 
-    public Pet(int petId, String petName, String species, Date adoptionDate, String gender, String breed, int age, String description, boolean isAdopted) {
+    public Pet(int petId, String petName, String species, Date adoptionDate, String gender, String breed, int age, String description, boolean isAdopted, String petPhoto) {
         this.petId = petId;
         this.petName = petName;
         this.species = species;
@@ -43,6 +44,7 @@ public class Pet {
         this.age = age;
         this.description = description;
         this.isAdopted = isAdopted;
+        this.petPhoto = petPhoto;
     }
 
     public int getPetId() {
@@ -115,5 +117,13 @@ public class Pet {
 
     public void setAdopted(boolean adopted) {
         isAdopted = adopted;
+    }
+
+    public String getPetPhoto() {
+        return petPhoto;
+    }
+
+    public void setPetPhoto(String petPhoto) {
+        this.petPhoto = petPhoto;
     }
 }
