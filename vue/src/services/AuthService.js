@@ -9,5 +9,5 @@ export default {
   register(user) {
     return axios.post('/register', user)
   }
-
+//TODO: create .post with updated password of volunteer -- /change-password
 }
