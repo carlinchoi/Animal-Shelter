@@ -24,7 +24,7 @@ CREATE TABLE volunteers (
 	volunteer_role VARCHAR (64) NOT NULL,
 
 	CONSTRAINT PK_volunteer_id PRIMARY KEY (volunteer_id),
-	CONSTRAINT FK_users FOREIGN KEY (user_id) REFERENCES users(user_id)lkh
+	CONSTRAINT FK_users FOREIGN KEY (user_id) REFERENCES users(user_id)
 
 );
 
