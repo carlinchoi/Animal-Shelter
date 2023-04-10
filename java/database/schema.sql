@@ -1,11 +1,11 @@
 BEGIN TRANSACTION;
 
-DROP TABLE IF EXISTS users;
-DROP TABLE IF EXISTS administrators CASCADE;
+DROP TABLE IF EXISTS volunteer_application;
 DROP TABLE IF EXISTS volunteers CASCADE;
-DROP TABLE IF EXISTS volunteer_application CASCADE;
-DROP TABLE IF EXISTS pets CASCADE;
+DROP TABLE IF EXISTS users CASCADE;
+DROP TABLE IF EXISTS administrators CASCADE;
 DROP TABLE IF EXISTS adoptions;
+DROP TABLE IF EXISTS pets CASCADE;
 
 
 CREATE TABLE users (
@@ -75,8 +75,7 @@ CREATE TABLE adoptions (
 	CONSTRAINT FK_pets FOREIGN KEY (pet_id) REFERENCES pets(pet_id)
 );
 
-INSERT INTO pets (pet_name, pet_photo, is_adopted, species, gender, breed, age, description)
-	VALUES ('Cooper', 'doggie.com', 'True', 'Dog', 'male', 'Bernese Mountain Dog', '2', 'Black/White/Brown/fluffy and sweet');
+
 
 
 COMMIT TRANSACTION;
