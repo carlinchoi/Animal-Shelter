@@ -1,6 +1,12 @@
 <template>
      <header class="shelter-heading">
         <img src="../assets/animalshelterlogo.png" alt="Rockville" />
+         <nav>
+      <ul id="primary-navigation">
+        <li ><router-link v-bind:to="{ name: 'home' }"><button>TBD</button></router-link></li>
+        <li class="active"><router-link v-bind:to="{ name: 'login' }"><button>Logout</button></router-link></li>
+      </ul>
+    </nav>
     </header>
 </template>
 
@@ -11,7 +17,10 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
+ul#primary-navigation .active {
+font-weight: bold;
+}
 .shelter-heading  {
     display: flex;
   flex-direction: row;
@@ -27,7 +36,14 @@ position: fixed;
 }
 .shelter-heading img {
     border-radius: 25px;
-    clip-path: polygon(85% 6%, 70% 15%, 30% 15%, 15% 5%, 0% 25%, 10% 45%, 10% 75%, 25% 90%, 40% 95%, 60% 95%, 75% 91%, 90% 75%, 90% 45%, 100% 25%);
+}
+.primary.navigation {
+    list-style: none;
+    padding:0;
+    margin: 0;
+    background:hsl(0, 0%, 100%, 0.1);
+    backdrop-filter: blur(1rem);
+    
 }
 
 </style>

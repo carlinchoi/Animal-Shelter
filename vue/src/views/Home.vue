@@ -22,8 +22,6 @@ html, body {
   height: 100%;
 }
 .home {
-  background-color: purple;
-  background-image: url("../assets/background.png");
-  background-size: repeat;
+ 
 }
 </style>
