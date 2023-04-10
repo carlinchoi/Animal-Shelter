@@ -14,7 +14,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path="/pet")
-@PreAuthorize("permitAll")
 //TODO preAuthorize??
 public class PetController {
     //private Pet pet;
@@ -32,6 +31,7 @@ public class PetController {
         return allPet;
 
     }
+    @PreAuthorize("permitAll")
     @RequestMapping(path="/{id}",method = RequestMethod.GET)
     public Pet listPet(@PathVariable("id") int petId){
         //TODO  get pet from petDao.findById()
