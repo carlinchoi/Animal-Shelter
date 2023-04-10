@@ -25,7 +25,7 @@ public class PetController {
         List<Pet> allPet = petDao.findAll();
         //TODO return List
         return allPet;
-        
+
     }
     @RequestMapping(path="/{id}",method = RequestMethod.GET)
     public Pet listPet(@PathVariable("id") int petId){
