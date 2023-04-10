@@ -52,7 +52,7 @@ CREATE TABLE volunteer_application (
 CREATE TABLE pets (
 	pet_id SERIAL,
 	pet_name varchar(50) NOT NULL UNIQUE,
-	pet_photo varChar (50),
+	pet_photo varChar (250),
 	is_adopted boolean NOT NULL,
 	species varChar(50) NOT NULL,
 	gender varChar (32) NOT NULL,
