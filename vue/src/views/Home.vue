@@ -16,7 +16,13 @@ export default {
   name: 'home',
   components: {
     viewPets
-  }
+  },
+   created() {
+     console.log(this.$store.state.token)
+     console.log(this.$store.state.user)
+     console.log(this.$store.state.user.id)
+  
+   }
 }
 </script>
 

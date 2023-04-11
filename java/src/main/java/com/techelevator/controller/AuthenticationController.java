@@ -60,7 +60,5 @@ public class AuthenticationController {
         }
     }
 
-    //TODO create method to change password of new volunteer -- path: /change-password/ type: POST
-
 }
 
