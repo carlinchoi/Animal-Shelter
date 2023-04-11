@@ -10,7 +10,7 @@
 import TestComponent from '../components/TestComponent.vue';
 
 export default {
-  name: 'Home',
+  name: 'home',
   components: {
 
     TestComponent 
