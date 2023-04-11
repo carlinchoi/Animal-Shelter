@@ -11,10 +11,12 @@ public interface PetDao {
     //Pet pet = petDao.findById(petId);
     public  Pet findById(int petId);
 
-                                //Future methods
+                        //To use
 
-//   public List<Pet> searchPetsByName(String petName);
+//    public List<Pet> searchPetsByName(String petName);
 
-//   public Pet createPet()
+//   public Pet createPet(Pet newPet);
+
+//    void updatePet(Pet pet);
 
 }
