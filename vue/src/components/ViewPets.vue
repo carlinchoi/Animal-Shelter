@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <!-- <div>
       <table>
           <thead>
               <tr>
@@ -14,6 +14,32 @@
               </tr>
           </tbody>
       </table>
+  </div> -->
+  <div>
+    <table v-for="pet in this.$store.state.pets" :key="pet.petId">
+      <thead>
+        <tr>
+          <th> {{ pet. petName }}</th>
+      
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <img :src= "pet.petPhoto" alt="Photo of Pet">
+            </td>
+        </tr>
+        <tr>
+          <td>Species: {{ pet.species }}</td>
+        </tr>
+        <tr>
+          <td> Breed: {{ pet.breed }}</td>
+        </tr>
+        <tr>
+          <td>{{ pet.description }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 
@@ -44,5 +70,8 @@ export default {
 
 
 <style>
-
+  img {
+    width: 300px;
+    height: 300px;
+  }
 </style>
