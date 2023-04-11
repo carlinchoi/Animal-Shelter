@@ -1,19 +1,19 @@
 <template>
   <div class="home">
-     <div class="background-image"></div>
     <h1>Home</h1>
-   <p class="message">You must be authenticated to see this</p> 
-    <viewpets />
+    <p>You must be authenticated to see this</p>
+    <test-component></test-component>
   </div>
 </template>
 
 <script>
-import viewpets from '../components/ViewPets.vue';
+import TestComponent from '../components/TestComponent.vue';
 
 export default {
   name: 'Home',
   components: {
-    viewpets
+
+    TestComponent 
   }
 }
 </script>
@@ -42,3 +42,4 @@ export default {
   z-index: 1;
 }
 </style>
+
