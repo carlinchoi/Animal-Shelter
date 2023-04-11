@@ -13,6 +13,7 @@
         <td >{{ pet.petId }}</td>
         <td> {{ pet.petName }}</td>
         <td>{{ pet.gender }}</td>
+    
       </tr>
     </tbody>
   </table>
@@ -30,8 +31,9 @@ export default {
         petService.findAllPets().then((response)=>{
             this.pets=response.data;
         })
-    }
+    }, 
 }
+
 </script>
 <style>
 </style>

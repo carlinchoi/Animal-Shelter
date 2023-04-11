@@ -55,7 +55,7 @@ ul.tabs li a:hover {
   background-color: #f2f2f2;
 }
 .shelter-heading  {
-    display: flex;
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 10px 30px;
@@ -63,14 +63,16 @@ ul.tabs li a:hover {
   width: 100%;
   border: #00514f solid;
   margin-bottom: 5px;
-position: fixed;
+  position: fixed;
   top: 0;
   left: 0;
   background-color: rgba(3, 79, 60, 0.7);
   backdrop-filter: blur(10px);
+  height: 200px;
 }
 .shelter-heading img {
   clip-path: polygon(100% 0%, 70% 15%, 30% 15%, 0% 0%, 0% 25%, 0% 48%, 0% 75%, 24% 93%, 36% 100%, 64% 100%, 77% 93%, 100% 79%, 100% 48%, 100% 25%);
+  height: 200px;
 }
 .primary.navigation {
     list-style: none;
@@ -79,8 +81,6 @@ position: fixed;
     background:hsl(0, 0%, 100%, 0.1);
     backdrop-filter: blur(1rem);
     
-}
-nav {
 }
 
 </style>
