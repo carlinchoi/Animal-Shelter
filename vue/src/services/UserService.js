@@ -8,6 +8,8 @@ export default {
 
     getUserById(userId) {
         return http.get(`/user/${userId}`)
+    },
+    updateRoleById(userId, user) {
+        return http.put(`/user/${userId}`, user);
     }
-
 }

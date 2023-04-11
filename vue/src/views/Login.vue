@@ -32,6 +32,7 @@ export default {
   components: {},
   data() {
     return {
+      
       user: {
         username: "",
         password: ""
@@ -49,7 +50,18 @@ export default {
           if (response.status == 200) {
             this.$store.commit("SET_AUTH_TOKEN", response.data.token);
             this.$store.commit("SET_USER", response.data.user);
+            //if(this.user.password === 'animalshelter1') {
+              if(response.data.user.authorities[0].name==="ROLE_NEWVOLUNTEER"){
+              //  alert(response.data.user.authorities[0].name);
+              //this.$router.push("/change-password");
+              
+            }else{
+                alert("Not ROLE_USER")
+            }
+              //alert('change your password bruh');
+            //}
             this.$router.push("/");
+
           }
         })
         .catch(error => {

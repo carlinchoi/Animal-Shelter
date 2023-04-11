@@ -34,7 +34,7 @@ export default {
         username: '',
         password: 'animalshelter1',
         confirmPassword: 'animalshelter1',
-        role: 'volunteer',
+        role: 'newvolunteer',
       },
       registrationErrors: false,
       registrationErrorMsg: 'There were problems registering this user.',
