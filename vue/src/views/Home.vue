@@ -1,34 +1,38 @@
 <template>
   <div class="home">
+    <div class="background-image"></div>
     <h1>Home</h1>
-    <p>You must be authenticated to see this</p>
-    <test-component></test-component>
+    <div class="message-container">
+      <p class="message">You must be authenticated to see this</p>
+    </div>
+    <viewpets />
   </div>
 </template>
 
 <script>
-import TestComponent from '../components/TestComponent.vue';
+import viewPets from '../components/ViewPets.vue';
 
 export default {
   name: 'home',
   components: {
-
-    TestComponent 
+    viewPets
   }
 }
 </script>
 
 <style>
-@font-face {
-  font-family: Nunito Sans;
-}
 .home {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
 }
+
 .background-image {
-   position: absolute;
+  position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -39,9 +43,25 @@ export default {
   transform: rotate(45deg);
   z-index: -1;
 }
-.message {
+.message-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: relative;
   z-index: 1;
 }
-</style>
 
+.message {
+  margin-bottom: 1rem;
+}
+
+.logout-btn {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  background-color: #00514f;
+  color: white;
+  cursor: pointer;
+}
+</style>

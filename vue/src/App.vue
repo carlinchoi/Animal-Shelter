@@ -2,18 +2,21 @@
     <div id="nav">
     <router-view/>
     <the-header></the-header>
+    <sidebar></sidebar>
     </div>
 
     
 </template>
 <script>
-import TheHeader from './components/TheHeader.vue'
+import TheHeader from './components/TheHeader.vue';
+import Sidebar from './components/Sidebar.vue';
 
 
 export default {
   name: 'App',
   components: {
-    TheHeader
+    TheHeader,
+    Sidebar
   }
 }
 </script>
@@ -29,6 +32,7 @@ export default {
   background-image: url('./assets/background.png');
   background-size:cover;
   height: 100vh;
+  display:flex;
 
 }
 #nav {
