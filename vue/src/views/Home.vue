@@ -5,7 +5,7 @@
     <div class="message-container">
       <p class="message">You must be authenticated to see this</p>
     </div>
-    <viewpets />
+    <view-pets />
   </div>
 </template>
 
