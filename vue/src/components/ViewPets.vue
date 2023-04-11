@@ -16,11 +16,12 @@
       </table>
   </div> -->
   <div class="pet-container">
-    <!-- <slick :options="slickOptions"> -->
     <div v-for="pet in this.$store.state.pets" :key="pet.petId" class="pet-card">
+      <div class="card-content">
      <div class="image-container"> 
         <img :src= "pet.petPhoto" alt="Photo of Pet">
       </div>
+      <a href="#" class="button">Learn More</a>
       <div>  
           <p>{{ pet. petName }}</p>
           <p>Species: {{ pet.species }}</p>
@@ -29,12 +30,11 @@
       </div>
       </div>
       </div>
+      </div>
+      
 </template>
 
 <script>
-// import Slick from 'vue-slick-';
-// import 'vue-slick-carousel/dist/vue-slick-carousel.css';
-// import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css';
 import petservice from '../services/PetService';
 export default {
   name: "view-pets",
@@ -56,27 +56,20 @@ export default {
     //   this.pets = response.data;
     // })
   },
-  // data() {
-  //   return {
-  //     slickOptions: {
-  //       slidesToShow: 4,
-  //       infinite: true,
-  //       dots: true,
-  //          }
-  //   }
-  // }
 };
 </script>
 
 
 <style>
+
 .pet-container{
+  font-family: Montserrat, sans-serif;
   display:flex;
   flex-wrap: wrap;
   justify-content: center;
   height: 500px;
   position:fixed;
-  top:350px;
+  top:325px;
 }
   img {
     width: 300px;
@@ -87,6 +80,7 @@ export default {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    border-radius: 5px;
     align-items: center;
     height: 300px;
     width: 300px;
@@ -104,9 +98,30 @@ export default {
     background-color: rgba(93, 11, 93, 0.7);
     backdrop-filter: blur(10px);
     box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease-in-out;
+    transition: transform 500ms ease;
   }
   .pet-card:hover {
-  transform: translateY(-5px);
+  transform: scale(1.05);
+  }
+  .button {
+    cursor:pointer;
+    display: inline;
+    text-decoration:none;
+    color: black;
+    background-color: rgb(195, 226, 199);
+    padding: 0.5em 1.25em;
+    border-radius: 0.25em;
+  }
+  .button:hover,
+  .button:focus {
+    background-color: lightsteelblue;
+  }
+  .card-content {
+    transform: translateY(5%);
+    transition: transform 500ms ease;
+  } 
+  .pet-card:hover .card-content {
+  transform: translateY(0);
+  
   }
 </style>
