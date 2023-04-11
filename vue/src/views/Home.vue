@@ -19,7 +19,9 @@ export default {
 </script>
 
 <style>
-
+@font-face {
+  font-family: Nunito Sans;
+}
 .home {
   position: relative;
   width: 100%;
