@@ -7,39 +7,22 @@
 </template>
 
 <script>
-import TestComponent from '../components/TestComponent.vue';
 
+import TestComponent from "../components/TestComponent.vue"
 export default {
-  name: 'Home',
-  components: {
-
-    TestComponent 
-  }
-}
+  components: { TestComponent},
+  name: "home",
+  
+};
 </script>
 
 <style>
-
-.home {
-  position: relative;
-  width: 100%;
+html, body {
   height: 100%;
 }
-.background-image {
-   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 20%;
-  background-image: url('../assets/background2.png');
-  background-repeat: repeat;
-  background-size: contain;
-  transform: rotate(45deg);
-  z-index: -1;
-}
-.message {
-  position: relative;
-  z-index: 1;
+.home {
+  background-color: purple;
+  background-image: url("../assets/background.png");
+  background-size: repeat;
 }
 </style>
-
