@@ -34,6 +34,7 @@ ul.tabs li {
 ul.tabs li.active a {
   background-color: #034f3c;
   color: white;
+  border-radius: 10px;
 }
 ul.tabs li a {
   display: block;
@@ -44,6 +45,8 @@ ul.tabs li a {
   background-color: #d9d9d9;
   border: 1px solid black;
   border-bottom: none;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 ul.tabs li:last-child a {
   border-right: none;
