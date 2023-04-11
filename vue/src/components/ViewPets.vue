@@ -30,7 +30,7 @@ export default {
   },
   computed: {
       pets() {
-          return this.$store.state.petInfo;
+          return this.$store.state.pets;
       }
   },
   created(){

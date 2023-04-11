@@ -53,7 +53,7 @@ export default new Vuex.Store({
     },
 
     SET_PET_INFO(state, petData) {
-      state.petInfo = petData;
+      state.pets = petData;
     }
   }
 })
