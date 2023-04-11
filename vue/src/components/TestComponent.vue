@@ -10,9 +10,9 @@
     </thead>
     <tbody>
       <tr v-for="pet in pets" :key="pet.pet_id" >
-        <td >{{pet.pet_id}}</td>
-        <td> {{pet.pet_name}}</td>
-        <td>{{gender}}</td>
+        <td >{{ pet.petId }}</td>
+        <td> {{ pet.petName }}</td>
+        <td>{{ pet.gender }}</td>
       </tr>
     </tbody>
   </table>

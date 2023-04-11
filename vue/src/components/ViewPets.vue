@@ -7,19 +7,18 @@
               </tr>
           </thead>
           <tbody>
-              <tr v-for="pet in pets" :key="pet.petId">
-                  <td>
-                       {{ pet.breed }} 
-                </td>      
+              <tr v-for="pet in this.$store.state.pets" :key="pet.petId">
+                  <td >{{ pet.petId }}</td>
+                  <td> {{ pet.petName }}</td>
+                  <td>{{ pet.gender }}</td>
               </tr>
-           
           </tbody>
       </table>
   </div>
 </template>
 
 <script>
-import petservice from '../services/PetService.js';
+import petservice from '../services/PetService';
 export default {
   name: "view-pets",
   methods: {
@@ -35,9 +34,10 @@ export default {
       }
   },
   created(){
-    this.retrievePets().then((response) => {
-      this.pets = response.data;
-    })
+    this.retrievePets();
+    // this.retrievePets().then((response) => {
+    //   this.pets = response.data;
+    // })
   }
 };
 </script>
