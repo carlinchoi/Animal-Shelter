@@ -5,15 +5,18 @@
       <ul id="primary-navigation" class="tabs">
         <li ><router-link v-bind:to="{ name: 'home' }"><button>TBD</button></router-link></li>
         <li class="active"><router-link v-bind:to="{ name: 'logout' }"><button>Logout</button></router-link></li>
+        <li><router-link v-bind:to="{ name: 'volunteer-register' }"><button>Register as Volunteer</button></router-link></li>
       </ul>
     </nav>
     </header>
 </template>
 
 <script>
+//import { component } from 'vue/types/umd'
+import volunteerRegister from '../views/VolunteerRegister.vue'
 export default {
-    name:"the-header"
-
+    name:"the-header",
+    component: { volunteerRegister}
 }
 </script>
 
