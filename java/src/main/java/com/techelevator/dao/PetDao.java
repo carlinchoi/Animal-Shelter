@@ -10,4 +10,11 @@ public interface PetDao {
 
     //Pet pet = petDao.findById(petId);
     public  Pet findById(int petId);
+
+                                //Future methods
+
+//   public List<Pet> searchPetsByName(String petName);
+
+//   public Pet createPet()
+
 }
