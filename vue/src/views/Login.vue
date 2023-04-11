@@ -39,6 +39,8 @@ export default {
       invalidCredentials: false
     };
   },
+
+  //Reset
   methods: {
     login() {
       authService
