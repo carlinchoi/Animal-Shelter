@@ -16,7 +16,7 @@
       </table>
   </div> -->
   <div class="pet-container">
-    <slick :options="slickOptions">
+    <!-- <slick :options="slickOptions"> -->
     <div v-for="pet in this.$store.state.pets" :key="pet.petId" class="pet-card">
      <div class="image-container"> 
         <img :src= "pet.petPhoto" alt="Photo of Pet">
@@ -33,8 +33,8 @@
 
 <script>
 // import Slick from 'vue-slick-';
-import 'vue-slick-carousel/dist/vue-slick-carousel.css';
-import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css';
+// import 'vue-slick-carousel/dist/vue-slick-carousel.css';
+// import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css';
 import petservice from '../services/PetService';
 export default {
   name: "view-pets",
