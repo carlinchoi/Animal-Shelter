@@ -23,7 +23,7 @@
 </style>
 
 <script>
-function close() {
-    document.getElementById("rightSidebar").style.display = "none";
-}
-</script>
+// function close() {
+//     document.getElementById("rightSidebar").style.display = "none";
+// }
+</script> 
