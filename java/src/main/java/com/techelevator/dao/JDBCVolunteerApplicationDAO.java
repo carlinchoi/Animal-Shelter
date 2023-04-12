@@ -42,6 +42,13 @@ public class JDBCVolunteerApplicationDAO implements VolunteerApplicationDAO {
             return null;
         }
     }
+
+
+
+
+
+
+
     private VolunteerApplication mapRowToVolunteerApplication(SqlRowSet sql) {
         VolunteerApplication volunteerapplication = new VolunteerApplication();
         volunteerapplication.setApplicationId(sql.getInt("application_id"));

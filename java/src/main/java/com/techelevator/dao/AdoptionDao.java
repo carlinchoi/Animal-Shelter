@@ -10,4 +10,6 @@ public interface AdoptionDao {
 
         Adoption getAdoptionById(int adoptionId);
 
+
+
 }

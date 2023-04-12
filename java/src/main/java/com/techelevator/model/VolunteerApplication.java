@@ -28,5 +28,14 @@ public class VolunteerApplication {
 
     public void setApplicationStatus(String applicationStatus) {this.applicationStatus = applicationStatus;}
 
+    @Override
+    public String toString() {
+        return "VolunteerApplication{" +
+                "applicationId=" + applicationId +
+                ", userId=" + userId +
+                ", applicationStatus ='" + applicationStatus + '\'' +
+
+                '}';
+    }
 }
 
