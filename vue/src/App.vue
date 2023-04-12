@@ -3,6 +3,7 @@
     <router-view/>
     <the-header></the-header>
     <sidebar></sidebar>
+    <the-footer></the-footer>
     </div>
 
     
@@ -10,6 +11,7 @@
 <script>
 import TheHeader from './components/TheHeader.vue';
 import Sidebar from './components/Sidebar.vue';
+import TheFooter from './components/TheFooter.vue';
 // import Slick from 'vue-slick-carousel';
 
 
@@ -18,6 +20,7 @@ export default {
   components: {
     TheHeader,
     Sidebar,
+    TheFooter
 
   }
 }
