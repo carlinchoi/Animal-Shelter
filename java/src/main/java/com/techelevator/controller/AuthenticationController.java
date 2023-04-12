@@ -67,6 +67,7 @@ public class AuthenticationController {
               System.out.println(newUser);
               User user = userDao.findByUsername(newUser.getUsername());
             userDao.updateUserPassword(user, newUser);
+            userDao.updateUser(user);
         } catch (UsernameNotFoundException e) {
             System.out.println("error");
         }
