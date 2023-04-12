@@ -1,5 +1,5 @@
 <template>
-  <div class="login-wrapper">
+   <div class="login-wrapper">
     <div class="form-wrapper">
         <form @submit.prevent="changePassword">
             <h1 >Please Change Password</h1>
@@ -8,11 +8,11 @@
             </div>
             <div class="form-input-group">
               <label for="new password"> New Password</label>
-              <input type="password"  v-model='password' required>
+              <input type="password"  v-model='user.password' required>
             </div>
             <div class="form-input-group">
               <label for="confirmPassword">Confirm New Password</label>
-              <input type="password" v-model='confirmPassword' required/>
+              <input type="password" v-model='user.confirmPassword' required/>
             </div>
             <button type="submit">Submit Password Change</button>
         </form>
@@ -21,15 +21,16 @@
 </template>
 
 <script>
-import authService from '../services/AuthService';
-
-  export default {
+import userService from '../services/UserService.js';
+export default {
     name: 'changePassword',
     data() {
       return {
         user: {
+          username: this.$store.state.user.username,
           password: '',
-          confirmPassword:''
+          confirmPassword:'',
+          role: 'volunteer'
         },
         changePasswordErrors: false,
         changePasswordErrorMsg: 'There were problems changing the password for this user.',
@@ -41,10 +42,10 @@ import authService from '../services/AuthService';
           this.changePasswordErrors = true;
           this.changePasswordErrorMsg = 'Password & Confirm Password do not match.';
         } else {
-        authService
-          .register(this.user)
+        userService
+          .updateUserPassword(this.user)
           .then((response) => {
-            if (response.status == 201) {
+            if (response.status == 200) {
               this.$router.push({
                 path: '/login',
                 query: { registration: 'success' },

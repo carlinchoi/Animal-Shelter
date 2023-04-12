@@ -6,7 +6,7 @@ import Logout from '../views/Logout.vue'
 import Register from '../views/Register.vue'
 import store from '../store/index'
 import VolunteerRegister from '../views/VolunteerRegister.vue'
-import ChangePassword from '../views/ChangePassword.vue'
+import ChangePasswordPage from '../views/ChangePasswordPage.vue'
 
 Vue.use(Router)
 
@@ -66,7 +66,7 @@ const router = new Router({
     {
       path:"/change-password",
       name:'change-password',
-      component: ChangePassword,
+      component: ChangePasswordPage,
       meta: {
         requiresAuth: false
       }
