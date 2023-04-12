@@ -7,16 +7,17 @@
       </div>
       <div class="form-input-group">
         <span class ="icon"><ion-icon name="person-outline"></ion-icon></span>
+        <label for="username"> Username</label>
         <input type="text" id="username" v-model="user.username" required autofocus />
       </div>
-      <!-- <div class="form-input-group">
+      <div class="form-input-group">
         <label for="password">Password</label>
         <input type="password" id="password" v-model="user.password" required />
       </div>
       <div class="form-input-group">
         <label for="confirmPassword">Confirm Password</label>
         <input type="password" id="confirmPassword" v-model="user.confirmPassword" required />
-      </div> -->
+      </div>
       <button type="submit">Create Volunteer Account</button>
       <p><router-link :to="{ name: 'login' }"><button>Already have an account? Log in.</button></router-link></p>
     </form>
@@ -32,8 +33,8 @@ export default {
     return {
       user: {
         username: '',
-        password: 'animalshelter1',
-        confirmPassword: 'animalshelter1',
+        password: '',
+        confirmPassword: '',
         role: 'newvolunteer',
       },
       registrationErrors: false,

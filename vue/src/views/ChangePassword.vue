@@ -4,7 +4,7 @@
         <form @submit.prevent="changePassword">
             <h1 >Please Change Password</h1>
             <div role="alert" v-if="changePasswordErrors">
-              {{ changePasswordErrorMsg}}
+              {{ changePasswordErrorMsg }}
             </div>
             <div class="form-input-group">
               <label for="new password"> New Password</label>
