@@ -6,7 +6,7 @@
         {{ registrationErrorMsg }}
       </div>
       <div class="form-input-group">
-        <label for="username">Username</label>
+        <span class ="icon"><ion-icon name="person-outline"></ion-icon></span>
         <input type="text" id="username" v-model="user.username" required autofocus />
       </div>
       <!-- <div class="form-input-group">

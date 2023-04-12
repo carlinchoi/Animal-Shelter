@@ -2,6 +2,7 @@ package com.techelevator.controller;
 
 import javax.validation.Valid;
 
+import ch.qos.logback.core.net.SyslogOutputStream;
 import com.techelevator.model.*;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -57,6 +58,17 @@ public class AuthenticationController {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "User Already Exists.");
         } catch (UsernameNotFoundException e) {
             userDao.create(newUser.getUsername(),newUser.getPassword(), newUser.getRole());
+        }
+    }
+
+    @RequestMapping(value = "/update-password", method = RequestMethod.PUT)
+    public void updatePassword(@Valid @RequestBody RegisterUserDto newUser) {
+        try {
+              System.out.println(newUser);
+              User user = userDao.findByUsername(newUser.getUsername());
+            userDao.updateUserPassword(user, newUser);
+        } catch (UsernameNotFoundException e) {
+            System.out.println("error");
         }
     }
 

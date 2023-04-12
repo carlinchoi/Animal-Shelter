@@ -1,5 +1,6 @@
 package com.techelevator.dao;
 
+import com.techelevator.model.RegisterUserDto;
 import com.techelevator.model.User;
 
 import java.util.List;
@@ -21,4 +22,7 @@ public interface UserDao {
     User getUserByUsername(String username);
 
     void deleteUser(User username);
+
+    void updateUserPassword(User databaseUser, RegisterUserDto user);
+
 }
