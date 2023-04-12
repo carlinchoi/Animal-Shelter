@@ -33,8 +33,8 @@ export default {
     return {
       user: {
         username: '',
-        password: 'animalshelter1',
-        confirmPassword: 'animalshelter1',
+        password: '',
+        confirmPassword: '',
         role: 'newvolunteer',
       },
       registrationErrors: false,
