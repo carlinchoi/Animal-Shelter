@@ -59,15 +59,17 @@ export default {
             //if(this.user.password === 'animalshelter1') {
               if(response.data.user.authorities[0].name==="ROLE_NEWVOLUNTEER"){
               //  alert(response.data.user.authorities[0].name);
-              //this.$router.push("/change-password");
+              this.$router.push("/change-password");
               
+            } else {
+              this.$router.push('./')
             }
             //else{
             //     alert("Not ROLE_USER")
             // }
               //alert('change your password bruh');
             //}
-            this.$router.push("/");
+            // this.$router.push("/");
 
           }
         })
