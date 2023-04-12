@@ -12,11 +12,11 @@
         Thank you for registering, please sign in.
       </div>
       <div class="form-input-group">
-        <label for="username"></label>
+        <span class ="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
         <input type="text" id="username" placeholder="Username" v-model="user.username" required autofocus />
       </div>
       <div class="form-input-group">
-        <label for="password"></label>
+        <span class ="icon"><ion-icon name="person-outline"></ion-icon></span>
         <input type="password" id="password" placeholder="Password" v-model="user.password" required />
       </div>
       <button type="submit" >Sign in</button>
@@ -113,7 +113,13 @@ form {
 .form-input-group {
   margin-bottom: 1rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+}
+.form-input-group .icon {
+  width: 30px;
+  align-self: flex-start;
+  margin-right: -10px
 }
 label {
   margin-right: 0.5rem;

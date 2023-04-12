@@ -3,9 +3,9 @@
         <img src="../assets/animalshelterlogo.png" alt="Rockville" />
       <nav>
       <ul id="primary-navigation" class="tabs">
-        <li ><router-link v-bind:to="{ name: 'home' }"><button class="btn-primary">TBD</button></router-link></li>
+        <!-- <li ><router-link v-bind:to="{ name: 'home' }"><button class="btn-primary">TBD</button></router-link></li> -->
         <li ><router-link v-bind:to="{ name: 'volunteer-register' }"><button class="btn-primary">Register to Volunteer</button></router-link></li>
-        <li class="active"><router-link v-bind:to="{ name: 'logout' }"><button>Logout</button></router-link></li>
+        <li class="active" v-if="showLogoutButton"><router-link v-bind:to="{ name: 'logout' }"><button>Logout</button></router-link></li>
       </ul>
     </nav>
     </header>
@@ -13,9 +13,14 @@
 
 <script>
 export default {
-    name:"the-header"
+    name:"the-header",
+  computed: {
+    showLogoutButton() {
+      return this.$route.name === 'home';
+    },
+},
+};
 
-}
 </script>
 
 <style>
