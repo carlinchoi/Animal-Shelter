@@ -61,9 +61,10 @@ export default {
               //  alert(response.data.user.authorities[0].name);
               //this.$router.push("/change-password");
               
-            }else{
-                alert("Not ROLE_USER")
             }
+            //else{
+            //     alert("Not ROLE_USER")
+            // }
               //alert('change your password bruh');
             //}
             this.$router.push("/");
