@@ -59,6 +59,13 @@ public class JdbcUserDao implements UserDao {
     }
 
     @Override
+    public void deleteUser(User user) {
+        String sql = "DELETE FROM public.users\n" +
+                "\tWHERE username = ?;";
+        jdbcTemplate.update(sql, user.getUsername());
+    }
+
+    @Override
     public List<User> findAll() {
         List<User> users = new ArrayList<>();
         String sql = "select * from users";

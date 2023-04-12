@@ -31,4 +31,10 @@ public class UserController {
         userDao.updateUser(user);
     }
 
+    @RequestMapping(value = "/{username}", method = RequestMethod.DELETE)
+    public void deleteUser(@RequestBody User user, @PathVariable("username") String username) {
+        user = userDao.getUserByUsername(username);
+        userDao.deleteUser(user);
+    }
+
 }

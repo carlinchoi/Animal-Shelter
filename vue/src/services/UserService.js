@@ -14,5 +14,13 @@ export default {
     },
     updateRoleByUsername(username, user) {
         return http.put(`/user/${username}`, user);
+    },
+    updateUserByUsername(username, user) {
+        return http.put(`/user/${username}`, user);
+    },
+    deleteByUsername(username, user) {
+        return http.delete(`/user/${username}`, user);
     }
+
+    
 }
