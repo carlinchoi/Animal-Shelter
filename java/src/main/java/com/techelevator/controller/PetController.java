@@ -38,5 +38,8 @@ public class PetController {
         return pet;
     }
 
-
+    @RequestMapping(path ="/all", method = RequestMethod.POST)
+    public Pet createPet(@RequestBody Pet newPet) {
+        return petDao.createPet(newPet);
+    }
 }
