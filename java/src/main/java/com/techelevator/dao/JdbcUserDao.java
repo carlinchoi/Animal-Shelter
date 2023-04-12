@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import com.techelevator.model.RegisterUserDto;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
@@ -109,6 +110,17 @@ public class JdbcUserDao implements UserDao {
         //user.setId(userId);
         jdbcTemplate.update(sql, user.getId());
     }
+
+    @Override
+    public void updateUserPassword(User databaseUser, RegisterUserDto user) {
+        String sql = "UPDATE users\n" +
+                "\tSET password_hash= ?\n" +
+                "\tWHERE user_id= ?;";
+        String password_hash = new BCryptPasswordEncoder().encode(user.getPassword());
+        jdbcTemplate.update(sql, password_hash, databaseUser.getId());
+    }
+
+
 
     private User mapRowToUser(SqlRowSet rs) {
         User user = new User();

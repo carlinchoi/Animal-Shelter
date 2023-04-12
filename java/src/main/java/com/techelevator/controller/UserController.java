@@ -25,10 +25,13 @@ public class UserController {
             return user;
         }
 
-    @RequestMapping(value = "/{username}", method = RequestMethod.PUT)
-    public void updateUser(@RequestBody User user, @PathVariable("username") String username) {
-        user = userDao.getUserByUsername(username);
+    @RequestMapping(value = "/{username}/update-password", method = RequestMethod.PUT)
+    public void updateUser(@RequestBody String password, @PathVariable("username") String username) {
+        User user = userDao.getUserByUsername(username);
+        user.setPassword(password);
+        System.out.println(user.getPassword() + user.getUsername());
         userDao.updateUser(user);
+
     }
 
     @RequestMapping(value = "/{username}", method = RequestMethod.DELETE)
