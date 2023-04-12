@@ -1,20 +1,4 @@
 <template>
-  <!-- <div>
-      <table>
-          <thead>
-              <tr>
-                  <th>Pet</th>
-              </tr>
-          </thead>
-          <tbody>
-              <tr v-for="pet in this.$store.state.pets" :key="pet.petId">
-                  <td >{{ pet.petId }}</td>
-                  <td> {{ pet.petName }}</td>
-                  <td>{{ pet.gender }}</td>
-              </tr>
-          </tbody>
-      </table>
-  </div> -->
   <div class="pet-container">
     <div v-for="pet in this.$store.state.pets" :key="pet.petId" class="pet-card">
       <div class="card-content">
@@ -22,7 +6,7 @@
         <img :src= "pet.petPhoto" alt="Photo of Pet">
       </div>
       <a href="#" class="button">Learn More</a>
-      <div>  
+      <div class="text-box">  
           <p>{{ pet. petName }}</p>
           <p>Species: {{ pet.species }}</p>
           <p> Breed: {{ pet.breed }}</p>
@@ -31,7 +15,7 @@
       </div>
       </div>
       </div>
-      
+     
 </template>
 
 <script>
@@ -61,7 +45,6 @@ export default {
 
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&family=Poppins:wght@300;400;500&display=swap');
 .pet-container{
   font-family: Montserrat, sans-serif;
   display:flex;
@@ -70,6 +53,7 @@ export default {
   height: 500px;
   position:fixed;
   top:325px;
+  margin-top: -100px;
 }
   img {
     width: 300px;
@@ -87,18 +71,21 @@ export default {
     overflow-y: hidden;
   }
   .pet-card {
+    
     margin: 10px;
-    padding: 10px;
+    padding: 40px;
     border: 1px solid #ccc;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
     max-width: 300px;
-    background-color: rgba(93, 11, 93, 0.7);
-    backdrop-filter: blur(10px);
+    background-color: #8b648b;
     box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
     transition: transform 500ms ease;
+    background-color: rgba(139, 100, 139, 0.8);
+    z-index: 1;
+    
   }
   .pet-card:hover {
   transform: scale(1.05);
@@ -114,14 +101,29 @@ export default {
   }
   .button:hover,
   .button:focus {
-    background-color: lightsteelblue;
+    background-color: rgb(221, 176, 222);
   }
   .card-content {
     transform: translateY(5%);
     transition: transform 500ms ease;
   } 
-  .pet-card:hover .card-content {
+  /* .pet-card:hover .card-content {
   transform: translateY(0);
-  
+  } */
+  .text-box {
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
   }
+  .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.logo img {
+  max-width: 400px;
+  max-height: 200px;
+}
 </style>

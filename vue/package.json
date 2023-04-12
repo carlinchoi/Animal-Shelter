@@ -10,6 +10,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "core-js": "^3.9.1",
+    "slick-carousel": "^1.8.1",
     "vue": "^2.6.12",
     "vue-router": "^3.5.1",
     "vue-slick-carousel": "^1.0.6",
@@ -17,6 +18,7 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.19.1",
+    "@types/jquery": "^3.5.16",
     "@vue/babel-preset-app": "^5.0.8",
     "@vue/cli-plugin-babel": "^5.0.8",
     "@vue/cli-plugin-eslint": "^5.0.8",
