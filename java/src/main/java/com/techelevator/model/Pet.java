@@ -119,11 +119,10 @@ public class Pet {
         isAdopted = adopted;
     }
 
-    public String getPetPhoto() {
-        return petPhoto;
-    }
+    public String getPetPhoto() { return petPhoto;}
 
     public void setPetPhoto(String petPhoto) {
         this.petPhoto = petPhoto;
     }
+
 }

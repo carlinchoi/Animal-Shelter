@@ -13,8 +13,8 @@ public interface PetDao {
 
 //  public List<Pet> searchPetsByName(String petName);
 
-//  public Pet createPet(Pet newPet);
+    public Pet createPet(Pet newPet);
 
-//  void updatePet(Pet pet);
+    void updatePet(Pet pet);
 
 }

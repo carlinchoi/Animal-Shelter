@@ -50,25 +50,25 @@ public class JDBCPetDao implements PetDao {
 //        return petByName;
 //    }
 
-//    @Override
-//    public Pet createPet (Pet newPet) {
-//        String sql = "INSERT INTO pets (pet_name, pet_photo, is_adopted, species, gender, breed, age_years, description) " +
-//               "VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING pet_id; ";
-//        Integer newId = jdbcTemplate.queryForObject(sql, Integer.class,
-//                newPet.getPetName(), newPet.getPetPhoto(), newPet.getIsAdopted(), newPet.getSpecies(), newPet.getGender(), newPet.getBreed(), newPet.getAgeYears(), newPet.getDescription());)
-//
-//         return findById(newId);
-//
-//    }
+    @Override
+    public Pet createPet (Pet newPet) {
+        String sql = "INSERT INTO pets (pet_name, pet_photo, is_adopted, species, gender, breed, age_years, description) " +
+               "VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING pet_id; ";
+        Integer newId = jdbcTemplate.queryForObject(sql, Integer.class,
+                newPet.getPetName(), newPet.getPetPhoto(), newPet.isAdopted(), newPet.getSpecies(), newPet.getGender(), newPet.getBreed(), newPet.getAge(), newPet.getDescription());
 
-//    @Override
-//    public void updatePet(Pet pet) {
-//        String sql = "UPDATE pet " +
-//                      "SET pet_name = ?, pet_photo = ?, is_adopted = ?, species = ?, gender = ?, breed = ?, age_years = ?, description = ? " +
-//                      "WHERE pet_id = ?;";
-//        jdbcTemplate.update(sql, pet.getPetName(), pet.getPetPhoto(), newPet.getIsAdopted(), pet.getSpecies(), pet.getGender(), pet.getBreed(), pet.getAgeYears(), pet.getDescription());
-//
-//    }
+         return findById(newId);
+
+    }
+
+    @Override
+    public void updatePet(Pet pet) {
+        String sql = "UPDATE pet " +
+                      "SET pet_name = ?, pet_photo = ?, is_adopted = ?, species = ?, gender = ?, breed = ?, age_years = ?, description = ? " +
+                      "WHERE pet_id = ?;";
+        jdbcTemplate.update(sql, pet.getPetName(), pet.getPetPhoto(), pet.isAdopted(), pet.getSpecies(), pet.getGender(), pet.getBreed(), pet.getAge(), pet.getDescription());
+
+    }
 
 
     private Pet mapRowToPet(SqlRowSet sql) {
