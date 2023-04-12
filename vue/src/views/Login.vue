@@ -155,7 +155,7 @@ button:hover {
   align-items: center;
   height: 100vh;
 }
-* {
-overflow:auto;
+body {
+  overflow: hidden;
 }
 </style>
