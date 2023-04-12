@@ -6,6 +6,7 @@
         <!-- <li ><router-link v-bind:to="{ name: 'home' }"><button class="btn-primary">TBD</button></router-link></li> -->
         <li ><router-link v-bind:to="{ name: 'volunteer-register' }"><button class="btn-primary">Register to Volunteer</button></router-link></li>
         <li class="active" v-if="showLogoutButton"><router-link v-bind:to="{ name: 'logout' }"><button>Logout</button></router-link></li>
+        <li v-if="showLoginButton"><router-link v-bind:to="{ name: 'login' }"><button>Login</button></router-link></li>
       </ul>
     </nav>
     </header>
@@ -17,6 +18,9 @@ export default {
   computed: {
     showLogoutButton() {
       return this.$route.name === 'home';
+    },
+    showLoginButton() {
+      return this.$route.name === "register" || this.$route.name === 'volunteer-register';
     },
 },
 };
