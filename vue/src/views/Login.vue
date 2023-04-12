@@ -1,6 +1,9 @@
 <template>
+<body>
+<div class="login-wrapper">
+  <div class="form-wrapper">
   <div id="login">
-    <form @submit.prevent="login" style="margin-top: 80px;">
+    <form @submit.prevent="login">
       <h1 >Please Sign In</h1>
       <div role="alert" v-if="invalidCredentials">
         Invalid username and password!
@@ -9,12 +12,12 @@
         Thank you for registering, please sign in.
       </div>
       <div class="form-input-group">
-        <label for="username">Username</label>
-        <input type="text" id="username" v-model="user.username" required autofocus />
+        <label for="username"></label>
+        <input type="text" id="username" placeholder="Username" v-model="user.username" required autofocus />
       </div>
       <div class="form-input-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" v-model="user.password" required />
+        <label for="password"></label>
+        <input type="password" id="password" placeholder="Password" v-model="user.password" required />
       </div>
       <button type="submit" >Sign in</button>
       <p>
@@ -22,6 +25,9 @@
       <router-link v-bind:to="{ name: 'home' }"><button>Go to Home</button></router-link>
     </form>
   </div>
+  </div>
+  </div>
+  </body>
 </template>
 
 <script>
@@ -77,19 +83,45 @@ export default {
 </script>
 
 <style scoped>
+
+body {
+  background-image: url('../assets/background2.png');
+  background-color: rgb(206, 191, 224);
+  background-repeat: repeat;
+  background-size: contain;
+  min-height: 100%;
+  min-width: 100%;
+  margin: 0;
+  padding: 0;
+}
 form {
   display: flex;
   flex-direction: column;
   justify-content: center; 
   align-items: center; 
-  height: 100vh;
-  margin-top: 40vh;
-}
+  height: 80vh;
+  margin-top: 20vh;
+  max-width: 400px;
+  margin: auto;
+  padding: 80px;
+  border: 2px solid #410553;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.671);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  }
 .form-input-group {
   margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 label {
   margin-right: 0.5rem;
+}
+input {
+  padding: 0.5rem;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  
 }
 button {
   min-width: 130px;
@@ -103,12 +135,20 @@ button {
   display: inline-block;
   outline: none;
   border-radius: 20px;
-  border: 2px solid #2c0b8e;
-  background: #2c0b8e;
+  border: 2px solid #4c6e5c;
+  background: #62a18f;
 }
 button:hover {
   background: #fff;
-  color: #2c0b8e
+  color: #fff;
 }
-
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+* {
+overflow:auto;
+}
 </style>

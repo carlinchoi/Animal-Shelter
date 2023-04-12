@@ -74,6 +74,10 @@ export default {
 </script>
 
 <style scoped>
+html, body {
+    margin: 0;
+    padding: 0;
+}
 form {
   display: flex;
   flex-direction: column;

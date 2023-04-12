@@ -76,7 +76,7 @@ button:after {
   top: 0;
   width: 0;
   height: 100%;
-  background: #2c0b8e;
+  background: #93789e;
 }
 
 </style>

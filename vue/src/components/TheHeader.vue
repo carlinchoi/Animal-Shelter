@@ -35,7 +35,6 @@ cursor:pointer;
 transition: all 200ms ease-in;
 }
 ul.tabs li {
-font-family: Montserrat, sans-serif;
 border:none;
 outline: none;
   flex: 1; 
@@ -56,7 +55,6 @@ ul.tabs li a {
   border-bottom: none;
   border-radius: 10px;
   box-shadow: 2px 2px 5px rgba(4, 73, 52, 0.2);
-  font-family: Montserrat, sans-serif;
   border:none;
   outline: none;
 }
