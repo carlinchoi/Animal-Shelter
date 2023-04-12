@@ -4,6 +4,7 @@
       <nav>
       <ul id="primary-navigation" class="tabs">
         <li ><router-link v-bind:to="{ name: 'home' }"><button class="btn-primary">TBD</button></router-link></li>
+        <li ><router-link v-bind:to="{ name: 'volunteer-register' }"><button class="btn-primary">Register to Volunteer</button></router-link></li>
         <li class="active"><router-link v-bind:to="{ name: 'logout' }"><button>Logout</button></router-link></li>
       </ul>
     </nav>
@@ -34,7 +35,6 @@ cursor:pointer;
 transition: all 200ms ease-in;
 }
 ul.tabs li {
-font-family: Montserrat, sans-serif;
 border:none;
 outline: none;
   flex: 1; 
@@ -55,7 +55,6 @@ ul.tabs li a {
   border-bottom: none;
   border-radius: 10px;
   box-shadow: 2px 2px 5px rgba(4, 73, 52, 0.2);
-  font-family: Montserrat, sans-serif;
   border:none;
   outline: none;
 }

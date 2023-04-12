@@ -48,6 +48,24 @@ public class JdbcUserDao implements UserDao {
 	}
 
     @Override
+    public User getUserByUsername(String username) {
+        String sql = "SELECT * FROM users WHERE username = ?";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, username);
+        if (results.next()) {
+            return mapRowToUser(results);
+        } else {
+            return null;
+        }
+    }
+
+    @Override
+    public void deleteUser(User user) {
+        String sql = "DELETE FROM public.users\n" +
+                "\tWHERE username = ?;";
+        jdbcTemplate.update(sql, user.getUsername());
+    }
+
+    @Override
     public List<User> findAll() {
         List<User> users = new ArrayList<>();
         String sql = "select * from users";
@@ -80,6 +98,16 @@ public class JdbcUserDao implements UserDao {
         String ssRole = role.toUpperCase().startsWith("ROLE_") ? role.toUpperCase() : "ROLE_" + role.toUpperCase();
 
         return jdbcTemplate.update(insertUserSql, username, password_hash, ssRole) == 1;
+    }
+
+    @Override
+    public void updateUser(User user) {
+        String sql = "UPDATE users\n" +
+                "\tSET role='ROLE_VOLUNTEER'\n" +
+                "\tWHERE user_id= ?;";
+        //User user = new User();
+        //user.setId(userId);
+        jdbcTemplate.update(sql, user.getId());
     }
 
     private User mapRowToUser(SqlRowSet rs) {

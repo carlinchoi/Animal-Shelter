@@ -15,4 +15,10 @@ public interface UserDao {
     int findIdByUsername(String username);
 
     boolean create(String username, String password, String role);
+
+    void updateUser(User user);
+
+    User getUserByUsername(String username);
+
+    void deleteUser(User username);
 }

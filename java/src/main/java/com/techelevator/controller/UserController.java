@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping(path="/user")
 @CrossOrigin
+
 public class UserController {
     private UserDao userDao;
 
@@ -23,4 +24,17 @@ public class UserController {
             User user = userDao.getUserById(userId);
             return user;
         }
+
+    @RequestMapping(value = "/{username}", method = RequestMethod.PUT)
+    public void updateUser(@RequestBody User user, @PathVariable("username") String username) {
+        user = userDao.getUserByUsername(username);
+        userDao.updateUser(user);
+    }
+
+    @RequestMapping(value = "/{username}", method = RequestMethod.DELETE)
+    public void deleteUser(@RequestBody User user, @PathVariable("username") String username) {
+        user = userDao.getUserByUsername(username);
+        userDao.deleteUser(user);
+    }
+
 }

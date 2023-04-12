@@ -34,7 +34,7 @@ export default {
         username: '',
         password: 'animalshelter1',
         confirmPassword: 'animalshelter1',
-        role: 'volunteer',
+        role: 'newvolunteer',
       },
       registrationErrors: false,
       registrationErrorMsg: 'There were problems registering this user.',
@@ -74,6 +74,10 @@ export default {
 </script>
 
 <style scoped>
+html, body {
+    margin: 0;
+    padding: 0;
+}
 form {
   display: flex;
   flex-direction: column;

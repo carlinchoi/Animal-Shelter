@@ -13,7 +13,6 @@ import java.util.List;
 @Component
 public class JDBCVolunteerApplicationDAO implements VolunteerApplicationDAO {
     private final JdbcTemplate jdbcTemplate;
-    public JDBCVolunteerApplicationDAO (DataSource dataSource) { jdbcTemplate = new JdbcTemplate(dataSource);}
 
     public JDBCVolunteerApplicationDAO(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
