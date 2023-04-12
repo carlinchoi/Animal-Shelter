@@ -10,6 +10,8 @@ public interface VolunteerApplicationDAO {
 
     public VolunteerApplication findById (int applicationId);
 
+    VolunteerApplication createVolunteerApplication(VolunteerApplication volunteerApplication);
+
 //    public Application submitApplication();
 //
 //    public Application checkApplicationStatus(String status);

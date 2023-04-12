@@ -57,7 +57,7 @@ public class JDBCPetDao implements PetDao {
 //        Integer newId = jdbcTemplate.queryForObject(sql, Integer.class,
 //                newPet.getPetName(), newPet.getPetPhoto(), newPet.getIsAdopted(), newPet.getSpecies(), newPet.getGender(), newPet.getBreed(), newPet.getAgeYears(), newPet.getDescription());)
 //
-//         return getPet(newId);
+//         return findById(newId);
 //
 //    }
 

@@ -41,12 +41,16 @@ public class JDBCVolunteerApplicationDAO implements VolunteerApplicationDAO {
             return null;
         }
     }
+    @Override
+    public VolunteerApplication createVolunteerApplication (VolunteerApplication volunteerApplication) {
+        String sql = "INSERT INTO volunteer_application (user_id, application_status) " +
+               "VALUES (?, ?) RETURNING application_id; ";
+        Integer newId = jdbcTemplate.queryForObject(sql, Integer.class,
+                volunteerApplication.getUserId(), volunteerApplication.getApplicationStatus());
 
+         return findById(newId);
 
-
-
-
-
+    }
 
     private VolunteerApplication mapRowToVolunteerApplication(SqlRowSet sql) {
         VolunteerApplication volunteerapplication = new VolunteerApplication();
@@ -55,7 +59,4 @@ public class JDBCVolunteerApplicationDAO implements VolunteerApplicationDAO {
         volunteerapplication.setApplicationStatus(sql.getString("status"));
         return volunteerapplication;
     }
-
-
-
 }
