@@ -32,7 +32,16 @@ INSERT INTO pets(
 --
 --INSERT INTO pets(
 --	pet_name, pet_photo, is_adopted, species, gender, breed, age_years, description)
---	VALUES ('Jams', 'https://c4.wallpaperflare.com/wallpaper/12/91/646/cocker-spaniel-wallpaper-preview.jpg', 'true', 'Dog', 'female', 'Spaniel', '1', 'Musically talented, prefers pop rock);
+--	VALUES ('Jams', 'https://c4.wallpaperflare.com/wallpaper/12/91/646/cocker-spaniel-wallpaper-preview.jpg', 'true', 'Dog', 'female', 'Spaniel', '1', 'Musically talented, prefers pop rock');
 --
+
+--INSERT INTO pets(
+--	pet_name, pet_photo, is_adopted, species, gender, breed, age_years, description)
+--	VALUES ('Nugget', 'https://en.bcdn.biz/Images/2015/9/18/094344f8-707e-4f31-b24f-c2a51ea3de78.jpg', 'false', 'Hamster', 'male', 'Unknown', '3', 'Loves playgrounds and fresh veggies');
+
+
+--INSERT INTO pets(
+--	pet_name, pet_photo, is_adopted, species, gender, breed, age_years, description)
+--	VALUES ('Cuddles', 'https://t4.ftcdn.net/jpg/02/70/05/25/360_F_270052571_qP9uVd1MpB4kfflUO92S5gdKYCjxM5K3.jpg', 'true', 'Hamster', 'female', 'Unknown', '1', 'Requires cozy couch and pillows';
 
 COMMIT TRANSACTION;
