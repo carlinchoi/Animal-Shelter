@@ -18,30 +18,30 @@ INSERT INTO pets(
 
                                     -- More Pets to Add Later!
 
---INSERT INTO pets(
---	pet_name, pet_photo, is_adopted, species, gender, breed, age_years, description)
---	VALUES ('Tank', 'https://files.slack.com/files-pri/T0GNFLF6D-F053EUXQCBS/image.png', 'false', 'Dog', 'Male', 'Lab Mix', '1', 'Has amazing energy, slight tennis ball addiction');
---
---INSERT INTO pets(
---	pet_name, pet_photo, is_adopted, species, gender, breed, age_years, description)
---	VALUES ('Happy', 'https://files.slack.com/files-pri/T0GNFLF6D-F0533Q58KCH/image.png', 'true', 'Cat', 'Female', 'Unknown', '1', 'Loves sunshine and polka dots');
---
---INSERT INTO pets(
---	pet_name, pet_photo, is_adopted, species, gender, breed, age_years, description)
---	VALUES ('Blue', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQZGZXfcALhaG7pwafvCnUQG5Bq9EZ5_Dh9xRNTHseS4Oi8q3wujkvpfZB8KxF2bdrryQ&usqp=CAU', 'false', 'Bird', 'Male', 'Parakeet', '2', 'Loves good conversations');
---
---INSERT INTO pets(
---	pet_name, pet_photo, is_adopted, species, gender, breed, age_years, description)
---	VALUES ('Jams', 'https://c4.wallpaperflare.com/wallpaper/12/91/646/cocker-spaniel-wallpaper-preview.jpg', 'true', 'Dog', 'female', 'Spaniel', '1', 'Musically talented, prefers pop rock');
---
---
---INSERT INTO pets(
---	pet_name, pet_photo, is_adopted, species, gender, breed, age_years, description)
---	VALUES ('Nugget', 'https://en.bcdn.biz/Images/2015/9/18/094344f8-707e-4f31-b24f-c2a51ea3de78.jpg', 'false', 'Hamster', 'male', 'Unknown', '3', 'Loves playgrounds and fresh veggies');
---
---
---INSERT INTO pets(
---	pet_name, pet_photo, is_adopted, species, gender, breed, age_years, description)
---	VALUES ('Cuddles', 'https://t4.ftcdn.net/jpg/02/70/05/25/360_F_270052571_qP9uVd1MpB4kfflUO92S5gdKYCjxM5K3.jpg', 'true', 'Hamster', 'female', 'Unknown', '1', 'Requires cozy couch and pillows';
+INSERT INTO pets(
+	pet_name, pet_photo, is_adopted, species, gender, breed, age_years, description)
+	VALUES ('Tank', 'https://files.slack.com/files-pri/T0GNFLF6D-F053EUXQCBS/image.png', 'false', 'Dog', 'Male', 'Lab Mix', '1', 'Has amazing energy, slight tennis ball addiction');
+
+INSERT INTO pets(
+	pet_name, pet_photo, is_adopted, species, gender, breed, age_years, description)
+	VALUES ('Happy', 'https://files.slack.com/files-pri/T0GNFLF6D-F0533Q58KCH/image.png', 'true', 'Cat', 'Female', 'Unknown', '1', 'Loves sunshine and polka dots');
+
+INSERT INTO pets(
+	pet_name, pet_photo, is_adopted, species, gender, breed, age_years, description)
+	VALUES ('Blue', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQZGZXfcALhaG7pwafvCnUQG5Bq9EZ5_Dh9xRNTHseS4Oi8q3wujkvpfZB8KxF2bdrryQ&usqp=CAU', 'false', 'Bird', 'Male', 'Parakeet', '2', 'Loves good conversations');
+
+INSERT INTO pets(
+	pet_name, pet_photo, is_adopted, species, gender, breed, age_years, description)
+	VALUES ('Jams', 'https://c4.wallpaperflare.com/wallpaper/12/91/646/cocker-spaniel-wallpaper-preview.jpg', 'true', 'Dog', 'female', 'Spaniel', '1', 'Musically talented, prefers pop rock');
+
+
+INSERT INTO pets(
+	pet_name, pet_photo, is_adopted, species, gender, breed, age_years, description)
+	VALUES ('Nugget', 'https://en.bcdn.biz/Images/2015/9/18/094344f8-707e-4f31-b24f-c2a51ea3de78.jpg', 'false', 'Hamster', 'male', 'Unknown', '3', 'Loves playgrounds and fresh veggies');
+
+
+INSERT INTO pets(
+	pet_name, pet_photo, is_adopted, species, gender, breed, age_years, description)
+	VALUES ('Cuddles', 'https://t4.ftcdn.net/jpg/02/70/05/25/360_F_270052571_qP9uVd1MpB4kfflUO92S5gdKYCjxM5K3.jpg', 'true', 'Hamster', 'female', 'Unknown', '1', 'Requires cozy couch and pillows');
 
 COMMIT TRANSACTION;
