@@ -11,5 +11,8 @@ export default {
     },
     updateRoleById(userId, user) {
         return http.put(`/user/${userId}`, user);
+    },
+    updateRoleByUsername(username, user) {
+        return http.put(`/user/${username}`, user);
     }
 }

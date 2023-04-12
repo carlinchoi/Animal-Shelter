@@ -25,9 +25,9 @@ public class UserController {
             return user;
         }
 
-    @RequestMapping(value = "/{userId}", method = RequestMethod.PUT)
-    public void updateUser(@RequestBody User user, @PathVariable("userId") int userId) {
-        user = userDao.getUserById(userId);
+    @RequestMapping(value = "/{username}", method = RequestMethod.PUT)
+    public void updateUser(@RequestBody User user, @PathVariable("username") String username) {
+        user = userDao.getUserByUsername(username);
         userDao.updateUser(user);
     }
 
