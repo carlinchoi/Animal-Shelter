@@ -85,6 +85,7 @@ export default {
     transition: transform 500ms ease;
     background-color: rgba(139, 100, 139, 0.8);
     z-index: 1;
+    font-weight: bold;
     
   }
   .pet-card:hover {
@@ -104,7 +105,7 @@ export default {
     background-color: rgb(221, 176, 222);
   }
   .card-content {
-    transform: translateY(5%);
+    transform: translateY(0%);
     transition: transform 500ms ease;
   } 
   /* .pet-card:hover .card-content {
