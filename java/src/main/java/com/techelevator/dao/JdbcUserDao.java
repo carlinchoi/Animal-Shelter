@@ -119,7 +119,7 @@ public class JdbcUserDao implements UserDao {
         String password_hash = new BCryptPasswordEncoder().encode(user.getPassword());
         jdbcTemplate.update(sql, password_hash, databaseUser.getId());
     }
-
+    //comment
 
 
     private User mapRowToUser(SqlRowSet rs) {
