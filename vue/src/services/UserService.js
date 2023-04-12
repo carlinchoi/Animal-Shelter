@@ -20,6 +20,9 @@ export default {
     },
     deleteByUsername(username, user) {
         return http.delete(`/user/${username}`, user);
+    },
+    updateUserPassword(user) {
+        return http.post('/update-password', user);
     }
 
     
