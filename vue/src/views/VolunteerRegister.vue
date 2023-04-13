@@ -40,7 +40,7 @@ export default {
         username: '',
         password: '',
         confirmPassword: '',
-        role: 'newvolunteer',
+        role: 'PENDINGVOLUNTEER',
       },
       registrationErrors: false,
       registrationErrorMsg: 'There were problems registering this user.',

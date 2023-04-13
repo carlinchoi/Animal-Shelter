@@ -57,7 +57,7 @@ export default {
             this.$store.commit("SET_AUTH_TOKEN", response.data.token);
             this.$store.commit("SET_USER", response.data.user);
             //if(this.user.password === 'animalshelter1') {
-              if(response.data.user.authorities[0].name==="ROLE_NEWVOLUNTEER"){
+              if(response.data.user.authorities[0].name==="ROLE_PENDINGVOLUNTEER"){
               //  alert(response.data.user.authorities[0].name);
               this.$router.push("/change-password");
               
