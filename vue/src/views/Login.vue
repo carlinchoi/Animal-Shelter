@@ -89,7 +89,7 @@ export default {
 
 body {
   background-image: url('../assets/background2.png');
-  background-color: rgb(206, 191, 224);
+  background-color: rgb(230, 222, 240);
   background-repeat: repeat;
   background-size: contain;
   min-height: 100%;

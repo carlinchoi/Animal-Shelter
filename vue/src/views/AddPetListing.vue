@@ -5,7 +5,7 @@
             <h1 >Add Details About New Pet Listing</h1>
             <div class="form-input-group">
               <label for="pet name"> Name </label>
-              <input type="text"  v-model='pet.petName' required>
+              <input type="text" v-model='pet.petName' required/>
             </div>
             <div class="form-input-group">
               <label for="pet species"> Species </label>
@@ -80,9 +80,9 @@ export default{
 </script>
 
 <style>
-body {
+/* body {
   background-image: url('../assets/background2.png');
-  background-color: rgb(206, 191, 224);
+  background-color: rgb(137, 167, 155);
   background-repeat: repeat;
   background-size: contain;
   min-height: 100%;
@@ -95,11 +95,11 @@ form {
   flex-direction: column;
   justify-content: center; 
   align-items: center; 
-  height: 80vh;
-  margin-top: 20vh;
+  height: 60vh;
+  margin-top: -10vh;
   max-width: 400px;
   margin: auto;
-  padding: 80px;
+  padding: 40px;
   border: 2px solid #410553;
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.671);
@@ -152,5 +152,5 @@ button:hover {
 }
 body {
   overflow: hidden;
-}
+} */
 </style>

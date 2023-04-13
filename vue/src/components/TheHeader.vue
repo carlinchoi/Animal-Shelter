@@ -37,7 +37,7 @@ export default {
 </script>
 <style scoped>
 div{
-  z-index: 9999;
+  z-index: 10;
 }
 nav {
   background-color: rgba(15, 83, 66, 0.8);

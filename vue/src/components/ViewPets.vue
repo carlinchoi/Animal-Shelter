@@ -12,7 +12,8 @@
       <div
         v-for="pet in filteredPets"
         :key="pet.petId"
-        class="pet-card flip-card">
+        class="pet-card flip-card"
+      >
         <div class="flip-card-front">
           <div class="flip-card-inner">
             <div class="flip-card-back">
@@ -26,7 +27,7 @@
                 <p>Species: {{ pet.species }}</p>
                 <p>Breed: {{ pet.breed }}</p>
                 <p>{{ pet.description }}</p>
-                <router-link v-show="$store.state.user.authorities[0].name==='ROLE_VOLUNTEER'"
+                <router-link
                   :to="{
                     name: 'update-pet-page',
                     params: { petId: pet.petId, pet: pet },
@@ -91,8 +92,8 @@ export default {
   justify-content: space-between;
   align-items: flex-start;
   height: 300px;
-  position: static;
-  top: 325px;
+  /* position: static; */
+  /* top: 325px; */
   padding: 0 2px;
   margin-top: 50px;
   max-width: 1200px;
@@ -122,16 +123,16 @@ img {
   flex-direction: column;
   align-items: center;
   max-width: 300px;
+  background-color: rgba(93, 11, 93, 0.7);
   backdrop-filter: blur(10px);
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
   transition: transform 500ms ease;
   background-color: rgba(139, 100, 139, 0.8);
-  z-index: 2;
+  z-index: 1;
   font-weight: bold;
   flex-basis: calc(50% - 20px);
   width: calc(50% - 10px);
   margin: 10px;
-  overflow:hidden,
 }
 
 .pet-card:hover {
@@ -151,6 +152,7 @@ img {
 .button:focus {
   background-color: lightsteelblue;
 }
+
 .text-box {
   background-color: white;
   padding: 10px;
@@ -183,14 +185,13 @@ img {
 }
 .btn-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin: 0 auto;
   padding: 10px;
   overflow: hidden;
-  position: relative;
-  height: -100px;
-  z-index: 1;
+  position: static;
+  margin-top: 50px;
 }
 .btn-container button {
   font-size: 16px;
@@ -211,7 +212,9 @@ img {
 }
 button {
   height: -100px;
+  z-index: 15;
   background-color: rgb(195, 226, 199);
+  margin-top: -100px;
 }
 
 .pet-card:hover .card-content {
