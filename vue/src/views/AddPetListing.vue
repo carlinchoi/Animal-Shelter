@@ -29,7 +29,7 @@
             </div>
             <div class="form-input-group">
               <label for="pet photo"> Photo Url </label>
-              <input type="text"  v-model='pet.petPhoto' required>
+              <input type="url"  v-model='pet.petPhoto' required>
             </div>
             <button type="submit">Submit New Listing</button>
         </form>
