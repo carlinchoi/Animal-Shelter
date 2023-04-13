@@ -20,9 +20,9 @@
       <div>  
           <p>{{ pet. petName }}</p>
           <p>Species: {{ pet.species }}</p>
-          <p> Breed: {{ pet.breed }}</p>ool
+          <p> Breed: {{ pet.breed }}</p>
           <p>{{ pet.description }}</p>
-          <router-link :to="{ name: 'UpdatePetListing', params: {id: pet.petId} }">Edit</router-link>
+          <router-link :to="{ name: 'update-pet-page', params: {petId: pet.petId, pet: pet} }" class="button">Edit</router-link>
       </div>
       </div>
       </div>
@@ -156,7 +156,9 @@ export default {
     backface-visibility: hidden;
     transform: translateY(0%);
     transition: transform 500ms ease;
-  } .card-content.back {
+    z-index: 2;
+  } 
+  .card-content.back {
   transform: rotateY(180deg);
 }
  
@@ -164,6 +166,12 @@ export default {
     background-color: white;
     padding: 10px;
     border-radius: 5px;
+    position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 5;
   }
   .logo {
   display: flex;
