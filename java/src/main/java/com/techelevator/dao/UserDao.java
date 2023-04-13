@@ -30,4 +30,8 @@ public interface UserDao {
     List<User> findAllPendingVolunteers();
 
     List<User> findAllVolunteersAndAdmin();
+
+    void updateUserApplicationStatus(int userId, String newStatus);
+
+    void updateUserRole(int userId, String newRole);
 }

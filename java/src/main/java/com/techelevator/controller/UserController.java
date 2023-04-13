@@ -33,7 +33,6 @@ public class UserController {
         user.setPassword(password);
         System.out.println(user.getPassword() + user.getUsername());
         userDao.updateUser(user);
-
     }
 
     @RequestMapping(value = "/{username}", method = RequestMethod.DELETE)
@@ -58,4 +57,15 @@ public class UserController {
         List<User> volunteerList = userDao.findAllVolunteersAndAdmin();
         return volunteerList;
     }
+    @RequestMapping(value = "/application-status/{userId}", method = RequestMethod.PUT)
+    public void updateUserApplicationStatus(@PathVariable("userId") int userId, @RequestParam String newStatus) {
+        userDao.updateUserApplicationStatus(userId, newStatus);
+    }
+
+    @RequestMapping(value = "/user-role/{userId}", method = RequestMethod.PUT)
+    public void updateUserRole(@PathVariable("userId") int userId, @RequestParam String newRole) {
+        userDao.updateUserRole(userId, newRole);
+    }
+
 }
+

@@ -153,6 +153,21 @@ public class JdbcUserDao implements UserDao {
         }
         return volunteers;
     }
+
+
+    @Override
+    public void updateUserApplicationStatus(int userId, String newStatus) {
+        String sql = "UPDATE users SET application_status = ? WHERE user_id = ?;";
+        jdbcTemplate.update(sql, newStatus, userId);
+    }
+
+
+
+    @Override
+    public void updateUserRole(int userId, String newRole) {
+        String sql = "UPDATE users SET role = ? WHERE user_id = ?";
+        jdbcTemplate.update(sql, newRole, userId);
+    }
     //comment
 
 

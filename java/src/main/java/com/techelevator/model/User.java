@@ -21,6 +21,7 @@ public class User {
    private String lastName;
    private String phone;
    private String tempPassword;
+   private String applicationStatus;
 
    public User() { }
 
@@ -118,6 +119,14 @@ public class User {
 
    public void setTempPassword(String tempPassword) {
       this.tempPassword = tempPassword;
+   }
+
+   public String getApplicationStatus() {
+      return applicationStatus;
+   }
+
+   public void setApplicationStatus(String applicationStatus) {
+      this.applicationStatus = applicationStatus;
    }
 
    public void setAuthorities(String authorities) {
