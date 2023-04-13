@@ -1,0 +1,106 @@
+<template>
+   <div>
+    <div class="form-wrapper">
+        <form @submit.prevent="updatePet">
+            <h1 >Update Pet Listing</h1>
+            <div class="form-input-group">
+              <label for="pet name"> Name </label>
+              <input type="text"  v-model='pet.petName' required>
+            </div>
+            <div class="form-input-group">
+              <label for="pet species"> Species </label>
+              <input type="text"  v-model='pet.species' required>
+            </div>
+            <div class="form-input-group">
+              <label for="pet gender"> Gender </label>
+              <input type="text"  v-model='pet.gender' required>
+            </div>
+            <div class="form-input-group">
+              <label for="pet breed"> Breed </label>
+              <input type="text"  v-model='pet.breed' required>
+            </div>
+            <div class="form-input-group">
+              <label for="pet age"> Age </label>
+              <input type="number"  v-model='pet.age' required>
+            </div>
+            <div class="form-input-group">
+              <label for="pet description"> Description </label>
+              <input type="text"  v-model='pet.description' required>
+            </div>
+            <div class="form-input-group">
+              <label for="pet photo"> Photo Url </label>
+              <input type="url"  v-model='pet.petPhoto' required>
+            </div>
+            <div class="form-input-group">
+              <label for="is adopted"> Has this pet been adopted? </label>
+              <input type="checkbox"  v-model='pet.adopted' >
+            </div>
+            <button type="submit">Submit New Listing</button>
+        </form>
+    </div>
+  </div>
+</template>
+
+<script>
+import petService from '../services/PetService.js';
+export default{
+    name: 'update-pet-listing',
+    props: ["petId"], 
+    //pet: Object,
+    data() {
+        return {
+            pet: {
+                petId: this.petId,
+                petName: "",
+                species: "",
+                adoptionDate: null,
+                gender: "",
+                breed: "",
+                age: "",
+                description: "",
+                petPhoto: "",
+                adopted: ""
+            }
+        }
+    },
+    methods: {
+        updatePet() {
+            petService.updatePet(this.petId, this.pet)
+            .then((response) => {
+            if (response.status == 200) {
+              this.$router.push({
+                path: '/',
+              });
+            }
+          })
+          .catch((error) => {
+            const response = error.response;
+            this.registrationErrors = true;
+            if (response.status === 400) {
+              this.registrationErrorMsg = 'Bad Request: Validation Errors';
+            }
+          });
+      }
+    },
+    created() {
+    petService
+      .getPetById(this.petId)
+      .then(response => {
+        this.$store.commit("SET_ACTIVE_PET", response.data);
+        this.pet = response.data;
+        //this.pet.species = response.data.pet.species;
+      })
+      .catch(error => {
+        if (error.response.status == 404) {
+          this.$router.push({name: 'NotFound'});
+        }
+      });
+    //this.pet = this.$route.params.pet;
+  }
+    
+}
+</script>
+
+<style>
+
+</style>

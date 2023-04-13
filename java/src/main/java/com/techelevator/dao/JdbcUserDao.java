@@ -129,6 +129,30 @@ public class JdbcUserDao implements UserDao {
         System.out.println(password_hash);
         return jdbcTemplate.update(insertUserSql, volunteerPendingUser.getUsername(), password_hash,volunteerPendingUser.getEmail(),volunteerPendingUser.getFirstName(),volunteerPendingUser.getLastName(),volunteerPendingUser.getPhone(),"ROLE_PENDINGVOLUNTEER")==1;
     }
+
+    @Override
+    public List<User> findAllNewVolunteers() {
+        List<User> newVolunteers = new ArrayList<>();
+        String sql = "SELECT * FROM users WHERE role = 'ROLE_NEWVOLUNTEER';";
+        SqlRowSet result = jdbcTemplate.queryForRowSet(sql);
+
+        while (result.next()) {
+            newVolunteers.add(mapRowToUser(result));
+        }
+        return newVolunteers;
+    }
+
+    @Override
+    public List<User> findAllVolunteersAndAdmin() {
+        List<User> volunteers = new ArrayList<>();
+        String sql = "SELECT * FROM users WHERE role IN ('ROLE_VOLUNTEER', 'ROLE_ADMIN');";
+        SqlRowSet result = jdbcTemplate.queryForRowSet(sql);
+
+        while (result.next()) {
+            volunteers.add(mapRowToUser(result));
+        }
+        return volunteers;
+    }
     //comment
 
 

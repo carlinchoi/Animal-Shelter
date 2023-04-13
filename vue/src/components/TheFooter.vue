@@ -4,6 +4,8 @@
              <ion-icon name="logo-instagram"></ion-icon>
              <ion-icon name="logo-facebook"></ion-icon>
              <ion-icon name="logo-youtube"></ion-icon>
+             <router-link :to="{name: 'home' }"><ion-icon name="home-outline"></ion-icon></router-link>
+              <li><a href="#">Contact Us</a></li>
      </footer>
    
 </template>
@@ -45,7 +47,12 @@ ion-icon {
   font-size: 38px;
   margin-top: -100px;
   padding: 0px 10px;
+  color: rgb(195, 226, 199);
   
+}
+router-link {
+  padding-right: 100px;
+  text-align: right;
 }
 
 ion-icon:hover {

@@ -17,7 +17,8 @@ public class JDBCPetDao implements PetDao {
     @Override
     public List<Pet> findAll() {
         List<Pet> pets = new ArrayList<>();
-        String sql = "SELECT * FROM pets;";
+        String sql = "SELECT * FROM pets" +
+                " WHERE is_adopted = false;";
         SqlRowSet result = jdbcTemplate.queryForRowSet(sql);
 
         while (result.next()) {

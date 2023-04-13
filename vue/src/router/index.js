@@ -9,7 +9,11 @@ import VolunteerRegister from '../views/VolunteerRegister.vue'
 import ChangePasswordPage from '../views/ChangePasswordPage.vue'
 import AddPetListing from '../views/AddPetListing.vue'
 import VolunteerList from '../views/VolunteerList.vue'
+<<<<<<< HEAD
 import VolunteerApplicationView from '../views/VolunteerApplicationView.vue'
+=======
+import UpdatePetPage from '../views/UpdatePetPage.vue'
+>>>>>>> c0693d95cb8a969228b241a1d619c20cc7a16287
 
 Vue.use(Router)
 
@@ -91,9 +95,15 @@ const router = new Router({
       }
     },
     {
+<<<<<<< HEAD
       path: "/volunteer-application",
       name: "volunteer-application",
       component: VolunteerApplicationView,
+=======
+      path: "/update-pet-page",
+      name: "update-pet-page",
+      component: UpdatePetPage,
+>>>>>>> c0693d95cb8a969228b241a1d619c20cc7a16287
       meta: {
         requiresAuth: false
       }
