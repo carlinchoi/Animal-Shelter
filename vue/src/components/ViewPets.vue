@@ -26,7 +26,7 @@
                 <p>Species: {{ pet.species }}</p>
                 <p>Breed: {{ pet.breed }}</p>
                 <p>{{ pet.description }}</p>
-                <router-link
+                <router-link v-show="$store.state.user.authorities[0].name==='ROLE_VOLUNTEER'"
                   :to="{
                     name: 'update-pet-page',
                     params: { petId: pet.petId, pet: pet },
