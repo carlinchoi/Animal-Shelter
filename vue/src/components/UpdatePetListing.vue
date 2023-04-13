@@ -2,7 +2,6 @@
    <div>
     <div class="form-wrapper">
         <form @submit.prevent="updatePet">
-            <h1 >Update Pet Listing</h1>
             <div class="form-input-group">
               <label for="pet name"> Name </label>
               <input type="text"  v-model='pet.petName' required>
