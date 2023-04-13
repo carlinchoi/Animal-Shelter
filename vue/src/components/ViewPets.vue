@@ -12,8 +12,7 @@
       <div
         v-for="pet in filteredPets"
         :key="pet.petId"
-        class="pet-card flip-card"
-      >
+        class="pet-card flip-card">
         <div class="flip-card-front">
           <div class="flip-card-inner">
             <div class="flip-card-back">
@@ -116,23 +115,23 @@ img {
 .pet-card {
   position: relative;
   margin: 10px;
-  padding: 10px;
+  padding: 30px;
   border: 1px solid #ccc;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 300px;
-  background-color: rgba(93, 11, 93, 0.7);
   backdrop-filter: blur(10px);
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
   transition: transform 500ms ease;
   background-color: rgba(139, 100, 139, 0.8);
-  z-index: 1;
+  z-index: 2;
   font-weight: bold;
   flex-basis: calc(50% - 20px);
   width: calc(50% - 10px);
   margin: 10px;
+  overflow:hidden,
 }
 
 .pet-card:hover {
@@ -189,7 +188,9 @@ img {
   margin: 0 auto;
   padding: 10px;
   overflow: hidden;
-  position: static;
+  position: relative;
+  height: -100px;
+  z-index: 1;
 }
 .btn-container button {
   font-size: 16px;
@@ -210,7 +211,6 @@ img {
 }
 button {
   height: -100px;
-  z-index: 15;
   background-color: rgb(195, 226, 199);
 }
 

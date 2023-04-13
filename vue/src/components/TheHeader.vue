@@ -36,6 +36,9 @@ export default {
 };
 </script>
 <style scoped>
+div{
+  z-index: 9999;
+}
 nav {
   background-color: rgba(15, 83, 66, 0.8);
   color: white;
@@ -63,9 +66,11 @@ nav ul {
   height: 336px;
 }
 
-nav li {
+nav ul {
   margin: 0;
   font-size:20px;
+  border-radius: 10px;
+ 
  
 }
 
