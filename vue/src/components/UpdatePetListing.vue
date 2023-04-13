@@ -33,7 +33,7 @@
             </div>
             <div class="form-input-group">
               <label for="is adopted"> Has this pet been adopted? </label>
-              <input type="checkbox"  v-model='pet.adopted' required>
+              <input type="checkbox"  v-model='pet.adopted' >
             </div>
             <button type="submit">Submit New Listing</button>
         </form>
