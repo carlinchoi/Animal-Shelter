@@ -40,4 +40,9 @@ public class UserController {
         userDao.deleteUser(user);
     }
 
+    @RequestMapping(value="/pending-volunteer",method=RequestMethod.POST)
+    public boolean pendingVolunteer(@RequestBody User user){
+        return userDao.createPendingVolunteerUser(user);
+    }
+
 }

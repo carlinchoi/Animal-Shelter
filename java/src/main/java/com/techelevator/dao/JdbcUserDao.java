@@ -119,6 +119,16 @@ public class JdbcUserDao implements UserDao {
         String password_hash = new BCryptPasswordEncoder().encode(user.getPassword());
         jdbcTemplate.update(sql, password_hash, databaseUser.getId());
     }
+
+    @Override
+    public boolean createPendingVolunteerUser(User volunteerPendingUser) {
+        String insertUserSql = "insert into users (username,password_hash,email, first_name, last_name, phone,role) values (?,?,?,?,?,?,?)";
+        System.out.println(insertUserSql);
+        System.out.println(volunteerPendingUser);
+        String password_hash = new BCryptPasswordEncoder().encode(volunteerPendingUser.getTempPassword());
+        System.out.println(password_hash);
+        return jdbcTemplate.update(insertUserSql, volunteerPendingUser.getUsername(), password_hash,volunteerPendingUser.getEmail(),volunteerPendingUser.getFirstName(),volunteerPendingUser.getLastName(),volunteerPendingUser.getPhone(),"ROLE_PENDINGVOLUNTEER")==1;
+    }
     //comment
 
 

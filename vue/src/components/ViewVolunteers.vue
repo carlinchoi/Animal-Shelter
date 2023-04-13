@@ -7,6 +7,7 @@
           <th>Last Name</th>
           <th>Email</th>
           <th>Phone</th>
+          <th>Role</th>
         </tr>
       </thead>
       <tbody>
@@ -15,6 +16,7 @@
           <td>{{ volunteer.lastName }}</td>
           <td>{{ volunteer.email }}</td>
           <td>{{ volunteer.phone }}</td>
+          <td>{{ volunteer.role }}</td>
         </tr>
       </tbody>
     </table>
