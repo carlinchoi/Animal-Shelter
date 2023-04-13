@@ -92,8 +92,8 @@ export default {
   justify-content: space-between;
   align-items: flex-start;
   height: 300px;
-  /* position: static; */
-  /* top: 325px; */
+   position: static; 
+   top: 325px; 
   padding: 0 2px;
   margin-top: 50px;
   max-width: 1200px;
@@ -150,7 +150,7 @@ img {
 }
 .button:hover,
 .button:focus {
-  background-color: lightsteelblue;
+  background-color: rgb(208, 182, 214);
 }
 
 .text-box {
