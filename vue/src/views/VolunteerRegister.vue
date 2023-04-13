@@ -139,6 +139,7 @@ button {
   border-radius: 20px;
   border: 2px solid #4c6e5c;
   background: #62a18f;
+  margin-top: 0px;
 }
 button:hover {
   background: #fff;
