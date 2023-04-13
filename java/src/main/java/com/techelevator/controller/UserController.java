@@ -47,9 +47,9 @@ public class UserController {
         return userDao.createPendingVolunteerUser(user);
     }
 
-    @RequestMapping(value = "/new-volunteer", method = RequestMethod.GET)
-    public List<User> findAllNewVolunteers() {
-        List<User> newVolunteerList = userDao.findAllNewVolunteers();
+    @RequestMapping(value = "/pending-volunteer", method = RequestMethod.GET)
+    public List<User> findAllPendingVolunteers() {
+        List<User> newVolunteerList = userDao.findAllPendingVolunteers();
         return newVolunteerList;
     }
 

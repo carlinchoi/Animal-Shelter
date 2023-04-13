@@ -27,7 +27,7 @@ public interface UserDao {
 
     boolean createPendingVolunteerUser(User volunteerPendingUser);
 
-    List<User> findAllNewVolunteers();
+    List<User> findAllPendingVolunteers();
 
     List<User> findAllVolunteersAndAdmin();
 }

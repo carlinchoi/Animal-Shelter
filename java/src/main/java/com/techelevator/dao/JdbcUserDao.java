@@ -131,15 +131,15 @@ public class JdbcUserDao implements UserDao {
     }
 
     @Override
-    public List<User> findAllNewVolunteers() {
-        List<User> newVolunteers = new ArrayList<>();
-        String sql = "SELECT * FROM users WHERE role = 'ROLE_NEWVOLUNTEER';";
+    public List<User> findAllPendingVolunteers() {
+        List<User> pendingVolunteerList = new ArrayList<>();
+        String sql = "SELECT * FROM users WHERE role = 'ROLE_PENDINGVOLUNTEER';";
         SqlRowSet result = jdbcTemplate.queryForRowSet(sql);
 
         while (result.next()) {
-            newVolunteers.add(mapRowToUser(result));
+            pendingVolunteerList.add(mapRowToUser(result));
         }
-        return newVolunteers;
+        return pendingVolunteerList;
     }
 
     @Override
