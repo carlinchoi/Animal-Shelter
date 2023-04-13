@@ -20,11 +20,11 @@ INSERT INTO pets(
 
 INSERT INTO pets(
 	pet_name, pet_photo, is_adopted, species, gender, breed, age_years, description)
-	VALUES ('Tank', 'https://files.slack.com/files-pri/T0GNFLF6D-F053EUXQCBS/image.png', 'false', 'Dog', 'Male', 'Lab Mix', '1', 'Has amazing energy, slight tennis ball addiction');
+	VALUES ('Tank', 'https://people.com/thmb/s5axxuhc4nVAr5YfJ4nyjAxBCrM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(637x434:639x436)/tennis-ball-dog-1-426a19de798f4044accbbed837b204c6.jpg', 'false', 'Dog', 'Male', 'Golden', '1', 'Has amazing energy, slight tennis ball addiction');
 
 INSERT INTO pets(
 	pet_name, pet_photo, is_adopted, species, gender, breed, age_years, description)
-	VALUES ('Happy', 'https://files.slack.com/files-pri/T0GNFLF6D-F0533Q58KCH/image.png', 'true', 'Cat', 'Female', 'Unknown', '1', 'Loves sunshine and polka dots');
+	VALUES ('Happy', 'https://cdn.shopify.com/s/files/1/0249/6472/6880/products/170106485_924058855021440_6983099715977778192_n.jpg?v=1677208554&width=1445', 'true', 'Cat', 'Female', 'Unknown', '1', 'Loves polka dots');
 
 INSERT INTO pets(
 	pet_name, pet_photo, is_adopted, species, gender, breed, age_years, description)
