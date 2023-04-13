@@ -14,7 +14,6 @@
       </div>
       </div>
       </div>
-      <router-link v-bind:to="{ name: 'add-pet-listing' }"><button class="btn-primary">Add New Pet Listing</button></router-link>
       </div>
      
 </template>

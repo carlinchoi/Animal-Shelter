@@ -9,8 +9,9 @@
         <li><a href="#">Browse Pets</a></li>
         <li><a href="#">Donate</a></li>
         <li><router-link v-bind:to="{ name: 'volunteer-register' }">Apply to Volunteer</router-link></li>
-        <li class="active" v-if="showLogoutButton"><router-link v-bind:to="{ name: 'logout' }">Logout</router-link></li>
         <li v-if="showLoginButton"><router-link v-bind:to="{ name: 'login' }"><button>Login</button></router-link></li>
+        <li v-if="showNewPetButton"><router-link v-bind:to="{ name: 'add-pet-listing' }">Add New Pet Listing</router-link></li>
+        <li class="active" v-if="showLogoutButton"><router-link v-bind:to="{ name: 'logout' }">Logout</router-link></li>
         <li><a href="#"><input type="text" placeholder="Search"></a></li>
       </ul>
     </nav>
@@ -28,6 +29,9 @@ export default {
     showLoginButton() {
       return this.$route.name === "register" || this.$route.name === "volunteer-register";
     },
+    showNewPetButton() {
+      return this.$route.name === "home";
+    }
   },
 };
 </script>
