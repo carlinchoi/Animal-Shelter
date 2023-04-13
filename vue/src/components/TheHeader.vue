@@ -6,7 +6,7 @@
         <img src="../assets/animalshelterlogo.png" alt="Rockville" />
       </div>
       <ul>
-        <li><a href="#">Browse Pets</a></li>
+        <li><router-link :to="{name: 'home' }">Browse Pets</router-link></li>
         <li><a href="#">Donate</a></li>
         <li><router-link v-bind:to="{ name: 'volunteer-register' }">Apply to Volunteer</router-link></li>
         <li v-if="showLoginButton"><router-link v-bind:to="{ name: 'login' }"><button>Login</button></router-link></li>
