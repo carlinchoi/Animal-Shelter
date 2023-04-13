@@ -11,13 +11,11 @@ import java.util.List;
 @RestController
 @RequestMapping(path="/volunteer")
 @CrossOrigin
-
-
 public class VolunteerController {
     private final VolunteerDao volunteerDao;
 
     public VolunteerController( VolunteerDao volunteerDao) {
-        //this.pet = pet;
+
         this.volunteerDao = volunteerDao;
     }
 
@@ -26,8 +24,6 @@ public class VolunteerController {
     @RequestMapping(path="/all",method = RequestMethod.GET)
     public List<Volunteer> listAllVolunteer(){
         List<Volunteer> allVolunteer = volunteerDao.findAll();
-        //TODO return List
-        System.out.println(allVolunteer);
         return allVolunteer;
 
     }

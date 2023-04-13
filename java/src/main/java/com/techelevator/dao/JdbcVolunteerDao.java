@@ -20,7 +20,7 @@ public class JdbcVolunteerDao implements VolunteerDao{
     @Override
     public List<Volunteer> findAll() {
         List<Volunteer> volunteers = new ArrayList<>();
-        String sql="select * from users where role = 'ROLE_VOLANTEER' or role = 'ROLE_ADMIN' ";
+        String sql="select * from users where role = 'ROLE_VOLUNTEER' or role = 'ROLE_ADMIN' ";
         SqlRowSet result=jdbcTemplate.queryForRowSet(sql);
         while(result.next()){
             Volunteer volunteer=mapRowToVolunteer(result);
