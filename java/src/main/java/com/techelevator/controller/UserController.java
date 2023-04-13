@@ -54,8 +54,8 @@ public class UserController {
     }
 
     @RequestMapping(value = "/volunteer", method = RequestMethod.GET)
-    List<User> findAllVolunteers() {
-        List<User> volunteerList = userDao.findAllVolunteers();
+    List<User> findAllVolunteersAndAdmin() {
+        List<User> volunteerList = userDao.findAllVolunteersAndAdmin();
         return volunteerList;
     }
 }

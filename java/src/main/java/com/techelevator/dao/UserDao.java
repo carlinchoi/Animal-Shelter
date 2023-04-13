@@ -29,5 +29,5 @@ public interface UserDao {
 
     List<User> findAllNewVolunteers();
 
-    List<User> findAllVolunteers();
+    List<User> findAllVolunteersAndAdmin();
 }

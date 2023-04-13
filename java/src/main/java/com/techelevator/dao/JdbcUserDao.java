@@ -143,9 +143,9 @@ public class JdbcUserDao implements UserDao {
     }
 
     @Override
-    public List<User> findAllVolunteers() {
+    public List<User> findAllVolunteersAndAdmin() {
         List<User> volunteers = new ArrayList<>();
-        String sql = "SELECT * FROM users WHERE role = 'ROLE_VOLUNTEER';";
+        String sql = "SELECT * FROM users WHERE role IN ('ROLE_VOLUNTEER', 'ROLE_ADMIN');";
         SqlRowSet result = jdbcTemplate.queryForRowSet(sql);
 
         while (result.next()) {
