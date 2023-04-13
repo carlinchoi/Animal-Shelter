@@ -1,4 +1,7 @@
 <template>
+<body>
+<div class="register-wrapper">
+  <div class="form-wrapper">
   <div id="register" class="text-center">
     <form @submit.prevent="register">
       <h1>Create Account</h1>
@@ -7,21 +10,23 @@
       </div>
       <div class="form-input-group">
         <span class ="icon"><ion-icon name="person-outline"></ion-icon></span>
-        <label for="username"> Username</label>
-        <input type="text" id="username" v-model="user.username" required autofocus />
+        <input type="text" id="username" placeholder="Username" v-model="user.username" required autofocus />
       </div>
       <div class="form-input-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" v-model="user.password" required />
+        <span class ="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+        <input type="password" id="password" placeholder="Password" v-model="user.password" required />
       </div>
       <div class="form-input-group">
-        <label for="confirmPassword">Confirm Password</label>
-        <input type="password" id="confirmPassword" v-model="user.confirmPassword" required />
+        <span class ="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+        <input type="password" id="confirmPassword" placeholder="Confirm Password" v-model="user.confirmPassword" required />
       </div>
       <button type="submit">Create Volunteer Account</button>
       <p><router-link :to="{ name: 'login' }"><button>Already have an account? Log in.</button></router-link></p>
     </form>
   </div>
+  </div>
+  </div>
+  </body>
 </template>
 
 <script>
@@ -75,23 +80,50 @@ export default {
 </script>
 
 <style scoped>
-html, body {
-    margin: 0;
-    padding: 0;
+body {
+  background-image: url('../assets/background2.png');
+  background-color: rgb(192, 224, 191);
+  background-repeat: repeat;
+  background-size: contain;
+  min-height: 100%;
+  min-width: 100%;
+  margin: 0;
+  padding: 0;
 }
 form {
   display: flex;
   flex-direction: column;
   justify-content: center; 
   align-items: center; 
-  height: 100vh;
-  margin-top: 40vh;
-}
+  height: 80vh;
+  margin-top: 20vh;
+  max-width: 400px;
+  margin: auto;
+  padding: 80px;
+  border: 2px solid #410553;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.671);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  }
 .form-input-group {
   margin-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.form-input-group .icon {
+  width: 30px;
+  align-self: flex-start;
+  margin-right: -10px
 }
 label {
   margin-right: 0.5rem;
+}
+input {
+  padding: 0.5rem;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  
 }
 button {
   min-width: 130px;
@@ -105,12 +137,20 @@ button {
   display: inline-block;
   outline: none;
   border-radius: 20px;
-  border: 2px solid #2c0b8e;
-  background: #2c0b8e;
+  border: 2px solid #4c6e5c;
+  background: #62a18f;
 }
 button:hover {
   background: #fff;
-  color: #2c0b8e
+  color: #fff;
 }
-
+.register-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+body {
+  overflow: hidden;
+}
 </style>
