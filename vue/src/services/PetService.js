@@ -16,5 +16,9 @@ export default {
 
     createPet(pet) {
         return http.post('/pet/all', pet)
+    },
+
+    updatePet(petId, pet) {
+        return http.put(`/pet/${petId}`, pet)
     }
 }
