@@ -7,6 +7,7 @@ import Register from '../views/Register.vue'
 import store from '../store/index'
 import VolunteerRegister from '../views/VolunteerRegister.vue'
 import ChangePasswordPage from '../views/ChangePasswordPage.vue'
+import AddPetListing from '../views/AddPetListing.vue'
 
 Vue.use(Router)
 
@@ -67,6 +68,14 @@ const router = new Router({
       path:"/change-password",
       name:'change-password',
       component: ChangePasswordPage,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path:"/add-pet-listing",
+      name:'add-pet-listing',
+      component: AddPetListing,
       meta: {
         requiresAuth: false
       }
