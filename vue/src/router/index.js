@@ -9,6 +9,7 @@ import VolunteerRegister from '../views/VolunteerRegister.vue'
 import ChangePasswordPage from '../views/ChangePasswordPage.vue'
 import AddPetListing from '../views/AddPetListing.vue'
 import VolunteerList from '../views/VolunteerList.vue'
+import VolunteerApplicationView from '../views/VolunteerApplicationView.vue'
 
 Vue.use(Router)
 
@@ -85,6 +86,14 @@ const router = new Router({
       path: "/volunteer-listing",
       name: "volunteer-listing",
       component: VolunteerList,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path: "/volunteer-application",
+      name: "volunteer-application",
+      component: VolunteerApplicationView,
       meta: {
         requiresAuth: false
       }
