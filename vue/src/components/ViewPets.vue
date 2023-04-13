@@ -17,7 +17,7 @@
         <img :src= "pet.petPhoto" alt="Photo of Pet">
       </div>
       <a href="#" class="button">Learn More</a>
-      <div>  
+      <div class="text-box">  
           <p>{{ pet. petName }}</p>
           <p>Species: {{ pet.species }}</p>
           <p> Breed: {{ pet.breed }}</p>
@@ -75,7 +75,7 @@ export default {
   font-family: Montserrat, sans-serif;
   display:flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   align-items:flex-start;
   height: 300px;
   position:static;
@@ -117,6 +117,7 @@ export default {
     z-index: 1;
     font-weight: bold;
     flex-basis: calc(50% - 20px);
+     width: calc(50% - 10px); 
     margin: 10px;
 
   }
@@ -166,12 +167,8 @@ export default {
     background-color: white;
     padding: 10px;
     border-radius: 5px;
-    position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  z-index: 5;
+
+
   }
   .logo {
   display: flex;
@@ -203,6 +200,8 @@ export default {
   display:flex;
   justify-content: center;
   margin-top:50px;
+  overflow: hidden;
+  position: static;
 
 }
 #pet-container{
