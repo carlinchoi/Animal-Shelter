@@ -100,9 +100,11 @@ header {
 position: absolute;
   top: 0;
   left:0;
-  clip-path: polygon(100% 0%, 70% 15%, 30% 15%, 0% 0%, 0% 25%, 0% 48%, 0% 75%, 24% 93%, 36% 100%, 64% 100%, 77% 93%, 100% 79%, 100% 48%, 100% 25%);
+clip-path: polygon(100% 0%, 70% 15%, 30% 15%, 0% 0%, 0% 25%, 0% 48%, 0% 75%, 24% 93%, 36% 100%, 64% 100%, 77% 93%, 100% 79%, 100% 48%, 100% 25%); 
   height: 190px;
   z-index: 1;
   padding: 5px;
+  background-color: transparent;
+  border: black;
 }
 </style>
