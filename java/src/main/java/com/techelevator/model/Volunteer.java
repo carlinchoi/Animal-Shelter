@@ -5,16 +5,19 @@ public class Volunteer {
     private String firstName;
     private String lastName;
     private String phone;
+    private String role;
 
 
     public Volunteer() {
 
     }
-    public Volunteer(String email, String firstName, String lastName, String phone) {
+    public Volunteer(String email, String firstName, String lastName, String phone,String role) {
+
         this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
         this.phone = phone;
+        this.role=role;
     }
 
 
@@ -49,5 +52,13 @@ public class Volunteer {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }
