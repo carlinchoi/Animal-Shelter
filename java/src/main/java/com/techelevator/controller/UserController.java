@@ -6,6 +6,8 @@ import com.techelevator.dao.UserDao;
 import com.techelevator.model.User;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(path="/user")
 @CrossOrigin
@@ -45,4 +47,15 @@ public class UserController {
         return userDao.createPendingVolunteerUser(user);
     }
 
+    @RequestMapping(value = "/new-volunteer", method = RequestMethod.GET)
+    public List<User> findAllNewVolunteers() {
+        List<User> newVolunteerList = userDao.findAllNewVolunteers();
+        return newVolunteerList;
+    }
+
+    @RequestMapping(value = "/volunteer", method = RequestMethod.GET)
+    List<User> findAllVolunteers() {
+        List<User> volunteerList = userDao.findAllVolunteers();
+        return volunteerList;
+    }
 }
