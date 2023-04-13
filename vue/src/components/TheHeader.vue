@@ -67,7 +67,6 @@ nav li {
   margin: 0;
   font-size:20px;
  
-
 }
 
 nav a {
