@@ -17,7 +17,7 @@
         <img :src= "pet.petPhoto" alt="Photo of Pet">
       </div>
       <a href="#" class="button">Learn More</a>
-      <div class="text-box">  
+      <div>  
           <p>{{ pet. petName }}</p>
           <p>Species: {{ pet.species }}</p>
           <p> Breed: {{ pet.breed }}</p>ool
@@ -28,7 +28,7 @@
       </div>
       </div>
       </div>
-     
+      
 </template>
 
 <script>
@@ -70,6 +70,7 @@ export default {
 
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&family=Poppins:wght@300;400;500&display=swap');
 .pet-container{
   font-family: Montserrat, sans-serif;
   display:flex;
@@ -101,14 +102,15 @@ export default {
   .pet-card {
     position:relative;
     margin: 10px;
-    padding: 40px;
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
     max-width: 300px;
-    background-color: #8b648b;
+    background-color: rgba(93, 11, 93, 0.7);
+    backdrop-filter: blur(10px);
     box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
     transition: transform 500ms ease;
     background-color: rgba(139, 100, 139, 0.8);
@@ -145,7 +147,7 @@ export default {
   }
   .button:hover,
   .button:focus {
-    background-color: rgb(221, 176, 222);
+    background-color: lightsteelblue;
   }
   .card-content {
     position: absolute;
@@ -204,5 +206,8 @@ button {
   background-color: rgb(195, 226, 199);
 }
 
-
+  .pet-card:hover .card-content {
+  transform: translateY(0);
+  
+  }
 </style>

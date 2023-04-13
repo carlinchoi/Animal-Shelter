@@ -25,4 +25,5 @@ public interface UserDao {
 
     void updateUserPassword(User databaseUser, RegisterUserDto user);
 
+    boolean createPendingVolunteerUser(User volunteerPendingUser);
 }

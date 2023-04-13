@@ -20,12 +20,13 @@ public class JdbcVolunteerDao implements VolunteerDao{
     @Override
     public List<Volunteer> findAll() {
         List<Volunteer> volunteers = new ArrayList<>();
-        String sql="select * from users where role = 'ROLE_VOLANTEER' or role = 'ROLE_ADMIN' ";
+        String sql="select * from users where(role = 'ROLE_VOLUNTEER' OR role = 'ROLE_ADMIN') AND first_name <> '' ";
         SqlRowSet result=jdbcTemplate.queryForRowSet(sql);
         while(result.next()){
             Volunteer volunteer=mapRowToVolunteer(result);
             volunteers.add(volunteer);
         }
+        System.out.println((volunteers));
         return volunteers;
     }
 
@@ -33,14 +34,11 @@ public class JdbcVolunteerDao implements VolunteerDao{
     private Volunteer mapRowToVolunteer(SqlRowSet rs) {
         Volunteer volunteer = new Volunteer();
         volunteer.setFirstName(rs.getString("first_name"));
-        System.out.println((volunteer.getFirstName()));
         volunteer.setLastName(rs.getString("last_name"));
-        System.out.println((volunteer.getLastName()));
         volunteer.setEmail(rs.getString("email"));
-        System.out.println((volunteer.getEmail()));
         volunteer.setPhone(rs.getString("phone"));
-        System.out.println((volunteer.getPhone()));
-        System.out.println((volunteer));
+        volunteer.setRole(rs.getString("role"));
+
         return volunteer;
     }
 }

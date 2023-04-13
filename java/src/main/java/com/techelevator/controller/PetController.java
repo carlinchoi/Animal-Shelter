@@ -2,8 +2,10 @@ package com.techelevator.controller;
 
 import com.techelevator.dao.PetDao;
 import com.techelevator.model.Pet;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.security.PublicKey;
 import java.util.ArrayList;
@@ -42,4 +44,15 @@ public class PetController {
     public Pet createPet(@RequestBody Pet newPet) {
         return petDao.createPet(newPet);
     }
+
+    @RequestMapping(path = "/{petId}", method = RequestMethod.PUT)
+    public Pet updatePet(@RequestBody Pet pet, @PathVariable int petId) {
+        Pet updatedPet = petDao.updatePet(pet, petId);
+        if (updatedPet == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "This Pet does not exist");
+        } else {
+            return updatedPet;
+        }
+    }
+
 }

@@ -15,6 +15,6 @@ public interface PetDao {
 
     public Pet createPet(Pet newPet);
 
-    void updatePet(Pet pet);
+    Pet updatePet(Pet pet, int petId);
 
 }

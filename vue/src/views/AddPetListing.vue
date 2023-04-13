@@ -21,7 +21,7 @@
             </div>
             <div class="form-input-group">
               <label for="pet age"> Age </label>
-              <input type="text"  v-model='pet.age' required>
+              <input type="number"  v-model='pet.age' required>
             </div>
             <div class="form-input-group">
               <label for="pet description"> Description </label>
@@ -29,7 +29,7 @@
             </div>
             <div class="form-input-group">
               <label for="pet photo"> Photo Url </label>
-              <input type="text"  v-model='pet.petPhoto' required>
+              <input type="url"  v-model='pet.petPhoto' required>
             </div>
             <button type="submit">Submit New Listing</button>
         </form>

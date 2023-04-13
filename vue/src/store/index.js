@@ -32,7 +32,8 @@ export default new Vuex.Store({
     //   description:''
     // }],
 
-    pets:[]
+    pets:[],
+    volunteers:[],
   },
   mutations: {
     SET_AUTH_TOKEN(state, token) {
@@ -54,6 +55,9 @@ export default new Vuex.Store({
 
     SET_PET_INFO(state, petData) {
       state.pets = petData;
+    },
+    SET_VOLANTEER_INFO(state,volunteerData){
+      state.volunteers = volunteerData;
     }
   }
 })
