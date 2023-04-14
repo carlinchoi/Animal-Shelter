@@ -55,9 +55,16 @@ export default {
         this.$store.commit("SET_VOLANTEER_INFO", response.data);
       });
     },
-    updateStatus(){
-
-    }
+    updateStatus(volunteer,event){ 
+      console.log("insid updateStatus Function"+event.target.value);
+        console.log(volunteer);
+        volunteer.role=event.target.value;
+       VolunteerService.updateVolunteerStatus(volunteer).then((response)=>{
+          this.$store.commit("SET_VOLANTEER_INFO", response.data);
+       })
+        
+        
+    },
   },
   computed: {
   volunteers() {
