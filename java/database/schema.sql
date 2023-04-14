@@ -13,7 +13,10 @@ CREATE TABLE users (
 	username VARCHAR(50) NOT NULL UNIQUE,
 	password_hash VARCHAR(200) NOT NULL,
 	role VARCHAR(50) NOT NULL,
-
+    email VARCHAR(255),
+    first_name VARCHAR(255),
+    last_name VARCHAR(255),
+    phone VARCHAR(255),
 	CONSTRAINT PK_user PRIMARY KEY (user_id)
 );
 

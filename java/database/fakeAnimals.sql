@@ -6,7 +6,7 @@ INSERT INTO pets(
 
 INSERT INTO pets(
 	pet_name, pet_photo, is_adopted, species, gender, breed, age_years, description)
-	VALUES ('Saul', 'https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2023-03/puppy-dog-mc-230321-03-b700d4.jpg', 'true', 'Dog', 'Male', 'Corgi', '4', 'Loves bacon and walks');
+	VALUES ('Saul', 'https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2023-03/puppy-dog-mc-230321-03-b700d4.jpg', 'false', 'Dog', 'Male', 'Corgi', '4', 'Loves bacon and walks');
 
 INSERT INTO pets(
 	pet_name, pet_photo, is_adopted, species, gender, breed, age_years, description)
@@ -24,7 +24,7 @@ INSERT INTO pets(
 
 INSERT INTO pets(
 	pet_name, pet_photo, is_adopted, species, gender, breed, age_years, description)
-	VALUES ('Happy', 'https://cdn.shopify.com/s/files/1/0249/6472/6880/products/170106485_924058855021440_6983099715977778192_n.jpg?v=1677208554&width=1445', 'true', 'Cat', 'Female', 'Unknown', '1', 'Loves polka dots');
+	VALUES ('Happy', 'https://cdn.shopify.com/s/files/1/0249/6472/6880/products/170106485_924058855021440_6983099715977778192_n.jpg?v=1677208554&width=1445', 'false', 'Cat', 'Female', 'Unknown', '1', 'Loves polka dots');
 
 INSERT INTO pets(
 	pet_name, pet_photo, is_adopted, species, gender, breed, age_years, description)
@@ -32,12 +32,12 @@ INSERT INTO pets(
 
 INSERT INTO pets(
 	pet_name, pet_photo, is_adopted, species, gender, breed, age_years, description)
-	VALUES ('Jams', 'https://c4.wallpaperflare.com/wallpaper/12/91/646/cocker-spaniel-wallpaper-preview.jpg', 'true', 'Dog', 'female', 'Spaniel', '1', 'Musically talented, prefers pop rock');
+	VALUES ('Jams', 'https://c4.wallpaperflare.com/wallpaper/12/91/646/cocker-spaniel-wallpaper-preview.jpg', 'false', 'Dog', 'female', 'Spaniel', '1', 'Musically talented, prefers pop rock');
 
 
 INSERT INTO pets(
 	pet_name, pet_photo, is_adopted, species, gender, breed, age_years, description)
-	VALUES ('Nugget', 'https://en.bcdn.biz/Images/2015/9/18/094344f8-707e-4f31-b24f-c2a51ea3de78.jpg', 'false', 'Hamster', 'male', 'Unknown', '3', 'Loves playgrounds and fresh veggies');
+	VALUES ('Nugget', 'https://en.bcdn.biz/Images/2015/9/18/094344f8-707e-4f31-b24f-c2a51ea3de78.jpg', 'true', 'Hamster', 'male', 'Unknown', '3', 'Loves playgrounds and fresh veggies');
 
 
 INSERT INTO pets(
