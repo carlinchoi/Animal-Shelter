@@ -11,7 +11,6 @@
 </template>
 <script>
 import TheHeader from './components/TheHeader.vue';
-import Sidebar from './components/Sidebar.vue';
 import TheFooter from './components/TheFooter.vue';
 
 
@@ -19,7 +18,6 @@ export default {
   name: 'App',
   components: {
     TheHeader,
-    Sidebar,
     TheFooter,
 
 
@@ -36,7 +34,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-  background-image: url('./assets/background.png');
   background-size:cover;
   height: 100vh;
   display:flex;
