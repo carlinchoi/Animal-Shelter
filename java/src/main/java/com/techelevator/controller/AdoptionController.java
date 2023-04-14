@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 @RestController
-//@RequestMapping(path="")
+@RequestMapping(path="")
 @CrossOrigin
 public class AdoptionController {
     private final AdoptionDao adoptionDao;
