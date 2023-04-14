@@ -112,12 +112,11 @@ body {
   padding: 0;
 }
 form {
-  display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center; 
   align-items: center; 
-  height: 80vh;
+  height: 50vh;
   margin-top: 20vh;
   max-width: 400px;
   margin: auto;
@@ -139,12 +138,17 @@ form {
   margin-right: -10px
 }
 label {
+  width: 100px;
   margin-right: 0.5rem;
 }
 input {
+  flex: 1;
   padding: 0.5rem;
   border: 2px solid #ccc;
   border-radius: 5px;
+  justify-self: left;
+  padding:10px;
+  border-radius:10px;
   
 }
 button {
@@ -161,7 +165,8 @@ button {
   border-radius: 20px;
   border: 2px solid #4c6e5c;
   background: #62a18f;
-  margin-top: 0px;
+  margin-top: 20px;
+  align-self:center;
   
 }
 button:hover {

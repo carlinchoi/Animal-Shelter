@@ -103,8 +103,8 @@ form {
   flex-direction: column;
   justify-content: center; 
   align-items: center; 
-  height: 80vh;
-  margin-top: 20vh;
+  height: 100vh;
+  margin-top: 0;
   max-width: 400px;
   margin: auto;
   padding: 80px;
@@ -130,7 +130,8 @@ label {
 input {
   padding: 0.5rem;
   border: 2px solid #ccc;
-  border-radius: 5px;
+  padding:10px;
+  border-radius:10px;
   
 }
 button {

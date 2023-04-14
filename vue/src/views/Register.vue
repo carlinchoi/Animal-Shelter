@@ -119,7 +119,8 @@ label {
 input {
   padding: 0.5rem;
   border: 2px solid #ccc;
-  border-radius: 5px;
+  padding:10px;
+  border-radius:10px;
   margin-top: 10px;
   
   

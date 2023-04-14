@@ -103,7 +103,7 @@ form {
   flex-direction: column;
   justify-content: center; 
   align-items: center; 
-  height: 80vh;
+  height: 50vh;
   margin-top: 20vh;
   max-width: 400px;
   margin: auto;
