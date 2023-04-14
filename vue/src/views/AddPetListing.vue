@@ -127,7 +127,6 @@ button {
   min-width: 130px;
   height: 40px;
   color: #fff;
-  padding: 5px 10px;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -137,7 +136,7 @@ button {
   border-radius: 20px;
   border: 2px solid #4c6e5c;
   background: #62a18f;
-  margin-top: 10px;
+  margin-top: 0px;
 }
 button:hover {
   background: #fff;

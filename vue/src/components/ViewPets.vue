@@ -147,6 +147,7 @@ img {
   background-color: rgb(195, 226, 199);
   padding: 0.5em 1.25em;
   border-radius: 0.25em;
+  font-weight: bold;
 }
 .button:hover,
 .button:focus {

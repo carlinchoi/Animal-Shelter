@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h1>Update Pet Listing</h1>
     <update-pet-listing
       v-bind:petId="parseInt($route.params.petId)" />
       <!-- v-bind:pet="($route.params.pet)" /> -->
