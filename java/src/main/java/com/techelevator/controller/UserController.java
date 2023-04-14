@@ -52,6 +52,11 @@ public class UserController {
         return newVolunteerList;
     }
 
+    @RequestMapping(value = "/pending-volunteer/{userId}", method = RequestMethod.PUT)
+    public void updatePendingVolunteerRole(@PathVariable("userId") int userId, @RequestParam String newRole) {
+        userDao.updateUserRole(userId, newRole);
+    }
+
     @RequestMapping(value = "/volunteer", method = RequestMethod.GET)
     List<User> findAllVolunteersAndAdmin() {
         List<User> volunteerList = userDao.findAllVolunteersAndAdmin();
