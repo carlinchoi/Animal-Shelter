@@ -12,5 +12,9 @@ export default {
     },   
     createVolunteer(volunteerApplication) {
         return http.post('/user/pending-volunteer', volunteerApplication)
-    }
+    },
+    updateVolunteer(volunteerApplication) {
+        return http.put('/user/pending-volunteer', volunteerApplication)
+    },
+
 }

@@ -3,7 +3,7 @@
 <div class="register-wrapper">
   <div class="form-wrapper">
   <div id="register" class="text-center">
-    <form @submit.prevent="register">
+    <form @submit.prevent="register" v-if="!showVolunteerApplication">
       <h1>Create Account</h1>
       <div role="alert" v-if="registrationErrors">
         {{ registrationErrorMsg }}
@@ -26,14 +26,20 @@
   </div>
   </div>
   </div>
+  <volunteer-application v-if="showVolunteerApplication" v-bind:username="user.username"/>
   </body>
+  
 </template>
 
 <script>
 import authService from '../services/AuthService';
+import VolunteerApplication from '../components/VolunteerApplication.vue';
 
 export default {
   name: 'volunteerRegister',
+  components:{
+    VolunteerApplication
+  },
   data() {
     return {
       user: {
@@ -44,6 +50,7 @@ export default {
       },
       registrationErrors: false,
       registrationErrorMsg: 'There were problems registering this user.',
+      showVolunteerApplication: false,
     };
   },
   methods: {
@@ -56,10 +63,11 @@ export default {
           .register(this.user)
           .then((response) => {
             if (response.status == 201) {
-              this.$router.push({
-                path: '/login',
-                query: { registration: 'success' },
-              });
+              this.showVolunteerApplication=true;
+              // this.$router.push({
+              //   path: '/login',
+              //   query: { registration: 'success' },
+              // });
             }
           })
           .catch((error) => {
