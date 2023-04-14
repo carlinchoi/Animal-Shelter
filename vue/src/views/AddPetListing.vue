@@ -1,40 +1,37 @@
 <template>
+<body>
    <div>
     <div class="form-wrapper">
         <form @submit.prevent="addNewPet">
-            <h1 >Add Details About New Pet Listing</h1>
+            <h1 >Add New Pet Listing</h1>
             <div class="form-input-group">
-              <label for="pet name"> Name </label>
-              <input type="text" v-model='pet.petName' required/>
+
+              <input type="text" placeholder="Name" v-model='pet.petName' required/>
             </div>
             <div class="form-input-group">
-              <label for="pet species"> Species </label>
-              <input type="text"  v-model='pet.species' required>
+
+              <input type="text" placeholder="Species" v-model='pet.species' required>
             </div>
             <div class="form-input-group">
-              <label for="pet gender"> Gender </label>
-              <input type="text"  v-model='pet.gender' required>
+              <input type="text" placeholder="Gender" v-model='pet.gender' required>
             </div>
             <div class="form-input-group">
-              <label for="pet breed"> Breed </label>
-              <input type="text"  v-model='pet.breed' required>
+              <input type="text" placeholder="Breed" v-model='pet.breed' required>
             </div>
             <div class="form-input-group">
-              <label for="pet age"> Age </label>
-              <input type="number"  v-model='pet.age' required>
+              <input type="number" placeholder="Age" v-model='pet.age' required>
             </div>
             <div class="form-input-group">
-              <label for="pet description"> Description </label>
-              <input type="text"  v-model='pet.description' required>
+              <input type="text" placeholder="Description" v-model='pet.description' required>
             </div>
             <div class="form-input-group">
-              <label for="pet photo"> Photo Url </label>
-              <input type="url"  v-model='pet.petPhoto' required>
+              <input type="url" placeholder="Photo URL" v-model='pet.petPhoto' required>
             </div>
             <button type="submit">Submit New Listing</button>
         </form>
     </div>
   </div>
+  </body>
 </template>
 
 <script>
@@ -79,8 +76,8 @@ export default{
 }
 </script>
 
-<style>
-/* body {
+<style scoped>
+body {
   background-image: url('../assets/background2.png');
   background-color: rgb(137, 167, 155);
   background-repeat: repeat;
@@ -89,6 +86,7 @@ export default{
   min-width: 100%;
   margin: 0;
   padding: 0;
+  overflow:hidden;
 }
 form {
   display: flex;
@@ -123,7 +121,6 @@ input {
   padding: 0.5rem;
   border: 2px solid #ccc;
   border-radius: 5px;
-  
 }
 button {
   min-width: 130px;
@@ -139,18 +136,23 @@ button {
   border-radius: 20px;
   border: 2px solid #4c6e5c;
   background: #62a18f;
+  margin-top: 10px;
 }
 button:hover {
   background: #fff;
   color: #fff;
+}
+.form-wrapper{
+  margin-top: 200px;
 }
 .login-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  overflow: hidden;
 }
 body {
   overflow: hidden;
-} */
+}
 </style>

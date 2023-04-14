@@ -12,7 +12,7 @@
         <li v-if="showLoginButton"><router-link v-bind:to="{ name: 'login' }">Login</router-link></li>
         <li v-if="showNewPetButton"><router-link v-bind:to="{ name: 'add-pet-listing' }">Add New Pet Listing</router-link></li>
         <li class="active" v-if="showLogoutButton"><router-link v-bind:to="{ name: 'logout' }">Logout</router-link></li>
-        <li><a href="#"><input type="text" placeholder="Search"></a></li>
+        <!-- <li><a href="#"><input type="text" placeholder="Search"></a></li> -->
       </ul>
     </nav>
     

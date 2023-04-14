@@ -7,15 +7,16 @@
         {{ registrationErrorMsg }}
       </div>
       <div class="form-input-group">
-        <span class ="icon"><ion-icon name="person-outline"></ion-icon></span>
+        <!-- <span class ="icon"><ion-icon name="person-outline"></ion-icon></span> -->
         <input type="text" id="username" placeholder="Username" v-model="user.username" required autofocus />
       </div>
       <div class="form-input-group">
-        <span class ="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+        <!-- <span class ="icon"><ion-icon name="lock-closed-outline"></ion-icon></span> -->
+
         <input type="password" placeholder="Password" id="password" v-model="user.password" required />
       </div>
       <div class="form-input-group">
-        <span class ="icon"><ion-icon name="checkmark-outline"></ion-icon></span>
+        <!-- <span class ="icon"><ion-icon name="checkmark-outline"></ion-icon></span> -->
         <input type="password" id="confirmPassword" placeholder="Confirm Password" v-model="user.confirmPassword" required />
       </div>
       <button type="submit">Create Account</button>
@@ -119,6 +120,7 @@ input {
   padding: 0.5rem;
   border: 2px solid #ccc;
   border-radius: 5px;
+  margin-top: 10px;
   
 }
 button {
