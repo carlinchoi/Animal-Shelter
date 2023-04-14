@@ -6,8 +6,8 @@ const http = axios.create({
 
 export default {
 
-    createAdoption(adoption) {
-        return http.post('/adoption-form', adoption)
+    createAdoption(petId, parentName, parentEmail) {
+        return http.post('/adoption-form', petId, parentName, parentEmail)
       },
     
 }

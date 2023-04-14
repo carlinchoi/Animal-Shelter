@@ -67,7 +67,8 @@ export default{
             if (response.status == 200) {
               if (this.pet.adopted === true) {
                 this.$router.push({
-                path: '/adoption-form',
+                name: 'adoption-form-page',
+                params: { petId: this.pet.petId, pet: this.pet }
               });
             } else
               this.$router.push({
