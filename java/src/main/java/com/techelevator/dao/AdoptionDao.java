@@ -10,6 +10,8 @@ public interface AdoptionDao {
 
         Adoption getAdoptionById(int adoptionId);
 
+        Adoption createAdoption(Adoption adoption);
 
+        Adoption findAdoptionById(int id);
 
 }
