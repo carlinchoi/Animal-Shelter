@@ -29,7 +29,7 @@ public interface UserDao {
 
     void updatePendingVolunteerUser(User volunteerPendingUser);
 
-    List<User> findAllPendingVolunteers();
+
 
     List<User> findAllVolunteersAndAdmin();
 

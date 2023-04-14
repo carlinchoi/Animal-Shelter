@@ -6,18 +6,20 @@ public class Volunteer {
     private String lastName;
     private String phone;
     private String role;
+    private int userId;
 
 
     public Volunteer() {
 
     }
-    public Volunteer(String email, String firstName, String lastName, String phone,String role) {
+    public Volunteer(String email, String firstName, String lastName, String phone,String role,int userId) {
 
         this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
         this.phone = phone;
         this.role=role;
+        this.userId=userId;
     }
 
 
@@ -60,5 +62,13 @@ public class Volunteer {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 }

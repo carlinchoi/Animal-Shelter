@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 @Component
 public class JdbcVolunteerDao implements VolunteerDao{
@@ -29,6 +28,29 @@ public class JdbcVolunteerDao implements VolunteerDao{
         System.out.println((volunteers));
         return volunteers;
     }
+    @Override
+    public void updatePendingVolunteerUser(Volunteer volunteerPendingUser) {
+        System.out.println(volunteerPendingUser);
+        String insertUserSql = "UPDATE users SET  email=?, first_name=?, last_name=?, phone=?, role=? WHERE user_id=?";
+        System.out.println(insertUserSql);
+        System.out.println(volunteerPendingUser);
+        jdbcTemplate.update(insertUserSql,volunteerPendingUser.getEmail(),volunteerPendingUser.getFirstName(),volunteerPendingUser.getLastName(),volunteerPendingUser.getPhone(),volunteerPendingUser.getRole(),volunteerPendingUser.getUserId());
+    }
+
+    @Override
+    public List<Volunteer> findAllPendingVolunteers() {
+        List<Volunteer> pendingVolunteerList = new ArrayList<>();
+        String sql = "SELECT * FROM users WHERE role = 'ROLE_PENDINGVOLUNTEER';";
+        SqlRowSet result = jdbcTemplate.queryForRowSet(sql);
+
+        while (result.next()) {
+            pendingVolunteerList.add(mapRowToVolunteer(result));
+        }
+        return pendingVolunteerList;
+    }
+
+
+
 
 
     private Volunteer mapRowToVolunteer(SqlRowSet rs) {
@@ -38,6 +60,7 @@ public class JdbcVolunteerDao implements VolunteerDao{
         volunteer.setEmail(rs.getString("email"));
         volunteer.setPhone(rs.getString("phone"));
         volunteer.setRole(rs.getString("role"));
+        volunteer.setUserId(rs.getInt("user_id"));
 
         return volunteer;
     }

@@ -16,5 +16,11 @@ export default {
     updateVolunteer(volunteerApplication) {
         return http.put('/user/pending-volunteer', volunteerApplication)
     },
+    updateVolunteerStatus(volunteer){
+        return http.put('/volunteer/volunteer-pending-list',volunteer)
+    },
+    findAllPendingVolunteer() {
+        return http.get('/volunteer/pending-volunteer')
+    },   
 
 }

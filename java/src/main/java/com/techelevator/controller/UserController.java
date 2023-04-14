@@ -52,11 +52,7 @@ public class UserController {
     }
 
 
-    @RequestMapping(value = "/pending-volunteer", method = RequestMethod.GET)
-    public List<User> findAllPendingVolunteers() {
-        List<User> newVolunteerList = userDao.findAllPendingVolunteers();
-        return newVolunteerList;
-    }
+
 
     @RequestMapping(value = "/pending-volunteer/{userId}", method = RequestMethod.PUT)
     public void updatePendingVolunteerRole(@PathVariable("userId") int userId, @RequestParam String newRole) {
@@ -77,6 +73,9 @@ public class UserController {
     public void updateUserRole(@PathVariable("userId") int userId, @RequestParam String newRole) {
         userDao.updateUserRole(userId, newRole);
     }
+
+
+
 
 }
 

@@ -34,6 +34,7 @@ export default new Vuex.Store({
 
     pets:[],
     volunteers:[],
+    pendingVolunteers:[],
     activePet: {
       petId: null,
       petName: '',
@@ -72,6 +73,9 @@ export default new Vuex.Store({
     },
     SET_ACTIVE_PET(state, data) {
       state.activePet = data;
+    },
+    SET_PENDING_VOLANTEER_INFO(state,volunteerData){
+      state.pendingVolunteers = volunteerData;
     },
   }
 })

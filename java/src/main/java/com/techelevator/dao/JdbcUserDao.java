@@ -136,17 +136,6 @@ public class JdbcUserDao implements UserDao {
         System.out.println(volunteerPendingUser);
         jdbcTemplate.update(insertUserSql,volunteerPendingUser.getEmail(),volunteerPendingUser.getFirstName(),volunteerPendingUser.getLastName(),volunteerPendingUser.getPhone(),volunteerPendingUser.getUsername() );
     }
-    @Override
-    public List<User> findAllPendingVolunteers() {
-        List<User> pendingVolunteerList = new ArrayList<>();
-        String sql = "SELECT * FROM users WHERE role = 'ROLE_PENDINGVOLUNTEER';";
-        SqlRowSet result = jdbcTemplate.queryForRowSet(sql);
-
-        while (result.next()) {
-            pendingVolunteerList.add(mapRowToUser(result));
-        }
-        return pendingVolunteerList;
-    }
 
     @Override
     public List<User> findAllVolunteersAndAdmin() {

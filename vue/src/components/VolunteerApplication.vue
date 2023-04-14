@@ -40,11 +40,11 @@ export default {
         phone: this.phone
       };
       console.log(volunteerApplication);
-      alert("console log"+volunteerApplication)
+      
       VolunteerService.updateVolunteer(volunteerApplication)
         .then(response => {
           console.log(response.data);
-          this.$router.push({
+            this.$router.push({
                 path: '/login',
                 query: { registration: 'success' },
               });
