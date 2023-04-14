@@ -65,12 +65,6 @@ export default{
             petService.updatePet(this.petId, this.pet)
             .then((response) => {
             if (response.status == 200) {
-              if (this.pet.adopted === true) {
-                this.$router.push({
-                name: 'adoption-form-page',
-                params: { petId: this.pet.petId, pet: this.pet }
-              });
-            } else
               this.$router.push({
                 path: '/',
               });
@@ -170,8 +164,6 @@ button {
   border: 2px solid #4c6e5c;
   background: #62a18f;
   margin-top: 0px;
-
-  
   
 }
 button:hover {

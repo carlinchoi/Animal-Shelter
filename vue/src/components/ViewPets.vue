@@ -27,14 +27,14 @@
                 <p>Species: {{ pet.species }}</p>
                 <p>Breed: {{ pet.breed }}</p>
                 <p>{{ pet.description }}</p>
-                <button v-show="$store.state.user.authorities[0].name === ('ROLE_VOLUNTEER' || 'ROLE_ADMIN')" ><router-link 
+                <router-link
                   :to="{
                     name: 'update-pet-page',
-                    params: { petId: pet.petId, pet: pet }
+                    params: { petId: pet.petId, pet: pet },
                   }"
                   class="button"
                   >Edit</router-link
-                ></button>
+                >
               </div>
             </div>
           </div>

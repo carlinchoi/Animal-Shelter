@@ -10,15 +10,15 @@
       </div>
       <div class="form-input-group">
         <!-- <span class ="icon"><ion-icon name="person-outline"></ion-icon></span> -->
-        <input type="text" id="username" placeholder="Username" v-model="user.username" required autofocus />
+        <input type="text" id="username" class="placeholder-animate" placeholder="Username" v-model="user.username" required autofocus />
       </div>
       <div class="form-input-group">
         <!-- <span class ="icon"><ion-icon name="lock-closed-outline"></ion-icon></span> -->
-        <input type="password" id="password" placeholder="Password" v-model="user.password" required />
+        <input type="password" id="password" class="placeholder-animate" placeholder="Password" v-model="user.password" required />
       </div>
       <div class="form-input-group">
         <!-- <span class ="icon"><ion-icon name="lock-closed-outline"></ion-icon></span> -->
-        <input type="password" id="confirmPassword" placeholder="Confirm Password" v-model="user.confirmPassword" required />
+        <input type="password" id="confirmPassword" class="placeholder-animate" placeholder="Confirm Password" v-model="user.confirmPassword" required />
       </div>
       <button type="submit">Create Volunteer Account</button>
       <p><router-link :to="{ name: 'login' }"><button>Already have an account? Log in.</button></router-link></p>
@@ -161,5 +161,29 @@ button:hover {
 }
 body {
   overflow: hidden;
+}
+.placeholder-animate::-webkit-input-placeholder {
+  transition: all 0.3s ease-out;
+  opacity: 0.5;
+  transform: translateY(0px);
+}
+.placeholder-animate:focus + .floating-placeholder,
+.placeholder-animate.valid + .floating-placeholder{
+    font-size: 16px;
+    top: -10px;
+    left: 10px;
+    color: rgb(197, 172, 228);
+}
+.placeholder-animate {
+    width: 100%;
+    border: none;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  .placeholder-animate:not(:focus) {
+  border-bottom: 1px solid #62a18f;
 }
 </style>

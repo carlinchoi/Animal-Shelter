@@ -1,7 +1,7 @@
 <template>
     <div class="search-container container-bg">
       <input type="text" v-model="searchTerm" class="placeholder-animate">
-      <label class="floating-placeholder" for="search-input">Search By First or Last Name</label>
+      <label class="floating-placeholder" for="search-input">Search by First or Last Name</label>
       <table class='volunteer-table'>
       <thead>
         <tr class="active-row">
@@ -175,6 +175,7 @@ input {
   min-width: 100%;
   margin: 0;
   padding: 0;
+  z-index: 10;
 }
 .container-bg {
   background-color: #fff;

@@ -13,6 +13,7 @@
             </div>
             <div class="form-input-group">
               <!-- <span class ="icon"><ion-icon name="lock-closed-outline"></ion-icon></span> -->
+              <label class="floating-placeholder" for="username">Username</label>
               <input
                 type="text"
                 id="username"
@@ -20,6 +21,7 @@
                 v-model="user.username"
                 required
                 autofocus
+                class="placeholder-animate"
               />
             </div>
             <div class="form-input-group">
@@ -30,6 +32,7 @@
                 placeholder="Password"
                 v-model="user.password"
                 required
+                class="placeholder-animate"
               />
             </div>
             <button type="submit">Sign in</button>
@@ -130,7 +133,7 @@ form {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
 .form-input-group {
-  margin-bottom: 1rem;
+  margin-bottom: .5rem;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -149,6 +152,30 @@ input {
   padding: 10px;
   border-radius: 10px;
 }
+.placeholder-animate::-webkit-input-placeholder {
+  transition: all 0.3s ease-out;
+  opacity: 0.5;
+  transform: translateY(0px);
+}
+.placeholder-animate:focus + .floating-placeholder,
+.placeholder-animate.valid + .floating-placeholder{
+    font-size: 16px;
+    top: -10px;
+    left: 10px;
+    color: rgb(197, 172, 228);
+}
+.placeholder-animate {
+    width: 100%;
+    border: none;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  .placeholder-animate:not(:focus) {
+  border-bottom: 1px solid #62a18f;
+}
 button {
   min-width: 130px;
   height: 40px;
@@ -164,6 +191,16 @@ button {
   border: 2px solid #4c6e5c;
   background: #62a18f;
   margin-top: 0px;
+}
+.floating-placeholder {
+  position: absolute;
+  top: 12px;
+  left: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ccc;
+  transition: all 0.2s ease-out;
+  pointer-events: none;
 }
 button:hover {
   background: #fff;
