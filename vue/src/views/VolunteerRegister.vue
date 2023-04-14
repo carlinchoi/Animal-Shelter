@@ -21,7 +21,7 @@
         <input type="password" id="confirmPassword" class="placeholder-animate" placeholder="Confirm Password" v-model="user.confirmPassword" required />
       </div>
       <button type="submit">Create Account</button>
-      <p><router-link :to="{ name: 'login' }"><button>Already have an account? Log in.</button></router-link></p>
+      <p><router-link :to="{ name: 'login' }"><button>Already have an account? Sign in.</button></router-link></p>
     </form>
   </div>
   </div>

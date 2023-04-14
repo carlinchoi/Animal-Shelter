@@ -75,7 +75,7 @@ export default {
 </script>
 
 
-<style>
+<style scoped>
 .volunteer-table {
   width: 100%;
   border-collapse: collapse;

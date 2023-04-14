@@ -41,9 +41,9 @@
                 ><button>Need an account? Sign up.</button></router-link
               >
             </p>
-            <router-link v-bind:to="{ name: 'home' }"
+            <!-- <router-link v-bind:to="{ name: 'home' }"
               ><button>Go to Home</button></router-link
-            >
+            > -->
           </form>
         </div>
       </div>
