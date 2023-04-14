@@ -72,6 +72,7 @@ export default {
 
 <style scoped>
 .volunteer-table {
+  font-family: Montserrat, sans-serif;
   width: 100%;
   border-collapse: collapse;
   margin: 25px 0;
@@ -135,10 +136,10 @@ input {
 }
 .placeholder-animate:focus + .floating-placeholder,
 .placeholder-animate.valid + .floating-placeholder{
-    font-size: 12px;
+    font-size: 16px;
     top: -10px;
     left: 10px;
-    color: #62a18f;
+    color: rgb(197, 172, 228);
 }
 .search-container {
   position: relative;
@@ -177,5 +178,8 @@ input {
 }
 .container-bg {
   background-color: #fff;
+}
+label {
+  color: rgb(206, 191, 224);
 }
 </style>
