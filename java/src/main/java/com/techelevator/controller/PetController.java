@@ -31,6 +31,14 @@ public class PetController {
         return allPet;
 
     }
+    //@RequestMapping(path="/all/adopted", method = RequestMethod.GET)
+    //public List<Pet> listAllAdoptedPets(){
+        //TODO list all adoptedPet from petDao.findAllAdopted()
+        //List<Pet> allAdoptedPet = petDao.findAllAdopted();
+        //TODO return List
+        //return allPet;
+
+
     @PreAuthorize("permitAll")
     @RequestMapping(path="/{id}",method = RequestMethod.GET)
     public Pet listPet(@PathVariable("id") int petId){

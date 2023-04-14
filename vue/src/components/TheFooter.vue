@@ -1,17 +1,15 @@
 <template>
      <footer class="shelter-footer"> 
           <p class="copy"> &copy; 2023 Rockville Animal Shelter. All rights reserved.</p>   
-          <p class="contact"> Contact Us </p>  
+          <p class="contact"> Contact Us </p> 
+          <p class="adopted"> Adopted Pets </p>   
           <ion-icon name="logo-instagram"></ion-icon>
           <ion-icon name="logo-facebook"></ion-icon>
           <ion-icon name="logo-youtube"></ion-icon>
           <router-link :to="{name: 'home' }"><ion-icon name="home"></ion-icon></router-link>
-             
-           
-
+          <!-- <router-link :to="{name: 'adopted' }">Adopted Pets</router-link>  -->
      </footer>
 </template>
-
 
 <script>
 export default {
@@ -48,16 +46,25 @@ export default {
 .contact {
   position: relative;
   bottom: 38px;
-  padding-right: 250px;
+  padding-right: 185px;
   text-align: right;
   text-decoration: underline;
   text-decoration-color: rgb(195, 226, 199);
   color: white;
  
 }
+.adopted {
+  position: relative;
+  bottom: 81px;
+  padding-right: 315px;
+  text-align: right;
+  text-decoration: underline;
+  text-decoration-color: rgb(195, 226, 199);
+  color: white;
+}
 ion-icon {
   position: relative;
-  bottom: 68px;
+  bottom: 112px;
   font-size: 38px;
   margin-top: -100px;
   padding: 0px 10px;
@@ -68,6 +75,7 @@ ion-icon {
 ion-icon:hover {
   background-color: #a37da3;
 }
+
 
 </style>
 
