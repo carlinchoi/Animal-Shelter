@@ -1,61 +1,87 @@
 <template>
-<body>
-  <div id="register" class="text-center">
-    <form @submit.prevent="register">
-      <h1>Create Account</h1>
-      <div role="alert" v-if="registrationErrors">
-        {{ registrationErrorMsg }}
-      </div>
-      <div class="form-input-group">
-        <!-- <span class ="icon"><ion-icon name="person-outline"></ion-icon></span> -->
-        <input type="text" id="username" placeholder="Username" v-model="user.username" required autofocus />
-      </div>
-      <div class="form-input-group">
-        <!-- <span class ="icon"><ion-icon name="lock-closed-outline"></ion-icon></span> -->
+  <body>
+    <div id="register" class="text-center">
+      <form @submit.prevent="register">
+        <h1>Create Account</h1>
+        <div role="alert" v-if="registrationErrors">
+          {{ registrationErrorMsg }}
+        </div>
+        <div class="form-input-group">
+          <!-- <span class ="icon"><ion-icon name="person-outline"></ion-icon></span> -->
+          <input
+            type="text"
+            id="username"
+            class="placeholder-animate"
+            placeholder="Username"
+            v-model="user.username"
+            required
+            autofocus
+          />
+        </div>
+        <div class="form-input-group">
+          <!-- <span class ="icon"><ion-icon name="lock-closed-outline"></ion-icon></span> -->
 
-        <input type="password" placeholder="Password" id="password" v-model="user.password" required />
-      </div>
-      <div class="form-input-group">
-        <!-- <span class ="icon"><ion-icon name="checkmark-outline"></ion-icon></span> -->
-        <input type="password" id="confirmPassword" placeholder="Confirm Password" v-model="user.confirmPassword" required />
-      </div>
-      <button type="submit">Create Account</button>
-      <p><router-link :to="{ name: 'login' }"><button>Already have an account? Log in.</button></router-link></p>
-    </form>
-  </div>
+          <input
+            type="password"
+            placeholder="Password"
+            class="placeholder-animate"
+            id="password"
+            v-model="user.password"
+            required
+          />
+        </div>
+        <div class="form-input-group">
+          <!-- <span class ="icon"><ion-icon name="checkmark-outline"></ion-icon></span> -->
+          <input
+            type="password"
+            id="confirmPassword"
+            class="placeholder-animate"
+            placeholder="Confirm Password"
+            v-model="user.confirmPassword"
+            required
+          />
+        </div>
+        <button type="submit">Create Account</button>
+        <p>
+          <router-link :to="{ name: 'login' }"
+            ><button>Already have an account? Log in.</button></router-link
+          >
+        </p>
+      </form>
+    </div>
   </body>
 </template>
 
 <script>
-import authService from '../services/AuthService';
+import authService from "../services/AuthService";
 
 export default {
-  name: 'register',
+  name: "register",
   data() {
     return {
       user: {
-        username: '',
-        password: '',
-        confirmPassword: '',
-        role: 'user',
+        username: "",
+        password: "",
+        confirmPassword: "",
+        role: "user",
       },
       registrationErrors: false,
-      registrationErrorMsg: 'There were problems registering this user.',
+      registrationErrorMsg: "There were problems registering this user.",
     };
   },
   methods: {
     register() {
       if (this.user.password != this.user.confirmPassword) {
         this.registrationErrors = true;
-        this.registrationErrorMsg = 'Password & Confirm Password do not match.';
+        this.registrationErrorMsg = "Password & Confirm Password do not match.";
       } else {
         authService
           .register(this.user)
           .then((response) => {
             if (response.status == 201) {
               this.$router.push({
-                path: '/login',
-                query: { registration: 'success' },
+                path: "/login",
+                query: { registration: "success" },
               });
             }
           })
@@ -63,14 +89,14 @@ export default {
             const response = error.response;
             this.registrationErrors = true;
             if (response.status === 400) {
-              this.registrationErrorMsg = 'Bad Request: Validation Errors';
+              this.registrationErrorMsg = "Bad Request: Validation Errors";
             }
           });
       }
     },
     clearErrors() {
       this.registrationErrors = false;
-      this.registrationErrorMsg = 'There were problems registering this user.';
+      this.registrationErrorMsg = "There were problems registering this user.";
     },
   },
 };
@@ -78,7 +104,7 @@ export default {
 
 <style scoped>
 body {
-  background-image: url('../assets/background2.png');
+  background-image: url("../assets/background2.png");
   background-color: rgb(206, 191, 224);
   background-repeat: repeat;
   background-size: contain;
@@ -90,8 +116,8 @@ body {
 form {
   display: flex;
   flex-direction: column;
-  justify-content: center; 
-  align-items: center; 
+  justify-content: center;
+  align-items: center;
   height: 100vh;
   margin-top: 0vh;
   max-width: 350px;
@@ -101,9 +127,9 @@ form {
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.671);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-  }
+}
 .form-input-group {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -111,7 +137,7 @@ form {
 .form-input-group .icon {
   width: 30px;
   align-self: flex-start;
-  margin-right: -10px
+  margin-right: -10px;
 }
 label {
   margin-right: 0.5rem;
@@ -119,11 +145,9 @@ label {
 input {
   padding: 0.5rem;
   border: 2px solid #ccc;
-  padding:10px;
-  border-radius:10px;
+  padding: 10px;
+  border-radius: 10px;
   margin-top: 10px;
-  
-  
 }
 button {
   min-width: 130px;
@@ -153,5 +177,29 @@ button:hover {
 }
 body {
   overflow: hidden;
+}
+.placeholder-animate::-webkit-input-placeholder {
+  transition: all 0.3s ease-out;
+  opacity: 0.5;
+  transform: translateY(0px);
+}
+.placeholder-animate:focus + .floating-placeholder,
+.placeholder-animate.valid + .floating-placeholder {
+  font-size: 16px;
+  top: -10px;
+  left: 10px;
+  color: rgb(197, 172, 228);
+}
+.placeholder-animate {
+  width: 100%;
+  border: none;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.placeholder-animate:not(:focus) {
+  border-bottom: 1px solid #62a18f;
 }
 </style>

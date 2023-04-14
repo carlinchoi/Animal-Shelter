@@ -13,6 +13,7 @@ import VolunteerApplicationView from '../views/VolunteerApplicationView.vue'
 import UpdatePetPage from '../views/UpdatePetPage.vue'
 import VolunteerPendingList from '../views/VolunteerPendingList.vue'
 import TestVolunteerPending from '../components/TestVolunteerPending.vue'
+import AdoptionFormPage from '../views/AdoptionFormPage.vue'
 
 Vue.use(Router)
 
@@ -118,6 +119,11 @@ const router = new Router({
       path: "/test-volunteer-pending-list",
       name: "test-volunteer-pending-list",
       component: TestVolunteerPending,
+    },
+    {
+      path: "/adoption-form-page",
+      name: "adoption-form-page",
+      component: AdoptionFormPage,
       meta: {
         requiresAuth: false
       }

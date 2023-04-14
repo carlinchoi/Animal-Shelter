@@ -4,6 +4,7 @@
    <div>
     <div class="form-wrapper">
         <form @submit.prevent="updatePet">
+          <h1>Update Pet Listing</h1>
             <div class="form-input-group">
               <input type="text" placeholder="Name"  v-model='pet.petName' required>
             </div>
@@ -65,11 +66,6 @@ export default{
             petService.updatePet(this.petId, this.pet)
             .then((response) => {
             if (response.status == 200) {
-              if (this.pet.adopted === true) {
-                this.$router.push({
-                path: '/adoption-form',
-              });
-            } else
               this.$router.push({
                 path: '/',
               });
@@ -169,8 +165,6 @@ button {
   border: 2px solid #4c6e5c;
   background: #62a18f;
   margin-top: 0px;
-
-  
   
 }
 button:hover {
@@ -185,5 +179,8 @@ button:hover {
 }
 body {
   overflow: hidden;
+}
+h1 {
+  color:white;
 }
 </style>

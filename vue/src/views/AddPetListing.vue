@@ -6,26 +6,26 @@
             <h1 >Add New Pet Listing</h1>
             <div class="form-input-group">
 
-              <input type="text" placeholder="Name" v-model='pet.petName' required/>
+              <input type="text" placeholder="Name" class="placeholder-animate" v-model='pet.petName' required/>
             </div>
             <div class="form-input-group">
 
-              <input type="text" placeholder="Species" v-model='pet.species' required>
+              <input type="text" placeholder="Species" class="placeholder-animate" v-model='pet.species' required>
             </div>
             <div class="form-input-group">
-              <input type="text" placeholder="Gender" v-model='pet.gender' required>
+              <input type="text" placeholder="Gender" class="placeholder-animate" v-model='pet.gender' required>
             </div>
             <div class="form-input-group">
-              <input type="text" placeholder="Breed" v-model='pet.breed' required>
+              <input type="text" placeholder="Breed" class="placeholder-animate" v-model='pet.breed' required>
             </div>
             <div class="form-input-group">
-              <input type="number" placeholder="Age" v-model='pet.age' required>
+              <input type="number" placeholder="Age" class="placeholder-animate" v-model='pet.age' required>
             </div>
             <div class="form-input-group">
-              <input type="text" placeholder="Description" v-model='pet.description' required>
+              <input type="text" placeholder="Description" class="placeholder-animate" v-model='pet.description' required>
             </div>
             <div class="form-input-group">
-              <input type="url" placeholder="Photo URL" v-model='pet.petPhoto' required>
+              <input type="url" placeholder="Photo URL" class="placeholder-animate" v-model='pet.petPhoto' required>
             </div>
             <button type="submit">Submit New Listing</button>
         </form>
@@ -104,7 +104,7 @@ form {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   }
 .form-input-group {
-  margin-bottom: 1rem;
+  margin-bottom: .5rem;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -154,5 +154,29 @@ button:hover {
 }
 body {
   overflow: hidden;
+}
+.placeholder-animate::-webkit-input-placeholder {
+  transition: all 0.3s ease-out;
+  opacity: 0.5;
+  transform: translateY(0px);
+}
+.placeholder-animate:focus + .floating-placeholder,
+.placeholder-animate.valid + .floating-placeholder{
+    font-size: 16px;
+    top: -10px;
+    left: 10px;
+    color: rgb(197, 172, 228);
+}
+.placeholder-animate {
+    width: 100%;
+    border: none;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  .placeholder-animate:not(:focus) {
+  border-bottom: 1px solid #62a18f;
 }
 </style>

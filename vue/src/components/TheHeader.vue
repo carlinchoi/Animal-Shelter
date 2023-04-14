@@ -7,7 +7,7 @@
       </div>
       <ul>
         <li><router-link :to="{name: 'home' }">Browse Pets</router-link></li>
-        <li><a href="#">Donate</a></li>
+        <!-- <li><a href="#">Donate</a></li> -->
         <li><router-link v-bind:to="{ name: 'volunteer-register' }">Apply to Volunteer</router-link></li>
         <li v-if="showLoginButton"><router-link v-bind:to="{ name: 'login' }">Login</router-link></li>
         <li v-if="showNewPetButton"><router-link v-bind:to="{ name: 'add-pet-listing' }">Add New Pet Listing</router-link></li>
@@ -36,9 +36,6 @@ export default {
 };
 </script>
 <style scoped>
-div{
-  z-index: 10;
-}
 nav {
   background-color: rgba(15, 83, 66, 0.8);
   color: white;
@@ -66,11 +63,9 @@ nav ul {
   height: 336px;
 }
 
-nav ul {
+nav li {
   margin: 0;
   font-size:20px;
-  border-radius: 10px;
- 
  
 }
 
@@ -83,7 +78,7 @@ nav a {
 }
 
 nav a:hover {
-  background-color:  rgb(195, 226, 199);
+  background-color: #a37da3;
 }
 
 nav .active {
@@ -100,11 +95,9 @@ header {
 position: absolute;
   top: 0;
   left:0;
-clip-path: polygon(100% 0%, 70% 15%, 30% 15%, 0% 0%, 0% 25%, 0% 48%, 0% 75%, 24% 93%, 36% 100%, 64% 100%, 77% 93%, 100% 79%, 100% 48%, 100% 25%); 
+  clip-path: polygon(100% 0%, 70% 15%, 30% 15%, 0% 0%, 0% 25%, 0% 48%, 0% 75%, 24% 93%, 36% 100%, 64% 100%, 77% 93%, 100% 79%, 100% 48%, 100% 25%);
   height: 190px;
   z-index: 1;
   padding: 5px;
-  background-color: transparent;
-  border: black;
 }
 </style>

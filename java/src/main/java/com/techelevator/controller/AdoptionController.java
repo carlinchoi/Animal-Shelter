@@ -3,10 +3,13 @@ package com.techelevator.controller;
 import com.techelevator.dao.AdoptionDao;
 import com.techelevator.model.Adoption;
 import com.techelevator.model.Pet;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
-@RequestMapping(path="/")
+@RequestMapping(path="")
 @CrossOrigin
 public class AdoptionController {
     private final AdoptionDao adoptionDao;
@@ -15,9 +18,11 @@ public class AdoptionController {
         this.adoptionDao = adoptionDao;
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(path ="/adoption-form", method = RequestMethod.POST)
-    public Adoption createAdoption(@RequestBody Adoption newAdoption) {
-        return adoptionDao.createAdoption(newAdoption);
+    public boolean createAdoption(@Valid @RequestBody Adoption newAdoption) {
+        adoptionDao.createAdoption(newAdoption);
+        return true;
     }
 
 
