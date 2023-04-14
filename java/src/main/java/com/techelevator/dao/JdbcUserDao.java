@@ -129,7 +129,13 @@ public class JdbcUserDao implements UserDao {
         System.out.println(password_hash);
         return jdbcTemplate.update(insertUserSql, volunteerPendingUser.getUsername(), password_hash,volunteerPendingUser.getEmail(),volunteerPendingUser.getFirstName(),volunteerPendingUser.getLastName(),volunteerPendingUser.getPhone(),"ROLE_PENDINGVOLUNTEER")==1;
     }
-
+    @Override
+    public void updatePendingVolunteerUser(User volunteerPendingUser) {
+        String insertUserSql = "UPDATE users SET  email=?, first_name=?, last_name=?, phone=? WHERE username=?";
+        System.out.println(insertUserSql);
+        System.out.println(volunteerPendingUser);
+        jdbcTemplate.update(insertUserSql,volunteerPendingUser.getEmail(),volunteerPendingUser.getFirstName(),volunteerPendingUser.getLastName(),volunteerPendingUser.getPhone(),volunteerPendingUser.getUsername() );
+    }
     @Override
     public List<User> findAllPendingVolunteers() {
         List<User> pendingVolunteerList = new ArrayList<>();

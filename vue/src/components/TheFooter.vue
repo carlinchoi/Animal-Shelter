@@ -5,7 +5,9 @@
              <ion-icon name="logo-facebook"></ion-icon>
              <ion-icon name="logo-youtube"></ion-icon>
              <router-link :to="{name: 'home' }"><ion-icon name="home-outline"></ion-icon></router-link>
+             
               <li><a href="#">Contact Us</a></li>
+              
      </footer>
    
 </template>
@@ -19,6 +21,7 @@ export default {
 
 <style>
 .shelter-footer  {
+  z-index: 5;
   text-align: center;
   padding: 7px 15px;
   font-family: Montserrat, sans-serif;
@@ -39,6 +42,10 @@ export default {
  padding-left: 100px;
  text-align: left;
 
+}
+ul li{
+  color: rgb(195, 226, 199);
+  text-align: right;
 }
 
 ion-icon {

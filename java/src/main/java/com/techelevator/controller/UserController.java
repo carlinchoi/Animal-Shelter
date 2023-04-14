@@ -46,6 +46,12 @@ public class UserController {
         return userDao.createPendingVolunteerUser(user);
     }
 
+    @RequestMapping(value="/pending-volunteer",method=RequestMethod.PUT)
+    public void updateVolunteer(@RequestBody User user){
+         userDao.updatePendingVolunteerUser(user);
+    }
+
+
     @RequestMapping(value = "/pending-volunteer", method = RequestMethod.GET)
     public List<User> findAllPendingVolunteers() {
         List<User> newVolunteerList = userDao.findAllPendingVolunteers();
