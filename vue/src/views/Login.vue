@@ -1,32 +1,50 @@
 <template>
-<body>
-<div class="login-wrapper">
-  <div class="form-wrapper">
-  <div id="login">
-    <form @submit.prevent="login">
-      <h1 >Please Sign In</h1>
-      <div role="alert" v-if="invalidCredentials">
-        Invalid username and password!
+  <body>
+    <div class="login-wrapper">
+      <div class="form-wrapper">
+        <div id="login">
+          <form @submit.prevent="login">
+            <h1>Please Sign In</h1>
+            <div role="alert" v-if="invalidCredentials">
+              Invalid username and password!
+            </div>
+            <div role="alert" v-if="this.$route.query.registration">
+              Thank you for registering, please sign in.
+            </div>
+            <div class="form-input-group">
+              <!-- <span class ="icon"><ion-icon name="lock-closed-outline"></ion-icon></span> -->
+              <input
+                type="text"
+                id="username"
+                placeholder="Username"
+                v-model="user.username"
+                required
+                autofocus
+              />
+            </div>
+            <div class="form-input-group">
+              <!-- <span class ="icon"><ion-icon name="person-outline"></ion-icon></span> -->
+              <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                v-model="user.password"
+                required
+              />
+            </div>
+            <button type="submit">Sign in</button>
+            <p>
+              <router-link :to="{ name: 'register' }"
+                ><button>Need an account? Sign up.</button></router-link
+              >
+            </p>
+            <router-link v-bind:to="{ name: 'home' }"
+              ><button>Go to Home</button></router-link
+            >
+          </form>
+        </div>
       </div>
-      <div role="alert" v-if="this.$route.query.registration">
-        Thank you for registering, please sign in.
-      </div>
-      <div class="form-input-group">
-        <!-- <span class ="icon"><ion-icon name="lock-closed-outline"></ion-icon></span> -->
-        <input type="text" id="username" placeholder="Username" v-model="user.username" required autofocus />
-      </div>
-      <div class="form-input-group">
-        <!-- <span class ="icon"><ion-icon name="person-outline"></ion-icon></span> -->
-        <input type="password" id="password" placeholder="Password" v-model="user.password" required />
-      </div>
-      <button type="submit" >Sign in</button>
-      <p>
-      <router-link :to="{ name: 'register' }"><button>Need an account? Sign up.</button></router-link></p>
-      <router-link v-bind:to="{ name: 'home' }"><button>Go to Home</button></router-link>
-    </form>
-  </div>
-  </div>
-  </div>
+    </div>
   </body>
 </template>
 
@@ -38,12 +56,11 @@ export default {
   components: {},
   data() {
     return {
-      
       user: {
         username: "",
-        password: ""
+        password: "",
       },
-      invalidCredentials: false
+      invalidCredentials: false,
     };
   },
 
@@ -52,43 +69,42 @@ export default {
     login() {
       authService
         .login(this.user)
-        .then(response => {
+        .then((response) => {
           if (response.status == 200) {
             this.$store.commit("SET_AUTH_TOKEN", response.data.token);
             this.$store.commit("SET_USER", response.data.user);
             //if(this.user.password === 'animalshelter1') {
-              if(response.data.user.authorities[0].name==="ROLE_PENDINGVOLUNTEER"){
+            if (
+              response.data.user.authorities[0].name === "ROLE_PENDINGVOLUNTEER"
+            ) {
               //  alert(response.data.user.authorities[0].name);
               this.$router.push("/change-password");
-              
             } else {
-              this.$router.push('/')
+              this.$router.push("/");
             }
             //else{
             //     alert("Not ROLE_USER")
             // }
-              //alert('change your password bruh');
+            //alert('change your password bruh');
             //}
             // this.$router.push("/");
-
           }
         })
-        .catch(error => {
+        .catch((error) => {
           const response = error.response;
 
           if (response.status === 401) {
             this.invalidCredentials = true;
           }
         });
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style scoped>
-
 body {
-  background-image: url('../assets/background2.png');
+  background-image: url("../assets/background2.png");
   background-color: rgb(230, 222, 240);
   background-repeat: repeat;
   background-size: contain;
@@ -101,8 +117,8 @@ form {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  justify-content: center; 
-  align-items: center; 
+  justify-content: center;
+  align-items: center;
   height: 100vh;
   margin-top: 0;
   max-width: 400px;
@@ -112,7 +128,7 @@ form {
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.671);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-  }
+}
 .form-input-group {
   margin-bottom: 1rem;
   display: flex;
@@ -122,7 +138,7 @@ form {
 .form-input-group .icon {
   width: 30px;
   align-self: flex-start;
-  margin-right: -10px
+  margin-right: -10px;
 }
 label {
   margin-right: 0.5rem;
@@ -130,9 +146,8 @@ label {
 input {
   padding: 0.5rem;
   border: 2px solid #ccc;
-  padding:10px;
-  border-radius:10px;
-  
+  padding: 10px;
+  border-radius: 10px;
 }
 button {
   min-width: 130px;
@@ -149,7 +164,6 @@ button {
   border: 2px solid #4c6e5c;
   background: #62a18f;
   margin-top: 0px;
-  
 }
 button:hover {
   background: #fff;
