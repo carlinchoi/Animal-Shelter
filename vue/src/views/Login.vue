@@ -180,7 +180,7 @@ button {
   min-width: 130px;
   height: 40px;
   color: #fff;
-  padding: 5px 10px;
+  padding: -5px 5px;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;

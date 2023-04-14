@@ -4,6 +4,7 @@
    <div>
     <div class="form-wrapper">
         <form @submit.prevent="updatePet">
+          <h1>Update Pet Listing</h1>
             <div class="form-input-group">
               <input type="text" placeholder="Name"  v-model='pet.petName' required>
             </div>
@@ -178,5 +179,8 @@ button:hover {
 }
 body {
   overflow: hidden;
+}
+h1 {
+  color:white;
 }
 </style>
