@@ -2,39 +2,19 @@
    <div>
     <div class="form-wrapper">
         <form @submit.prevent="addAdoptionForm">
+            <!-- <div class="form-input-group">
+              <label for="adoption date"> Adoption Date 'YYYY-MM-DD'</label>
+              <input type="text"  v-model='adoption.adoptionDate' required>
+            </div> -->
             <div class="form-input-group">
-              <label for="pet name"> Name </label>
-              <input type="text"  v-model='pet.petName' required>
+              <label for="parent name"> Parent Name </label>
+              <input type="text"  v-model='adoption.parentName' required>
             </div>
             <div class="form-input-group">
-              <label for="pet species"> Species </label>
-              <input type="text"  v-model='pet.species' required>
+              <label for="parent-email"> Parent Email </label>
+              <input type="email"  v-model='adoption.parentEmail' required>
             </div>
-            <div class="form-input-group">
-              <label for="pet gender"> Gender </label>
-              <input type="text"  v-model='pet.gender' required>
-            </div>
-            <div class="form-input-group">
-              <label for="pet breed"> Breed </label>
-              <input type="text"  v-model='pet.breed' required>
-            </div>
-            <div class="form-input-group">
-              <label for="pet age"> Age </label>
-              <input type="number"  v-model='pet.age' required>
-            </div>
-            <div class="form-input-group">
-              <label for="pet description"> Description </label>
-              <input type="text"  v-model='pet.description' required>
-            </div>
-            <div class="form-input-group">
-              <label for="pet photo"> Photo Url </label>
-              <input type="url"  v-model='pet.petPhoto' required>
-            </div>
-            <div class="form-input-group">
-              <label for="is adopted"> Has this pet been adopted? </label>
-              <input type="checkbox"  v-model='pet.adopted' >
-            </div>
-            <button type="submit">Submit New Listing</button>
+            <button type="submit">Submit Adoption Form</button>
         </form>
     </div>
   </div>
@@ -43,35 +23,32 @@
 <script>
 import adoptionService from '../services/AdoptionService.js';
 export default{
-    name: 'update-pet-listing',
+    name: 'adoption-form',
     props: ["petId"], 
     //pet: Object,
     data() {
         return {
             adoption: {
-                 petId: 1,
-                 adoptionDate:'', //format date: 'yyyy-mm-dd'
-                 parentName:'',
-                 parentEmail: ''
-
-            }
+              petId: this.petId,
+              parentName:'',
+              parentEmail:''
+          }
         }
     },
     methods: {
         addAdoptionForm() {
             adoptionService.createAdoption(this.adoption)
             .then((response) => {
-            if (response.status == 200) {
-              if (this.pet.adopted === true) {
+            if (response.status == 201) {
                 this.$router.push({
-                path: '/adoption-form',
+                path: '/',
               });
             } else 
               this.$router.push({
-                path: '/',
+                path: '/adoption-form-page',
               });
             }
-          })
+          )
           .catch((error) => {
             const response = error.response;
             this.registrationErrors = true;
@@ -81,21 +58,21 @@ export default{
           });
       }
     },
-    created() {
-    petService
-      .getPetById(this.petId)
-      .then(response => {
-        this.$store.commit("SET_ACTIVE_PET", response.data);
-        this.pet = response.data;
-        //this.pet.species = response.data.pet.species;
-      })
-      .catch(error => {
-        if (error.response.status == 404) {
-          this.$router.push({name: 'NotFound'});
-        }
-      });
-    //this.pet = this.$route.params.pet;
-  }
+  //   created() {
+  //   petService
+  //     .getPetById(this.petId)
+  //     .then(response => {
+  //       this.$store.commit("SET_ACTIVE_PET", response.data);
+  //       this.pet = response.data;
+  //       //this.pet.species = response.data.pet.species;
+  //     })
+  //     .catch(error => {
+  //       if (error.response.status == 404) {
+  //         this.$router.push({name: 'NotFound'});
+  //       }
+  //     });
+  //   //this.pet = this.$route.params.pet;
+  // }
     
 }
 </script>

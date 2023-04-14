@@ -11,6 +11,7 @@ import AddPetListing from '../views/AddPetListing.vue'
 import VolunteerList from '../views/VolunteerList.vue'
 import VolunteerApplicationView from '../views/VolunteerApplicationView.vue'
 import UpdatePetPage from '../views/UpdatePetPage.vue'
+import AdoptionFormPage from '../views/AdoptionFormPage.vue'
 
 Vue.use(Router)
 
@@ -100,6 +101,14 @@ const router = new Router({
       path: "/update-pet-page",
       name: "update-pet-page",
       component: UpdatePetPage,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path: "/adoption-form-page",
+      name: "adoption-form-page",
+      component: AdoptionFormPage,
       meta: {
         requiresAuth: false
       }
