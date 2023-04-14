@@ -29,18 +29,25 @@ export default {
       phone: ''
     }
   },
+  props: ["username"],
   methods: {
     submitForm() {
       const volunteerApplication = {
+        username:this.username,
         firstName: this.firstName,
         lastName: this.lastName,
         email: this.email,
         phone: this.phone
       };
-
-      VolunteerService.createVolunteerApplication(volunteerApplication)
+      console.log(volunteerApplication);
+      alert("console log"+volunteerApplication)
+      VolunteerService.updateVolunteer(volunteerApplication)
         .then(response => {
           console.log(response.data);
+          this.$router.push({
+                path: '/login',
+                query: { registration: 'success' },
+              });
         })
         .catch(error => {
           console.error("Error creating volunteer application:", error);
@@ -51,48 +58,4 @@ export default {
 </script>
 
 <style>
-.volunteer-form {
-  display: flex;
-  flex-direction: column;
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f7f7f7;
-  border-radius: 5px;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 20px;
-}
-
-label {
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-input {
-  padding: 10px;
-  border: none;
-  border-radius: 3px;
-  font-size: 16px;
-  background-color: #ffffff;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.submit-btn {
-  padding: 10px 20px;
-  background-color: #1a73e8;
-  color: #ffffff;
-  border: none;
-  border-radius: 3px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
-}
-
-.submit-btn:hover {
-  background-color: #0d47a1;
-}
 </style>
