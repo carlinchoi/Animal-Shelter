@@ -69,7 +69,7 @@ nav ul {
 
 nav li {
   margin: 0;
-  font-size:20px;
+  font-size:25px;
  
 }
 
