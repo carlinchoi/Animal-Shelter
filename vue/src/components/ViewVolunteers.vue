@@ -1,6 +1,8 @@
 <template>
-  <div >
-    <table class='volunteer-table'>
+  <div>
+    <div class="search-container">
+      <input type="text" v-model="searchTerm" placeholder="Search By Name">
+      <table class='volunteer-table'>
       <thead>
         <tr>
           <th>First Name</th>
@@ -11,7 +13,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="volunteer in this.$store.state.volunteers" :key="volunteer.email">
+        <tr v-for="volunteer in filteredVolunteers" :key="volunteer.email">
           <td>{{ volunteer.firstName }}</td>
           <td>{{ volunteer.lastName }}</td>
           <td>{{ volunteer.email }}</td>
@@ -21,12 +23,20 @@
       </tbody>
     </table>
   </div>
+  </div>
 </template>
 
 <script>
 import VolunteerService from '../services/VolunteerService.js';
 export default {
   name: "view-volunteers",
+  data() {
+    return {
+      searchTerm: '',
+      selectedRole: null,
+
+    }
+  },
   methods: {
     retrieveVolunteers(){
       VolunteerService.findAllVolunteer().then((response) => {
@@ -35,15 +45,30 @@ export default {
     }
   },
   computed: {
-    //   pets() {
-    //       return this.$store.state.pets;
-    //   }
+  volunteers() {
+    return this.$store.state.volunteers;
+  },
+  filteredVolunteers() {
+    let filtered = this.volunteers;
+    if (this.searchTerm) {
+      filtered= filtered.filter (volunteer =>
+       volunteer.firstName.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+          volunteer.lastName.toLowerCase().includes(this.searchTerm.toLowerCase())
+      );
+    }
+    if (this.selectedRole) {
+      filtered= filtered.filter(volunteer =>
+      volunteer.role === this.selectedRole
+      );
+    }
+    return filtered;
+  }
   },
   created(){
     this.retrieveVolunteers();
    
   },
-};
+}
 </script>
 
 

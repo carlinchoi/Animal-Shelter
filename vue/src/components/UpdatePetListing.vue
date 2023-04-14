@@ -65,6 +65,11 @@ export default{
             petService.updatePet(this.petId, this.pet)
             .then((response) => {
             if (response.status == 200) {
+              if (this.pet.adopted === true) {
+                this.$router.push({
+                path: '/adoption-form',
+              });
+            } else
               this.$router.push({
                 path: '/',
               });
