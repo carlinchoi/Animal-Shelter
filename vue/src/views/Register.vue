@@ -122,6 +122,7 @@ input {
   border-radius: 5px;
   margin-top: 10px;
   
+  
 }
 button {
   min-width: 130px;
@@ -137,6 +138,7 @@ button {
   border-radius: 20px;
   border: 2px solid #4c6e5c;
   background: #62a18f;
+  margin-top: 10px;
 }
 button:hover {
   background: #fff;
