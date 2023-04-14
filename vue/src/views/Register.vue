@@ -92,9 +92,9 @@ form {
   flex-direction: column;
   justify-content: center; 
   align-items: center; 
-  height: 80vh;
-  margin-top: 20vh;
-  max-width: 400px;
+  height: 100vh;
+  margin-top: 0vh;
+  max-width: 350px;
   margin: auto;
   padding: 80px;
   border: 2px solid #410553;
