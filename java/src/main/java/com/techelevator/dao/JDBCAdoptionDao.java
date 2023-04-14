@@ -42,9 +42,9 @@ public class JDBCAdoptionDao implements AdoptionDao {
         @Override
         public Adoption createAdoption(Adoption adoption) {
             String sql = "INSERT INTO public.adoptions(\n" +
-                    "\tpet_id, parent_name, parent_email)\n" +
-                    "\tVALUES ( ?, ?, ? ) RETURNING adoption_id; ";
-            Integer newId = jdbcTemplate.queryForObject(sql, Integer.class, adoption.getPetId(), adoption.getParentName(), adoption.getParentEmail());
+                    "\tpet_id, adoption_date, parent_name, parent_email)\n" +
+                    "\tVALUES ( ?, ?, ?, ? ) RETURNING adoption_id; ";
+            Integer newId = jdbcTemplate.queryForObject(sql, Integer.class, adoption.getPetId(), adoption.getAdoptionDate(), adoption.getParentName(), adoption.getParentEmail());
             return findAdoptionById(newId);
 
         }

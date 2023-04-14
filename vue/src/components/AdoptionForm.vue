@@ -11,6 +11,10 @@
               <label for="parent name"> Parent Name </label>
               <input type="text"  v-model='adoption.parentName' required>
             </div>
+            <div class="form-input-group"> 
+              <label for="adoption date"> Date </label>
+              <input type="date" value="2018-07-22"  min="2018-01-01" max="2023-12-31" v-model='adoption.adoptionDate'>
+            </div>
             <div class="form-input-group">
               <label for="parent-email"> Parent Email </label>
               <input type="email"  v-model='adoption.parentEmail' required>
@@ -31,6 +35,7 @@ export default{
         return {
             adoption: {
               petId: this.petId,
+              adoptionDate: '',
               parentName:'',
               parentEmail:''
           }
