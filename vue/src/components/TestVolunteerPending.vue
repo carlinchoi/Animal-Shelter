@@ -61,6 +61,7 @@ export default {
         volunteer.role=event.target.value;
        VolunteerService.updateVolunteerStatus(volunteer).then((response)=>{
           this.$store.commit("SET_VOLANTEER_INFO", response.data);
+           this.retrieveVolunteers();
        })
         
         
