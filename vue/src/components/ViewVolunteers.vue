@@ -1,8 +1,10 @@
 <template>
-    <div class="search-container container-bg">
-      <input type="text" v-model="searchTerm" class="placeholder-animate">
-      <label class="floating-placeholder" for="search-input">Search by First or Last Name</label>
-      <table class='volunteer-table'>
+  <div class="search-container container-bg background">
+    <input type="text" v-model="searchTerm" class="placeholder-animate" />
+    <label class="floating-placeholder" for="search-input"
+      >Search by First or Last Name</label
+    >
+    <table class="volunteer-table">
       <thead>
         <tr class="active-row">
           <th>First Name</th>
@@ -26,47 +28,51 @@
 </template>
 
 <script>
-import VolunteerService from '../services/VolunteerService.js';
+import VolunteerService from "../services/VolunteerService.js";
 export default {
   name: "view-volunteers",
   data() {
     return {
-      searchTerm: '',
+      searchTerm: "",
       selectedRole: null,
-    }
+    };
   },
   methods: {
-    retrieveVolunteers(){
+    retrieveVolunteers() {
       VolunteerService.findAllVolunteer().then((response) => {
         this.$store.commit("SET_VOLANTEER_INFO", response.data);
       });
-    }
+    },
   },
   computed: {
-  volunteers() {
-    return this.$store.state.volunteers;
+    volunteers() {
+      return this.$store.state.volunteers;
+    },
+    filteredVolunteers() {
+      let filtered = this.volunteers;
+      if (this.searchTerm) {
+        filtered = filtered.filter(
+          (volunteer) =>
+            volunteer.firstName
+              .toLowerCase()
+              .includes(this.searchTerm.toLowerCase()) ||
+            volunteer.lastName
+              .toLowerCase()
+              .includes(this.searchTerm.toLowerCase())
+        );
+      }
+      if (this.selectedRole) {
+        filtered = filtered.filter(
+          (volunteer) => volunteer.role === this.selectedRole
+        );
+      }
+      return filtered;
+    },
   },
-  filteredVolunteers() {
-    let filtered = this.volunteers;
-    if (this.searchTerm) {
-      filtered= filtered.filter (volunteer =>
-       volunteer.firstName.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
-          volunteer.lastName.toLowerCase().includes(this.searchTerm.toLowerCase())
-      );
-    }
-    if (this.selectedRole) {
-      filtered= filtered.filter(volunteer =>
-      volunteer.role === this.selectedRole
-      );
-    }
-    return filtered;
-  }
-  },
-  created(){
+  created() {
     this.retrieveVolunteers();
-   
   },
-}
+};
 </script>
 
 
@@ -85,7 +91,7 @@ export default {
 }
 
 .volunteer-table thead tr {
-  background-color:#62a18f;
+  background-color: #62a18f;
   color: #fff;
   font-weight: bold;
   padding: 12px 15px;
@@ -95,7 +101,6 @@ export default {
 .volunteer-table th,
 .volunteer-table td {
   padding: 12px 15px;
-
 }
 
 .volunteer-table tbody td {
@@ -126,8 +131,8 @@ input {
   border: none;
   padding: 10px;
   border-radius: 10px;
- appearance: none;
- width: 50px;
+  appearance: none;
+  width: 50px;
 }
 .placeholder-animate::-webkit-input-placeholder {
   transition: all 0.3s ease-out;
@@ -135,11 +140,12 @@ input {
   transform: translateY(0px);
 }
 .placeholder-animate:focus + .floating-placeholder,
-.placeholder-animate.valid + .floating-placeholder{
-    font-size: 16px;
-    top: -10px;
-    left: 10px;
-    color: rgb(197, 172, 228);
+.placeholder-animate.valid + .floating-placeholder {
+  font-size: 18px;
+  top: -10px;
+  left: 10px;
+  color: rgb(197, 172, 228);
+  font-weight: bold;
 }
 .search-container {
   position: relative;
@@ -155,15 +161,15 @@ input {
   pointer-events: none;
 }
 .placeholder-animate {
-    width: 100%;
-    border: none;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-  .placeholder-animate:not(:focus) {
+  width: 100%;
+  border: none;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.placeholder-animate:not(:focus) {
   border-bottom: 1px solid #62a18f;
 }
 .background {
@@ -182,5 +188,16 @@ input {
 }
 label {
   color: rgb(206, 191, 224);
+}
+.background {
+  background-image: url('../assets/pupkit.png');
+  background-color: rgb(230, 222, 240);
+  background-repeat: repeat;
+  background-size: contain;
+  min-height: 100%;
+  min-width: 100%;
+  margin: 0;
+  padding: 0;
+  z-index: 10;
 }
 </style>

@@ -1,23 +1,36 @@
 <template>
-<div>
-  
+  <div>
     <nav>
       <div class="logo-container">
         <img src="../assets/animalshelterlogo.png" alt="Rockville" />
       </div>
       <ul>
-        <li><router-link :to="{name: 'home' }">Browse Pets</router-link></li>
-        <!-- <li><a href="#">Donate</a></li> -->
-        <li><router-link v-bind:to="{ name: 'volunteer-register' }">Apply to Volunteer</router-link></li>
-        <li v-if="showLoginButton"><router-link v-bind:to="{ name: 'login' }">Login</router-link></li>
-        <li v-if="showNewPetButton"><router-link v-bind:to="{ name: 'add-pet-listing' }">Add New Pet Listing</router-link></li>
-        <li class="active" v-if="showLogoutButton"><router-link v-bind:to="{ name: 'logout' }">Logout</router-link></li>
-        <li v-if="showRegisterButton"><router-link v-bind:to="{ name: 'register' }">Register</router-link></li>
-        <!-- <li><a href="#"><input type="text" placeholder="Search"></a></li> -->
+        <li><router-link :to="{ name: 'home' }">Browse Pets</router-link></li>
+        <li>
+          <router-link v-bind:to="{ name: 'volunteer-register' }"
+            >Apply to Volunteer</router-link
+          >
+        </li>
+        <li v-if="showLoginButton">
+          <router-link v-bind:to="{ name: 'login' }">Login</router-link>
+        </li>
+        <li v-if="showNewPetButton">
+          <router-link v-bind:to="{ name: 'add-pet-listing' }"
+            >Add New Pet Listing</router-link
+          >
+        </li>
+        <li class="active" v-if="showLogoutButton">
+          <router-link v-bind:to="{ name: 'logout' }">Logout</router-link>
+        </li>
+        <li v-if="showRegisterButton">
+          <router-link v-bind:to="{ name: 'register' }">Register</router-link>
+        </li>
+        <!-- <li v-if="showVolunteersButton">
+          <router-link v-bind:to="{ name: 'login' }">Show Volunteers</router-link>
+        </li> -->
       </ul>
     </nav>
-    
-</div>
+  </div>
 </template>
 
 <script>
@@ -28,14 +41,17 @@ export default {
       return this.$route.name === "home";
     },
     showLoginButton() {
-      return this.$route.name === "register" || this.$route.name === "volunteer-register";
+      return (
+        this.$route.name === "register" ||
+        this.$route.name === "volunteer-register"
+      );
     },
     showNewPetButton() {
       return this.$route.name === "home";
     },
     showRegisterButton() {
       return this.$route.name === "register" || this.$route.name === "login";
-    }
+    },
   },
 };
 </script>
@@ -48,13 +64,13 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
-  right:0;
+  right: 0;
 
   width: 100%;
   z-index: 1;
 }
 .logo-container {
-position:relative;
+  position: relative;
 }
 
 nav ul {
@@ -69,8 +85,7 @@ nav ul {
 
 nav li {
   margin: 0;
-  font-size:25px;
- 
+  font-size: 25px;
 }
 
 nav a {
@@ -96,10 +111,25 @@ header {
   margin-top: 60px;
 }
 .logo-container img {
-position: absolute;
+  position: absolute;
   top: 0;
-  left:0;
-  clip-path: polygon(100% 0%, 70% 15%, 30% 15%, 0% 0%, 0% 25%, 0% 48%, 0% 75%, 24% 93%, 36% 100%, 64% 100%, 77% 93%, 100% 79%, 100% 48%, 100% 25%);
+  left: 0;
+  clip-path: polygon(
+    100% 0%,
+    70% 15%,
+    30% 15%,
+    0% 0%,
+    0% 25%,
+    0% 48%,
+    0% 75%,
+    24% 93%,
+    36% 100%,
+    64% 100%,
+    77% 93%,
+    100% 79%,
+    100% 48%,
+    100% 25%
+  );
   height: 190px;
   z-index: 1;
   padding: 5px;

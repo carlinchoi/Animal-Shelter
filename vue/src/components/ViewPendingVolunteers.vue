@@ -1,96 +1,137 @@
 <template>
-
-  <div >
+  <div>
     <h1>From Component</h1>
+    <div class="search-container background">
+      <input type="text" v-model="searchTerm" class="placeholder-animate" />
+      <label class="floating-placeholder" for="search-input"
+        >Search by First or Last Name</label
+      >
+      <table class="volunteer-table">
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Role</th>
+            <th>userid</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- <tr v-for="volunteer in pendingVolunteers" v-bind:key="volunteer.userid"> -->
+          <tr v-for="volunteer in filteredVolunteers" :key="volunteer.email">
+            <td>{{ volunteer.firstName }}</td>
+            <td>{{ volunteer.lastName }}</td>
+            <td>{{ volunteer.email }}</td>
+            <td>{{ volunteer.phone }}</td>
 
-    <table class='volunteer-table'>
-      <thead>
-        <tr>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Email</th>
-          <th>Phone</th>
-          <th>Role</th>
-          <th>userid</th>
-         
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="volunteer in pendingVolunteers" v-bind:key="volunteer.userid">
-          <td>{{ volunteer.firstName }}</td>
-          <td>{{ volunteer.lastName }}</td>
-          <td>{{ volunteer.email }}</td>
-          <td>{{ volunteer.phone }}</td>
-  
-          <td>
-            <select  @change="updateStatus(volunteer, $event)" >
-              <option value="ROLE_PENDINGVOLUNTEER">pending</option>
-              <option value="ROLE_APPROVED">approved</option>
-              <option value="ROLE_DECLINED">delined</option>
-            </select>     
-          </td>
-          <td>{{ volunteer.userId }}</td>
-        </tr>
-      </tbody>
-    </table>
+            <td>
+              <select class="select" @change="updateStatus(volunteer, $event)">
+                <option disabled selected>Status</option>
+                <option value="ROLE_PENDINGVOLUNTEER">Pending</option>
+                <option value="ROLE_APPROVED">Approved</option>
+                <option value="ROLE_DECLINED">Declined</option>
+              </select>
+            </td>
+            <td>{{ volunteer.userId }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </template>
 
 <script>
-import volunteerService from '../services/VolunteerService.js';
+import volunteerService from "../services/VolunteerService.js";
 export default {
   name: "view-pending-volunteers",
+  data() {
+    return {
+      searchTerm: "",
+      selectedRole: null,
+    };
+  },
   methods: {
-    retrieveVolunteers(){
-      alert("debug retrieveVolunteers")
+    retrieveVolunteers() {
+      alert("debug retrieveVolunteers");
       volunteerService.findAllPendingVolunteer().then((response) => {
-        console.log("findAllPendingVolunteer"+response.data)
+        console.log("findAllPendingVolunteer" + response.data);
         this.$store.commit("SET_PENDING_VOLANTEER_INFO", response.data);
       });
     },
-    updateStatus(volunteer,event){ 
-      console.log(event.target.value+volunteer);
-     
-        console.log(volunteer);
-        volunteerService.updateVolunteerStatus(volunteer).then((response)=>{
-         if (response.status == 200) {
-          this.$store.commit("SET_VOLANTEER_INFO", response.data);
-          this.$router.push( {name:'volunteer-pending-list'});
-          }  }) 
+    updateStatus(volunteer, event) {
+      console.log(event.target.value + volunteer);
 
-       volunteerService.findAllVolunteer().then((response) => {
+      console.log(volunteer);
+      volunteerService.updateVolunteerStatus(volunteer).then((response) => {
+        if (response.status == 200) {
+          this.$store.commit("SET_VOLANTEER_INFO", response.data);
+          this.$router.push({ name: "volunteer-pending-list" });
+        }
+      });
+
+      volunteerService.findAllVolunteer().then((response) => {
         this.$store.commit("SET_PENDING_VOLANTEER_INFO", response.data);
       });
     },
-  computed: {
-    pendingVolunteers(){
-      return this.$store.state.pendingVolunteers
-    }
+    computed: {
+      pendingVolunteers() {
+        return this.$store.state.pendingVolunteers;
+      },
+    },
+    filteredVolunteers() {
+      let filtered = this.volunteers;
+      if (this.searchTerm) {
+        filtered = filtered.filter(
+          (volunteer) =>
+            volunteer.firstName
+              .toLowerCase()
+              .includes(this.searchTerm.toLowerCase()) ||
+            volunteer.lastName
+              .toLowerCase()
+              .includes(this.searchTerm.toLowerCase())
+        );
+      }
+      if (this.selectedRole) {
+        filtered = filtered.filter(
+          (volunteer) => volunteer.role === this.selectedRole
+        );
+      }
+      return filtered;
+    },
+    created() {
+      this.retrieveVolunteers();
+    },
   },
-  created(){
-    this.retrieveVolunteers();
-   
-  },
-}}
+};
 </script>
 
 
 <style scoped>
 .volunteer-table {
+  font-family: Montserrat, sans-serif;
   width: 100%;
   border-collapse: collapse;
-  margin: 0 auto;
+  margin: 25px 0;
   font-size: 1em;
   font-family: sans-serif;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+  min-width: 400px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
 }
 
-.volunteer-table thead th {
-  background-color: #192a56;
+.volunteer-table thead tr {
+  background-color: #62a18f;
   color: #fff;
   font-weight: bold;
   padding: 12px 15px;
   text-align: left;
+  font-weight: bold;
+}
+.volunteer-table th,
+.volunteer-table td {
+  padding: 12px 15px;
 }
 
 .volunteer-table tbody td {
@@ -98,12 +139,113 @@ export default {
   text-align: left;
   border-bottom: 1px solid #ddd;
 }
+.volunteer-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+.volunteer-table tbody tr.active-row {
+  font-weight: bold;
+  color: #62a18f;
+}
+.volunteer-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
 
-.volunteer-table tbody tr:last-of-type td {
-  border-bottom: none;
+.volunteer-table tbody tr:last-of-type {
+  border-bottom: 2px solid #62a18f;
 }
 
 .volunteer-table tbody tr:hover {
   background-color: #f5f5f5;
+}
+input {
+  padding: 0.5rem;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  appearance: none;
+  width: 50px;
+}
+.placeholder-animate::-webkit-input-placeholder {
+  transition: all 0.3s ease-out;
+  opacity: 0.5;
+  transform: translateY(0px);
+}
+.placeholder-animate:focus + .floating-placeholder,
+.placeholder-animate.valid + .floating-placeholder {
+  font-size: 20px;
+  top: -10px;
+  left: 10px;
+  color: rgb(197, 172, 228);
+  font-weight: bold;
+}
+.search-container {
+  position: relative;
+}
+.floating-placeholder {
+  position: absolute;
+  top: 12px;
+  left: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ccc;
+  transition: all 0.2s ease-out;
+  pointer-events: none;
+}
+.placeholder-animate {
+  width: 100%;
+  border: none;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.placeholder-animate:not(:focus) {
+  border-bottom: 1px solid #62a18f;
+}
+.background {
+  background-image: url("../assets/background2.png");
+  background-color: rgb(230, 222, 240);
+  background-repeat: repeat;
+  background-size: contain;
+  min-height: 100%;
+  min-width: 100%;
+  margin: 0;
+  padding: 0;
+  z-index: 10;
+}
+.container-bg {
+  background-color: #fff;
+}
+label {
+  color: rgb(206, 191, 224);
+}
+.background {
+  background-image: url('../assets/pupkit.png');
+  background-color: rgb(230, 222, 240);
+  background-repeat: repeat;
+  background-size: contain;
+  min-height: 100%;
+  min-width: 100%;
+  margin: 0;
+  padding: 0;
+  z-index: 10;
+}
+.select{
+padding: 8px 12px;
+color: #333333;
+background-color: #eeeeee;
+border: 1px solid #dddddd;
+cursor: pointer;
+border-radius: 5px;
+}
+.select:focus,
+.select:hover {
+  outline: none;
+  border: 1px solid #bbbbbb;
+}
+.select option {
+  background: #ffffff;
+  color:rgb(188, 154, 230);
 }
 </style>
