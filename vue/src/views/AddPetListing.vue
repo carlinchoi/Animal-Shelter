@@ -94,7 +94,7 @@ form {
   justify-content: center; 
   align-items: center; 
   height: 200vh;
-  margin-top: -10vh;
+  margin-top: 10vh;
   max-width: 400px;
   margin: auto;
   padding: 40px;
@@ -109,11 +109,6 @@ form {
   display: flex;
   flex-direction: row;
   align-items: center;
-}
-.form-input-group .icon {
-  width: 30px;
-  align-self: flex-start;
-  margin-right: -10px
 }
 label {
   margin-right: 0.5rem;

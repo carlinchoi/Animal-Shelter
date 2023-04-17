@@ -141,8 +141,8 @@ input {
 }
 .placeholder-animate:focus + .floating-placeholder,
 .placeholder-animate.valid + .floating-placeholder {
-  font-size: 18px;
-  top: -10px;
+  font-size: 25px;
+  top: -20px;
   left: 10px;
   color: rgb(197, 172, 228);
   font-weight: bold;

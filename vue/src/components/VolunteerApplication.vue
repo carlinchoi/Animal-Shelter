@@ -12,10 +12,10 @@
     <input type="text" placeholder="Last Name" class="placeholder-animate" id="lastName" v-model="lastName" required>
   </div>
   <div class="form-input-group">
-    <input type="email" placeholder="Email" id="email" v-model="email" required>
+    <input type="email" placeholder="Email" class="placeholder-animate" id="email" v-model="email" required>
   </div>
   <div class="form-input-group">
-    <input type="tel" placeholder="Phone Number" id="phone" v-model="phone" required>
+    <input type="tel" placeholder="Phone Number" class="placeholder-animate" id="phone" v-model="phone" required>
   </div>
   <button type="submit" class="btn">Submit</button>
 </form>
@@ -68,7 +68,7 @@ export default {
 
 <style scoped>
 body {
-  background-image: url("../assets/background2.png");
+  /* background-image: url("../assets/background2.png"); */
   background-color: rgb(230, 222, 240);
   background-repeat: repeat;
   background-size: contain;
@@ -76,7 +76,6 @@ body {
   min-width: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden;
 }
 form {
   display: flex;
@@ -86,13 +85,14 @@ form {
   align-items: center;
   height: 100vh;
   margin-top: 0;
-  max-width: 350px;
+  max-width: 400px;
   margin: auto;
   padding: 80px;
   border: 2px solid #410553;
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.671);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  margin-bottom: 100px;
 }
 .form-input-group {
   margin-bottom: 0.5rem;
@@ -105,8 +105,11 @@ form {
   align-self: flex-start;
   margin-right: -10px;
 }
+label {
+  margin-right: 0.5rem;
+}
 input {
-  padding: 0.5rem;
+  padding: .5rem;
   border: 2px solid #ccc;
   padding: 10px;
   border-radius: 10px;
@@ -149,7 +152,7 @@ button {
   border-radius: 20px;
   border: 2px solid #4c6e5c;
   background: #62a18f;
-  margin-top: 10px;
+  margin-top: 0px;
 }
 button:hover {
   background: #fff;
@@ -160,8 +163,5 @@ button:hover {
   justify-content: center;
   align-items: center;
   height: 100vh;
-}
-body {
-  overflow: hidden;
 }
 </style>

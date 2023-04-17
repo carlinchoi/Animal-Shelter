@@ -1,11 +1,11 @@
 <template>
   <div>
-    <h1>Volunteer Listing</h1>
+    <!-- <h1>Volunteer Listing</h1> -->
     <div class="search-container background">
       <input type="text" v-model="searchTerm" class="placeholder-animate" />
       <label class="floating-placeholder" for="search-input"
-        >Search by First or Last Name</label
-      >
+        >Search by First or Last Name</label>
+      <div class="table-container">
       <table class="volunteer-table">
         <thead>
           <tr>
@@ -37,6 +37,7 @@
           </tr>
         </tbody>
       </table>
+      </div>
     </div>
   </div>
 </template>
@@ -100,6 +101,10 @@ export default {
 
 
 <style scoped>
+.table-container {
+  max-height: 400px;
+  overflow: auto;
+}
 .volunteer-table {
   font-family: Montserrat, sans-serif;
   width: 100%;
@@ -110,9 +115,10 @@ export default {
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
   min-width: 400px;
   border-radius: 5px 5px 0 0;
-  overflow: hidden;
 }
-
+.volunteer-table thead {
+position: sticky;
+}
 .volunteer-table thead tr {
   background-color: #62a18f;
   color: #fff;
@@ -124,8 +130,13 @@ export default {
 .volunteer-table th,
 .volunteer-table td {
   padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
 }
-
+.volunteer-table tbody {
+  overflow: auto;
+  height: 300px;
+}
 .volunteer-table tbody td {
   padding: 12px 15px;
   text-align: left;
@@ -164,10 +175,11 @@ input {
 }
 .placeholder-animate:focus + .floating-placeholder,
 .placeholder-animate.valid + .floating-placeholder {
-  font-size: 18px;
-  top: -10px;
+   font-size: 25px;
+  top: -20px;
   left: 10px;
-  color: rgb(188, 154, 230);
+  color: rgb(197, 172, 228);
+  font-weight: bold;
 }
 .search-container {
   position: relative;
