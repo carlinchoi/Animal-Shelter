@@ -149,4 +149,26 @@ header {
   z-index: 1;
   padding: 5px;
 }
+@media only screen and (max-width: 768px) {
+  nav {
+    height: 200px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    height: 100%;
+    margin-top: 0;
+  }
+
+  nav li {
+    margin: 0 10px;
+    font-size: 25px;
+  }
+  .logo-container {
+    display: none;
+  }
+  .logo-container img {
+    height: 190px;
+  }
+}
 </style>

@@ -12,12 +12,8 @@
       <div
         v-for="pet in filteredPets"
         :key="pet.petId"
-        class="pet-card flip-card"
+        class="pet-card"
       >
-        <div class="flip-card-front">
-          <div class="flip-card-inner">
-            <div class="flip-card-back">
-              <div class="card-content"></div>
               <div class="image-container">
                 <img :src="pet.petPhoto" alt="Photo of Pet" />
               </div>
@@ -39,9 +35,6 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
 </template>
 
 <script>
@@ -220,5 +213,28 @@ button {
 
 .pet-card:hover .card-content {
   transform: translateY(0);
+}
+
+@media only screen and (max-width: 768px) {
+  .pet-container {
+   display:block;
+   margin-bottom: 20px;
+  }
+  .pet-card {
+    flex-basis: auto;
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .image-container {
+    height: 200px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
 }
 </style>
