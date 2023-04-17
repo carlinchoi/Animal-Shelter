@@ -6,6 +6,7 @@
       </div>
       <ul>
         <li><router-link :to="{ name: 'home' }">Browse Pets</router-link></li>
+        <li><router-link :to="{ name: 'view-adoptions' }">Adopted Pets</router-link></li>
         <li>
           <router-link v-bind:to="{ name: 'volunteer-register' }"
             >Apply to Volunteer</router-link
