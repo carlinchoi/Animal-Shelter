@@ -20,12 +20,6 @@ INSERT INTO pets(
 	pet_name, pet_photo, is_adopted, species, gender, breed, age_years, description)
 	VALUES ('Tank', 'https://people.com/thmb/s5axxuhc4nVAr5YfJ4nyjAxBCrM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(637x434:639x436)/tennis-ball-dog-1-426a19de798f4044accbbed837b204c6.jpg', 'false', 'Dog', 'Male', 'Golden', '1', 'Has amazing energy, slight tennis ball addiction');
 
-   -- Extra Tank Photos for Optional Multiple Pet Photos
-
--- https://www.rover.com/blog/wp-content/uploads/iStock-1208708284-e1679690200318.jpg
-
--- https://www.daddylawngames.com/wp-content/uploads/2021/07/Best-Tennis-Balls-for-Dogs.jpg
-
 
 INSERT INTO pets(
 	pet_name, pet_photo, is_adopted, species, gender, breed, age_years, description)
