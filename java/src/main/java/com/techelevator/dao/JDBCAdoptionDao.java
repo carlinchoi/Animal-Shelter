@@ -18,7 +18,8 @@ public class JDBCAdoptionDao implements AdoptionDao {
         @Override
         public List <Adoption> findAllAdoptions() {
             List<Adoption> adoptions = new ArrayList<>();
-            String sql = "SELECT * FROM adoptions";
+            String sql = "SELECT * FROM adoptions\n" +
+                    "ORDER BY adoption_date ASC";
             SqlRowSet result = jdbcTemplate.queryForRowSet(sql);
 
             while (result.next()) {
@@ -43,8 +44,13 @@ public class JDBCAdoptionDao implements AdoptionDao {
         public Adoption createAdoption(Adoption adoption) {
             String sql = "INSERT INTO public.adoptions(\n" +
                     "\tpet_id, adoption_date, parent_name, parent_email)\n" +
-                    "\tVALUES ( ?, ?, ?, ? ) RETURNING adoption_id; ";
+                    "\tVALUES ( ?, ?, ?, ?) RETURNING adoption_id; ";
+
             Integer newId = jdbcTemplate.queryForObject(sql, Integer.class, adoption.getPetId(), adoption.getAdoptionDate(), adoption.getParentName(), adoption.getParentEmail());
+            sql = "UPDATE public.pets " +
+                    "SET adoption_date = ? "+
+                    "WHERE pet_id = ?; ";
+            jdbcTemplate.update(sql, adoption.getAdoptionDate(), adoption.getPetId());
             return findAdoptionById(newId);
 
         }

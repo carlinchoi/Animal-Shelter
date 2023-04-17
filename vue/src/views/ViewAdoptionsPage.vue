@@ -1,17 +1,17 @@
 <template>
   <div>
-    <adoption-form
+    <view-adoptions
       v-bind:petId="parseInt($route.params.petId)" 
       v-bind:petName="($route.params.petName)" /> 
   </div>
 </template>
 
 <script>
-import AdoptionForm from "../components/AdoptionForm.vue";
+import ViewAdoptions from "../components/ViewAdoptions.vue";
 
 export default {
   components: {
-    AdoptionForm
+    ViewAdoptions
   }
 };
 </script>

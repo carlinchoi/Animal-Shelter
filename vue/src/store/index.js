@@ -45,7 +45,8 @@ export default new Vuex.Store({
       description: '',
       isAdopted: '',
       petPhoto: ''
-    }
+    },
+    adoptedPets:[]
   },
   mutations: {
     SET_AUTH_TOKEN(state, token) {
@@ -80,6 +81,8 @@ export default new Vuex.Store({
     UPDATE_VOLANTEER_ROLE(state,data){
       state.volunteers[data.index].role = data.role;
     },
-
+    SET_ADOPTIONS_INFO(state, adoptionData) {
+      state.adoptedPets = adoptionData;
+    },
   }
 })

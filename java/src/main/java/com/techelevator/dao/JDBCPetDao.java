@@ -38,6 +38,19 @@ public class JDBCPetDao implements PetDao {
         }
     }
 
+    @Override
+    public List<Pet> findAdoptedPets() {
+        List<Pet> pets = new ArrayList<>();
+        String sql = "SELECT * FROM pets" +
+                " WHERE is_adopted = true;";
+        SqlRowSet result = jdbcTemplate.queryForRowSet(sql);
+
+        while (result.next()) {
+            pets.add(mapRowToPet(result));
+        }
+        return pets;
+    }
+
 //    @Override
 //    public List searchPetsByName(String petName) {
 //          List<Pet> petByName = new ArrayList<>();
@@ -84,6 +97,7 @@ public class JDBCPetDao implements PetDao {
         pet.setBreed(sql.getString("breed"));
         pet.setAge(sql.getInt("age_years"));
         pet.setDescription(sql.getString("description"));
+        pet.setAdoptionDate(sql.getString("adoption_date"));
         return pet;
     }
 }

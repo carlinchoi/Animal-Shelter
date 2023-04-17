@@ -104,7 +104,7 @@ export default {
             if (this.pet.adopted === true) {
               this.$router.push({
                 name: "adoption-form-page",
-                params: { petId: this.petId}
+                params: { petId: this.petId, petName: this.pet.petName}
               });
             } else {
               this.$router.push({

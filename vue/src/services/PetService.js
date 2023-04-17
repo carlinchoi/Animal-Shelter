@@ -20,5 +20,9 @@ export default {
 
     updatePet(petId, pet) {
         return http.put(`/pet/${petId}`, pet)
+    },
+
+    findAdoptedPets() {
+        return http.get('/pet/all-adopted')
     }
 }

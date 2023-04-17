@@ -62,6 +62,7 @@ CREATE TABLE pets (
 	breed varChar (32) NOT NULL,
 	age_years int NOT NULL,
 	description varChar (100) NOT NULL,
+    adoption_date varchar (255),
 
 	CONSTRAINT PK_pet_id PRIMARY KEY (pet_id)
 

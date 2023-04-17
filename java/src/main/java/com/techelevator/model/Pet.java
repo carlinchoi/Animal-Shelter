@@ -7,7 +7,7 @@ public class Pet {
     private String petName;
     private String species;
     //TODO LocalDate ???
-    private Date adoptionDate;
+    private String adoptionDate;
     private String gender;
     private String breed;
     private int age;
@@ -34,7 +34,7 @@ public class Pet {
                 '}';
     }
 
-    public Pet(int petId, String petName, String species, Date adoptionDate, String gender, String breed, int age, String description, boolean isAdopted, String petPhoto) {
+    public Pet(int petId, String petName, String species, String adoptionDate, String gender, String breed, int age, String description, boolean isAdopted, String petPhoto) {
         this.petId = petId;
         this.petName = petName;
         this.species = species;
@@ -71,12 +71,12 @@ public class Pet {
         this.species = species;
     }
 
-    public Date getAdoptionDate() {
+    public String getAdoptionDate() {
         return adoptionDate;
     }
 
-    public void setAdoptionDate(Date adoptionDate) {
-        this.adoptionDate = adoptionDate;
+    public String setAdoptionDate(String adoptionDate) {
+        return this.adoptionDate = adoptionDate;
     }
 
     public String getGender() {

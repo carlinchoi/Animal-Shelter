@@ -62,5 +62,12 @@ public class PetController {
             return updatedPet;
         }
     }
+    @RequestMapping(path="/all-adopted",method = RequestMethod.GET)
+    public List<Pet> findAdoptedPets(){
+        //TODO list all pet from petDao.findAll()
+        List<Pet> allPet = petDao.findAdoptedPets();
+        //TODO return List
+        return allPet;
 
+    }
 }

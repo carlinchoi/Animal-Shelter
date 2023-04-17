@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 @RequestMapping(path="")
@@ -25,6 +26,9 @@ public class AdoptionController {
         return true;
     }
 
-
+    @RequestMapping(path ="/view-adoptions", method = RequestMethod.GET)
+    public List<Adoption> findAllAdoptions() {
+        return adoptionDao.findAllAdoptions();
+    }
 
 }

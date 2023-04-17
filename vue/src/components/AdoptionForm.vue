@@ -29,7 +29,7 @@
 import adoptionService from '../services/AdoptionService.js';
 export default{
     name: 'adoption-form',
-    props: ["petId"], 
+    props: ["petId", "petName"],
     //pet: Object,
     data() {
         return {
@@ -37,7 +37,8 @@ export default{
               petId: this.petId,
               adoptionDate: '',
               parentName:'',
-              parentEmail:''
+              parentEmail:'',
+              petName: this.petName
           }
         }
     },

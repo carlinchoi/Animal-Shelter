@@ -15,6 +15,7 @@ import VolunteerPending from '../components/VolunteerPending.vue'
 import AdoptionFormPage from '../views/AdoptionFormPage.vue'
 import PendingApplication from '../views/PendingApplication.vue'
 import PromoteToAdmin from '../components/PromoteToAdmin.vue'
+import ViewAdoptionsPage from '../components/ViewAdoptions.vue'
 
 Vue.use(Router)
 
@@ -133,6 +134,14 @@ const router = new Router({
       path: "/volunteer-to-promote",
       name: "volunteer-to-promote",
       component: PromoteToAdmin,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path: "/view-adoptions",
+      name: "view-adoptions",
+      component: ViewAdoptionsPage,
       meta: {
         requiresAuth: false
       }

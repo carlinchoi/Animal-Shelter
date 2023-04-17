@@ -9,5 +9,9 @@ export default {
     createAdoption(adoption) {
         return http.post('/adoption-form', adoption)
       },
+
+    findAllAdoptions() {
+        return http.get('/view-adoptions')
+    }
     
 }
