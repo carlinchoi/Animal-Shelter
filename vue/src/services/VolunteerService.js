@@ -22,5 +22,8 @@ export default {
     findAllPendingVolunteer() {
         return http.get('/volunteer/pending-volunteer')
     },   
+    findVolunteerToPromote() {
+        return http.get('/volunteer/volunteer-to-promote')
+    },   
 
 }

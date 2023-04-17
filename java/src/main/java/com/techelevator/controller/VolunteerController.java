@@ -34,11 +34,18 @@ public class VolunteerController {
     public void updateVolunteer(@RequestBody Volunteer volunteer){
         volunteerDao.updatePendingVolunteerUser(volunteer);
     }
-    @PreAuthorize("hasRole('ADMIN')")
+   // @PreAuthorize("hasRole('ADMIN')")
     @ResponseStatus(HttpStatus.OK)
     @RequestMapping(value = "/pending-volunteer", method = RequestMethod.GET)
     public List<Volunteer> findAllPendingVolunteers() {
         List<Volunteer> newVolunteerList = volunteerDao.findAllPendingVolunteers();
+        return newVolunteerList;
+    }
+
+    @ResponseStatus(HttpStatus.OK)
+    @RequestMapping(value = "/volunteer-to-promote", method = RequestMethod.GET)
+    public List<Volunteer> findVolunteersToPromote() {
+        List<Volunteer> newVolunteerList = volunteerDao.findVolunteersToPromote();
         return newVolunteerList;
     }
 

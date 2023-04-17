@@ -49,6 +49,18 @@ public class JdbcVolunteerDao implements VolunteerDao{
         return pendingVolunteerList;
     }
 
+    @Override
+    public List<Volunteer> findVolunteersToPromote() {
+        List<Volunteer> pendingVolunteerList = new ArrayList<>();
+        String sql = "SELECT * FROM users WHERE role = 'ROLE_VOLUNTEER';";
+        SqlRowSet result = jdbcTemplate.queryForRowSet(sql);
+
+        while (result.next()) {
+            pendingVolunteerList.add(mapRowToVolunteer(result));
+        }
+        return pendingVolunteerList;
+    }
+
 
 
 
@@ -61,7 +73,7 @@ public class JdbcVolunteerDao implements VolunteerDao{
         volunteer.setPhone(rs.getString("phone"));
         volunteer.setRole(rs.getString("role"));
         volunteer.setUserId(rs.getInt("user_id"));
-
+        System.out.println(volunteer);
         return volunteer;
     }
 }

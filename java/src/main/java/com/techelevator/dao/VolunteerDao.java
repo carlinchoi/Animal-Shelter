@@ -10,4 +10,6 @@ public interface VolunteerDao {
     void updatePendingVolunteerUser(Volunteer volunteerPendingUser);
 
     List<Volunteer> findAllPendingVolunteers();
+
+    List<Volunteer> findVolunteersToPromote();
 }
