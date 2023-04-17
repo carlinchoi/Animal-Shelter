@@ -79,7 +79,7 @@ export default{
 <style scoped>
 body {
   background-image: url('../assets/background2.png');
-  background-color: rgb(137, 167, 155);
+  background-color:rgb(195, 226, 199);
   background-repeat: repeat;
   background-size: contain;
   min-height: 100%;

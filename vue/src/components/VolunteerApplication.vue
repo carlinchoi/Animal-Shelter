@@ -6,10 +6,10 @@
 <form @submit.prevent="submitForm" class="form">
   <h1>Submit Application</h1>
   <div class="form-input-group">
-    <input type="text" placeholder="First Name" id="firstName" v-model="firstName" required>
+    <input type="text" placeholder="First Name" class="placeholder-animate" id="firstName" v-model="firstName" required>
   </div>
   <div class="form-input-group">
-    <input type="text" placeholder="Last Name" id="lastName" v-model="lastName" required>
+    <input type="text" placeholder="Last Name" class="placeholder-animate" id="lastName" v-model="lastName" required>
   </div>
   <div class="form-input-group">
     <input type="email" placeholder="Email" id="email" v-model="email" required>
@@ -76,6 +76,7 @@ body {
   min-width: 100%;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 form {
   display: flex;
@@ -85,7 +86,7 @@ form {
   align-items: center;
   height: 100vh;
   margin-top: 0;
-  max-width: 400px;
+  max-width: 350px;
   margin: auto;
   padding: 80px;
   border: 2px solid #410553;
@@ -103,9 +104,6 @@ form {
   width: 30px;
   align-self: flex-start;
   margin-right: -10px;
-}
-label {
-  margin-right: 0.5rem;
 }
 input {
   padding: 0.5rem;
@@ -151,23 +149,13 @@ button {
   border-radius: 20px;
   border: 2px solid #4c6e5c;
   background: #62a18f;
-  margin-top: 0px;
-}
-.floating-placeholder {
-  position: absolute;
-  top: 12px;
-  left: 20px;
-  font-size: 16px;
-  font-weight: bold;
-  color: #ccc;
-  transition: all 0.2s ease-out;
-  pointer-events: none;
+  margin-top: 10px;
 }
 button:hover {
   background: #fff;
   color: #fff;
 }
-.login-wrapper {
+.register-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;

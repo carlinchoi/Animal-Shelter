@@ -169,12 +169,6 @@ button:hover {
   background: #fff;
   color: #fff;
 }
-.login-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
 body {
   overflow: hidden;
 }

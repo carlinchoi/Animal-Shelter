@@ -202,27 +202,14 @@ button {
   background: #62a18f;
   margin-top: 0px;
 }
-.floating-placeholder {
-  position: absolute;
-  top: 12px;
-  left: 20px;
-  font-size: 16px;
-  font-weight: bold;
-  color: #ccc;
-  transition: all 0.2s ease-out;
-  pointer-events: none;
-}
 button:hover {
   background: #fff;
   color: #fff;
 }
-.login-wrapper {
+.register-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-}
-body {
-  overflow: hidden;
 }
 </style>
