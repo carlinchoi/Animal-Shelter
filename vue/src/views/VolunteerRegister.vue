@@ -118,7 +118,7 @@ export default {
 <style scoped>
 body {
   background-image: url("../assets/background2.png");
-  background-color: rgb(192, 224, 191);
+  background-color: rgb(230, 222, 240);
   background-repeat: repeat;
   background-size: contain;
   min-height: 100%;
@@ -128,11 +128,12 @@ body {
 }
 form {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  margin-top: 20vh;
+  margin-top: 0;
   max-width: 400px;
   margin: auto;
   padding: 80px;
@@ -156,38 +157,10 @@ label {
   margin-right: 0.5rem;
 }
 input {
-  padding: 0.5rem;
+  padding: .5rem;
   border: 2px solid #ccc;
-  border-radius: 5px;
-}
-button {
-  min-width: 130px;
-  height: 40px;
-  color: #fff;
-  padding: 5px 5px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  display: inline-block;
-  outline: none;
-  border-radius: 20px;
-  border: 2px solid #4c6e5c;
-  background: #62a18f;
-  margin-top: 0px;
-}
-button:hover {
-  background: #fff;
-  color: #fff;
-}
-.register-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-body {
-  overflow: hidden;
+  padding: 10px;
+  border-radius: 10px;
 }
 .placeholder-animate::-webkit-input-placeholder {
   transition: all 0.3s ease-out;
@@ -212,5 +185,44 @@ body {
 }
 .placeholder-animate:not(:focus) {
   border-bottom: 1px solid #62a18f;
+}
+button {
+  min-width: 130px;
+  height: 40px;
+  color: #fff;
+  padding: -5px 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 20px;
+  border: 2px solid #4c6e5c;
+  background: #62a18f;
+  margin-top: 0px;
+}
+.floating-placeholder {
+  position: absolute;
+  top: 12px;
+  left: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ccc;
+  transition: all 0.2s ease-out;
+  pointer-events: none;
+}
+button:hover {
+  background: #fff;
+  color: #fff;
+}
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+body {
+  overflow: hidden;
 }
 </style>
