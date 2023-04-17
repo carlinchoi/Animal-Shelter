@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="btn-container" id="btn-container">
+    <div class="btn-container fade-out" id="btn-container">
       <button @click="selectSpecies(null)">All Pets</button>
       <button @click="selectSpecies('Dog')">Dogs</button>
       <button @click="selectSpecies('Cat')">Cats</button>
@@ -14,6 +14,10 @@
         :key="pet.petId"
         class="pet-card"
       >
+        <div class="flip-card-front">
+          <div class="flip-card-inner">
+            <div class="flip-card-back">
+              <div class="card-content"></div>
               <div class="image-container">
                 <img :src="pet.petPhoto" alt="Photo of Pet" />
               </div>
@@ -35,6 +39,9 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -48,6 +55,7 @@ export default {
   },
   mounted() {
     this.retrievePets();
+    window.addEventListener('scroll', this.handleScroll);
   },
   methods: {
     retrievePets() {
@@ -85,8 +93,6 @@ export default {
   justify-content: space-between;
   align-items: flex-start;
   height: 300px;
-   position: static; 
-   top: 325px; 
   padding: 0 2px;
   margin-top: 50px;
   max-width: 1200px;
@@ -214,18 +220,22 @@ button {
 .pet-card:hover .card-content {
   transform: translateY(0);
 }
+.fade-out {
+  transition: opacity 0.5s ease-out;
+  opacity: 1;
+}
+.fade-out.hide {
+  opacity: 0;
+}
 
 @media only screen and (max-width: 768px) {
   .pet-container {
-   display:block;
-   margin-bottom: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+   
   }
-  .pet-card {
-    flex-basis: auto;
-    width: 100%;
-    margin: 10px 0;
-  }
-
   .image-container {
     height: 200px;
     width: 100%;
@@ -236,5 +246,14 @@ button {
     width: 100%;
     height: 100%;
   }
-}
+  .btn-container {
+    display:none;
+    /* flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-top: 100px;
+    */
+  }
+  }
 </style>

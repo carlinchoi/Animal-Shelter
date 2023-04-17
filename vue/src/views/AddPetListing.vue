@@ -1,6 +1,6 @@
 <template>
 <body>
-   <div>
+   <div class="add-wrapper">
     <div class="form-wrapper">
         <form @submit.prevent="addNewPet">
             <h1 >Add New Pet Listing</h1>
@@ -93,7 +93,7 @@ form {
   flex-direction: column;
   justify-content: center; 
   align-items: center; 
-  height: 60vh;
+  height: 200vh;
   margin-top: -10vh;
   max-width: 400px;
   margin: auto;
@@ -102,6 +102,7 @@ form {
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.671);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  margin-bottom: -10vh;
   }
 .form-input-group {
   margin-bottom: .5rem;
@@ -127,6 +128,7 @@ button {
   min-width: 130px;
   height: 40px;
   color: #fff;
+  padding: -5px 5px;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -143,14 +145,7 @@ button:hover {
   color: #fff;
 }
 .form-wrapper{
-  margin-top: 200px;
-}
-.login-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  overflow: hidden;
+  margin-top: 50px;
 }
 body {
   overflow: hidden;
@@ -178,5 +173,11 @@ body {
   }
   .placeholder-animate:not(:focus) {
   border-bottom: 1px solid #62a18f;
+}
+.add-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 </style>
