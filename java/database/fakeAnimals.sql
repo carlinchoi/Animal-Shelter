@@ -16,8 +16,6 @@ INSERT INTO pets(
 	pet_name, pet_photo, is_adopted, species, gender, breed, age_years, description)
 	VALUES ('Butter', 'https://patch.com/img/cdn20/getty/25204965/20211221/061842/styles/patch_image/public/gettyimages-1221884124___21180650218.jpg', 'false', 'Guinea Pig', 'Male', 'Unknown', '1', 'Might sniff you a lot');
 
-                                    -- More Pets to Add Later!
-
 INSERT INTO pets(
 	pet_name, pet_photo, is_adopted, species, gender, breed, age_years, description)
 	VALUES ('Tank', 'https://people.com/thmb/s5axxuhc4nVAr5YfJ4nyjAxBCrM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(637x434:639x436)/tennis-ball-dog-1-426a19de798f4044accbbed837b204c6.jpg', 'false', 'Dog', 'Male', 'Golden', '1', 'Has amazing energy, slight tennis ball addiction');

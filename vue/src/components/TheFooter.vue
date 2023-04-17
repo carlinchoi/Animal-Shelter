@@ -41,30 +41,33 @@ export default {
   padding-left: 100px;
   text-align: left;
   color: white;
+  bottom: 0px;
 
 }
 .contact {
   position: relative;
-  bottom: 38px;
+  bottom: 42px;
   padding-right: 185px;
   text-align: right;
   text-decoration: underline;
   text-decoration-color: rgb(195, 226, 199);
   color: white;
+  font-size: 22px;
  
 }
 .adopted {
   position: relative;
-  bottom: 81px;
+  bottom: 90px;
   padding-right: 315px;
   text-align: right;
   text-decoration: underline;
   text-decoration-color: rgb(195, 226, 199);
   color: white;
+  font-size: 22px;
 }
 ion-icon {
   position: relative;
-  bottom: 112px;
+  bottom: 125px;
   font-size: 38px;
   margin-top: -100px;
   padding: 0px 10px;
