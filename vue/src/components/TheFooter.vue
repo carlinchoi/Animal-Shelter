@@ -79,7 +79,11 @@ ion-icon:hover {
   background-color: #a37da3;
 }
 
-
+@media (max-width: 768px) {
+  .shelter-footer {
+    display: none;
+  }
+}
 </style>
 
 
