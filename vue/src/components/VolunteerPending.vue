@@ -18,13 +18,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="volunteer in filteredVolunteers" :key="volunteer.userId">
+          <tr v-for="volunteer in filteredVolunteers" :key="volunteer.email">
             <td>{{ volunteer.userId }}</td>
             <td>{{ volunteer.firstName }}</td>
             <td>{{ volunteer.lastName }}</td>
             <td>{{ volunteer.email }}</td>
             <td>{{ volunteer.phone }}</td>
-            <!-- <td>{{ volunteer.role }}</td> -->
 
             <td>
               <select class="select" @change="updateStatus(volunteer, $event)">
@@ -119,6 +118,9 @@ export default {
 .volunteer-table thead {
 position: sticky;
 }
+.volunteer-table thead th {
+  color: white;
+}
 .volunteer-table thead tr {
   background-color: #62a18f;
   color: #fff;
@@ -132,10 +134,11 @@ position: sticky;
   padding: 12px 15px;
   text-align: left;
   border-bottom: 1px solid #ddd;
+  color: #5c5470;
+  font-weight: bold;
 }
 .volunteer-table tbody {
-  overflow: auto;
-  height: 300px;
+  height:50vh;
 }
 .volunteer-table tbody td {
   padding: 12px 15px;
@@ -149,9 +152,9 @@ position: sticky;
   font-weight: bold;
   color: #62a18f;
 }
-.volunteer-table tbody tr:nth-of-type(even) {
+/* .volunteer-table tbody tr:nth-of-type(even) {
   background-color: #f3f3f3;
-}
+} */
 
 .volunteer-table tbody tr:last-of-type {
   border-bottom: 2px solid #62a18f;
@@ -159,6 +162,7 @@ position: sticky;
 
 .volunteer-table tbody tr:hover {
   background-color: #f5f5f5;
+  color: black;
 }
 input {
   padding: 0.5rem;
@@ -178,7 +182,7 @@ input {
    font-size: 25px;
   top: -20px;
   left: 10px;
-  color: rgb(197, 172, 228);
+  color: #5c5470;
   font-weight: bold;
 }
 .search-container {
@@ -217,7 +221,7 @@ label {
   background-image: url('../assets/pupkit.png');
   background-color: rgb(230, 222, 240);
   background-repeat: repeat;
-  background-size: contain;
+  background-size: 33%;
   min-height: 100%;
   min-width: 100%;
   margin: 0;

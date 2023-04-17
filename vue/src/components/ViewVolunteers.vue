@@ -2,8 +2,8 @@
   <div class="search-container container-bg background">
     <input type="text" v-model="searchTerm" class="placeholder-animate" />
     <label class="floating-placeholder" for="search-input"
-      >Search by First or Last Name</label
-    >
+      >Search by First or Last Name</label>
+    <div class="table-container">  
     <table class="volunteer-table">
       <thead>
         <tr class="active-row">
@@ -24,6 +24,7 @@
         </tr>
       </tbody>
     </table>
+  </div>
   </div>
 </template>
 
@@ -77,6 +78,10 @@ export default {
 
 
 <style scoped>
+.table-container {
+  max-height: 400px;
+  overflow: auto;
+}
 .volunteer-table {
   font-family: Montserrat, sans-serif;
   width: 100%;
@@ -89,7 +94,12 @@ export default {
   border-radius: 5px 5px 0 0;
   overflow: hidden;
 }
-
+.volunteer-table thead {
+position: sticky;
+}
+.volunteer-table thead th {
+  color: white;
+}
 .volunteer-table thead tr {
   background-color: #62a18f;
   color: #fff;
@@ -101,6 +111,10 @@ export default {
 .volunteer-table th,
 .volunteer-table td {
   padding: 12px 15px;
+   text-align: left;
+  border-bottom: 1px solid #ddd;
+  color: #5c5470;
+  font-weight: bold;
 }
 
 .volunteer-table tbody td {
@@ -141,10 +155,10 @@ input {
 }
 .placeholder-animate:focus + .floating-placeholder,
 .placeholder-animate.valid + .floating-placeholder {
-  font-size: 25px;
+   font-size: 25px;
   top: -20px;
   left: 10px;
-  color: rgb(197, 172, 228);
+  color: #5c5470;
   font-weight: bold;
 }
 .search-container {
