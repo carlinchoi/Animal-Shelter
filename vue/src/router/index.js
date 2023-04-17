@@ -11,8 +11,7 @@ import AddPetListing from '../views/AddPetListing.vue'
 import VolunteerList from '../views/VolunteerList.vue'
 import VolunteerApplicationView from '../views/VolunteerApplicationView.vue'
 import UpdatePetPage from '../views/UpdatePetPage.vue'
-import VolunteerPendingList from '../views/VolunteerPendingList.vue'
-import TestVolunteerPending from '../components/TestVolunteerPending.vue'
+import VolunteerPending from '../components/VolunteerPending.vue'
 import AdoptionFormPage from '../views/AdoptionFormPage.vue'
 import PendingApplication from '../views/PendingApplication.vue'
 
@@ -111,15 +110,7 @@ const router = new Router({
     {
       path: "/volunteer-pending-list",
       name: "volunteer-pending-list",
-      component: VolunteerPendingList,
-      meta: {
-        requiresAuth: false
-      }
-    },
-    {
-      path: "/test-volunteer-pending-list",
-      name: "test-volunteer-pending-list",
-      component: TestVolunteerPending,
+      component: VolunteerPending,
     },
     {
       path: "/adoption-form-page",

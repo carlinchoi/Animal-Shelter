@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>From Component</h1>
+    <h1>Volunteer Listing</h1>
     <div class="search-container background">
       <input type="text" v-model="searchTerm" class="placeholder-animate" />
       <label class="floating-placeholder" for="search-input"
@@ -9,21 +9,22 @@
       <table class="volunteer-table">
         <thead>
           <tr>
+            <th>User ID</th>
             <th>First Name</th>
             <th>Last Name</th>
             <th>Email</th>
             <th>Phone</th>
             <th>Role</th>
-            <th>userid</th>
           </tr>
         </thead>
         <tbody>
-          <!-- <tr v-for="volunteer in pendingVolunteers" v-bind:key="volunteer.userid"> -->
           <tr v-for="volunteer in filteredVolunteers" :key="volunteer.email">
+            <td>{{ volunteer.userId }}</td>
             <td>{{ volunteer.firstName }}</td>
             <td>{{ volunteer.lastName }}</td>
             <td>{{ volunteer.email }}</td>
             <td>{{ volunteer.phone }}</td>
+            <!-- <td>{{ volunteer.role }}</td> -->
 
             <td>
               <select class="select" @change="updateStatus(volunteer, $event)">
@@ -33,7 +34,6 @@
                 <option value="ROLE_DECLINED">Declined</option>
               </select>
             </td>
-            <td>{{ volunteer.userId }}</td>
           </tr>
         </tbody>
       </table>
@@ -42,9 +42,9 @@
 </template>
 
 <script>
-import volunteerService from "../services/VolunteerService.js";
+import VolunteerService from "../services/VolunteerService.js";
 export default {
-  name: "view-pending-volunteers",
+  name: "view-volunteers",
   data() {
     return {
       searchTerm: "",
@@ -53,31 +53,23 @@ export default {
   },
   methods: {
     retrieveVolunteers() {
-      alert("debug retrieveVolunteers");
-      volunteerService.findAllPendingVolunteer().then((response) => {
-        console.log("findAllPendingVolunteer" + response.data);
-        this.$store.commit("SET_PENDING_VOLANTEER_INFO", response.data);
+      VolunteerService.findAllPendingVolunteer().then((response) => {
+        this.$store.commit("SET_VOLANTEER_INFO", response.data);
       });
     },
     updateStatus(volunteer, event) {
-      console.log(event.target.value + volunteer);
-
+      console.log("insid updateStatus Function" + event.target.value);
       console.log(volunteer);
-      volunteerService.updateVolunteerStatus(volunteer).then((response) => {
-        if (response.status == 200) {
-          this.$store.commit("SET_VOLANTEER_INFO", response.data);
-          this.$router.push({ name: "volunteer-pending-list" });
-        }
-      });
-
-      volunteerService.findAllVolunteer().then((response) => {
-        this.$store.commit("SET_PENDING_VOLANTEER_INFO", response.data);
+      volunteer.role = event.target.value;
+      VolunteerService.updateVolunteerStatus(volunteer).then((response) => {
+        this.$store.commit("SET_VOLANTEER_INFO", response.data);
+        this.retrieveVolunteers();
       });
     },
-    computed: {
-      pendingVolunteers() {
-        return this.$store.state.pendingVolunteers;
-      },
+  },
+  computed: {
+    volunteers() {
+      return this.$store.state.volunteers;
     },
     filteredVolunteers() {
       let filtered = this.volunteers;
@@ -99,9 +91,9 @@ export default {
       }
       return filtered;
     },
-    created() {
-      this.retrieveVolunteers();
-    },
+  },
+  created() {
+    this.retrieveVolunteers();
   },
 };
 </script>
@@ -172,11 +164,10 @@ input {
 }
 .placeholder-animate:focus + .floating-placeholder,
 .placeholder-animate.valid + .floating-placeholder {
-  font-size: 20px;
+  font-size: 18px;
   top: -10px;
   left: 10px;
-  color: rgb(197, 172, 228);
-  font-weight: bold;
+  color: rgb(188, 154, 230);
 }
 .search-container {
   position: relative;
@@ -203,17 +194,7 @@ input {
 .placeholder-animate:not(:focus) {
   border-bottom: 1px solid #62a18f;
 }
-.background {
-  background-image: url("../assets/background2.png");
-  background-color: rgb(230, 222, 240);
-  background-repeat: repeat;
-  background-size: contain;
-  min-height: 100%;
-  min-width: 100%;
-  margin: 0;
-  padding: 0;
-  z-index: 10;
-}
+
 .container-bg {
   background-color: #fff;
 }

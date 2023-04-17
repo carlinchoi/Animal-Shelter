@@ -23,7 +23,7 @@
           <router-link v-bind:to="{ name: 'volunteer-listing' }">VolunteerList</router-link>
         </li>
         <li v-if="isAdmin">
-          <router-link v-bind:to="{ name: 'test-volunteer-pending-list' }">Approve Volunteers</router-link>
+          <router-link v-bind:to="{ name: 'volunteer-pending-list' }">Approve Volunteers</router-link>
         </li>
         <li class="active" v-if="showLogoutButton">
           <router-link v-bind:to="{ name: 'logout' }">Logout</router-link>
