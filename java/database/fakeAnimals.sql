@@ -35,12 +35,12 @@ INSERT INTO pets(
 
 
 INSERT INTO pets(
-	pet_name, pet_photo, is_adopted, species, gender, breed, age_years, description)
-	VALUES ('Nugget', 'https://en.bcdn.biz/Images/2015/9/18/094344f8-707e-4f31-b24f-c2a51ea3de78.jpg', 'true', 'Hamster', 'male', 'Unknown', '3', 'Loves playgrounds and fresh veggies');
+	pet_name, pet_photo, is_adopted, species, gender, breed, age_years, description, adoption_date)
+	VALUES ('Nugget', 'https://en.bcdn.biz/Images/2015/9/18/094344f8-707e-4f31-b24f-c2a51ea3de78.jpg', 'true', 'Hamster', 'male', 'Unknown', '3', 'Loves playgrounds and fresh veggies', '11-04-2022');
 
 
 INSERT INTO pets(
-	pet_name, pet_photo, is_adopted, species, gender, breed, age_years, description)
-	VALUES ('Cuddles', 'https://t4.ftcdn.net/jpg/02/70/05/25/360_F_270052571_qP9uVd1MpB4kfflUO92S5gdKYCjxM5K3.jpg', 'true', 'Hamster', 'female', 'Unknown', '1', 'Requires cozy couch and pillows');
+	pet_name, pet_photo, is_adopted, species, gender, breed, age_years, description, adoption_date)
+	VALUES ('Cuddles', 'https://t4.ftcdn.net/jpg/02/70/05/25/360_F_270052571_qP9uVd1MpB4kfflUO92S5gdKYCjxM5K3.jpg', 'true', 'Hamster', 'female', 'Unknown', '1', 'Requires cozy couch and pillows', '04-03-2023');
 
 COMMIT TRANSACTION;
