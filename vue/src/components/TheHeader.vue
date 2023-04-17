@@ -19,12 +19,21 @@
             >Add New Pet Listing</router-link
           >
         </li>
+        <li v-if="isVolunteerOrAdmin">
+          <router-link v-bind:to="{ name: 'volunteer-listing' }">VolunteerList</router-link>
+        </li>
+        <li v-if="isAdmin">
+          <router-link v-bind:to="{ name: 'test-volunteer-pending-list' }">Approve Volunteers</router-link>
+        </li>
         <li class="active" v-if="showLogoutButton">
           <router-link v-bind:to="{ name: 'logout' }">Logout</router-link>
         </li>
         <li v-if="showRegisterButton">
           <router-link v-bind:to="{ name: 'register' }">Register</router-link>
         </li>
+      
+       
+
         <!-- <li v-if="showVolunteersButton">
           <router-link v-bind:to="{ name: 'login' }">Show Volunteers</router-link>
         </li> -->
@@ -52,6 +61,12 @@ export default {
     showRegisterButton() {
       return this.$route.name === "register" || this.$route.name === "login";
     },
+    isVolunteerOrAdmin() {
+      return this.$store.state.user.authorities[0].name.includes('ROLE_VOLUNTEER') || this.$store.state.user.authorities[0].name.includes('ROLE_ADMIN');
+    },
+    isAdmin() {
+      return this.$store.state.user.authorities[0].name.includes('ROLE_ADMIN');
+    }
   },
 };
 </script>

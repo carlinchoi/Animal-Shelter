@@ -14,6 +14,7 @@ import UpdatePetPage from '../views/UpdatePetPage.vue'
 import VolunteerPendingList from '../views/VolunteerPendingList.vue'
 import TestVolunteerPending from '../components/TestVolunteerPending.vue'
 import AdoptionFormPage from '../views/AdoptionFormPage.vue'
+import PendingApplication from '../views/PendingApplication.vue'
 
 Vue.use(Router)
 
@@ -128,6 +129,14 @@ const router = new Router({
         requiresAuth: false
       }
     },
+    {
+      path: "/pending-application",
+      name: "pending-application",
+      component: PendingApplication,
+      meta: {
+        requiresAuth: false
+      }
+    }
   ]
 })
 

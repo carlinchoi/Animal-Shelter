@@ -78,11 +78,14 @@ export default {
             this.$store.commit("SET_USER", response.data.user);
             //if(this.user.password === 'animalshelter1') {
             if (
-              response.data.user.authorities[0].name === "ROLE_PENDINGVOLUNTEER"
+              response.data.user.authorities[0].name === "ROLE_APPROVED"
             ) {
               //  alert(response.data.user.authorities[0].name);
               this.$router.push("/change-password");
-            } else {
+            } else if (response.data.user.authorities[0].name === "ROLE_PENDINGVOLUNTEER") {
+              this.$router.push({ name: 'pending-application' });
+            } 
+            else {
               this.$router.push("/");
             }
             //else{
