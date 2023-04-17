@@ -18,7 +18,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="volunteer in filteredVolunteers" :key="volunteer.email">
+          <tr v-for="volunteer in filteredVolunteers" :key="volunteer.userId">
             <td>{{ volunteer.userId }}</td>
             <td>{{ volunteer.firstName }}</td>
             <td>{{ volunteer.lastName }}</td>

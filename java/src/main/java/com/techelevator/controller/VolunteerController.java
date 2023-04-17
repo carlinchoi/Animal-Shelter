@@ -9,7 +9,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@PreAuthorize("isAuthenticated()")
 @RestController
 @RequestMapping(path="/volunteer")
 @CrossOrigin
@@ -22,7 +22,7 @@ public class VolunteerController {
     }
 
 
-    @PreAuthorize("permitAll")
+
     @RequestMapping(path="/all",method = RequestMethod.GET)
     public List<Volunteer> listAllVolunteer(){
         List<Volunteer> allVolunteer = volunteerDao.findAll();
@@ -34,6 +34,7 @@ public class VolunteerController {
     public void updateVolunteer(@RequestBody Volunteer volunteer){
         volunteerDao.updatePendingVolunteerUser(volunteer);
     }
+    @PreAuthorize("hasRole('ADMIN')")
     @ResponseStatus(HttpStatus.OK)
     @RequestMapping(value = "/pending-volunteer", method = RequestMethod.GET)
     public List<Volunteer> findAllPendingVolunteers() {

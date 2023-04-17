@@ -77,5 +77,9 @@ export default new Vuex.Store({
     SET_PENDING_VOLANTEER_INFO(state,volunteerData){
       state.pendingVolunteers = volunteerData;
     },
+    UPDATE_VOLANTEER_ROLE(state,data){
+      state.volunteers[data.index].role = data.role;
+    },
+
   }
 })
