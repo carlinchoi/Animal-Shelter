@@ -197,7 +197,7 @@ img {
   padding: 10px;
   overflow: hidden;
   position: static;
-  margin-top: 130px;
+  margin-top: 100px;
 }
 .btn-container button {
   font-size: 16px;
@@ -208,7 +208,7 @@ img {
   cursor: pointer;
 
   color: black;
-  transition: background-color 0.3s ease;
+  /* transition: background-color 0.3s ease; */
 }
 .btn-container button:hover {
   background-color: #ccc;
@@ -279,6 +279,9 @@ button {
     height: 100%;
   }
   .btn-container {
+    display:none;
+  }
+  .scroll-btn {
     display:none;
   }
   }
