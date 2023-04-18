@@ -8,7 +8,15 @@
       <button @click="selectSpecies('Bird')">Birds</button>
       <button @click="selectSpecies('Guinea Pig')">Guinea Pigs</button>
       <button @click="selectSpecies('Hamster')">Hamsters</button>
-    </div>
+
+      <!-- <div v-for="photo in petPhotos" :key="photo">
+        <img :src="photo" alt="Photos of this Pet">
+      </div> -->
+      
+  </div>
+
+  
+
     <div class="pet-container" id="pet-container">
       <div
         v-for="pet in filteredPets"
@@ -19,8 +27,8 @@
           <div class="flip-card-inner">
             <div class="flip-card-back">
               <div class="card-content"></div>
-              <div class="image-container">
-                <img :src="pet.petPhoto" alt="Photo of Pet" />
+              <div class="image-container" v-for="photo in petPhotos" :key="photo">
+                <img :src="photo" alt="Photos of this Pet">
               </div>
               <a href="#" class="button">Learn More</a>
               <div class="text-box">
@@ -52,16 +60,29 @@ export default {
   data() {
     return {
       selectedSpecies: null,
+      petPhotos: {
+        petId: this.petId,
+        photoUrl: []
+      }
     };
   },
   mounted() {
     this.retrievePets();
+    this.retrievePetPhotos(this.petId);
   },
+  // created() {
+  //   this.retrievePetPhotos();
+  // },
   methods: {
     retrievePets() {
       petservice.findAllPets().then((response) => {
         this.$store.commit("SET_PET_INFO", response.data);
       });
+    },
+    retrievePetPhotos() {
+      petservice.findAllPhotos(this.petId).then((response) => {
+        this.$store.commit("SET_PET_PHOTOS", response.data)
+      })
     },
     selectSpecies(species) {
       this.selectedSpecies = species;
@@ -282,4 +303,6 @@ button {
     display:none;
   }
   }
+
+  
 </style>

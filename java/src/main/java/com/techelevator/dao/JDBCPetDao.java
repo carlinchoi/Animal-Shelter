@@ -59,6 +59,21 @@ public class JDBCPetDao implements PetDao {
         return pets;
     }
 
+    @Override
+    public List<String> findAllPhotos(int petId) {
+        List<String> photoUrls = new ArrayList<>();
+        String sql = "SELECT photo_url FROM pet_photos WHERE pet_id = ?";
+        SqlRowSet result = jdbcTemplate.queryForRowSet(sql, petId);
+
+        while(result.next()) {
+            String photoUrl = result.getString("photo_url");
+            photoUrls.add(photoUrl);
+        }
+        return photoUrls;
+    }
+
+
+
 //    @Override
 //    public List searchPetsByName(String petName) {
 //          List<Pet> petByName = new ArrayList<>();
@@ -137,4 +152,11 @@ public Pet updatePet(Pet pet, int petId) {
         pet.setAdoptionDate(sql.getString("adoption_date"));
         return pet;
     }
+
+    private Pet mapRowToPetPhoto(SqlRowSet sql) {
+        Pet pet = new Pet();
+        pet.setPetPhoto(sql.getString("photo_url"));
+        return pet;
+    }
+
 }

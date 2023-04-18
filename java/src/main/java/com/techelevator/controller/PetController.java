@@ -29,7 +29,6 @@ public class PetController {
         List<Pet> allPet = petDao.findAll();
         //TODO return List
         return allPet;
-
     }
     //@RequestMapping(path="/all/adopted", method = RequestMethod.GET)
     //public List<Pet> listAllAdoptedPets(){
@@ -68,6 +67,12 @@ public class PetController {
         List<Pet> allPet = petDao.findAdoptedPets();
         //TODO return List
         return allPet;
-
     }
+
+    @RequestMapping(path="/pet-photos/{petId}", method = RequestMethod.GET)
+    public List<String> findAllPhotos(@PathVariable int petId) {
+        List<String> allPhotos = petDao.findAllPhotos(petId);
+        return allPhotos;
+    }
+
 }

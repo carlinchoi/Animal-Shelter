@@ -18,4 +18,6 @@ public interface PetDao {
     Pet updatePet(Pet pet, int petId);
 
     public List<Pet> findAdoptedPets();
+
+    public List<String> findAllPhotos(int petId);
 }

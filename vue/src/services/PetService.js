@@ -24,5 +24,9 @@ export default {
 
     findAdoptedPets() {
         return http.get('/pet/all-adopted')
+    },
+
+    findAllPhotos(petId) {
+        return http.get(`/pet/pet-photos/${petId}`)
     }
 }
