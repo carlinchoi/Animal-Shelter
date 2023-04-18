@@ -206,9 +206,7 @@ img {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-
   color: black;
-  /* transition: background-color 0.3s ease; */
 }
 .btn-container button:hover {
   background-color: #ccc;
@@ -246,7 +244,7 @@ button {
 
 .scroll-btn:hover {
   opacity: 1;
-  background-color: #a37da3;
+  background-color: #5c5470;
 }
 .scroll-btn::before {
   content: '';

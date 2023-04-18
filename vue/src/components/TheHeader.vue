@@ -120,11 +120,11 @@ nav a {
 }
 
 nav a:hover {
-  background-color: #a37da3;
+  background-color: #5c5470;
 }
 
 nav .active {
-  background-color: #99bdbc;
+  background-color: #5c5470;
   transition: background-color 0.3s ease-out;
 }
 

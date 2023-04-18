@@ -240,7 +240,7 @@ button {
 
 .scroll-btn:hover {
   opacity: 1;
-  background-color: #a37da3;
+  background-color: #5c5470;
 }
 .scroll-btn::before {
   content: '';
