@@ -92,10 +92,10 @@ export default {
           .then((response) => {
             if (response.status == 201) {
               this.showVolunteerApplication = true;
-              // this.$router.push({
-              //   path: '/login',
-              //   query: { registration: 'success' },
-              // });
+              this.$router.push({
+                path: '/login',
+                query: { registration: 'success' },
+              });
             }
           })
           .catch((error) => {
