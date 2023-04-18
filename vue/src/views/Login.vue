@@ -13,8 +13,11 @@
             </div>
             <div class="form-input-group">
               <!-- <span class ="icon"><ion-icon name="lock-closed-outline"></ion-icon></span> -->
-              <label class="floating-placeholder" for="username">Username</label>
-              <input
+              <label class="floating-placeholder" for="username"
+                >Username</label
+              >
+              <ion-icon name="person-outline"></ion-icon
+              ><input
                 type="text"
                 id="username"
                 placeholder="Username"
@@ -26,7 +29,8 @@
             </div>
             <div class="form-input-group">
               <!-- <span class ="icon"><ion-icon name="person-outline"></ion-icon></span> -->
-              <input
+              <ion-icon name="lock-closed-outline"></ion-icon
+              ><input
                 type="password"
                 id="password"
                 placeholder="Password"
@@ -77,15 +81,14 @@ export default {
             this.$store.commit("SET_AUTH_TOKEN", response.data.token);
             this.$store.commit("SET_USER", response.data.user);
             //if(this.user.password === 'animalshelter1') {
-            if (
-              response.data.user.authorities[0].name === "ROLE_APPROVED"
-            ) {
+            if (response.data.user.authorities[0].name === "ROLE_APPROVED") {
               //  alert(response.data.user.authorities[0].name);
               this.$router.push("/change-password");
-            } else if (response.data.user.authorities[0].name === "ROLE_PENDINGVOLUNTEER") {
-              this.$router.push({ name: 'pending-application' });
-            } 
-            else {
+            } else if (
+              response.data.user.authorities[0].name === "ROLE_PENDINGVOLUNTEER"
+            ) {
+              this.$router.push({ name: "pending-application" });
+            } else {
               this.$router.push("/");
             }
             //else{
@@ -136,7 +139,7 @@ form {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
 .form-input-group {
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -161,22 +164,22 @@ input {
   transform: translateY(0px);
 }
 .placeholder-animate:focus + .floating-placeholder,
-.placeholder-animate.valid + .floating-placeholder{
-    font-size: 16px;
-    top: -10px;
-    left: 10px;
-    color: rgb(197, 172, 228);
+.placeholder-animate.valid + .floating-placeholder {
+  font-size: 16px;
+  top: -10px;
+  left: 10px;
+  color: rgb(197, 172, 228);
 }
 .placeholder-animate {
-    width: 100%;
-    border: none;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-  .placeholder-animate:not(:focus) {
+  width: 100%;
+  border: none;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.placeholder-animate:not(:focus) {
   border-bottom: 1px solid #62a18f;
 }
 button {
