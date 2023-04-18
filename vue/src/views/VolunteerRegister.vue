@@ -93,7 +93,7 @@ export default {
             if (response.status == 201) {
               this.showVolunteerApplication = true;
               this.$router.push({
-                path: '/login',
+                path: '/volunteer-application',
                 query: { registration: 'success' },
               });
             }
