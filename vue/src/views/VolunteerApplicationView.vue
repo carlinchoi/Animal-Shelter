@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Volunteer Application Form</h1>
-    <VolunteerApplication />
+    <VolunteerApplication v-bind:username="($route.params.username)" />
   </div>
 </template>
 

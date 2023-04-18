@@ -93,8 +93,9 @@ export default {
             if (response.status == 201) {
               this.showVolunteerApplication = true;
               this.$router.push({
-                path: '/volunteer-application',
+                name: 'volunteer-application',
                 query: { registration: 'success' },
+                params: { username: this.user.username }
               });
             }
           })

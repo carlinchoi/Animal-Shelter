@@ -52,12 +52,24 @@ export default {
       
       VolunteerService.updateVolunteer(volunteerApplication)
         .then(response => {
-          console.log(response.data);
+          if (response.status == 200){
             this.$router.push({
                 path: '/login',
                 query: { registration: 'success' },
               });
+          }
         })
+        // adoptionService.createAdoption(this.adoption)
+        //     .then((response) => {
+        //     if (response.status == 201) {
+        //         this.$router.push({
+        //         path: '/',
+        //       });
+        //     } else 
+        //       this.$router.push({
+        //         path: '/adoption-form-page',
+        //       });
+        //     }
         .catch(error => {
           console.error("Error creating volunteer application:", error);
         });
