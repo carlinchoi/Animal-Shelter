@@ -102,7 +102,7 @@ export default {
   align-items: flex-start;
   height: 300px;
   padding: 0 2px;
-  margin-top: 250px;
+  margin-top: 50px;
   max-width: 1200px;
 }
 img {
@@ -139,7 +139,6 @@ img {
   font-weight: bold;
   flex-basis: calc(50% - 20px);
   width: calc(50% - 10px);
-  margin: 10px;
 }
 
 .pet-card:hover {
@@ -199,7 +198,8 @@ img {
   padding: 10px;
   overflow: hidden;
   position: static;
-  margin-top: 100px;
+  margin-top: -100px;
+
 }
 .btn-container button {
   font-size: 16px;
