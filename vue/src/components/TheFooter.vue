@@ -7,7 +7,8 @@
           <ion-icon name="logo-facebook"></ion-icon>
           <ion-icon name="logo-youtube"></ion-icon>
           <router-link :to="{name: 'home' }"><ion-icon name="home"></ion-icon></router-link>
-          <router-link :to="{name: 'view-adoptions' }">Adopted Pets</router-link> 
+          <button><router-link :to="{name: 'view-adoptions' }">Adopted Pets</router-link></button>
+ 
      </footer>
 </template>
 
