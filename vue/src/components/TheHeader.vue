@@ -81,9 +81,11 @@ nav {
   top: 0;
   left: 0;
   right: 0;
-
   width: 100%;
-  z-index: 1;
+  z-index: 50;
+}
+nav.hidden {
+  top: -200px;
 }
 .logo-container {
   position: relative;
@@ -150,6 +152,7 @@ header {
   z-index: 1;
   padding: 5px;
 }
+
 @media only screen and (max-width: 768px) {
   nav {
     height: 200px;

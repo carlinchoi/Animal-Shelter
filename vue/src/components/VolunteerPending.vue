@@ -24,6 +24,7 @@
             <td>{{ volunteer.lastName }}</td>
             <td>{{ volunteer.email }}</td>
             <td>{{ volunteer.phone }}</td>
+            <!-- <td>{{ volunteer.role }}</td> -->
 
             <td>
               <select class="select" @change="updateStatus(volunteer, $event)">

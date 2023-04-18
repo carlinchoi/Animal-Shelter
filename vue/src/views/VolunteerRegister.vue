@@ -61,12 +61,12 @@
 
 <script>
 import authService from "../services/AuthService";
-import VolunteerApplication from "../components/VolunteerApplication.vue";
+// import VolunteerApplication from "../components/VolunteerApplication.vue";
 
 export default {
   name: "volunteerRegister",
   components: {
-    VolunteerApplication,
+    // VolunteerApplication,
   },
   data() {
     return {

@@ -186,7 +186,7 @@ img {
   padding: 10px;
   overflow: hidden;
   position: static;
-  margin-top: 50px;
+  margin-top: 120px;
 }
 .btn-container button {
   font-size: 16px;

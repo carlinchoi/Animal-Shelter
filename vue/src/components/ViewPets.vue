@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+     <button @click="scrollToTop" class="scroll-btn"><ion-icon name="paw-outline"></ion-icon>Top</button>
     <div class="btn-container fade-out" id="btn-container">
       <button @click="selectSpecies(null)">All Pets</button>
       <button @click="selectSpecies('Dog')">Dogs</button>
@@ -55,7 +56,6 @@ export default {
   },
   mounted() {
     this.retrievePets();
-    window.addEventListener('scroll', this.handleScroll);
   },
   methods: {
     retrievePets() {
@@ -66,7 +66,13 @@ export default {
     selectSpecies(species) {
       this.selectedSpecies = species;
     },
-  },
+   scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });},
+ 
+    },
   computed: {
     pets() {
       return this.$store.state.pets;
@@ -191,7 +197,7 @@ img {
   padding: 10px;
   overflow: hidden;
   position: static;
-  margin-top: 50px;
+  margin-top: 120px;
 }
 .btn-container button {
   font-size: 16px;
@@ -201,7 +207,7 @@ img {
   border-radius: 5px;
   cursor: pointer;
 
-  color: #333;
+  color: black;
   transition: background-color 0.3s ease;
 }
 .btn-container button:hover {
@@ -220,12 +226,37 @@ button {
 .pet-card:hover .card-content {
   transform: translateY(0);
 }
-.fade-out {
-  transition: opacity 0.5s ease-out;
-  opacity: 1;
+.scroll-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 100px;
+  width: 40px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #5c5470;;
+  color: #fff;
+  font-size: 24px;
+  line-height: 50px;
+  text-align: center;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.3s;
 }
-.fade-out.hide {
-  opacity: 0;
+
+.scroll-btn:hover {
+  opacity: 1;
+  background-color: #a37da3;
+}
+.scroll-btn::before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  height: 50%;
+}
+.scroll-btn ion-icon {
+  display:inline-block;
+  vertical-align: middle;
+  
 }
 
 @media only screen and (max-width: 768px) {
@@ -248,12 +279,6 @@ button {
   }
   .btn-container {
     display:none;
-    /* flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    align-items: flex-end;
-    margin-top: 100px;
-    */
   }
   }
 </style>

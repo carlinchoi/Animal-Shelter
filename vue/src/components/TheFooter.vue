@@ -7,7 +7,7 @@
           <ion-icon name="logo-facebook"></ion-icon>
           <ion-icon name="logo-youtube"></ion-icon>
           <router-link :to="{name: 'home' }"><ion-icon name="home"></ion-icon></router-link>
-          <!-- <router-link :to="{name: 'adopted' }">Adopted Pets</router-link>  -->
+          <router-link :to="{name: 'view-adoptions' }">Adopted Pets</router-link> 
      </footer>
 </template>
 
@@ -17,7 +17,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .shelter-footer  {
   z-index: 5;
   text-align: center;
@@ -77,6 +77,7 @@ ion-icon {
 
 ion-icon:hover {
   background-color: #a37da3;
+  border-radius: 25%;
 }
 
 @media (max-width: 768px) {
