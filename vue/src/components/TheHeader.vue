@@ -21,7 +21,7 @@
           >
         </li>
         <li v-if="isVolunteerOrAdmin">
-          <router-link v-bind:to="{ name: 'volunteer-listing' }">VolunteerList</router-link>
+          <router-link v-bind:to="{ name: 'volunteer-listing' }">Volunteer List</router-link>
         </li>
         <li v-if="isAdmin">
           <router-link v-bind:to="{ name: 'volunteer-pending-list' }">Approve Volunteers</router-link>
@@ -48,7 +48,12 @@ export default {
   name: "the-header",
   computed: {
     showLogoutButton() {
-      return this.$route.name === "home";
+      return (
+      this.$route.name === "home" ||
+      this.$route.name === "view-adoptions" ||
+      this.$route.name === "volunteer-listing" ||
+      this.$route.name === "volunteer-pending-list"
+      );
     },
     showLoginButton() {
       return (
