@@ -71,7 +71,7 @@ public class JDBCAdoptionDao implements AdoptionDao {
                 Adoption adoption = new Adoption();
                 adoption.setAdoptionId(sql.getInt("adoption_id"));
                 adoption.setPetId(sql.getInt("pet_id"));
-                adoption.setAdoptionDate(sql.getDate("adoption_date"));
+                adoption.setAdoptionDate(sql.getString("adoption_date"));
                 adoption.setParentName(sql.getString("parent_name"));
                 adoption.setParentEmail(sql.getString("parent_email"));
 

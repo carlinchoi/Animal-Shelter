@@ -71,7 +71,7 @@ CREATE TABLE pets (
 CREATE TABLE adoptions (
 	adoption_id SERIAL,
 	pet_id INT NOT NULL,
-	adoption_date Date,
+	adoption_date varchar(255),
 	parent_name VARCHAR(32) NOT NULL,
 	parent_email VARCHAR(32) NOT NULL,
 

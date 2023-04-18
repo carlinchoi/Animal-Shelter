@@ -9,7 +9,7 @@ public class Adoption {
     private String petName;
     private String species;
     //TODO LocalDate ???
-    private Date adoptionDate;
+    private String adoptionDate;
     private String gender;
     private String breed;
     private int age;
@@ -23,7 +23,7 @@ public class Adoption {
     public Adoption() {
     }
 
-    public Adoption(int adoptionId, int petId, String petName, String species, Date adoptionDate, String gender, String breed, int age, String description, boolean isAdopted, String petPhoto, String parentName, String parentEmail) {
+    public Adoption(int adoptionId, int petId, String petName, String species, String adoptionDate, String gender, String breed, int age, String description, boolean isAdopted, String petPhoto, String parentName, String parentEmail) {
         this.adoptionId = adoptionId;
         this.petId = petId;
         this.petName = petName;
@@ -72,11 +72,11 @@ public class Adoption {
         this.species = species;
     }
 
-    public Date getAdoptionDate() {
+    public String getAdoptionDate() {
         return adoptionDate;
     }
 
-    public void setAdoptionDate(Date adoptionDate) {
+    public void setAdoptionDate(String adoptionDate) {
         this.adoptionDate = adoptionDate;
     }
 
