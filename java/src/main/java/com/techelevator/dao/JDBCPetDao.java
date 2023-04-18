@@ -17,8 +17,11 @@ public class JDBCPetDao implements PetDao {
     @Override
     public List<Pet> findAll() {
         List<Pet> pets = new ArrayList<>();
-        String sql = "SELECT * FROM pets" +
-                " WHERE is_adopted = false;";
+        String sql = "SELECT pets.*, pet_photos.photo_url \n" +
+                "FROM pets \n" +
+                "LEFT JOIN pet_photos \n" +
+                "ON pets.pet_id = pet_photos.pet_id \n" +
+                "WHERE pets.is_adopted = false;\n";
         SqlRowSet result = jdbcTemplate.queryForRowSet(sql);
 
         while (result.next()) {
@@ -29,7 +32,10 @@ public class JDBCPetDao implements PetDao {
 
     @Override
     public Pet findById(int petId) {
-        String sql = "SELECT * FROM pets WHERE pet_id = ?";
+        String sql = "SELECT pets.*, pet_photos.photo_url\n" +
+                "FROM pets\n" +
+                "LEFT JOIN pet_photos ON pets.pet_id = pet_photos.pet_id\n" +
+                "WHERE pets.pet_id = ?;\n";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql, petId);
         if (results.next()) {
             return mapRowToPet(results);
@@ -41,8 +47,10 @@ public class JDBCPetDao implements PetDao {
     @Override
     public List<Pet> findAdoptedPets() {
         List<Pet> pets = new ArrayList<>();
-        String sql = "SELECT * FROM pets" +
-                " WHERE is_adopted = true;";
+        String sql = "SELECT pets.*, pet_photos.photo_url \n" +
+                "FROM pets \n" +
+                "LEFT JOIN pet_photos ON pets.pet_id = pet_photos.pet_id \n" +
+                "WHERE pets.is_adopted = true;\n";
         SqlRowSet result = jdbcTemplate.queryForRowSet(sql);
 
         while (result.next()) {
@@ -66,31 +74,60 @@ public class JDBCPetDao implements PetDao {
 
     @Override
     public Pet createPet (Pet newPet) {
-        String sql = "INSERT INTO pets (pet_name, pet_photo, is_adopted, species, gender, breed, age_years, description) " +
-               "VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING pet_id; ";
+        String sql = "INSERT INTO pets (pet_name, is_adopted, species, gender, breed, age_years, description) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING pet_id; ";
         Integer newId = jdbcTemplate.queryForObject(sql, Integer.class,
-                newPet.getPetName(), newPet.getPetPhoto(), newPet.isAdopted(), newPet.getSpecies(), newPet.getGender(), newPet.getBreed(), newPet.getAge(), newPet.getDescription());
+                newPet.getPetName(), newPet.isAdopted(), newPet.getSpecies(), newPet.getGender(), newPet.getBreed(), newPet.getAge(), newPet.getDescription());
 
-         return findById(newId);
+        String sql2 = "INSERT INTO pet_photos (pet_id, photo_url) VALUES (?, ?);";
+        jdbcTemplate.update(sql2, newId, newPet.getPetPhoto());
 
+        return findById(newId);
     }
 
-    @Override
-    public Pet updatePet(Pet pet, int petId) {
-        String sql = "UPDATE pets " +
-                      "SET pet_name = ?, pet_photo = ?, is_adopted = ?, species = ?, gender = ?, breed = ?, age_years = ?, description = ? " +
-                      "WHERE pet_id = ?;";
-        jdbcTemplate.update(sql, pet.getPetName(), pet.getPetPhoto(), pet.isAdopted(), pet.getSpecies(), pet.getGender(), pet.getBreed(), pet.getAge(), pet.getDescription(), petId);
 
-        return pet;
-    }
+    //    @Override
+//    public Pet updatePet(Pet pet, int petId) {
+//        String sql = "UPDATE pets " +
+//                "SET pet_name = ?, is_adopted = ?, species = ?, gender = ?, breed = ?, age_years = ?, description = ? " +
+//                "WHERE pet_id = ?;";
+//        jdbcTemplate.update(sql, pet.getPetName(), pet.isAdopted(), pet.getSpecies(), pet.getGender(), pet.getBreed(), pet.getAge(), pet.getDescription(), petId);
+//
+//        sql = "UPDATE pet_photo " +
+//                "SET photo_url = ? " +
+//                "WHERE pet_id = ?;";
+//        jdbcTemplate.update(sql, pet.getPetPhoto(), petId);
+//
+//        return pet;
+//    }
+@Override
+public Pet updatePet(Pet pet, int petId) {
+    String sql = "UPDATE pets " +
+            "SET pet_name = ?, is_adopted = ?, species = ?, gender = ?, breed = ?, age_years = ?, description = ?, adoption_date = ? " +
+            "FROM pet_photos " +
+            "WHERE pets.pet_id = pet_photos.pet_id AND pets.pet_id = ?;";
+
+    jdbcTemplate.update(sql, pet.getPetName(), pet.isAdopted(), pet.getSpecies(), pet.getGender(), pet.getBreed(), pet.getAge(), pet.getDescription(), pet.getAdoptionDate(), petId);
+
+    String sql2 = "UPDATE pet_photos " +
+            "SET photo_url = ? " +
+            "WHERE pet_id = ?;";
+
+    jdbcTemplate.update(sql2, pet.getPetPhoto(), petId);
+
+    return pet;
+}
+
+
+
+
 
 
     private Pet mapRowToPet(SqlRowSet sql) {
         Pet pet = new Pet();
         pet.setPetId(sql.getInt("pet_id"));
         pet.setPetName(sql.getString("pet_name"));
-        pet.setPetPhoto(sql.getString("pet_photo"));
+        pet.setPetPhoto(sql.getString("photo_url"));
         pet.setAdopted(sql.getBoolean("is_adopted"));
         pet.setSpecies(sql.getString("species"));
         pet.setGender(sql.getString("gender"));

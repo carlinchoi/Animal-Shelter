@@ -6,6 +6,7 @@ DROP TABLE IF EXISTS users CASCADE;
 DROP TABLE IF EXISTS administrators CASCADE;
 DROP TABLE IF EXISTS adoptions;
 DROP TABLE IF EXISTS pets CASCADE;
+DROP TABLE IF EXISTS pet_photos;
 
 
 CREATE TABLE users (
@@ -19,6 +20,8 @@ CREATE TABLE users (
     phone VARCHAR(255),
 	CONSTRAINT PK_user PRIMARY KEY (user_id)
 );
+
+
 
 CREATE TABLE volunteers (
 	volunteer_id SERIAL,
@@ -55,7 +58,6 @@ CREATE TABLE volunteer_application (
 CREATE TABLE pets (
 	pet_id SERIAL,
 	pet_name varchar(50) NOT NULL,
-	pet_photo varChar (250),
 	is_adopted boolean NOT NULL,
 	species varChar(50) NOT NULL,
 	gender varChar (32) NOT NULL,
@@ -79,7 +81,14 @@ CREATE TABLE adoptions (
 	CONSTRAINT FK_pets FOREIGN KEY (pet_id) REFERENCES pets(pet_id)
 );
 
+CREATE TABLE pet_photos (
+    photo_id SERIAL,
+    pet_id INT NOT NULL,
+    photo_url varChar (250),
 
+    CONSTRAINT PK_pet_photo PRIMARY KEY (photo_id),
+    CONSTRAINT FK_pets_photo FOREIGN KEY (pet_id) REFERENCES pets(pet_id)
+);
 
 
 COMMIT TRANSACTION;

@@ -6,6 +6,3 @@ INSERT INTO public.users(
 	 username, password_hash, role, email, first_name, last_name, phone)
 	VALUES ('Vol2', 'vol2', 'ROLE_VOLUNTEER', 'vol2@gmail.com', 'vol2Name','vol2Lastname' , '77777777');
 	
-	select * from users
-	
-	select * from users where(role = 'ROLE_VOLUNTEER' OR role = 'ROLE_ADMIN') AND first_name <> ''

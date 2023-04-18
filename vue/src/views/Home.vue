@@ -21,6 +21,7 @@ export default {
 </script>
 
 <style>
+
 .home {
   position: relative;
   display: flex;
@@ -43,6 +44,7 @@ export default {
   transform: rotate(45deg);
   z-index: -1;
 }
+
 .message-container {
   display: flex;
   flex-direction: column;
@@ -64,4 +66,7 @@ export default {
   color: white;
   cursor: pointer;
 }
+
 </style>
+
+
