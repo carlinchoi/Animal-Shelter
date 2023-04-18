@@ -53,5 +53,8 @@ INSERT INTO pet_photos (pet_id, photo_url) VALUES (7, 'https://encrypted-tbn0.gs
 INSERT INTO pet_photos (pet_id, photo_url) VALUES (8, 'https://c4.wallpaperflare.com/wallpaper/12/91/646/cocker-spaniel-wallpaper-preview.jpg');
 INSERT INTO pet_photos (pet_id, photo_url) VALUES (9, 'https://en.bcdn.biz/Images/2015/9/18/094344f8-707e-4f31-b24f-c2a51ea3de78.jpg');
 INSERT INTO pet_photos (pet_id, photo_url) VALUES (10, 'https://t4.ftcdn.net/jpg/02/70/05/25/360_F_270052571_qP9uVd1MpB4kfflUO92S5gdKYCjxM5K3.jpg');
+INSERT INTO pet_photos (pet_id, photo_url) VALUES (5, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEJjN9H-bLwwrbdRegimIKIIkasGrpZBYtFQ&usqp=CAU');
+INSERT INTO pet_photos (pet_id, photo_url) VALUES (6, 'https://hips.hearstapps.com/hmg-prod/images/gettyimages-1144982182.jpg?crop=1.00xw:0.751xh;0,0.166xh&resize=1200:*');
+
 
 COMMIT TRANSACTION;
