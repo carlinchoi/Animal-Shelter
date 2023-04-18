@@ -1,4 +1,5 @@
 <template>
+<body>
   <div class="search-container container-bg background">
     <input type="text" v-model="searchTerm" class="placeholder-animate" />
     <label class="floating-placeholder" for="search-input"
@@ -26,6 +27,7 @@
     </table>
   </div>
   </div>
+  </body>
 </template>
 
 <script>
@@ -89,10 +91,11 @@ export default {
   margin: 25px 0;
   font-size: 1em;
   font-family: sans-serif;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, .10);
   min-width: 400px;
   border-radius: 5px 5px 0 0;
   overflow: hidden;
+
 }
 .volunteer-table thead {
 position: sticky;

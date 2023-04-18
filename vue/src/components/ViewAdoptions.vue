@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <button @click="scrollToTop" class="scroll-btn"><ion-icon name="paw-outline"></ion-icon>Top</button>
+    <button @click="scrollToTop" class="scroll-btn"><ion-icon name="paw-outline"></ion-icon></button>
     <div class="btn-container" id="btn-container">
       <button @click="selectSpecies(null)">All Adopted Pets</button>
       <button @click="selectSpecies('Dog')">Dogs</button>
@@ -192,7 +192,7 @@ img {
   padding: 10px;
   overflow: hidden;
   position: static;
-  margin-top: 120px;
+  margin-top: 130px;
 }
 .btn-container button {
   font-size: 16px;
@@ -224,11 +224,12 @@ button {
   position: fixed;
   right: 20px;
   bottom: 100px;
-  width: 0px;
   height: 60px;
+  width: 60px;
+  margin: 30px;
   border-radius: 50%;
-  background-color: #5c5470;;
-  color: #fff;
+  background-color: rgb(195, 226, 199);
+  color: #5c5470;
   font-size: 24px;
   line-height: 50px;
   text-align: center;
@@ -252,7 +253,6 @@ button {
   vertical-align: middle;
   
 }
-
 @media only screen and (max-width: 768px) {
   .pet-container {
    display:block;
