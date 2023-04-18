@@ -102,7 +102,7 @@ export default {
   align-items: flex-start;
   height: 300px;
   padding: 0 2px;
-  margin-top: 50px;
+  margin-top: 250px;
   max-width: 1200px;
 }
 img {

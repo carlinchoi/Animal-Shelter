@@ -2,7 +2,8 @@
   <div>
     <nav>
       <div class="logo-container">
-        <img src="../assets/animalshelterlogo.png" alt="Rockville" />
+         <img class= "pupkit" src="../assets/pupkitnobackground.png" alt="Rockville" />
+        <img class="logo" src="../assets/nobackgroundlogo.png" alt="Rockville" />
       </div>
       <ul>
         <li><router-link :to="{ name: 'home' }">Browse Pets</router-link></li>
@@ -94,8 +95,9 @@ nav.hidden {
 }
 .logo-container {
   position: relative;
+  display:flex;
+  justify-content:flex-start;
 }
-
 nav ul {
   display: flex;
   justify-content: flex-end;
@@ -133,12 +135,20 @@ header {
   padding: 20px;
   margin-top: 60px;
 }
-.logo-container img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 225px;
-  clip-path: polygon(
+/* .logo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} */
+.logo-container img.logo {
+   position: absolute;
+  top: -50px;
+  right: 10;
+  width: 300px;
+  z-index: 2;
+  height: 375px;
+  /* clip-path: polygon(
     100% 0%,
     70% 15%,
     30% 15%,
@@ -152,12 +162,18 @@ header {
     77% 93%,
     100% 79%,
     100% 48%,
-    100% 25%
-  );
-  height: 150px;
-  z-index: 1;
-  padding: 5px;
+    100% 25% */
+  /* ); */
   
+  
+}
+.logo-container img.pupkit {
+  position: absolute;
+  top: -50px;
+  right: 10;
+  width: px;
+  z-index: 2;
+  height: 225px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -179,7 +195,9 @@ header {
     display: none;
   }
   .logo-container img {
-    height: 190px;
+     position: absolute;
+  top: 0;
+  left: 0;
   }
 }
 </style>
