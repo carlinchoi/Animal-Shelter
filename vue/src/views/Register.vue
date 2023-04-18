@@ -110,6 +110,7 @@ body {
   background-color: rgb(206, 191, 224);
   background-repeat: repeat;
   background-size: contain;
+  background-position: center;
   min-height: 100%;
   min-width: 100%;
   margin: 0;

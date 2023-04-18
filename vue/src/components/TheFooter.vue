@@ -2,12 +2,12 @@
      <footer class="shelter-footer"> 
           <p class="copy"> &copy; 2023 Rockville Animal Shelter. All rights reserved.</p>   
           <p class="contact"> Contact Us </p> 
-          <p class="adopted"> Adopted Pets </p>   
+          <router-link :to="{name: 'view-adoptions' }"><p class="adopted"> Adopted Pets </p> </router-link>  
           <ion-icon name="logo-instagram"></ion-icon>
           <ion-icon name="logo-facebook"></ion-icon>
           <ion-icon name="logo-youtube"></ion-icon>
           <router-link :to="{name: 'home' }"><ion-icon name="home"></ion-icon></router-link>
-          <router-link :to="{name: 'view-adoptions' }">Adopted Pets</router-link> 
+ 
      </footer>
 </template>
 

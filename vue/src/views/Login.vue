@@ -117,9 +117,10 @@ body {
   background-color: rgb(230, 222, 240);
   background-repeat: repeat;
   background-size: contain;
+  background-position: center;
   min-height: 100%;
   min-width: 100%;
-  margin: 0;
+  margin: auto;
   padding: 0;
 }
 form {

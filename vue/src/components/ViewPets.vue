@@ -218,7 +218,7 @@ img {
   padding: 10px;
   overflow: hidden;
   position: static;
-  margin-top: 130px;
+  margin-top: 100px;
 }
 .btn-container button {
   font-size: 16px;
@@ -227,9 +227,7 @@ img {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-
   color: black;
-  transition: background-color 0.3s ease;
 }
 .btn-container button:hover {
   background-color: #ccc;
@@ -267,7 +265,7 @@ button {
 
 .scroll-btn:hover {
   opacity: 1;
-  background-color: #a37da3;
+  background-color: #5c5470;
 }
 .scroll-btn::before {
   content: '';
@@ -300,6 +298,9 @@ button {
     height: 100%;
   }
   .btn-container {
+    display:none;
+  }
+  .scroll-btn {
     display:none;
   }
   }

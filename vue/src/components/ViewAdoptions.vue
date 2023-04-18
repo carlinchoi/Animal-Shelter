@@ -192,7 +192,7 @@ img {
   padding: 10px;
   overflow: hidden;
   position: static;
-  margin-top: 130px;
+  margin-top: 100px;
 }
 .btn-container button {
   font-size: 16px;
@@ -240,7 +240,7 @@ button {
 
 .scroll-btn:hover {
   opacity: 1;
-  background-color: #a37da3;
+  background-color: #5c5470;
 }
 .scroll-btn::before {
   content: '';

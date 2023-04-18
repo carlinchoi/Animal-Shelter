@@ -81,7 +81,7 @@ nav {
   background-color: rgba(15, 83, 66, 0.8);
   color: white;
   font-weight: bold;
-  height: 200px;
+  height: 160px;
   position: fixed;
   top: 0;
   left: 0;
@@ -103,7 +103,7 @@ nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  height: 336px;
+  height: 250px;
 }
 
 nav li {
@@ -120,11 +120,11 @@ nav a {
 }
 
 nav a:hover {
-  background-color: #a37da3;
+  background-color: #5c5470;
 }
 
 nav .active {
-  background-color: #99bdbc;
+  background-color: #5c5470;
   transition: background-color 0.3s ease-out;
 }
 
@@ -137,6 +137,7 @@ header {
   position: absolute;
   top: 0;
   left: 0;
+  width: 225px;
   clip-path: polygon(
     100% 0%,
     70% 15%,
@@ -153,9 +154,10 @@ header {
     100% 48%,
     100% 25%
   );
-  height: 190px;
+  height: 150px;
   z-index: 1;
   padding: 5px;
+  
 }
 
 @media only screen and (max-width: 768px) {
