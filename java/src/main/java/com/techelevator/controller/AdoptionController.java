@@ -26,6 +26,7 @@ public class AdoptionController {
         return true;
     }
 
+    @ResponseStatus(HttpStatus.OK)
     @RequestMapping(path ="/view-adoptions", method = RequestMethod.GET)
     public List<Adoption> findAllAdoptions() {
         return adoptionDao.findAllAdoptions();

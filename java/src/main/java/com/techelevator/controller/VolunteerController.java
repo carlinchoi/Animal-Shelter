@@ -22,14 +22,14 @@ public class VolunteerController {
     }
 
 
-
+    @ResponseStatus(HttpStatus.OK)
     @RequestMapping(path="/all",method = RequestMethod.GET)
     public List<Volunteer> listAllVolunteer(){
         List<Volunteer> allVolunteer = volunteerDao.findAll();
         return allVolunteer;
 
     }
-
+    @ResponseStatus(HttpStatus.OK)
     @RequestMapping(value="/volunteer-pending-list",method=RequestMethod.PUT)
     public void updateVolunteer(@RequestBody Volunteer volunteer){
         volunteerDao.updatePendingVolunteerUser(volunteer);

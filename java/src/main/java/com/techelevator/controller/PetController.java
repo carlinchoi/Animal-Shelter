@@ -23,6 +23,7 @@ public class PetController {
         //this.pet = pet;
         this.petDao = petDao;
     }
+    @ResponseStatus(HttpStatus.OK)
     @RequestMapping(path="/all",method = RequestMethod.GET)
     public List<Pet> listAllPet(){
         //TODO list all pet from petDao.findAll()
@@ -47,11 +48,13 @@ public class PetController {
         return pet;
     }
 
+    @ResponseStatus(HttpStatus.OK)
     @RequestMapping(path ="/all", method = RequestMethod.POST)
     public Pet createPet(@RequestBody Pet newPet) {
         return petDao.createPet(newPet);
     }
 
+    //if success will send back 200 already handle it don't need   @ResponseStatus(HttpStatus.OK)
     @RequestMapping(path = "/{petId}", method = RequestMethod.PUT)
     public Pet updatePet(@RequestBody Pet pet, @PathVariable int petId) {
         Pet updatedPet = petDao.updatePet(pet, petId);
@@ -61,6 +64,7 @@ public class PetController {
             return updatedPet;
         }
     }
+    @ResponseStatus(HttpStatus.OK)
     @RequestMapping(path="/all-adopted",method = RequestMethod.GET)
     public List<Pet> findAdoptedPets(){
         //TODO list all pet from petDao.findAll()
@@ -69,6 +73,7 @@ public class PetController {
         return allPet;
     }
 
+    @ResponseStatus(HttpStatus.OK)
     @RequestMapping(path="/pet-photos/{petId}", method = RequestMethod.GET)
     public List<String> findAllPhotos(@PathVariable int petId) {
         List<String> allPhotos = petDao.findAllPhotos(petId);
