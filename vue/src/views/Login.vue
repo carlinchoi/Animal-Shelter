@@ -14,7 +14,7 @@
             <div class="form-input-group">
               <!-- <span class ="icon"><ion-icon name="lock-closed-outline"></ion-icon></span> -->
               <label class="floating-placeholder" for="username"
-                >Username</label
+                ></label
               >
               <ion-icon name="person-outline"></ion-icon
               ><input

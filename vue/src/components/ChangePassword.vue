@@ -7,12 +7,12 @@
               {{ changePasswordErrorMsg }}
             </div>
             <div class="form-input-group">
-              <label for="new password"> New Password</label>
-              <input type="password"  v-model='user.password' required>
+              <ion-icon name="lock-closed-outline"></ion-icon
+              ><input type="password" class="placeholder-animate" placeholder="New Password"  v-model='user.password' required>
             </div>
             <div class="form-input-group">
-              <label for="confirmPassword">Confirm New Password</label>
-              <input type="password" v-model='user.confirmPassword' required/>
+              <ion-icon name="lock-closed-outline"></ion-icon
+              ><input type="password" class="placeholder-animate" placeholder="Confirm New Password" v-model='user.confirmPassword' required/>
             </div>
             <button type="submit">Submit Password Change</button>
         </form>
@@ -73,7 +73,7 @@ export default {
 <style scoped>
 
 body {
-  background-image: url("../assets/background2.png");
+  
   background-color: rgb(230, 222, 240);
   background-repeat: repeat;
   background-size: contain;
@@ -83,6 +83,7 @@ body {
   padding: 0;
 }
 form {
+  background-image: url("../assets/background2.png");
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -91,12 +92,14 @@ form {
   height: 100vh;
   margin-top: 0;
   max-width: 400px;
+  color: #4c6e5c;
   margin: auto;
   padding: 80px;
   border: 2px solid #410553;
   border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.671);
+  background-color: rgb(195, 226, 199, 0.5);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  
 }
 .form-input-group {
   margin-bottom: 0.5rem;
