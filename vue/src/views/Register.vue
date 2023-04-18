@@ -8,7 +8,8 @@
         </div>
         <div class="form-input-group">
           <!-- <span class ="icon"><ion-icon name="person-outline"></ion-icon></span> -->
-          <input
+          <ion-icon name="person-outline"></ion-icon
+          ><input
             type="text"
             id="username"
             class="placeholder-animate"
@@ -21,7 +22,8 @@
         <div class="form-input-group">
           <!-- <span class ="icon"><ion-icon name="lock-closed-outline"></ion-icon></span> -->
 
-          <input
+          <ion-icon name="lock-closed-outline"></ion-icon
+          ><input
             type="password"
             placeholder="Password"
             class="placeholder-animate"
@@ -32,7 +34,7 @@
         </div>
         <div class="form-input-group">
           <!-- <span class ="icon"><ion-icon name="checkmark-outline"></ion-icon></span> -->
-          <input
+          <ion-icon name="lock-closed-outline"></ion-icon><input
             type="password"
             id="confirmPassword"
             class="placeholder-animate"
