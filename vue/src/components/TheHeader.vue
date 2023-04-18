@@ -157,6 +157,7 @@ header {
   height: 150px;
   z-index: 1;
   padding: 5px;
+  
 }
 
 @media only screen and (max-width: 768px) {

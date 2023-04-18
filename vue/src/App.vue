@@ -80,5 +80,22 @@ button:after {
   height: 100%;
   background: #93789e;
 }
+::-webkit-scrollbar {
+  width: 20px;
+  height: 8px;
+}
 
+::-webkit-scrollbar-track {
+  background-color: rgb(195, 226, 199);
+  width: 30px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(206, 191, 224);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #bbb;
+}
 </style>
