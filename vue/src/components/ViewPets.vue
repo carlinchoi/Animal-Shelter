@@ -231,7 +231,7 @@ button {
   right: 20px;
   bottom: 100px;
   width: 40px;
-  height: 80px;
+  height: 60px;
   border-radius: 50%;
   background-color: #5c5470;;
   color: #fff;
