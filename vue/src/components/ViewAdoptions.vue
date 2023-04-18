@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <button @click="scrollToTop" class="scroll-btn"><ion-icon name="paw-outline"></ion-icon>Top</button>
     <div class="btn-container" id="btn-container">
       <button @click="selectSpecies(null)">All Adopted Pets</button>
       <button @click="selectSpecies('Dog')">Dogs</button>
@@ -59,6 +60,11 @@ export default {
     selectSpecies(species) {
       this.selectedSpecies = species;
     },
+     scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });},
   },
   computed: {
     pets() {
@@ -186,7 +192,7 @@ img {
   padding: 10px;
   overflow: hidden;
   position: static;
-  margin-top: 50px;
+  margin-top: 120px;
 }
 .btn-container button {
   font-size: 16px;
@@ -195,8 +201,7 @@ img {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-
-  color: #333;
+  color: black;
   transition: background-color 0.3s ease;
 }
 .btn-container button:hover {
@@ -214,6 +219,38 @@ button {
 
 .pet-card:hover .card-content {
   transform: translateY(0);
+}
+.scroll-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 100px;
+  width: 0px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #5c5470;;
+  color: #fff;
+  font-size: 24px;
+  line-height: 50px;
+  text-align: center;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+
+.scroll-btn:hover {
+  opacity: 1;
+  background-color: #a37da3;
+}
+.scroll-btn::before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  height: 50%;
+}
+.scroll-btn ion-icon {
+  display:inline-block;
+  vertical-align: middle;
+  
 }
 
 @media only screen and (max-width: 768px) {
