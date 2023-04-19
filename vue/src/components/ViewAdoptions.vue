@@ -18,7 +18,7 @@
               <div class="image-container">
                 <img v-for="photo in petPhotos[pet.petId]" :key="photo" :src="photo" alt="Photos of this Pet">
               </div>
-              <a href="#" class="button">Learn More</a>
+              <!-- <a href="#" class="button">Learn More</a> -->
               <div class="text-box">
                 <p>{{ pet.petName }}</p>
                 <p>Species: {{ pet.species }}</p>
@@ -133,11 +133,10 @@ img {
   flex-direction: column;
   align-items: center;
   max-width: 300px;
-  background-color: rgba(93, 11, 93, 0.7);
   backdrop-filter: blur(10px);
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
   transition: transform 500ms ease;
-  background-color: rgba(139, 100, 139, 0.8);
+  background-color: rgba(197, 172, 207, 0.8);
   z-index: 1;
   font-weight: bold;
   flex-basis: calc(50% - 20px);
@@ -166,8 +165,10 @@ img {
 
 .text-box {
   background-color: white;
-  padding: 10px;
+  padding: 25px;
   border-radius: 5px;
+  line-height: 1; 
+  margin-top: 20px;
 }
 .logo {
   display: flex;
