@@ -283,10 +283,21 @@ button {
     height: 100%;
   }
   .btn-container {
-    display:none;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 -5px;
+    margin-top: 200px;
+
+  }
+  .btn-container button {
+    font-size: 12px;
+    padding: 5px 10px;
+    margin: 5px;
+    display: inline-block;
   }
   .scroll-btn {
-
+    display: none;
   }
   }
 
