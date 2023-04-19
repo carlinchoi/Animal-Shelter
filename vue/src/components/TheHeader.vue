@@ -185,6 +185,7 @@ header {
     flex-direction: column;
     height: 100%;
     margin-top: 0;
+    space-between: 10px;
   }
 
   nav li {

@@ -82,7 +82,30 @@ ion-icon:hover {
 
 @media (max-width: 768px) {
   .shelter-footer {
-    display: none;
+  
+  }
+  ion-icon {
+    position: relative;
+    bottom: 72px;
+    font-size: 21px;
+  }
+  .adopted {
+    position: relative;
+    bottom: 41px;
+    padding-right: 46px;
+    font-size: 13px;
+  }
+  .contact {
+    position: relative;
+    bottom: 13px;
+    padding-right: 342px;
+    font-size: 13px;
+  }
+  .copy {
+    position: relative;
+    bottom: -50px;
+    padding-left: 75px;
+    font-size: 11px;
   }
 }
 </style>
