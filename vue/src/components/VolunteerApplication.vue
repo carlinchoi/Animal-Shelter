@@ -120,7 +120,7 @@ export default {
 
 <style scoped>
 body {
-  /* background-image: url("../assets/background2.png"); */
+  background-image: url("../assets/background2.png");
   background-color: rgb(230, 222, 240);
   background-repeat: repeat;
   background-size: contain;
