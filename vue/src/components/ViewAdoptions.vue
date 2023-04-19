@@ -266,15 +266,12 @@ button {
 }
 @media only screen and (max-width: 768px) {
   .pet-container {
-   display:block;
-   margin-bottom: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+   
   }
-  .pet-card {
-    flex-basis: auto;
-    width: 100%;
-    margin: 10px 0;
-  }
-
   .image-container {
     height: 200px;
     width: 100%;
@@ -285,5 +282,23 @@ button {
     width: 100%;
     height: 100%;
   }
-}
+  .btn-container {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 -5px;
+    margin-top: 200px;
+
+  }
+  .btn-container button {
+    font-size: 12px;
+    padding: 5px 10px;
+    margin: 5px;
+    display: inline-block;
+  }
+  .scroll-btn {
+    display: none;
+  }
+  }
+
 </style>
