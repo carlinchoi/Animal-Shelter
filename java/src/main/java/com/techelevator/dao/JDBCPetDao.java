@@ -17,11 +17,8 @@ public class JDBCPetDao implements PetDao {
     @Override
     public List<Pet> findAll() {
         List<Pet> pets = new ArrayList<>();
-        String sql = "SELECT pets.*, pet_photos.photo_url \n" +
-                "FROM pets \n" +
-                "LEFT JOIN pet_photos \n" +
-                "ON pets.pet_id = pet_photos.pet_id \n" +
-                "WHERE pets.is_adopted = false;\n";
+        String sql = "SELECT *" +
+                " FROM pets ";
         SqlRowSet result = jdbcTemplate.queryForRowSet(sql);
 
         while (result.next()) {
@@ -47,10 +44,7 @@ public class JDBCPetDao implements PetDao {
     @Override
     public List<Pet> findAdoptedPets() {
         List<Pet> pets = new ArrayList<>();
-        String sql = "SELECT pets.*, pet_photos.photo_url \n" +
-                "FROM pets \n" +
-                "LEFT JOIN pet_photos ON pets.pet_id = pet_photos.pet_id \n" +
-                "WHERE pets.is_adopted = true;\n";
+        String sql = "SELECT * FROM pets WHERE is_adopted = true";
         SqlRowSet result = jdbcTemplate.queryForRowSet(sql);
 
         while (result.next()) {
@@ -142,7 +136,7 @@ public Pet updatePet(Pet pet, int petId) {
         Pet pet = new Pet();
         pet.setPetId(sql.getInt("pet_id"));
         pet.setPetName(sql.getString("pet_name"));
-        pet.setPetPhoto(sql.getString("photo_url"));
+//        pet.setPetPhoto(sql.getString("photo_url"));
         pet.setAdopted(sql.getBoolean("is_adopted"));
         pet.setSpecies(sql.getString("species"));
         pet.setGender(sql.getString("gender"));

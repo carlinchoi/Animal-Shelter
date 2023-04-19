@@ -16,7 +16,7 @@
         class="pet-card"
       >
               <div class="image-container">
-                <img :src="pet.petPhoto" alt="Photo of Pet" />
+                <img v-for="photo in petPhotos[pet.petId]" :key="photo" :src="photo" alt="Photos of this Pet">
               </div>
               <a href="#" class="button">Learn More</a>
               <div class="text-box">
@@ -46,6 +46,7 @@ export default {
   data() {
     return {
       selectedSpecies: null,
+      petPhotos: {},
     };
   },
   mounted() {
@@ -55,6 +56,15 @@ export default {
     retrievePets() {
       petservice.findAdoptedPets().then((response) => {
         this.$store.commit("SET_ADOPTIONS_INFO", response.data);
+        response.data.forEach((pet) => {
+          this.retrievePetPhotos(pet.petId);
+        });
+      });
+    },
+    retrievePetPhotos(petId) {
+      petservice.findAllPhotos(petId).then((response) => {
+        this.$store.commit("SET_PET_PHOTOS", { petId: petId, photos: response.data });
+        this.$set(this.petPhotos, petId, response.data);
       });
     },
     selectSpecies(species) {
