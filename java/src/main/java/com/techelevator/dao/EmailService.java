@@ -7,7 +7,7 @@ package com.techelevator.dao;
 
 // Importing required classes
 //import com.SpringBootEmail.Entity.EmailDetails;
-import com.techelevator.model.EmailDetails;
+import com.techelevator.Entity.EmailDetails;
 
 // Interface
 public interface EmailService {

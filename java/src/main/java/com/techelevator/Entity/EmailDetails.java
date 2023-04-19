@@ -1,4 +1,4 @@
-package com.techelevator.model;
+package com.techelevator.Entity;
 
 // Java Program to Illustrate EmailDetails Class
 

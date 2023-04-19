@@ -2,10 +2,10 @@ package com.techelevator.dao;
 // Java Program to Illustrate Creation Of
 // Service implementation class
 
-package com.SpringBootEmail.service;
+//package com.SpringBootEmail.service;
 
 // Importing required classes
-import com.SpringBootEmail.Entity.EmailDetails;
+import com.techelevator.Entity.EmailDetails;
 import java.io.File;
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
