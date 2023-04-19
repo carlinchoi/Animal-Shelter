@@ -6,7 +6,7 @@
           <form @submit.prevent="submitForm" class="form">
             <h1>Submit Application</h1>
             <div class="form-input-group">
-              <input
+              <ion-icon name="person-outline"></ion-icon><input
                 type="text"
                 placeholder="First Name"
                 class="placeholder-animate"
@@ -16,7 +16,7 @@
               />
             </div>
             <div class="form-input-group">
-              <input
+              <ion-icon name="person-outline"></ion-icon><input
                 type="text"
                 placeholder="Last Name"
                 class="placeholder-animate"
@@ -26,7 +26,7 @@
               />
             </div>
             <div class="form-input-group">
-              <input
+              <ion-icon name="mail-outline"></ion-icon><input
                 type="email"
                 placeholder="Email"
                 class="placeholder-animate"
@@ -36,7 +36,7 @@
               />
             </div>
             <div class="form-input-group">
-              <input
+              <ion-icon name="call-outline"></ion-icon><input
                 type="tel"
                 placeholder="Phone Number"
                 class="placeholder-animate"

@@ -12,7 +12,6 @@
               Thank you for registering, please sign in.
             </div>
             <div class="form-input-group">
-              <!-- <span class ="icon"><ion-icon name="lock-closed-outline"></ion-icon></span> -->
               <label class="floating-placeholder" for="username"
                 ></label
               >
@@ -28,7 +27,6 @@
               />
             </div>
             <div class="form-input-group">
-              <!-- <span class ="icon"><ion-icon name="person-outline"></ion-icon></span> -->
               <ion-icon name="lock-closed-outline"></ion-icon
               ><input
                 type="password"
@@ -45,9 +43,6 @@
                 ><button>Need an account? Sign up.</button></router-link
               >
             </p>
-            <!-- <router-link v-bind:to="{ name: 'home' }"
-              ><button>Go to Home</button></router-link
-            > -->
           </form>
         </div>
       </div>
