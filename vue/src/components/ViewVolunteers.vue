@@ -158,11 +158,9 @@ position: sticky;
 }
 input {
   padding: 0.5rem;
-  border: none;
+  border: 2px solid black;
   padding: 10px;
   border-radius: 10px;
-  appearance: none;
-  width: 50px;
 }
 .placeholder-animate::-webkit-input-placeholder {
   transition: all 0.3s ease-out;
@@ -200,9 +198,6 @@ input {
   border-radius: 5px;
   font-size: 16px;
 }
-.placeholder-animate:not(:focus) {
-  border-bottom: 1px solid #62a18f;
-}
 label {
   color: rgb(206, 191, 224);
 }
@@ -231,6 +226,6 @@ border-radius: 5px;
 }
 .select option {
   background: #ffffff;
-  color:rgb(188, 154, 230);
+  color:black;
 }
 </style>
