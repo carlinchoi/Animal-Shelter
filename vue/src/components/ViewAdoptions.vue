@@ -18,7 +18,6 @@
               <div class="image-container">
                 <img v-for="photo in petPhotos[pet.petId]" :key="photo" :src="photo" alt="Photos of this Pet">
               </div>
-              <!-- <a href="#" class="button">Learn More</a> -->
               <div class="text-box">
                 <p>{{ pet.petName }}</p>
                 <p>Species: {{ pet.species }}</p>
@@ -199,24 +198,26 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
-  padding: 10px;
-  overflow: hidden;
-  position: static;
-  margin-top: 100px;
+  margin-bottom: 20px;
 }
 .btn-container button {
-  font-size: 16px;
-  padding: 10px;
-  margin: 0 5px;
-  border: none;
-  border-radius: 5px;
   cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  margin: 0 4px;
+  transition: all 0.3s ease;
+  background-color: rgb(195, 226, 199);
   color: black;
-  transition: background-color 0.3s ease;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
 }
 .btn-container button:hover {
-  background-color: #ccc;
+  background-color: rgb(218, 219, 221);
 }
 #pet-container {
   height: 500px;

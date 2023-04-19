@@ -194,21 +194,25 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
-  padding: 10px;
-  overflow: hidden;
-  position: static;
-  margin-top: -100px;
+  margin-bottom: 100px;
+  margin-top: -150px;
 
 }
 .btn-container button {
+ cursor: pointer;
+  display: inline-block;
   font-size: 16px;
-  padding: 10px;
-  margin: 0 5px;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 8px 16px;
   border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  border-radius: 4px;
+  margin: 0 4px;
+  transition: all 0.3s ease;
+  background-color: rgb(195, 226, 199);
   color: black;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
 }
 .btn-container button:hover {
   background-color: #ccc;

@@ -1,10 +1,11 @@
 <template>
+<body>
   <div>
-    <h1>Volunteer Listing</h1>
-    <div class="search-container background">
+    <h1> Approve Volunteers </h1>
+    <div class="search-container">
       <input type="text" v-model="searchTerm" class="placeholder-animate" />
       <label class="floating-placeholder" for="search-input"
-        >Search by First or Last Name</label>
+        >Search Volunteers by First or Last Name</label>
       <div class="table-container">
       <table class="volunteer-table">
         <thead>
@@ -40,6 +41,7 @@
       </div>
     </div>
   </div>
+  </body>
 </template>
 
 <script>
@@ -99,20 +101,24 @@ export default {
 };
 </script>
 
-
 <style scoped>
+body {
+  background-image: url('../assets/pupkit.png');
+  height: 50%;
+  width: 75%;
+}
 h1 {
-  border: 1px solid black;
-  background: #62a18f;
-  padding: 20px;
-  border-radius: 50%;
-  color:white;
+  color: #62a18f;
+  font-size: 4rem;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
   text-align: center;
-  
+  margin-top: 2rem;
 }
 .table-container {
   max-height: 400px;
   overflow: auto;
+
 }
 .volunteer-table {
   font-family: Montserrat, sans-serif;
@@ -120,10 +126,10 @@ h1 {
   border-collapse: collapse;
   margin: 25px 0;
   font-size: 1em;
-  font-family: sans-serif;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
   min-width: 400px;
   border-radius: 5px 5px 0 0;
+  background-color: rgba(255, 255, 255, 0.6);
 }
 .volunteer-table thead {
 position: sticky;
@@ -144,7 +150,7 @@ position: sticky;
   padding: 12px 15px;
   text-align: left;
   border-bottom: 1px solid #ddd;
-  color: #5c5470;
+  color: black;
   font-weight: bold;
 }
 .volunteer-table tbody {
@@ -188,12 +194,13 @@ input {
    font-size: 25px;
   top: -20px;
   left: 10px;
-  color: #5c5470;
+  color: black;
   font-weight: bold;
 }
 .search-container {
   position: relative;
 }
+
 .floating-placeholder {
   position: absolute;
   top: 12px;
@@ -216,15 +223,10 @@ input {
 .placeholder-animate:not(:focus) {
   border-bottom: 1px solid #62a18f;
 }
-
-.container-bg {
-  background-color: #fff;
-}
 label {
   color: rgb(206, 191, 224);
 }
 .background {
-  background-image: url('../assets/pupkit.png');
   background-color: rgb(230, 222, 240);
   background-repeat: repeat;
   background-size: 33%;
@@ -236,7 +238,7 @@ label {
 }
 .select{
 padding: 8px 12px;
-color: #333333;
+color: black;
 background-color: #eeeeee;
 border: 1px solid #dddddd;
 cursor: pointer;

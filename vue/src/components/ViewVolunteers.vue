@@ -1,8 +1,8 @@
 <template>
-<body class="pupkit-bg">
-  <h1> View Volunteers </h1>
-  <div class="search-container container-bg background">
-  
+<body>
+  <div>
+    <h1> View Volunteers </h1>
+  <div class="search-container">
     <input type="text" v-model="searchTerm" class="placeholder-animate" />
     <label class="floating-placeholder" for="search-input"
       >Search by First or Last Name</label>
@@ -27,6 +27,7 @@
         </tr>
       </tbody>
     </table>
+  </div>
   </div>
   </div>
   </body>
@@ -82,17 +83,21 @@ export default {
 
 
 <style scoped>
+body {
+  background-image: url('../assets/pupkit.png');
+  height: 150%;
+  width: 100%;
+}
 h1 {
-  border: 1px solid black;
-  background: #62a18f;
-  padding: 20px;
-  border-radius: 50%;
-  color:white;
+  color: #62a18f;
+  font-size: 4rem;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
   text-align: center;
-  
+  margin-top: 2rem;
 }
 .table-container {
-  max-height: 400px;
+  max-height: 490px;
   overflow: auto;
 }
 .volunteer-table {
@@ -101,12 +106,10 @@ h1 {
   border-collapse: collapse;
   margin: 25px 0;
   font-size: 1em;
-  font-family: sans-serif;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, .10);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
   min-width: 400px;
   border-radius: 5px 5px 0 0;
-  overflow: hidden;
-
+  background-color: rgba(255, 255, 255, 0.6);
 }
 .volunteer-table thead {
 position: sticky;
@@ -125,12 +128,14 @@ position: sticky;
 .volunteer-table th,
 .volunteer-table td {
   padding: 12px 15px;
-   text-align: left;
+  text-align: left;
   border-bottom: 1px solid #ddd;
-  color: #5c5470;
+  color: black;
   font-weight: bold;
 }
-
+.volunteer-table tbody {
+  height:50vh;
+}
 .volunteer-table tbody td {
   padding: 12px 15px;
   text-align: left;
@@ -143,32 +148,39 @@ position: sticky;
   font-weight: bold;
   color: #62a18f;
 }
-.volunteer-table tbody tr:nth-of-type(even) {
-  background-color: #f3f3f3;
-}
-
 .volunteer-table tbody tr:last-of-type {
   border-bottom: 2px solid #62a18f;
 }
 
 .volunteer-table tbody tr:hover {
   background-color: #f5f5f5;
+  color: black;
 }
 input {
   padding: 0.5rem;
-  border: 2px solid black;
+  border: none;
   padding: 10px;
   border-radius: 10px;
+  appearance: none;
+  width: 50px;
 }
 .placeholder-animate::-webkit-input-placeholder {
   transition: all 0.3s ease-out;
   opacity: 0.5;
   transform: translateY(0px);
 }
-
+.placeholder-animate:focus + .floating-placeholder,
+.placeholder-animate.valid + .floating-placeholder {
+   font-size: 25px;
+  top: -20px;
+  left: 10px;
+  color: black;
+  font-weight: bold;
+}
 .search-container {
   position: relative;
 }
+
 .floating-placeholder {
   position: absolute;
   top: 12px;
@@ -188,35 +200,37 @@ input {
   border-radius: 5px;
   font-size: 16px;
 }
-.background {
-  background-color: rgb(230, 222, 240);
-  background-repeat: repeat;
-  background-size: contain;
-  min-height: 100%;
-  min-width: 100%;
-  margin: 0;
-  padding: 0;
-  z-index: 10;
-}
-.container-bg {
-  background-color: #fff;
+.placeholder-animate:not(:focus) {
+  border-bottom: 1px solid #62a18f;
 }
 label {
   color: rgb(206, 191, 224);
 }
 .background {
-  background-image: url('../assets/pupkit.png');
   background-color: rgb(230, 222, 240);
   background-repeat: repeat;
-  background-size: contain;
+  background-size: 33%;
   min-height: 100%;
   min-width: 100%;
   margin: 0;
   padding: 0;
   z-index: 10;
 }
-body {
-  background-image: url('../assets/pupkit.png');
-  background-size: cover;
+.select{
+padding: 8px 12px;
+color: black;
+background-color: #eeeeee;
+border: 1px solid #dddddd;
+cursor: pointer;
+border-radius: 5px;
+}
+.select:focus,
+.select:hover {
+  outline: none;
+  border: 1px solid #bbbbbb;
+}
+.select option {
+  background: #ffffff;
+  color:rgb(188, 154, 230);
 }
 </style>
