@@ -104,7 +104,7 @@ export default {
 body {
   background-image: url('../assets/pupkit.png');
   height: 50%;
-  width: 75%;
+  width: 50%;
 }
 h1 {
   color: #62a18f;
