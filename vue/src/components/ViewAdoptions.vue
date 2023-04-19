@@ -266,15 +266,12 @@ button {
 }
 @media only screen and (max-width: 768px) {
   .pet-container {
-   display:block;
-   margin-bottom: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+   
   }
-  .pet-card {
-    flex-basis: auto;
-    width: 100%;
-    margin: 10px 0;
-  }
-
   .image-container {
     height: 200px;
     width: 100%;
@@ -285,5 +282,12 @@ button {
     width: 100%;
     height: 100%;
   }
-}
+  .btn-container {
+    display:none;
+  }
+  .scroll-btn {
+
+  }
+  }
+
 </style>
