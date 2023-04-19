@@ -1,81 +1,121 @@
 <template>
- <body>
+  <body>
     <div class="register-wrapper">
       <div class="form-wrapper">
         <div id="register" class="text-center">
-<form @submit.prevent="submitForm" class="form">
-  <h1>Submit Application</h1>
-  <div class="form-input-group">
-    <input type="text" placeholder="First Name" class="placeholder-animate" id="firstName" v-model="firstName" required>
-  </div>
-  <div class="form-input-group">
-    <input type="text" placeholder="Last Name" class="placeholder-animate" id="lastName" v-model="lastName" required>
-  </div>
-  <div class="form-input-group">
-    <input type="email" placeholder="Email" class="placeholder-animate" id="email" v-model="email" required>
-  </div>
-  <div class="form-input-group">
-    <input type="tel" placeholder="Phone Number" class="placeholder-animate" id="phone" v-model="phone" required>
-  </div>
-  <button type="submit" class="btn">Submit</button>
-</form>
-  </div>
-  </div>
-  </div>
-</body>
+          <form @submit.prevent="submitForm" class="form">
+            <h1>Submit Application</h1>
+            <div class="form-input-group">
+              <input
+                type="text"
+                placeholder="First Name"
+                class="placeholder-animate"
+                id="firstName"
+                v-model="firstName"
+                required
+              />
+            </div>
+            <div class="form-input-group">
+              <input
+                type="text"
+                placeholder="Last Name"
+                class="placeholder-animate"
+                id="lastName"
+                v-model="lastName"
+                required
+              />
+            </div>
+            <div class="form-input-group">
+              <input
+                type="email"
+                placeholder="Email"
+                class="placeholder-animate"
+                id="email"
+                v-model="email"
+                required
+              />
+            </div>
+            <div class="form-input-group">
+              <input
+                type="tel"
+                placeholder="Phone Number"
+                class="placeholder-animate"
+                id="phone"
+                v-model="phone"
+                required
+              />
+            </div>
+            <button type="submit" class="btn">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
 </template>
 
 <script>
-
-import VolunteerService from '../services/VolunteerService';
+import VolunteerService from "../services/VolunteerService";
+import emailService from "../services/EmailService";
 
 export default {
   data() {
     return {
-      firstName: '',
-      lastName: '',
-      email: '',
-      phone: ''
-    }
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+    };
   },
   props: ["username"],
   methods: {
     submitForm() {
       const volunteerApplication = {
-        username:this.username,
+        username: this.username,
         firstName: this.firstName,
         lastName: this.lastName,
         email: this.email,
-        phone: this.phone
+        phone: this.phone,
       };
       console.log(volunteerApplication);
-      
+      const applicationEmail = {
+        recipient: this.email,
+        msgBody:
+          "Thanks for applying! Your application is being reviewed by our administrators. Stand by for details!",
+        subject: "Thank you from Rockville!",
+      };
       VolunteerService.updateVolunteer(volunteerApplication)
-        .then(response => {
-          if (response.status == 200){
-            this.$router.push({
-                path: '/login',
-                query: { registration: 'success' },
-              });
+        .then((response) => {
+          if (response.status == 200) {
+            emailService.sendEmail(applicationEmail).then((response) => {
+              if (response.status == 200) {
+                this.$router.push({
+                  path: "/login",
+                  query: { registration: "success" },
+                });
+              }
+            });
           }
         })
-        // adoptionService.createAdoption(this.adoption)
-        //     .then((response) => {
-        //     if (response.status == 201) {
-        //         this.$router.push({
-        //         path: '/',
-        //       });
-        //     } else 
-        //       this.$router.push({
-        //         path: '/adoption-form-page',
-        //       });
-        //     }
-        .catch(error => {
+        .catch((error) => {
           console.error("Error creating volunteer application:", error);
         });
-    }
-  }
-}
+      // adoptionService.createAdoption(this.adoption)
+      //     .then((response) => {
+      //     if (response.status == 201) {
+      //         this.$router.push({
+      //         path: '/',
+      //       });
+      //     } else
+      //       this.$router.push({
+      //         path: '/adoption-form-page',
+      //       });
+      //     }
+      // .catch(error => {
+      //   console.error("Error creating volunteer application:", error);
+      // });
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -121,7 +161,7 @@ label {
   margin-right: 0.5rem;
 }
 input {
-  padding: .5rem;
+  padding: 0.5rem;
   border: 2px solid #ccc;
   padding: 10px;
   border-radius: 10px;
