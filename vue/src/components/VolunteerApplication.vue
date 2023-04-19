@@ -99,26 +99,20 @@ export default {
         .catch((error) => {
           console.error("Error creating volunteer application:", error);
         });
-      // adoptionService.createAdoption(this.adoption)
-      //     .then((response) => {
-      //     if (response.status == 201) {
-      //         this.$router.push({
-      //         path: '/',
-      //       });
-      //     } else
-      //       this.$router.push({
-      //         path: '/adoption-form-page',
-      //       });
-      //     }
-      // .catch(error => {
-      //   console.error("Error creating volunteer application:", error);
-      // });
     },
   },
 };
 </script>
 
 <style scoped>
+h1 {
+  border: 1px solid black;
+  color: white;
+  background: #62a18f;
+  padding: 20px;
+  border-radius: 50%
+  
+}
 body {
   background-image: url("../assets/background2.png");
   background-color: rgb(230, 222, 240);
@@ -171,13 +165,7 @@ input {
   opacity: 0.5;
   transform: translateY(0px);
 }
-.placeholder-animate:focus + .floating-placeholder,
-.placeholder-animate.valid + .floating-placeholder {
-  font-size: 16px;
-  top: -10px;
-  left: 10px;
-  color: rgb(197, 172, 228);
-}
+
 .placeholder-animate {
   width: 100%;
   border: none;
@@ -186,10 +174,9 @@ input {
   box-sizing: border-box;
   border-radius: 5px;
   font-size: 16px;
+  border: 2px solid rgb(0, 0, 0);
 }
-.placeholder-animate:not(:focus) {
-  border-bottom: 1px solid #62a18f;
-}
+
 button {
   min-width: 130px;
   height: 40px;

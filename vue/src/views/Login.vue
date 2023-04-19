@@ -107,6 +107,13 @@ export default {
 </script>
 
 <style scoped>
+h1 {
+  border: 1px solid black;
+  background: #62a18f;
+  padding: 20px;
+  border-radius: 50%;
+  color:white;
+}
 body {
   background-image: url("../assets/background2.png");
   background-color: rgb(230, 222, 240);
@@ -150,7 +157,7 @@ label {
 }
 input {
   padding: 0.5rem;
-  border: 2px solid #ccc;
+  border: 2px solid black;
   padding: 10px;
   border-radius: 10px;
 }
@@ -158,13 +165,6 @@ input {
   transition: all 0.3s ease-out;
   opacity: 0.5;
   transform: translateY(0px);
-}
-.placeholder-animate:focus + .floating-placeholder,
-.placeholder-animate.valid + .floating-placeholder {
-  font-size: 16px;
-  top: -10px;
-  left: 10px;
-  color: rgb(197, 172, 228);
 }
 .placeholder-animate {
   width: 100%;
@@ -174,9 +174,7 @@ input {
   box-sizing: border-box;
   border-radius: 5px;
   font-size: 16px;
-}
-.placeholder-animate:not(:focus) {
-  border-bottom: 1px solid #62a18f;
+  border: 2px solid rgb(0, 0, 0);
 }
 button {
   min-width: 130px;

@@ -1,6 +1,8 @@
 <template>
-<body>
+<body class="pupkit-bg">
+  <h1> View Volunteers </h1>
   <div class="search-container container-bg background">
+  
     <input type="text" v-model="searchTerm" class="placeholder-animate" />
     <label class="floating-placeholder" for="search-input"
       >Search by First or Last Name</label>
@@ -80,6 +82,15 @@ export default {
 
 
 <style scoped>
+h1 {
+  border: 1px solid black;
+  background: #62a18f;
+  padding: 20px;
+  border-radius: 50%;
+  color:white;
+  text-align: center;
+  
+}
 .table-container {
   max-height: 400px;
   overflow: auto;
@@ -145,25 +156,16 @@ position: sticky;
 }
 input {
   padding: 0.5rem;
-  border: none;
+  border: 2px solid black;
   padding: 10px;
   border-radius: 10px;
-  appearance: none;
-  width: 50px;
 }
 .placeholder-animate::-webkit-input-placeholder {
   transition: all 0.3s ease-out;
   opacity: 0.5;
   transform: translateY(0px);
 }
-.placeholder-animate:focus + .floating-placeholder,
-.placeholder-animate.valid + .floating-placeholder {
-   font-size: 25px;
-  top: -20px;
-  left: 10px;
-  color: #5c5470;
-  font-weight: bold;
-}
+
 .search-container {
   position: relative;
 }
@@ -186,11 +188,7 @@ input {
   border-radius: 5px;
   font-size: 16px;
 }
-.placeholder-animate:not(:focus) {
-  border-bottom: 1px solid #62a18f;
-}
 .background {
-  background-image: url("../assets/background2.png");
   background-color: rgb(230, 222, 240);
   background-repeat: repeat;
   background-size: contain;
@@ -216,5 +214,9 @@ label {
   margin: 0;
   padding: 0;
   z-index: 10;
+}
+body {
+  background-image: url('../assets/pupkit.png');
+  background-size: cover;
 }
 </style>

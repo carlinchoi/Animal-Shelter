@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!-- <h1>Volunteer Listing</h1> -->
+    <h1>Volunteer Listing</h1>
     <div class="search-container background">
       <input type="text" v-model="searchTerm" class="placeholder-animate" />
       <label class="floating-placeholder" for="search-input"
@@ -101,6 +101,15 @@ export default {
 
 
 <style scoped>
+h1 {
+  border: 1px solid black;
+  background: #62a18f;
+  padding: 20px;
+  border-radius: 50%;
+  color:white;
+  text-align: center;
+  
+}
 .table-container {
   max-height: 400px;
   overflow: auto;
@@ -153,10 +162,6 @@ position: sticky;
   font-weight: bold;
   color: #62a18f;
 }
-/* .volunteer-table tbody tr:nth-of-type(even) {
-  background-color: #f3f3f3;
-} */
-
 .volunteer-table tbody tr:last-of-type {
   border-bottom: 2px solid #62a18f;
 }
