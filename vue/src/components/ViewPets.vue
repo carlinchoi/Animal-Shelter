@@ -102,7 +102,6 @@ export default {
   align-items: flex-start;
   height: 300px;
   padding: 0 2px;
-  margin-top: 50px;
   max-width: 1200px;
 }
 img {
@@ -187,7 +186,7 @@ img {
   background-color: #ddd;
 }
 .btn.active {
-  background-color: #666;
+  background-color: rgb#5c5470;
   color: white;
 }
 .btn-container {

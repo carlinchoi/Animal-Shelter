@@ -1,9 +1,7 @@
 <template>
   <div class="home">
     <div class="background-image"></div>
-    <!-- <h1>Home</h1> -->
     <div class="message-container">
-      <!-- <p class="message">You must be authenticated to see this</p> -->
     </div>
     <view-pets />
   </div>

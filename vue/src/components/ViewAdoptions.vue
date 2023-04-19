@@ -1,4 +1,5 @@
 <template>
+<body>
   <div class="container">
     <button @click="scrollToTop" class="scroll-btn"><ion-icon name="paw-outline"></ion-icon></button>
     <div class="btn-container" id="btn-container">
@@ -36,6 +37,7 @@
             </div>
           </div>
         </div>
+        </body>
 </template>
 
 <script>
@@ -94,15 +96,19 @@ export default {
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&family=Poppins:wght@300;400;500&display=swap");
+body {
+   background-image: url('../assets/background2.png');
+   background-repeat: repeat;
+}
 .pet-container {
   font-family: Montserrat, sans-serif;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
-  height: 300px;
-   position: static; 
-   top: 325px; 
+  height: 100%;
+  position: static; 
+  top: 325px; 
   padding: 0 2px;
   margin-top: 50px;
   max-width: 1200px;
