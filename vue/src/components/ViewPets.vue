@@ -225,6 +225,7 @@ button {
   z-index: 15;
   background-color: rgb(195, 226, 199);
   margin-top: -100px;
+  justify-content: flex-end;
 }
 
 .pet-card:hover .card-content {
