@@ -95,6 +95,7 @@ h1 {
   font-weight: bold;
   text-align: center;
   margin-top: 2rem;
+  height: 30px;
 }
 .table-container {
   max-height: 490px;
