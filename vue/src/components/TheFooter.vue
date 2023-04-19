@@ -70,7 +70,7 @@ ion-icon {
   bottom: 125px;
   font-size: 38px;
   margin-top: -100px;
-  padding: 0px 10px;
+  padding: 0px 9px;
   color: rgb(195, 226, 199);
   
 }
@@ -82,30 +82,31 @@ ion-icon:hover {
 
 @media (max-width: 768px) {
   .shelter-footer {
-  
+    height: 23px;
   }
   ion-icon {
     position: relative;
-    bottom: 72px;
-    font-size: 21px;
+    padding-left: 2px;
+    bottom: 70px;
+    font-size: 15px;
   }
   .adopted {
     position: relative;
-    bottom: 41px;
+    bottom: 42px;
     padding-right: 46px;
-    font-size: 13px;
+    font-size: 10px;
   }
   .contact {
     position: relative;
-    bottom: 13px;
-    padding-right: 342px;
-    font-size: 13px;
+    bottom: 21px;
+    padding-right: 300px;
+    font-size: 10px;
   }
   .copy {
     position: relative;
-    bottom: -50px;
-    padding-left: 75px;
-    font-size: 11px;
+    bottom: -15px;
+    padding-left: 81px;
+    font-size: 7px;
   }
 }
 </style>
