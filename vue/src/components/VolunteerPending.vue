@@ -112,8 +112,7 @@ h1 {
   font-family: Montserrat, sans-serif;
   font-weight: bold;
   text-align: center;
-  margin-top: 2rem;
-}
+  }
 .table-container {
   max-height: 400px;
   overflow: auto;
@@ -189,7 +188,7 @@ padding: 0.5rem;
 .placeholder-animate:focus + .floating-placeholder,
 .placeholder-animate.valid + .floating-placeholder {
    font-size: 25px;
-  top: -20px;
+  top: -40px;
   left: 10px;
   color: black;
   font-weight: bold;
@@ -197,10 +196,13 @@ padding: 0.5rem;
 .search-container {
   position: relative;
 }
+.search-container input {
+  margin-top: -15px;
+}
 
 .floating-placeholder {
   position: absolute;
-  top: 12px;
+  top: -10px;
   left: 20px;
   font-size: 16px;
   font-weight: bold;
@@ -216,6 +218,7 @@ padding: 0.5rem;
   box-sizing: border-box;
   border-radius: 5px;
   font-size: 16px;
+  border: 2px solid rgb(0, 0, 0);
 }
 
 label {

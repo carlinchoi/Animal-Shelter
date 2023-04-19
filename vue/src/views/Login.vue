@@ -74,10 +74,8 @@ export default {
         .then((response) => {
           if (response.status == 200) {
             this.$store.commit("SET_AUTH_TOKEN", response.data.token);
-            this.$store.commit("SET_USER", response.data.user);
-            //if(this.user.password === 'animalshelter1') {
+            this.$store.commit("SET_USER", response.data.user); 
             if (response.data.user.authorities[0].name === "ROLE_APPROVED") {
-              //  alert(response.data.user.authorities[0].name);
               this.$router.push("/change-password");
             } else if (
               response.data.user.authorities[0].name === "ROLE_PENDINGVOLUNTEER"
@@ -86,12 +84,6 @@ export default {
             } else {
               this.$router.push("/");
             }
-            //else{
-            //     alert("Not ROLE_USER")
-            // }
-            //alert('change your password bruh');
-            //}
-            // this.$router.push("/");
           }
         })
         .catch((error) => {

@@ -7,7 +7,6 @@
           {{ registrationErrorMsg }}
         </div>
         <div class="form-input-group">
-          <!-- <span class ="icon"><ion-icon name="person-outline"></ion-icon></span> -->
           <ion-icon name="person-outline"></ion-icon
           ><input
             type="text"
@@ -20,8 +19,6 @@
           />
         </div>
         <div class="form-input-group">
-          <!-- <span class ="icon"><ion-icon name="lock-closed-outline"></ion-icon></span> -->
-
           <ion-icon name="lock-closed-outline"></ion-icon
           ><input
             type="password"
@@ -33,7 +30,6 @@
           />
         </div>
         <div class="form-input-group">
-          <!-- <span class ="icon"><ion-icon name="checkmark-outline"></ion-icon></span> -->
           <ion-icon name="lock-closed-outline"></ion-icon><input
             type="password"
             id="confirmPassword"
@@ -105,6 +101,13 @@ export default {
 </script>
 
 <style scoped>
+h1 {
+  border: 1px solid black;
+  background: #62a18f;
+  padding: 20px;
+  border-radius: 50%;
+  color:white;
+}
 body {
   background-image: url("../assets/background2.png");
   background-color: rgb(206, 191, 224);
@@ -146,11 +149,10 @@ label {
   margin-right: 0.5rem;
 }
 input {
-  padding: 0.5rem;
-  border: 2px solid #ccc;
+   padding: 0.5rem;
+  border: 2px solid black;
   padding: 10px;
   border-radius: 10px;
-  margin-top: 10px;
 }
 button {
   min-width: 130px;
@@ -180,13 +182,6 @@ body {
   opacity: 0.5;
   transform: translateY(0px);
 }
-.placeholder-animate:focus + .floating-placeholder,
-.placeholder-animate.valid + .floating-placeholder {
-  font-size: 16px;
-  top: -10px;
-  left: 10px;
-  color: rgb(197, 172, 228);
-}
 .placeholder-animate {
   width: 100%;
   border: none;
@@ -195,8 +190,6 @@ body {
   box-sizing: border-box;
   border-radius: 5px;
   font-size: 16px;
-}
-.placeholder-animate:not(:focus) {
-  border-bottom: 1px solid #62a18f;
+  border: 2px solid rgb(0, 0, 0);
 }
 </style>

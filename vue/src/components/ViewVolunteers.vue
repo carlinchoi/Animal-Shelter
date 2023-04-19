@@ -99,6 +99,7 @@ h1 {
 .table-container {
   max-height: 490px;
   overflow: auto;
+  width: 100%;
 }
 .volunteer-table {
   font-family: Montserrat, sans-serif;
@@ -107,7 +108,6 @@ h1 {
   margin: 25px 0;
   font-size: 1em;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
-  min-width: 400px;
   border-radius: 5px 5px 0 0;
   background-color: rgba(255, 255, 255, 0.6);
 }
@@ -197,6 +197,8 @@ input {
   box-sizing: border-box;
   border-radius: 5px;
   font-size: 16px;
+  border: 2px solid rgb(0, 0, 0);
+  
 }
 label {
   color: rgb(206, 191, 224);

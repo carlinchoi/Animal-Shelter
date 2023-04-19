@@ -3,7 +3,7 @@
    <div class="add-wrapper">
     <div class="form-wrapper">
         <form @submit.prevent="addNewPet">
-            <h1 >Add New Pet Listing</h1>
+            <h1 >Add Pet Listing</h1>
             <div class="form-input-group">
 
               <input type="text" placeholder="Name" class="placeholder-animate" v-model='pet.petName' required/>
@@ -77,6 +77,13 @@ export default{
 </script>
 
 <style scoped>
+h1 {
+  border: 1px solid black;
+  background: #62a18f;
+  padding: 20px;
+  border-radius: 50%;
+  color:white;
+}
 body {
   background-image: url('../assets/background2.png');
   background-color:rgb(195, 226, 199);
@@ -107,8 +114,9 @@ form {
 .form-input-group {
   margin-bottom: .5rem;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
+  margin-top: 10px;
 }
 label {
   margin-right: 0.5rem;
@@ -140,7 +148,8 @@ button:hover {
   color: #fff;
 }
 .form-wrapper{
-  margin-top: 50px;
+  margin-top: -50px;
+  max-width: 400px;
 }
 body {
   overflow: hidden;
@@ -150,13 +159,6 @@ body {
   opacity: 0.5;
   transform: translateY(0px);
 }
-.placeholder-animate:focus + .floating-placeholder,
-.placeholder-animate.valid + .floating-placeholder{
-    font-size: 16px;
-    top: -10px;
-    left: 10px;
-    color: rgb(197, 172, 228);
-}
 .placeholder-animate {
     width: 100%;
     border: none;
@@ -165,10 +167,8 @@ body {
     box-sizing: border-box;
     border-radius: 5px;
     font-size: 16px;
+    border: 2px solid rgb(0, 0, 0);
   }
-  .placeholder-animate:not(:focus) {
-  border-bottom: 1px solid #62a18f;
-}
 .add-wrapper{
   display: flex;
   justify-content: center;
