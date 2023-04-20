@@ -63,7 +63,13 @@ export default new Vuex.Store({
       localStorage.removeItem('token');
       localStorage.removeItem('user');
       state.token = '';
-      state.user = {};
+      state.user =  {
+        "authorities": [
+          {
+            "name": "ROLE_USER"
+          }
+        ]
+      };
       axios.defaults.headers.common = {};
     },
 
