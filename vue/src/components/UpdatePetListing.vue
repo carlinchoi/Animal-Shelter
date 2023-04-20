@@ -141,6 +141,20 @@ export default {
 </script>
 
 <style scoped>
+label {
+  border: 1px solid black;
+  background: #62a18f;
+  padding: 5px;
+  color:white;
+  border-radius: 10px;
+}
+h1 {
+  border: 1px solid black;
+  background: #62a18f;
+  padding: 20px;
+  border-radius: 50%;
+  color:white;
+}
 body {
   min-height: 100%;
   min-width: 100%;
