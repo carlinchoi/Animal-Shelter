@@ -63,6 +63,18 @@ INSERT INTO pets(
 	pet_name, is_adopted, species, gender, breed, age_years, description, adoption_date)
 	VALUES ('Cucumber', 'true', 'Guinea Pig', 'Female', 'Unknown', '2', 'Loves seasonal produce', '01-11-2021');
 
+INSERT INTO pets(
+	pet_name, is_adopted, species, gender, breed, age_years, description, adoption_date)
+	VALUES ('Penny', 'true', 'Dog', 'Female', 'Chihuahua', '1', 'Small size, big personality', '04-12-2022');
+
+INSERT INTO pets(
+	pet_name, is_adopted, species, gender, breed, age_years, description, adoption_date)
+	VALUES ('Kiwi', 'true', 'Bird', 'Male', 'Cockatiel', '2', 'Excellent karaoke abilities', '04-03-2021');
+
+INSERT INTO pets(
+	pet_name, is_adopted, species, gender, breed, age_years, description, adoption_date)
+	VALUES ('Abby', 'true', 'Cat', 'Female', 'Unknown', '3', 'Very artistic, enjoys watercolors and salmon', '02-03-2020');
+
 
 INSERT INTO pet_photos (pet_id, photo_url) VALUES (1, 'https://bestfriends.org/sites/default/files/styles/hero_dashboard_650/public/hero-dash/Victory3427MW_Dashboard_Standard.jpg?h=b02ff9d2&itok=yY9Xr3fe');
 INSERT INTO pet_photos (pet_id, photo_url) VALUES (2, 'https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2023-03/puppy-dog-mc-230321-03-b700d4.jpg');
@@ -79,10 +91,14 @@ INSERT INTO pet_photos (pet_id, photo_url) VALUES (12, 'https://doglime.com/wp-c
 INSERT INTO pet_photos (pet_id, photo_url) VALUES (13, 'https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60478169/1/?bust=1678470954&width=300');
 INSERT INTO pet_photos (pet_id, photo_url) VALUES (14, 'https://media-be.chewy.com/wp-content/uploads/2022/09/27102124/beagle-cute-dogs.jpg');
 INSERT INTO pet_photos (pet_id, photo_url) VALUES (15, 'https://cf.ltkcdn.net/small-mammals/guinea-pigs/images/orig/326593-2119x1413-sheltie-guinea-pig.jpg');
+INSERT INTO pet_photos (pet_id, photo_url) VALUES (16, 'https://d.newsweek.com/en/full/2202634/chihuahua.jpg');
+INSERT INTO pet_photos (pet_id, photo_url) VALUES (17, 'https://zupreem.com/wp-content/uploads/elementor/thumbs/cute-cockatiel-parrot-in-the-hands-of-the-owner-2021-09-01-16-14-54-utc-scaled-pmqyvnyfr6t00ar99hpps23qa3necbqdr8hrf73lsw.jpeg');
+INSERT INTO pet_photos (pet_id, photo_url) VALUES (18, 'https://media.istockphoto.com/id/1355950595/photo/ginger-cat-portrait.jpg?b=1&s=170667a&w=0&k=20&c=vmwjKbkVS9TB8haIf0N2nLrF2lJpZZvEpr0EFR4ksWo=');
 
 INSERT INTO pet_photos (pet_id, photo_url) VALUES (2, 'https://www.allthingsdogs.com/wp-content/uploads/2020/09/Corgi-Mixes.jpg');
 INSERT INTO pet_photos (pet_id, photo_url) VALUES (5, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEJjN9H-bLwwrbdRegimIKIIkasGrpZBYtFQ&usqp=CAU');
 INSERT INTO pet_photos (pet_id, photo_url) VALUES (6, 'https://hips.hearstapps.com/hmg-prod/images/gettyimages-1144982182.jpg?crop=1.00xw:0.751xh;0,0.166xh&resize=1200:*');
+INSERT INTO pet_photos (pet_id, photo_url) VALUES (8, 'https://www.alphapaw.com/wp-content/uploads/2021/01/3-2-768x768-1.jpg');
 
 
 COMMIT TRANSACTION;
