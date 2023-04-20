@@ -2,7 +2,8 @@
    <div class="login-wrapper">
     <div class="form-wrapper">
         <form @submit.prevent="changePassword">
-            <h1 >Please Change Password</h1>
+            <h1 >Account Approved!</h1>
+            <h2> Please Change Your Password. </h2>
             <div role="alert" v-if="changePasswordErrors">
               {{ changePasswordErrorMsg }}
             </div>
@@ -86,6 +87,15 @@ h1 {
   background: #62a18f;
   padding: 20px;
   border-radius: 50%
+  
+}
+h2 {
+  padding: .5rem;
+  font-size: 120%;
+  background: #62a18f;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 10px;
   
 }
 form {

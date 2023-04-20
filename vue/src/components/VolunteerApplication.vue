@@ -45,6 +45,7 @@
                 required
               />
             </div>
+            <p> A confirmation email will be sent to you. </p>
             <button type="submit" class="btn">Submit</button>
           </form>
         </div>
