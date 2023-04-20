@@ -25,7 +25,7 @@
                 <p>Breed: {{ pet.breed }}</p>
                 <p>{{ pet.description }}</p>
                 <p> Date Adopted: {{ pet.adoptionDate }}</p>
-                <button v-show="$store.state.user.authorities[0].name.includes('ROLE_VOLUNTEER') ||$store.state.user.authorities[0].name.includes('ROLE_ADMIN')"><router-link
+                <button class="button" v-show="$store.state.user.authorities[0].name.includes('ROLE_VOLUNTEER') ||$store.state.user.authorities[0].name.includes('ROLE_ADMIN')"><router-link
                   :to="{
                     name: 'update-pet-page',
                     params: { petId: pet.petId, pet: pet },
@@ -153,7 +153,10 @@ img {
   transform: scale(1.05);
  
 }
-.button {
+button {
+  border: none;
+}
+button .button {
   cursor: pointer;
   display: inline;
   text-decoration: none;

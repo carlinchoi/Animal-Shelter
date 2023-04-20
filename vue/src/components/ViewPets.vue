@@ -19,17 +19,17 @@
               <div class="image-container">
                 <img v-for="photo in petPhotos[pet.petId]" :key="photo" :src="photo" alt="Photos of this Pet">
               </div>
-              <a href="#" class="button">Learn More</a>
+              <a href="#" class="button">Learn More</a></div>
               <div class="text-box">
                 <p>{{ pet.petName }}</p>
                 <p>Species: {{ pet.species }}</p>
                 <p>Breed: {{ pet.breed }}</p>
                 <p>{{ pet.description }}</p>
-                <button v-show="$store.state.user.authorities[0].name.includes('ROLE_VOLUNTEER') ||$store.state.user.authorities[0].name.includes('ROLE_ADMIN')">
-                  <router-link :to="{ name: 'update-pet-page', params: { petId: pet.petId, pet: pet }}" class="button">Edit</router-link>
+                <button class="editButton" v-show="$store.state.user.authorities[0].name.includes('ROLE_VOLUNTEER') ||$store.state.user.authorities[0].name.includes('ROLE_ADMIN')">
+                  <router-link :to="{ name: 'update-pet-page', params: { petId: pet.petId, pet: pet }}" >Edit</router-link>
                 </button>
               </div>
-            </div>
+            
           </div>
         </div>
       </div>
@@ -130,30 +130,57 @@ img {
   flex-direction: column;
   align-items: center;
   max-width: 300px;
-  background-color: rgba(93, 11, 93, 0.7);
   backdrop-filter: blur(10px);
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
   transition: transform 500ms ease;
   background-color: rgba(139, 100, 139, 0.8);
-  z-index: 1;
+  z-index: 2;
   font-weight: bold;
   flex-basis: calc(50% - 20px);
   width: calc(50% - 10px);
 }
-
+.flip-card-back {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
 .pet-card:hover {
   transform: scale(1.05);
- 
 }
 .button {
+  position: absolute;
+  bottom: -38px;
+  right: 0px;
   cursor: pointer;
   display: inline;
   text-decoration: none;
   color: black;
-  background-color: rgb(195, 226, 199);
-  padding: 0.5em 1.25em;
-  border-radius: 0.25em;
+ background-color: rgb(195, 226, 199);
+  padding: 10px 15px;
+  border-radius: 5px;
   font-weight: bold;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+.editButton {
+  text-decoration: none;
+  position: absolute;
+  bottom:10px;
+  left: 30px;
+  cursor: pointer;
+  display: inline;
+  color: black;
+  background-color: rgb(195, 226, 199);
+  padding: 10px 15px;
+  border-radius: 5px;
+  border:none;
+}
+.editButton:hover,
+.editButton:focus{
+background-color: rgb(208, 182, 214);  
 }
 .button:hover,
 .button:focus {
@@ -182,13 +209,6 @@ img {
   padding: 12px 16px;
   background-color: #f1f1f1;
   cursor: pointer;
-}
-.btn:hover {
-  background-color: #ddd;
-}
-.btn.active {
-  background-color: rgb#5c5470;
-  color: white;
 }
 .btn-container {
   display: flex;
