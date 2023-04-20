@@ -173,10 +173,12 @@ button .button {
 
 .text-box {
   background-color: white;
-  padding: 25px;
+  padding: 10px 30px 30px;
   border-radius: 5px;
   line-height: 1; 
-  margin-top: 20px;
+  margin-top: 0px;
+  height: 40%;
+  width: 80%;
 }
 .logo {
   display: flex;
