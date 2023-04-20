@@ -43,6 +43,27 @@ INSERT INTO pets(
 	pet_name, is_adopted, species, gender, breed, age_years, description, adoption_date)
 	VALUES ('Cuddles', 'true', 'Hamster', 'female', 'Unknown', '1', 'Requires cozy couch and pillows', '04-03-2023');
 
+INSERT INTO pets(
+	pet_name, is_adopted, species, gender, breed, age_years, description)
+	VALUES ('Floppy', 'false', 'Rabbit', 'Female', 'Unknown', '2', 'Prefers organically grown lettuce');
+
+INSERT INTO pets(
+	pet_name, is_adopted, species, gender, breed, age_years, description)
+	VALUES ('Barley', 'false', 'Dog', 'Male', 'King Charles Spaniel', '1', 'Weekly spa days are appreciated');
+
+INSERT INTO pets(
+	pet_name, is_adopted, species, gender, breed, age_years, description, adoption_date)
+	VALUES ('Grayson', 'true', 'Cat', 'Male', 'Unknown', '2', 'Independent thinker', '03-03-2021');
+
+INSERT INTO pets(
+	pet_name, is_adopted, species, gender, breed, age_years, description)
+	VALUES ('Jumps', 'false', 'Dog', 'Male', 'Mix', '1', 'No caffeine required, loves the high jumps');
+
+INSERT INTO pets(
+	pet_name, is_adopted, species, gender, breed, age_years, description, adoption_date)
+	VALUES ('Cucumber', 'true', 'Guinea Pig', 'Female', 'Unknown', '2', 'Loves seasonal produce', '01-11-2021');
+
+
 INSERT INTO pet_photos (pet_id, photo_url) VALUES (1, 'https://bestfriends.org/sites/default/files/styles/hero_dashboard_650/public/hero-dash/Victory3427MW_Dashboard_Standard.jpg?h=b02ff9d2&itok=yY9Xr3fe');
 INSERT INTO pet_photos (pet_id, photo_url) VALUES (2, 'https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2023-03/puppy-dog-mc-230321-03-b700d4.jpg');
 INSERT INTO pet_photos (pet_id, photo_url) VALUES (3, 'https://www.rd.com/wp-content/uploads/2021/04/GettyImages-1288861082-scaled.jpg?resize=696,464');
@@ -53,6 +74,13 @@ INSERT INTO pet_photos (pet_id, photo_url) VALUES (7, 'https://encrypted-tbn0.gs
 INSERT INTO pet_photos (pet_id, photo_url) VALUES (8, 'https://c4.wallpaperflare.com/wallpaper/12/91/646/cocker-spaniel-wallpaper-preview.jpg');
 INSERT INTO pet_photos (pet_id, photo_url) VALUES (9, 'https://en.bcdn.biz/Images/2015/9/18/094344f8-707e-4f31-b24f-c2a51ea3de78.jpg');
 INSERT INTO pet_photos (pet_id, photo_url) VALUES (10, 'https://t4.ftcdn.net/jpg/02/70/05/25/360_F_270052571_qP9uVd1MpB4kfflUO92S5gdKYCjxM5K3.jpg');
+INSERT INTO pet_photos (pet_id, photo_url) VALUES (11, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRG8lqZ74iCCFSIcegzs-mzaJI8yHKfN_NPiA&usqp=CAU');
+INSERT INTO pet_photos (pet_id, photo_url) VALUES (12, 'https://doglime.com/wp-content/uploads/2021/03/Cavalier-King-Charles-Spaniel-cute-puppy.jpg.webp');
+INSERT INTO pet_photos (pet_id, photo_url) VALUES (13, 'https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60478169/1/?bust=1678470954&width=300');
+INSERT INTO pet_photos (pet_id, photo_url) VALUES (14, 'https://media-be.chewy.com/wp-content/uploads/2022/09/27102124/beagle-cute-dogs.jpg');
+INSERT INTO pet_photos (pet_id, photo_url) VALUES (15, 'https://cf.ltkcdn.net/small-mammals/guinea-pigs/images/orig/326593-2119x1413-sheltie-guinea-pig.jpg');
+
+INSERT INTO pet_photos (pet_id, photo_url) VALUES (2, 'https://www.allthingsdogs.com/wp-content/uploads/2020/09/Corgi-Mixes.jpg');
 INSERT INTO pet_photos (pet_id, photo_url) VALUES (5, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEJjN9H-bLwwrbdRegimIKIIkasGrpZBYtFQ&usqp=CAU');
 INSERT INTO pet_photos (pet_id, photo_url) VALUES (6, 'https://hips.hearstapps.com/hmg-prod/images/gettyimages-1144982182.jpg?crop=1.00xw:0.751xh;0,0.166xh&resize=1200:*');
 
