@@ -75,6 +75,14 @@ INSERT INTO pets(
 	pet_name, is_adopted, species, gender, breed, age_years, description, adoption_date)
 	VALUES ('Abby', 'true', 'Cat', 'Female', 'Unknown', '3', 'Very artistic, enjoys watercolors and salmon', '02-03-2020');
 
+INSERT INTO pets(
+	pet_name, is_adopted, species, gender, breed, age_years, description, adoption_date)
+	VALUES ('Charlie', 'true', 'Dog', 'Male', 'Mix', '3', 'Loves everyone he meets', '01-10-2020');
+
+INSERT INTO pets(
+	pet_name, is_adopted, species, gender, breed, age_years, description, adoption_date)
+	VALUES ('Ollie', 'true', 'Cat', 'Male', 'Unknown', '1', 'Spring is his favorite season', '01-10-2022');
+
 
 INSERT INTO pet_photos (pet_id, photo_url) VALUES (1, 'https://bestfriends.org/sites/default/files/styles/hero_dashboard_650/public/hero-dash/Victory3427MW_Dashboard_Standard.jpg?h=b02ff9d2&itok=yY9Xr3fe');
 INSERT INTO pet_photos (pet_id, photo_url) VALUES (2, 'https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2023-03/puppy-dog-mc-230321-03-b700d4.jpg');
@@ -94,6 +102,8 @@ INSERT INTO pet_photos (pet_id, photo_url) VALUES (15, 'https://cf.ltkcdn.net/sm
 INSERT INTO pet_photos (pet_id, photo_url) VALUES (16, 'https://d.newsweek.com/en/full/2202634/chihuahua.jpg');
 INSERT INTO pet_photos (pet_id, photo_url) VALUES (17, 'https://zupreem.com/wp-content/uploads/elementor/thumbs/cute-cockatiel-parrot-in-the-hands-of-the-owner-2021-09-01-16-14-54-utc-scaled-pmqyvnyfr6t00ar99hpps23qa3necbqdr8hrf73lsw.jpeg');
 INSERT INTO pet_photos (pet_id, photo_url) VALUES (18, 'https://media.istockphoto.com/id/1355950595/photo/ginger-cat-portrait.jpg?b=1&s=170667a&w=0&k=20&c=vmwjKbkVS9TB8haIf0N2nLrF2lJpZZvEpr0EFR4ksWo=');
+INSERT INTO pet_photos (pet_id, photo_url) VALUES (19, 'https://hips.hearstapps.com/hmg-prod/images/funny-dog-captions-1563456605.jpg?crop=0.748xw:1.00xh;0.0897xw,0&resize=1200:*');
+INSERT INTO pet_photos (pet_id, photo_url) VALUES (20, 'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F47%2F2020%2F06%2F27%2Fstriped-cat-playing-flower-552781357-2000.jpg');
 
 INSERT INTO pet_photos (pet_id, photo_url) VALUES (2, 'https://www.allthingsdogs.com/wp-content/uploads/2020/09/Corgi-Mixes.jpg');
 INSERT INTO pet_photos (pet_id, photo_url) VALUES (5, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEJjN9H-bLwwrbdRegimIKIIkasGrpZBYtFQ&usqp=CAU');
