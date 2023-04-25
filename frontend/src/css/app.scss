@@ -1,0 +1,56 @@
+// app global css in SCSS form
+// app.scss
+
+// Import Quasar variables
+@import "quasar.variables.scss";
+
+// Custom styles
+.q-tabs-centered {
+  display: flex;
+  justify-content: center;
+}
+
+.q-tab-right {
+  margin-left: auto;
+}
+
+.q-tab-with-margin {
+  margin-right:940px;
+}
+
+.home-text-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+.home-text-container h1 {
+  font-weight: bold;
+  white-space: nowrap;
+  margin: 0 auto;
+}
+
+.home-text-container p {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: larger;
+  height: 125px;
+}
+
+.home-title-container {
+  margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+// ... other custom styles ...
