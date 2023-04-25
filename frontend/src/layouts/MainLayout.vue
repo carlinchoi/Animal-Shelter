@@ -1,14 +1,17 @@
 <template>
+  <HeaderComponent />
   <Home />
 </template>
 
 <script>
+import HeaderComponent from 'src/components/Header.vue'
 import Home from '../components/Home.vue'
 
 export default {
   name: 'MainLayout',
   components: {
-    Home
+    Home,
+    HeaderComponent
   },
   data () {
     return {

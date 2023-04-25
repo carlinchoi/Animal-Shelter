@@ -21,15 +21,17 @@
 .home-text-container {
   display: flex;
   align-items: center;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
+  justify-content: flex-start;
+  flex-direction: column;
   text-align: center;
 }
+
+
 .home-text-container h1 {
   font-weight: bold;
   white-space: nowrap;
   margin: 0 auto;
+  height: 1000px;
 }
 
 .home-text-container p {
@@ -37,12 +39,21 @@
   margin: 0 auto;
   text-align: center;
   font-size: larger;
-  height: 125px;
+  height: 924px;
 }
 
 .home-title-container {
   margin-bottom: 20px;
 }
+
+header {
+  font-size: 2.5em;
+}
+header nav a {
+  font-size: 1.5em;
+}
+
+
 
 
 
