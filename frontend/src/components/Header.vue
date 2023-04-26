@@ -1,5 +1,5 @@
 <template>
-  <div id="app" style="min-height: 100vh;">
+  <div id="app" style="max-height: 10vh;">
     <q-layout view="lHh lpr lFf"  class="shadow-2 rounded-borders header">
       <q-header class='text-black bg-white' elevated>
         <q-toolbar>
@@ -12,7 +12,9 @@
           <q-tabs v-model="tab" class="q-tabs-centered">
             <q-tab name="images" label="Home"></q-tab> |
             <q-tab name="videos" label="Our Adopted Pets"></q-tab> |
-            <q-tab name="articles" label="Add New Pet Listing" class="q-tab-with-margin"></q-tab>
+            <q-tab name="articles" label="Add New Pet Listing"></q-tab> |
+            <q-tab name="articles" label="Become a Volunteer" class="q-tab-with-margin"></q-tab>
+
           </q-tabs>
 
 
@@ -20,34 +22,20 @@
             <q-menu>
               <q-list dense style="min-width: 100px">
                 <q-item clickable v-close-popup>
-                  <q-item-section>Open...</q-item-section>
+                  <q-item-section>View Volunteers</q-item-section>
                 </q-item>
                 <q-item clickable v-close-popup>
-                  <q-item-section>New</q-item-section>
+                  <q-item-section>Approve Pending Volunteers</q-item-section>
                 </q-item>
                 <q-separator></q-separator>
                 <q-item clickable>
-                  <q-item-section>Preferences</q-item-section>
+                  <q-item-section>Log Out</q-item-section>
                 </q-item>
               </q-list>
             </q-menu>
           </q-btn>
-
-          <q-menu>
-            <q-avatar><img src='https://cdn-icons-png.flaticon.com/512/5087/5087579.png'></q-avatar>
-          <q-tab label="Account" class="q-tab-right">
-              <q-list>
-                <q-item clickable>
-                  <q-item-section>
-                    Logout
-                  </q-item-section>
-                </q-item>
-              </q-list>
-            </q-tab>
-          </q-menu>
         </q-toolbar>
       </q-header>
-
     </q-layout>
   </div>
 </template>

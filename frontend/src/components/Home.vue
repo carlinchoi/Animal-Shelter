@@ -1,16 +1,17 @@
 <template>
   <div class="home-text-container">
     <div class="home-title-container">
-      <h1 class='fixed-center' style ='font-weight:bold'>
+      <h1 style ='font-weight:bold'>
         Every Pet Deserves a Loving Home. <br>
         <span style='color:orange'>Adopt </span>
         <span>a Pet Today!</span>
       </h1>
-      <p class="fixed-bottom">
+      <p>
         Browse our available animals and learn more about the adoption process. Together, we can
         <span style='font-weight: bold;'> rescue, rehabilitate, and rehome pets in need.</span>
         Thank you for supporting our mission to bring joy to families through pet adoption!
       </p>
+      <q-separator color="black" thickness="1px" style="height: 2px" />
     </div>
   </div>
 </template>

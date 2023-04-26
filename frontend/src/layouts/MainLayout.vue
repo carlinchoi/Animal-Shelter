@@ -1,17 +1,19 @@
 <template>
   <HeaderComponent />
   <Home />
+  <PetSearch />
 </template>
 
 <script>
 import HeaderComponent from 'src/components/Header.vue'
 import Home from '../components/Home.vue'
-
+import PetSearch from 'src/components/PetSearch.vue'
 export default {
   name: 'MainLayout',
   components: {
     Home,
-    HeaderComponent
+    HeaderComponent,
+    PetSearch
   },
   data () {
     return {
