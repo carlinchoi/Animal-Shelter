@@ -79,74 +79,27 @@
         style="height: 2px; width: 60%; margin: 0 auto; margin-top: 40px"
       />
     </div>
-    <div class="q-pa-md row q-gutter-md justify-left text-center">
-      <div v-for="pet in filteredPets" :key="pet.petId">
-        <q-card class="listing-card" flat bordered>
-          <!-- <img src="https://cdn.quasar.dev/img/parallax2.jpg" /> -->
-          <img
-            v-for="photo in petPhotos[pet.petId]"
-            :key="photo"
-            :src="photo"
-            alt="Photos of this Pet"
-          />
-          <q-list>
-            <q-item>
-              <q-item-section>
-                <q-item-label class="text-weight-bold">Name:</q-item-label>
-              </q-item-section>
-              <q-item-section>
-                <q-item-label>{{ pet.petName }}</q-item-label>
-              </q-item-section>
-            </q-item>
-            <q-separator />
-            <q-item>
-              <q-item-section>
-                <q-item-label class="text-weight-bold">Species: </q-item-label>
-              </q-item-section>
-              <q-item-section>
-                <q-item-label>{{ pet.species }}</q-item-label>
-              </q-item-section>
-            </q-item>
-            <q-separator />
-            <q-item>
-              <q-item-section>
-                <q-item-label class="text-weight-bold">Breed: </q-item-label>
-              </q-item-section>
-              <q-item-section>
-                <q-item-label>{{ pet.breed }}</q-item-label>
-              </q-item-section>
-            </q-item>
-            <q-separator />
-            <q-item>
-              <q-item-section>
-                <q-item-label class="text-weight-bold"
-                  >Description:
-                </q-item-label>
-              </q-item-section>
-              <q-item-section>
-                <q-item-label>{{ pet.description }}</q-item-label>
-              </q-item-section>
-            </q-item>
-          </q-list>
-        </q-card>
-      </div>
-    </div>
+
   </div>
 </template>
 
 <script>
 import petservice from "../boot/PetService";
+import { ref } from "vue";
 
 export default {
+
   //test push
   name: "view-pets",
   data() {
     return {
+      slide: ref(1),
       selectedSpecies: null,
       petPhotos: {},
       searchQuery: "",
     };
   },
+  
   mounted() {
     this.retrievePets();
   },
