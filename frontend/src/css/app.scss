@@ -15,7 +15,7 @@
 }
 
 .q-tab-with-margin {
-  margin-right:856px;
+  margin-right: 856px;
 }
 
 .home-text-container {
@@ -24,15 +24,18 @@
   justify-content: flex-start;
   flex-direction: column;
   text-align: center;
+  //this is supposed to allow us to highlight the text but its not
+  -webkit-user-select: text; /* Safari */
+  -moz-user-select: text; /* Firefox */
+  -ms-user-select: text; /* IE10+/Edge */
+  user-select: text !important;
 }
-
 
 .home-text-container h1 {
   font-weight: bold;
   white-space: nowrap;
   margin: 0 auto;
   margin-bottom: 20px;
-
 }
 
 .home-text-container p {
@@ -41,7 +44,7 @@
   text-align: center;
   font-size: larger;
   margin-bottom: 10px;
-
+  max-height: max-content;
 }
 
 .home-title-container {
@@ -65,7 +68,13 @@ header nav a {
   .q-img {
     height: 300px;
   }
+}
 
+.listing-card {
+  width: 100%;
+  max-width: 250px;
 }
 
 // ... other custom styles ...
+
+
