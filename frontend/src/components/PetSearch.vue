@@ -8,7 +8,7 @@
       v-model="searchQuery"
       type="text"
       label="Search Pets by Name, Species, or Breed"
-      standout="white"
+      outlined
       color="primary"
       input-class="search-input"
       class="q-mr-md q-ml-md vertical"
@@ -185,7 +185,9 @@ export default {
         pets = pets.filter(
           (pet) =>
             pet.breed.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-            pet.petName.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+            pet.petName
+              .toLowerCase()
+              .includes(this.searchQuery.toLowerCase()) ||
             pet.species.toLowerCase().includes(this.searchQuery.toLowerCase())
         );
       }
