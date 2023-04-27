@@ -1,6 +1,6 @@
 <template>
   <div id="q-app">
-    <q-layout class="shadow-2 rounded-borders">
+    <q-layout view="lHh lpr lFf" class="shadow-2 rounded-borders">
       <div class="q-pa-md">
         <div class="content" ref="content">
           <!-- Your page content goes here -->

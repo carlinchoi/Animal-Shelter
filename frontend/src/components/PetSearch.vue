@@ -1,12 +1,31 @@
 <template>
   <div id="q-app">
     <!-- style="min-height: 100vh;" removed this from line 2 -->
-    <h2>Search bar goes here Input Native form</h2>
+    <div>
+      <h3 class="text-center">Browse Available Pets</h3>
+    </div>
+    <q-input
+      v-model="searchQuery"
+      type="text"
+      label="Search Pets by Name, Species, or Breed"
+      standout="white"
+      color="primary"
+      input-class="search-input"
+      class="q-mr-md q-ml-md vertical"
+      style="max-width: 20%; margin-left: 40%"
+    >
+      <template v-slot:prepend>
+        <q-icon name="search" />
+      </template>
+      <template v-slot:append>
+        <q-icon name="clear" class="cursor-pointer" @click="searchQuery = ''" />
+      </template>
+    </q-input>
+
     <div class="q-pa-md row q-gutter-md justify-center text-center">
       <q-card class="my-card" @click="selectSpecies(null)">
         <h2 style="font-weight: bold">All Pets</h2>
       </q-card>
-
       <q-card class="my-card" @click="selectSpecies('Dog')">
         <q-img
           src="https://hips.hearstapps.com/hmg-prod/images/golden-retriever-royalty-free-image-506756303-1560962726.jpg?crop=1.00xw:0.756xh;0,0.0756xh&resize=1200:*"
@@ -60,7 +79,6 @@
         style="height: 2px; width: 60%; margin: 0 auto; margin-top: 40px"
       />
     </div>
-
     <div class="q-pa-md row q-gutter-md justify-left text-center">
       <div v-for="pet in filteredPets" :key="pet.petId">
         <q-card class="listing-card" flat bordered>
@@ -126,6 +144,7 @@ export default {
     return {
       selectedSpecies: null,
       petPhotos: {},
+      searchQuery: "",
     };
   },
   mounted() {
@@ -158,12 +177,24 @@ export default {
       return this.$store.state.pets;
     },
     filteredPets() {
-      if (!this.selectedSpecies) {
-        return this.$store.state.pets;
+      let pets = this.$store.state.pets;
+      if (this.selectedSpecies) {
+        pets = pets.filter((pet) => pet.species === this.selectedSpecies);
       }
-      return this.$store.state.pets.filter(
-        (pet) => pet.species === this.selectedSpecies
-      );
+      if (this.searchQuery) {
+        pets = pets.filter(
+          (pet) =>
+            pet.breed.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+            pet.petName.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+            pet.species.toLowerCase().includes(this.searchQuery.toLowerCase())
+        );
+      }
+      if (this.searchTerm) {
+        pets = pets.filter((pet) =>
+          pet.name.toLowerCase().includes(this.searchTerm.toLowerCase())
+        );
+      }
+      return pets;
     },
   },
 };
