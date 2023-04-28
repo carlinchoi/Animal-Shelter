@@ -79,7 +79,73 @@
         style="height: 2px; width: 60%; margin: 0 auto; margin-top: 40px"
       />
     </div>
+  </div>
+  <h2 class="text-center">Available Pets for Adoption</h2>
+  <div class="q-pa-md row q-gutter-md justify-left text-center pets-container">
+    <div v-for="pet in filteredPets" :key="pet.petId">
+      <q-card class="listing-card" flat bordered>
+        <!-- <img
+            v-for="photo in petPhotos[pet.petId]"
+            :key="photo"
+            :src="photo"
+            alt="Photos of this Pet"
+          /> -->
 
+        <!-- <q-carousel animated v-model="slide" arrows navigation infinite>
+            <q-carousel-slide
+              v-for="photo in petPhotos[pet.petId]"
+              :name="1"
+              :key="photo"
+              :img-src="photo"
+            ></q-carousel-slide>
+          </q-carousel> -->
+        <q-carousel animated v-model="slide" arrows navigation infinite>
+          <q-carousel-slide
+            v-for="photo in petPhotos[pet.petId]"
+            :name="1"
+            :key="photo"
+            :img-src="photo"
+          ></q-carousel-slide>
+        </q-carousel>
+        <q-list>
+          <q-item>
+            <q-item-section>
+              <q-item-label class="text-weight-bold">Name:</q-item-label>
+            </q-item-section>
+            <q-item-section>
+              <q-item-label>{{ pet.petName }}</q-item-label>
+            </q-item-section>
+          </q-item>
+          <q-separator />
+          <q-item>
+            <q-item-section>
+              <q-item-label class="text-weight-bold">Species: </q-item-label>
+            </q-item-section>
+            <q-item-section>
+              <q-item-label>{{ pet.species }}</q-item-label>
+            </q-item-section>
+          </q-item>
+          <q-separator />
+          <q-item>
+            <q-item-section>
+              <q-item-label class="text-weight-bold">Breed: </q-item-label>
+            </q-item-section>
+            <q-item-section>
+              <q-item-label>{{ pet.breed }}</q-item-label>
+            </q-item-section>
+          </q-item>
+          <q-separator />
+          <q-item>
+            <q-item-section>
+              <q-item-label class="text-weight-bold">Description:</q-item-label>
+            </q-item-section>
+            <q-item-section>
+              <q-item-label>{{ pet.description }}</q-item-label>
+            </q-item-section>
+          </q-item>
+        </q-list>
+      </q-card>
+    </div>
   </div>
 </template>
 
@@ -88,7 +154,6 @@ import petservice from "../boot/PetService";
 import { ref } from "vue";
 
 export default {
-
   //test push
   name: "view-pets",
   data() {
@@ -99,7 +164,7 @@ export default {
       searchQuery: "",
     };
   },
-  
+
   mounted() {
     this.retrievePets();
   },

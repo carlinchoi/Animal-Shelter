@@ -80,8 +80,13 @@ header nav a {
   text-align: left;
 }
 
-
-
+.pets-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Change this number to adjust the number of columns */
+  gap: 16px;
+  margin-left: 500px;
+  margin-right: 500px;
+}
 
 
 
