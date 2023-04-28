@@ -1,7 +1,7 @@
-<template>
-  <q-layout view="hHh lpr fFf">
+<template >
+  <q-layout view="hHh lpr fFf" >
 
-    <q-header class="text-black bg-white" elevated style="overflow-x: hidden;">
+    <q-header class="text-black bg-white" elevated>
         <q-toolbar>
           <q-avatar>
             <img
@@ -47,11 +47,11 @@
     </q-page-container>
 
 <!-- eslint-disable-next-line vue/no-deprecated-v-on-native-modifier -->
-<q-footer v-if="showFooter" bordered class="text-white" color="primary" height="100px">
-  <q-tabs no-caps active-color="primary" indicator-color="transparent" class="text-white">
-    <q-tab name="images" label="Images" style="font-weight: bold; font-size: 16px" ></q-tab>
-    <q-tab name="videos" label="Videos" style="font-weight: bold; font-size: 16px"></q-tab>
-    <q-tab name="articles" label="Articles" style="font-weight: bold; font-size: 16px"></q-tab>
+<q-footer v-if="showFooter" bordered class="text-white" color="primary" >
+  <q-tabs no-caps active-color="orange" indicator-color="orange" class="text-white">
+    <q-tab name="images" label="Images" style="font-weight: bold; font-size: 1.5em" ></q-tab>
+    <q-tab name="videos" label="Videos" style="font-weight: bold; font-size: 1.5em"></q-tab>
+    <q-tab name="articles" label="Articles" style="font-weight: bold; font-size: 1.5em"></q-tab>
   </q-tabs>
 </q-footer>
 
@@ -64,6 +64,7 @@
 
 import Home from '../components/Home.vue'
 import PetSearch from 'src/components/PetSearch.vue'
+import { debounce } from 'lodash'
 
 export default {
   name: 'MainLayout',
@@ -133,7 +134,7 @@ export default {
     }
   },
   mounted() {
-    window.addEventListener('scroll', this.handleScroll)
+    window.addEventListener('scroll', debounce(this.handleScroll, 200))
   },
   beforeUnmount() {
     window.removeEventListener('scroll', this.handleScroll)
