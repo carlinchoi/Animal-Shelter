@@ -11,7 +11,6 @@
         <span style='font-weight: bold;'> rescue, rehabilitate, and rehome pets in need.</span>
         Thank you for supporting our mission to bring joy to families through pet adoption!
       </p>
-      <q-separator color="black" thickness="1px" style="height: 2px" />
     </div>
   </div>
 </template>

@@ -1,31 +1,43 @@
 <template>
   <div id="q-app">
-    <!-- style="min-height: 100vh;" removed this from line 2 -->
     <div>
-      <h3 class="text-center">Browse Available Pets</h3>
+      <h3 class="text-center" style="font-weight: bold">
+        Browse Available Pets For Adoption
+      </h3>
     </div>
-    <q-input
-      v-model="searchQuery"
-      type="text"
-      label="Search Pets by Name, Species, or Breed"
-      outlined
-      color="primary"
-      input-class="search-input"
-      class="q-mr-md q-ml-md vertical"
-      style="max-width: 20%; margin-left: 40%"
-    >
-      <template v-slot:prepend>
-        <q-icon name="search" />
-      </template>
-      <template v-slot:append>
-        <q-icon name="clear" class="cursor-pointer" @click="searchQuery = ''" />
-      </template>
-    </q-input>
+    <div class="q-flex q-justify-center">
+      <div class="q-gutter-md">
+        <q-toolbar class="q-toolbar--justify-center">
+          <q-input
+            v-model="searchQuery"
+            type="text"
+            label="Search Pets by Name, Species, or Breed"
+            outlined
+            color="primary"
+            input-class="search-input"
+            class="q-mr-md q-ml-md vertical"
+            style="margin: 0 auto; width: 25%"
+          >
+            <template v-slot:prepend>
+              <q-icon name="search" />
+            </template>
+            <template v-slot:append>
+              <q-icon
+                name="clear"
+                class="cursor-pointer"
+                @click="searchQuery = ''"
+              />
+            </template>
+          </q-input>
+        </q-toolbar>
+      </div>
+    </div>
 
-    <div class="q-pa-md row q-gutter-md justify-center text-center">
-      <q-card class="my-card" @click="selectSpecies(null)">
-        <h2 style="font-weight: bold">All Pets</h2>
-      </q-card>
+    <div class="search-container text-center" style="font-weight:bold; margin: 0;">
+      <h6>Search by Category: <span style="text-decoration: underline; cursor: pointer;" @click="selectSpecies(null)">All Pets</span>,  <span style="text-decoration: underline; cursor: pointer;" @click="selectSpecies('Dog')">Dogs</span>, <span style="text-decoration: underline; cursor: pointer;" @click="selectSpecies('Cat')">Cats</span>, <span style="text-decoration: underline; cursor: pointer;" @click="selectSpecies('Bird')">Birds</span>, <span style="text-decoration: underline; cursor: pointer;" @click="selectSpecies('Guinea Pig')">Guinea Pigs</span>, <span style="text-decoration: underline; cursor: pointer;" @click="selectSpecies('Hamster')">Hamsters</span></h6>
+    </div>
+    <!-- <div class="q-pa-md row q-gutter-md justify-center text-center cards-container">
+      <q-card class="my-card" @click="selectSpecies(null)"> All Pets </q-card>
       <q-card class="my-card" @click="selectSpecies('Dog')">
         <q-img
           src="https://hips.hearstapps.com/hmg-prod/images/golden-retriever-royalty-free-image-506756303-1560962726.jpg?crop=1.00xw:0.756xh;0,0.0756xh&resize=1200:*"
@@ -72,15 +84,8 @@
           Hamsters
         </q-card-section>
       </q-card>
-
-      <q-separator
-        color="black"
-        thickness="1px"
-        style="height: 2px; width: 60%; margin: 0 auto; margin-top: 40px"
-      />
-    </div>
+    </div> -->
   </div>
-  <h2 class="text-center">Available Pets for Adoption</h2>
   <div class="q-pa-md row q-gutter-md justify-left text-center pets-container">
     <div v-for="pet in filteredPets" :key="pet.petId">
       <q-card class="listing-card" flat bordered>
@@ -99,14 +104,13 @@
               :img-src="photo"
             ></q-carousel-slide>
           </q-carousel> -->
-        <q-carousel animated v-model="slide" arrows navigation infinite>
-          <q-carousel-slide
-            v-for="photo in petPhotos[pet.petId]"
-            :name="1"
-            :key="photo"
-            :img-src="photo"
-          ></q-carousel-slide>
-        </q-carousel>
+        <img
+          v-for="photo in petPhotos[pet.petId]"
+          :key="photo"
+          :src="photo"
+          style="height: 300px; width:500px; object-fit: fill"
+        />
+
         <q-list>
           <q-item>
             <q-item-section>
@@ -162,6 +166,7 @@ export default {
       selectedSpecies: null,
       petPhotos: {},
       searchQuery: "",
+      options: ["Dog", "Cat", "Bird", "Guiena Pig", "Hamster"],
     };
   },
 

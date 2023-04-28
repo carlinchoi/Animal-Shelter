@@ -5,17 +5,17 @@
 @import "quasar.variables.scss";
 
 // Custom styles
+
 .q-tabs-centered {
   display: flex;
   justify-content: center;
+  align-items: center;
+  margin-right: 35%;
+  content: 10%
 }
 
 .q-tab-right {
   margin-left: auto;
-}
-
-.q-tab-with-margin {
-  margin-right: 856px;
 }
 
 .home-text-container {
@@ -24,11 +24,7 @@
   justify-content: flex-start;
   flex-direction: column;
   text-align: center;
-  //this is supposed to allow us to highlight the text but its not
-  -webkit-user-select: text; /* Safari */
-  -moz-user-select: text; /* Firefox */
-  -ms-user-select: text; /* IE10+/Edge */
-  user-select: text !important;
+  margin-top: 2%;
 }
 
 .home-text-container h1 {
@@ -39,17 +35,13 @@
 }
 
 .home-text-container p {
-  max-width: 800px;
   margin: 0 auto;
   text-align: center;
   font-size: larger;
-  margin-bottom: 10px;
+
   max-height: max-content;
 }
 
-.home-title-container {
-  margin-bottom: 20px;
-}
 
 header {
   font-size: 3em;
@@ -64,15 +56,14 @@ header nav a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  .q-img {
-    height: 200px;
-  }
 }
 
+.q-img {
+  height: 200px;
+}
 .listing-card {
-  width: 100%;
-  max-width: 250px;
+  min-height: 100%;
+  object-fit: fill;
 }
 
 
@@ -84,9 +75,33 @@ header nav a {
   display: grid;
   grid-template-columns: repeat(5, 1fr); /* Change this number to adjust the number of columns */
   gap: 16px;
-  margin-left: 500px;
-  margin-right: 500px;
+
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 3%;
 }
+.search-container span:hover {
+  text-decoration: underline;
+  background-color: rgb(251, 208, 129);
+  cursor: pointer;
+}
+h6 {
+  margin: 0.5%;
+}
+.q-layout {
+  box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

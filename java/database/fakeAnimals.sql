@@ -110,17 +110,5 @@ INSERT INTO pet_photos (pet_id, photo_url) VALUES (19, 'https://hips.hearstapps.
 INSERT INTO pet_photos (pet_id, photo_url) VALUES (20, 'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F47%2F2020%2F06%2F27%2Fstriped-cat-playing-flower-552781357-2000.jpg');
 INSERT INTO pet_photos (pet_id, photo_url) VALUES (21, 'https://www.rd.com/wp-content/uploads/2020/06/GettyImages-185330333-edit.jpg?fit=700,467');
 
-INSERT INTO pet_photos (pet_id, photo_url) VALUES (2, 'https://www.allthingsdogs.com/wp-content/uploads/2020/09/Corgi-Mixes.jpg');
-INSERT INTO pet_photos (pet_id, photo_url) VALUES (5, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEJjN9H-bLwwrbdRegimIKIIkasGrpZBYtFQ&usqp=CAU');
-INSERT INTO pet_photos (pet_id, photo_url) VALUES (6, 'https://hips.hearstapps.com/hmg-prod/images/gettyimages-1144982182.jpg?crop=1.00xw:0.751xh;0,0.166xh&resize=1200:*');
-INSERT INTO pet_photos (pet_id, photo_url) VALUES (8, 'https://www.alphapaw.com/wp-content/uploads/2021/01/3-2-768x768-1.jpg');
-
-INSERT INTO pet_photos (pet_id, photo_url) VALUES (2, 'https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2023-03/puppy-dog-mc-230321-03-b700d4.jpg');
-INSERT INTO pet_photos (pet_id, photo_url) VALUES (5, 'https://people.com/thmb/s5axxuhc4nVAr5YfJ4nyjAxBCrM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(637x434:639x436)/tennis-ball-dog-1-426a19de798f4044accbbed837b204c6.jpg');
-INSERT INTO pet_photos (pet_id, photo_url) VALUES (6, 'https://cdn.shopify.com/s/files/1/0249/6472/6880/products/170106485_924058855021440_6983099715977778192_n.jpg?v=1677208554&width=1445');
-INSERT INTO pet_photos (pet_id, photo_url) VALUES (8, 'https://c4.wallpaperflare.com/wallpaper/12/91/646/cocker-spaniel-wallpaper-preview.jpg');
-INSERT INTO pet_photos (pet_id, photo_url) VALUES (5, 'https://images.saymedia-content.com/.image/c_limit%2Ccs_srgb%2Cq_auto:eco%2Cw_700/MTk2MzI1NjA0Mjg5Njg0Nzg0/golden-retriever-names.webp');
-INSERT INTO pet_photos (pet_id, photo_url) VALUES (5, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEJjN9H-bLwwrbdRegimIKIIkasGrpZBYtFQ&usqp=CAU');
-
 
 COMMIT TRANSACTION;

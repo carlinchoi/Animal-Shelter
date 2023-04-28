@@ -1,22 +1,19 @@
 <template>
-  <HeaderComponent />
-  <Home />
-  <PetSearchLayout />
-  <Footercomponent />
+
+<main-layout />
+
 </template>
 
 <script>
-import HeaderComponent from 'src/components/Header.vue'
-import Home from '../components/Home.vue'
-import PetSearchLayout from 'src/layouts/PerSearchLayout.vue'
-import Footercomponent from '../components/FooterComponent.vue'
+import MainLayout from 'src/layouts/MainLayout.vue'
+
+
+
 export default {
   name: 'HomePage',
   components: {
-    Home,
-    HeaderComponent,
-    PetSearchLayout,
-    Footercomponent
+    MainLayout
+
   },
   data () {
     return {
