@@ -1,0 +1,46 @@
+<template>
+  <q-header class="text-black bg-white" elevated>
+    <q-toolbar>
+      <q-avatar>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTet9ewjLhjRL3uQUvKqGCeIdZqreI1Csmxow&usqp=CAU"/>
+      </q-avatar>
+
+      <q-toolbar-title>Rockville Animal Shelter</q-toolbar-title>
+
+      <q-tabs v-model="tab" class="q-tabs-centered">
+        <q-tab name="images" label="Home"></q-tab> |
+        <q-tab name="videos" label="Our Adopted Pets"></q-tab> |
+        <q-tab name="articles" label="Add New Pet Listing"></q-tab> |
+        <q-tab name="articles" label="Become a Volunteer" class="q-tab-with-margin"></q-tab>
+      </q-tabs>
+
+      <q-btn color="primary" label="Account">
+        <q-menu>
+          <q-list dense style="min-width: 100px">
+            <q-item clickable v-close-popup>
+              <q-item-section>View Volunteers</q-item-section>
+            </q-item>
+            <q-item clickable v-close-popup>
+              <q-item-section>Approve Pending Volunteers</q-item-section>
+            </q-item>
+            <q-separator></q-separator>
+            <q-item clickable>
+              <q-item-section>Log Out</q-item-section>
+            </q-item>
+          </q-list>
+        </q-menu>
+      </q-btn>
+    </q-toolbar>
+  </q-header>
+</template>
+
+<script>
+export default {
+  name: 'AppHeader',
+  data () {
+    return {
+      tab: 'images'
+    }
+  }
+}
+</script>
