@@ -2,7 +2,7 @@
   <div id="q-app">
     <div>
       <h3 class="text-center" style="font-weight: bold">
-        Browse Available Pets For Adoption
+        Browse Our Adopted Pets
       </h3>
     </div>
     <div class="q-flex q-justify-center">
@@ -11,7 +11,7 @@
           <q-input
             v-model="searchQuery"
             type="text"
-            label="Search Pets by Name, Species, or Breed"
+            label="Search our Adopted Pets by Name, Species, or Breed"
             outlined
             color="primary"
             input-class="search-input"
@@ -33,10 +33,44 @@
       </div>
     </div>
 
-    <div class="search-container text-center" style="font-weight:bold; margin: 0;">
-      <h6>Search by Category: <span style="text-decoration: underline; cursor: pointer;" @click="selectSpecies(null)">All Pets</span>,  <span style="text-decoration: underline; cursor: pointer;" @click="selectSpecies('Dog')">Dogs</span>, <span style="text-decoration: underline; cursor: pointer;" @click="selectSpecies('Cat')">Cats</span>, <span style="text-decoration: underline; cursor: pointer;" @click="selectSpecies('Bird')">Birds</span>, <span style="text-decoration: underline; cursor: pointer;" @click="selectSpecies('Guinea Pig')">Guinea Pigs</span>, <span style="text-decoration: underline; cursor: pointer;" @click="selectSpecies('Hamster')">Hamsters</span></h6>
+    <div
+      class="search-container text-center"
+      style="font-weight: bold; margin: 0"
+    >
+      <h6>
+        Search by Category:
+        <span
+          style="text-decoration: underline; cursor: pointer"
+          @click="selectSpecies(null)"
+          >All Pets</span
+        >,
+        <span
+          style="text-decoration: underline; cursor: pointer"
+          @click="selectSpecies('Dog')"
+          >Dogs</span
+        >,
+        <span
+          style="text-decoration: underline; cursor: pointer"
+          @click="selectSpecies('Cat')"
+          >Cats</span
+        >,
+        <span
+          style="text-decoration: underline; cursor: pointer"
+          @click="selectSpecies('Bird')"
+          >Birds</span
+        >,
+        <span
+          style="text-decoration: underline; cursor: pointer"
+          @click="selectSpecies('Guinea Pig')"
+          >Guinea Pigs</span
+        >,
+        <span
+          style="text-decoration: underline; cursor: pointer"
+          @click="selectSpecies('Hamster')"
+          >Hamsters</span
+        >
+      </h6>
     </div>
-
   </div>
   <div class="q-pa-md row q-gutter-md justify-left text-center pets-container">
     <div v-for="pet in filteredPets" :key="pet.petId">
@@ -45,7 +79,7 @@
           v-for="photo in petPhotos[pet.petId]"
           :key="photo"
           :src="photo"
-          style="height: 300px; width:500px; object-fit: fill"
+          style="height: 300px; width: 500px; object-fit: fill"
         />
 
         <q-list>
@@ -95,7 +129,7 @@ import petservice from "../boot/PetService";
 import { ref } from "vue";
 
 export default {
-  name: "view-pets",
+  name: "view-adoptions",
   data() {
     return {
       slide: ref(1),
@@ -105,14 +139,13 @@ export default {
       options: ["Dog", "Cat", "Bird", "Guiena Pig", "Hamster"],
     };
   },
-
   mounted() {
     this.retrievePets();
   },
   methods: {
     retrievePets() {
-      petservice.findAllPets().then((response) => {
-        this.$store.commit("SET_PET_INFO", response.data);
+      petservice.findAdoptedPets().then((response) => {
+        this.$store.commit("SET_ADOPTIONS_INFO", response.data);
         response.data.forEach((pet) => {
           this.retrievePetPhotos(pet.petId);
         });
@@ -133,15 +166,17 @@ export default {
   },
   computed: {
     pets() {
-      return this.$store.state.pets;
+      return this.$store.state.adoptedPets;
     },
     filteredPets() {
-      let pets = this.$store.state.pets;
+      let adoptedPets = this.$store.state.adoptedPets;
       if (this.selectedSpecies) {
-        pets = pets.filter((pet) => pet.species === this.selectedSpecies);
+        adoptedPets = adoptedPets.filter(
+          (pet) => pet.species === this.selectedSpecies
+        );
       }
       if (this.searchQuery) {
-        pets = pets.filter(
+        adoptedPets = adoptedPets.filter(
           (pet) =>
             pet.breed.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
             pet.petName
@@ -151,11 +186,11 @@ export default {
         );
       }
       if (this.searchTerm) {
-        pets = pets.filter((pet) =>
+        adoptedPets = adoptedPets.filter((pet) =>
           pet.name.toLowerCase().includes(this.searchTerm.toLowerCase())
         );
       }
-      return pets;
+      return adoptedPets;
     },
   },
 };

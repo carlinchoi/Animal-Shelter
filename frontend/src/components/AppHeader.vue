@@ -8,10 +8,10 @@
       <q-toolbar-title>Rockville Animal Shelter</q-toolbar-title>
 
       <q-tabs v-model="tab" class="q-tabs-centered">
-        <q-tab name="images" label="Home"></q-tab> |
-        <q-tab name="videos" label="Our Adopted Pets"></q-tab> |
-        <q-tab name="articles" label="Add New Pet Listing"></q-tab> |
-        <q-tab name="articles" label="Become a Volunteer" class="q-tab-with-margin"></q-tab>
+        <q-route-tab name="homeRoute" label="Home" :to="{ name: 'homePage'}"></q-route-tab>  |
+        <q-route-tab name="adoptedPetsRoute" label="Our Adopted Pets" :to="{ name: 'adoptedPets'}"></q-route-tab> |
+        <q-tab name="addNewPetRoute" label="Add New Pet Listing"></q-tab> |
+        <q-tab name="volunteerRegistrationRoute" label="Become a Volunteer" class="q-tab-with-margin"></q-tab>
       </q-tabs>
 
       <q-btn color="primary" label="Account">

@@ -1,30 +1,25 @@
-<template >
+<template>
   <q-layout view="hHh lpr fFf" >
     <AppHeader />
     <q-page-container @scroll="onScroll">
-      <Home />
-      <PetSearch />
+      <AdoptedPets/>
     </q-page-container>
     <AppFooter />
   </q-layout>
 
-
 </template>
 
 <script>
-
-import Home from '../components/Home.vue'
-import PetSearch from 'src/components/PetSearch.vue'
+import AdoptedPets from '../components/AdoptedPets.vue'
 import AppFooter from '../components/AppFooter.vue'
 import AppHeader from '../components/AppHeader.vue'
 
 export default {
-  name: 'MainLayout',
+  name: 'AdoptedPetsLayout',
   components: {
-    Home,
-    PetSearch,
+    AdoptedPets,
     AppFooter,
     AppHeader
   }
-  }
+}
 </script>
