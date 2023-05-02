@@ -88,7 +88,7 @@ INSERT INTO pets(
 	VALUES ('Daisy', 'false', 'Dog', 'Female', 'Dachshund', '1', 'Loves parks for the flowers and dirt');
 
 
-INSERT INTO pet_photos (pet_id, photo_url) VALUES (1, 'https://bestfriends.org/sites/default/files/styles/hero_dashboard_650/public/hero-dash/Victory3427MW_Dashboard_Standard.jpg?h=b02ff9d2&itok=yY9Xr3fe');
+INSERT INTO pet_photos (pet_id, photo_url) VALUES (1, 'https://thumbs.dreamstime.com/b/white-rabbit-1709771.jpg');
 INSERT INTO pet_photos (pet_id, photo_url) VALUES (2, 'https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2023-03/puppy-dog-mc-230321-03-b700d4.jpg');
 INSERT INTO pet_photos (pet_id, photo_url) VALUES (3, 'https://www.rd.com/wp-content/uploads/2021/04/GettyImages-1288861082-scaled.jpg?resize=696,464');
 INSERT INTO pet_photos (pet_id, photo_url) VALUES (4, 'https://patch.com/img/cdn20/getty/25204965/20211221/061842/styles/patch_image/public/gettyimages-1221884124___21180650218.jpg');

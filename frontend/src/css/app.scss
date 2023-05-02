@@ -149,6 +149,27 @@ body {
 }
 
 
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.form-row .input-container {
+  flex: 1 1 40%;
+}
+
+.select {
+  margin-right: 2%;
+}
+
+.input-container {
+  margin-bottom: 3%;
+}
+
+
+
 
 
 

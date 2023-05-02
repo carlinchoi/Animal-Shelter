@@ -25,51 +25,57 @@
                 />
               </div>
             </div>
-            <div class="input-row">
-              <div class="input-container">
-                <p style="font-weight: bold; margin-bottom: 1%">Gender</p>
-                <q-option-group
-                  v-model="pet.gender"
-                  type="radio"
-                  :options="genderOptions"
-                  required
-                  inline
-                  align="left"
-                />
-              </div>
-              <div class="input-container">
-                <p style="font-weight: bold; margin-bottom: 1%">Age</p>
-                <q-input
-                  filled
-                  v-model="pet.age"
-                  label="Age"
-                  type="number"
-                  required
-
-                />
-              </div>
+            <div class="input-container">
+              <p style="font-weight: bold; margin-bottom: 1%">Gender</p>
+              <q-option-group
+                v-model="pet.gender"
+                type="radio"
+                :options="genderOptions"
+                required
+                inline
+                align="left"
+              />
+            </div>
+            <div class="input-container">
+              <p style="font-weight: bold; margin-bottom: 1%">Age</p>
+              <q-input
+                filled
+                v-model="pet.age"
+                label="Age"
+                type="number"
+                required
+                style="width: 49%"
+                min="0"
+                max="100"
+              />
             </div>
 
             <div class="input-container">
-              <p style="font-weight: bold; margin-bottom: 1%">Select Species</p>
-              <q-select
-                filled
-                v-model="pet.species"
-                label="Select Species"
-                :options="breedOptions"
-                required
-                style="width: 40%"
-              />
-              <div class="input-container">
-                <p style="font-weight: bold; margin-bottom: 1%">Breed</p>
-                <q-input
-                  filled
-                  v-model="pet.breed"
-                  label="Breed"
-                  type="text"
-                  style="width: 40%"
-                  required
-                />
+              <div class="form-row">
+                <div class="input-container select">
+                  <p style="font-weight: bold; margin-bottom: 1%">
+                    Select Species
+                  </p>
+                  <q-select
+                    filled
+                    v-model="pet.species"
+                    label="Select Species"
+                    :options="breedOptions"
+                    required
+                    style="width: 100%"
+                  />
+                </div>
+                <div class="input-container">
+                  <p style="font-weight: bold; margin-bottom: 1%">Breed</p>
+                  <q-input
+                    filled
+                    v-model="pet.breed"
+                    label="Breed"
+                    type="text"
+                    style="width: 100%"
+                    required
+                  />
+                </div>
               </div>
 
               <div class="input-container">

@@ -45,7 +45,7 @@
           v-for="photo in petPhotos[pet.petId]"
           :key="photo"
           :src="photo"
-          style="height: 300px; width:500px; object-fit: fill"
+          style="height: 300px; width: 100%; object-fit: fill"
         />
 
         <q-list>
