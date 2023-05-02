@@ -26,6 +26,7 @@
                 >
                   <template v-slot:prepend>
                     <q-icon name="pets" />
+
                   </template>
                 </q-input>
               </div>

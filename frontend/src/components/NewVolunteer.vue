@@ -1,12 +1,14 @@
 <template>
   <q-layout>
     <q-page-container class="q-gutter-md">
-      <q-page class="register-wrapper">
+      <q-page class="add-wrapper">
         <div class="form-wrapper">
-          <div id="register" class="text-center">
+          <div id="register">
             <q-form @submit.prevent="submitForm" ref="registerForm">
               <div class="my-inputs">
-                <h1 style="font-weight: bold; margin-bottom: 1%; margin-top: 1%">
+                <h1
+                  style="font-weight: bold; margin-bottom: 1%; margin-top: 1%"
+                >
                   Volunteer Application
                 </h1>
                 <q-separator />
@@ -21,7 +23,7 @@
                     required
                     style="width: 100%"
                   >
-                    <template #prepend>
+                    <template v-slot:prepend>
                       <q-icon name="person-outline" />
                     </template>
                   </q-input>
@@ -36,7 +38,7 @@
                     required
                     style="width: 100%"
                   >
-                    <template #prepend>
+                    <template v-slot:prepend>
                       <q-icon name="person-outline" />
                     </template>
                   </q-input>
@@ -51,13 +53,15 @@
                     required
                     style="width: 100%"
                   >
-                    <template #prepend>
+                    <template v-slot:prepend>
                       <q-icon name="mail-outline" />
                     </template>
                   </q-input>
                 </div>
                 <div class="input-container">
-                  <p style="font-weight: bold; margin-bottom: 1%">Phone Number</p>
+                  <p style="font-weight: bold; margin-bottom: 1%">
+                    Phone Number
+                  </p>
                   <q-input
                     filled
                     v-model="phone"
@@ -66,12 +70,12 @@
                     required
                     style="width: 100%"
                   >
-                    <template #prepend>
+                    <template v-slot:prepend>
                       <q-icon name="call-outline" />
                     </template>
                   </q-input>
                 </div>
-                <p> A confirmation email will be sent to you. </p>
+                <p>*A confirmation email will be sent to you.</p>
                 <div
                   class="input-container"
                   style="display: flex; justify-content: space-between"
@@ -101,7 +105,6 @@
     </q-page-container>
   </q-layout>
 </template>
-
 
 <script>
 import VolunteerService from "../boot/VolunteerService";
@@ -154,6 +157,4 @@ export default {
 };
 </script>
 
-<style>
-
-</style>
+<style></style>
