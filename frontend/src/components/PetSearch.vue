@@ -60,6 +60,15 @@
           <q-separator />
           <q-item>
             <q-item-section>
+              <q-item-label class="text-weight-bold">Gender:</q-item-label>
+            </q-item-section>
+            <q-item-section>
+              <q-item-label>{{ pet.gender }}</q-item-label>
+            </q-item-section>
+          </q-item>
+          <q-separator />
+          <q-item>
+            <q-item-section>
               <q-item-label class="text-weight-bold">Species: </q-item-label>
             </q-item-section>
             <q-item-section>

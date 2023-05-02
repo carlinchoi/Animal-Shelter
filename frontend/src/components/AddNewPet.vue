@@ -5,68 +5,115 @@
         <div class="form-wrapper">
           <q-form @submit.prevent="addNewPet" ref="addPetForm">
             <div class="my-inputs">
-              <q-card class="my-card">
-                <q-card-section class="bg-primary text-white text-center">
-                  <div class="text-h6">Add New Pet Listing Form</div>
-                </q-card-section>
-              </q-card>
-              <q-input
-                filled
-                v-model="pet.petName"
-                label="Name"
-                type="text"
-                required
-              />
+              <h3
+                style="font-weight: bold; margin-bottom: 1%; margin-top: 1%"
+                align="left"
+              >
+                Add New Pet
+              </h3>
+              <q-separator />
+
+              <div class="input-container">
+                <p style="font-weight: bold; margin-bottom: 1%">Pet Name</p>
+                <q-input
+                  filled
+                  v-model="pet.petName"
+                  label="Name"
+                  type="text"
+                  required
+                  style="width: 100%"
+                />
+              </div>
+            </div>
+            <div class="input-row">
+              <div class="input-container">
+                <p style="font-weight: bold; margin-bottom: 1%">Gender</p>
+                <q-option-group
+                  v-model="pet.gender"
+                  type="radio"
+                  :options="genderOptions"
+                  required
+                  inline
+                  align="left"
+                />
+              </div>
+              <div class="input-container">
+                <p style="font-weight: bold; margin-bottom: 1%">Age</p>
+                <q-input
+                  filled
+                  v-model="pet.age"
+                  label="Age"
+                  type="number"
+                  required
+
+                />
+              </div>
+            </div>
+
+            <div class="input-container">
+              <p style="font-weight: bold; margin-bottom: 1%">Select Species</p>
               <q-select
                 filled
                 v-model="pet.species"
                 label="Select Species"
                 :options="breedOptions"
                 required
+                style="width: 40%"
               />
-              <q-option-group
-                v-model="pet.gender"
-                label="Gender"
-                type="radio"
-                :options="genderOptions"
-                required
-                inline
-                align="left"
-              />
-              <q-input
-                filled
-                v-model="pet.breed"
-                label="Breed"
-                type="text"
-                required
-              />
-              <q-input
-                filled
-                v-model="pet.age"
-                label="Age"
-                type="number"
-                required
-              />
-              <q-input
-                filled
-                v-model="pet.description"
-                label="Description"
-                type="text"
-                required
-              />
-              <q-input
-                filled
-                v-model="pet.petPhoto"
-                label="Photo URL"
-                type="url"
-                required
-              />
-              <q-btn
-                type="submit"
-                class="q-mt-md"
-                label="Submit New Listing"
-                color="primary"
-              />
+              <div class="input-container">
+                <p style="font-weight: bold; margin-bottom: 1%">Breed</p>
+                <q-input
+                  filled
+                  v-model="pet.breed"
+                  label="Breed"
+                  type="text"
+                  style="width: 40%"
+                  required
+                />
+              </div>
+
+              <div class="input-container">
+                <p style="font-weight: bold; margin-bottom: 1%">Description</p>
+                <q-input
+                  filled
+                  v-model="pet.description"
+                  label="Description"
+                  type="text"
+                  required
+                  style="width: 100%"
+                />
+              </div>
+              <div class="input-container">
+                <p style="font-weight: bold; margin-bottom: 1%">Photo URL</p>
+                <q-input
+                  filled
+                  v-model="pet.petPhoto"
+                  label="Photo URL"
+                  type="url"
+                  required
+                  style="width: 100%"
+                />
+              </div>
+              <div
+                class="input-container"
+                style="display: flex; justify-content: space-between"
+              >
+                <q-btn
+                  class="q-mt-md"
+                  label="Cancel"
+                  color="negative"
+                  @click="$router.push('/')"
+                  size="lg"
+                />
+                <q-btn
+                  type="submit"
+                  class="q-mt-md"
+                  label="Submit"
+                  color="primary"
+                  size="lg"
+                  style="flex-grow: 0.97"
+                />
+              </div>
             </div>
           </q-form>
         </div>
@@ -93,8 +140,8 @@ export default {
       },
       breedOptions: ["Dog", "Cat", "Bird", "Guinea Pig", "Hamster"],
       genderOptions: [
-        { label: "Male", value: "male" },
-        { label: "Female", value: "female" },
+        { label: "Male", value: "Male" },
+        { label: "Female", value: "Female" },
       ],
     };
   },

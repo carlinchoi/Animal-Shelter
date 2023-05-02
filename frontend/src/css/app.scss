@@ -117,6 +117,7 @@ body {
   margin: 0 auto;
   border: 1px solid #cccccc;
   border-radius: 5px;
+  text-align: left;
 
 }
 
@@ -137,8 +138,17 @@ body {
 .my-inputs {
   display: flex;
   flex-direction: column;
-  gap: 10px; 
+  gap: 10px;
 }
+
+.input-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
 
 
 
