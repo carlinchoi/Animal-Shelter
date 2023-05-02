@@ -103,6 +103,56 @@ body {
   overflow-x: hidden;
 }
 
+.add-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.form-wrapper {
+  width: 100%;
+  max-width: 20%;
+  padding: 1%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  margin: 0 auto;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+
+}
+
+.my-card .text-h6 {
+  white-space: nowrap;
+  font-size: 1.5em;
+  text-align: center;
+}
+.my-card {
+  padding: 0;
+  margin: 0 auto;
+}
+
+.q-card-section {
+  margin: 0;
+  padding: 0;
+}
+.my-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
