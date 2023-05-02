@@ -15,14 +15,19 @@
 
               <div class="input-container">
                 <p style="font-weight: bold; margin-bottom: 1%">Pet Name</p>
+
                 <q-input
                   filled
                   v-model="pet.petName"
-                  label="Name"
+                  label="Pet Name"
                   type="text"
                   required
                   style="width: 100%"
-                />
+                >
+                  <template v-slot:prepend>
+                    <q-icon name="pets" />
+                  </template>
+                </q-input>
               </div>
             </div>
             <div class="input-container">
@@ -47,7 +52,11 @@
                 style="width: 49%"
                 min="0"
                 max="100"
-              />
+              >
+                <template v-slot:prepend>
+                  <q-icon name="event" />
+                </template>
+              </q-input>
             </div>
 
             <div class="input-container">
@@ -63,10 +72,15 @@
                     :options="breedOptions"
                     required
                     style="width: 100%"
-                  />
+                  >
+                    <template v-slot:prepend>
+                      <q-icon name="pets" />
+                    </template>
+                  </q-select>
                 </div>
                 <div class="input-container">
                   <p style="font-weight: bold; margin-bottom: 1%">Breed</p>
+
                   <q-input
                     filled
                     v-model="pet.breed"
@@ -74,7 +88,11 @@
                     type="text"
                     style="width: 100%"
                     required
-                  />
+                  >
+                    <template v-slot:prepend>
+                      <q-icon name="flag" />
+                    </template>
+                  </q-input>
                 </div>
               </div>
 
@@ -87,7 +105,11 @@
                   type="text"
                   required
                   style="width: 100%"
-                />
+                >
+                  <template v-slot:prepend>
+                    <q-icon name="description" />
+                  </template>
+                </q-input>
               </div>
               <div class="input-container">
                 <p style="font-weight: bold; margin-bottom: 1%">Photo URL</p>
@@ -98,7 +120,11 @@
                   type="url"
                   required
                   style="width: 100%"
-                />
+                >
+                  <template v-slot:prepend>
+                    <q-icon name="image" />
+                  </template>
+                </q-input>
               </div>
               <div
                 class="input-container"
@@ -106,7 +132,8 @@
               >
                 <q-btn
                   class="q-mt-md"
-                  label="Cancel"
+                  label="Cancel
+"
                   color="negative"
                   @click="$router.push('/')"
                   size="lg"

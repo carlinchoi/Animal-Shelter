@@ -12,12 +12,8 @@
 import AddNewPetComponent from 'src/components/AddNewPet.vue'
 export default {
   components: {
-
     AddNewPetComponent
   }
 }
 </script>
 
-<style>
-
-</style>

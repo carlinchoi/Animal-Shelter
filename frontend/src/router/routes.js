@@ -8,17 +8,17 @@ const routes = [
   {
     name:'adoptedPets',
     path:'/adopted-pets',
-    component: () => import('pages/AdoptedPets.vue')
+    component: () => import('src/pages/AdoptedPetsPage.vue')
   },
   {
     name: 'addNewPet',
     path:'/add-new-pet',
-    component: () => import('pages/AddNewPet.vue')
+    component: () => import('src/pages/AddNewPetPage.vue')
   },
   {
     name: 'newVolunteer',
     path: '/new-volunteer',
-    component: () => import('pages/newVolunteer.vue')
+    component: () => import('src/pages/NewVolunteerPage.vue')
 },
   // Always leave this as last one,
   // but you can also remove it
