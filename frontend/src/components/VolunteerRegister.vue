@@ -81,6 +81,9 @@
                   />
                 </div>
               </div>
+              <div role="alert" v-if="registrationErrors">
+              {{ registrationErrorMsg }}
+            </div>
             </q-form>
           </div>
         </div>
