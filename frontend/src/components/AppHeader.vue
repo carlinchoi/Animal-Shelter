@@ -14,7 +14,7 @@
         <q-route-tab name="volunteerRegistrationRoute" label="Become a Volunteer" class="q-tab-with-margin" :to="{ name: 'VolunteerRegister'}"></q-route-tab>
       </q-tabs>
 
-      <q-btn color="primary" label="Create Account" :to="({name: 'CreateAccount'})" >
+      <q-btn color="primary" label="Account">
         <q-menu>
           <q-list dense style="min-width: 100px">
             <q-item clickable v-close-popup>
