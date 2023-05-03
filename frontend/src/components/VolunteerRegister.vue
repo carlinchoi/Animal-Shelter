@@ -98,12 +98,12 @@
 
 <script>
 import authService from "../boot/AuthService";
-// import VolunteerApplication from "../components/VolunteerApplication.vue";
+import VolunteerApplication from "../components/NewVolunteer.vue";
 
 export default {
   name: "volunteerRegister",
   components: {
-    // VolunteerApplication,
+    VolunteerApplication,
   },
   data() {
     return {
@@ -118,21 +118,19 @@ export default {
       showVolunteerApplication: false,
     };
   },
-  methods: {
+   methods: {
     register() {
       if (this.user.password != this.user.confirmPassword) {
         this.registrationErrors = true;
-        this.registrationErrorMsg = "*Password & Confirm Password do not match.";
+        this.registrationErrorMsg = "Password & Confirm Password do not match.";
       } else {
         authService
           .register(this.user)
           .then((response) => {
             if (response.status == 201) {
-              this.showVolunteerApplication = true;
               this.$router.push({
-                name: 'newVolunteer',
-                query: { registration: 'success' },
-                params: { username: this.user.username }
+                path: "/",
+                query: { registration: "success" },
               });
             }
           })
@@ -147,7 +145,7 @@ export default {
     },
     clearErrors() {
       this.registrationErrors = false;
-      this.registrationErrorMsg = "*There were problems registering this user.";
+      this.registrationErrorMsg = "There were problems registering this user.";
     },
   },
 };

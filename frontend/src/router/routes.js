@@ -25,12 +25,18 @@ const routes = [
     path: '/new-volunteer',
     component: () => import('src/pages/NewVolunteerPage.vue')
 },
+{
+  name: 'CreateAccount',
+  path:'/create-account',
+  component:() => import ('src/pages/CreateAccountPage.vue')
+},
   // Always leave this as last one,
   // but you can also remove it
   {
     path: '/:catchAll(.*)*',
     component: () => import('pages/ErrorNotFound.vue')
   },
+
 ]
 
 export default routes
