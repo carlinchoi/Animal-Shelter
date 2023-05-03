@@ -11,7 +11,7 @@
         <q-route-tab name="homeRoute" label="Home" :to="{ name: 'homePage'}"></q-route-tab>  |
         <q-route-tab name="adoptedPetsRoute" label="Our Adopted Pets" :to="{ name: 'adoptedPets'}"></q-route-tab> |
         <q-route-tab name="addNewPetRoute" label="Add New Pet Listing" :to="{ name: 'addNewPet'}"></q-route-tab> |
-        <q-route-tab name="volunteerRegistrationRoute" label="Become a Volunteer" class="q-tab-with-margin" :to="{ name: 'newVolunteer'}"></q-route-tab>
+        <q-route-tab name="volunteerRegistrationRoute" label="Become a Volunteer" class="q-tab-with-margin" :to="{ name: 'VolunteerRegister'}"></q-route-tab>
       </q-tabs>
 
       <q-btn color="primary" label="Account">

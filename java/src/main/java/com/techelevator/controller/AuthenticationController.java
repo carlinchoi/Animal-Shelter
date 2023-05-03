@@ -1,5 +1,6 @@
 package com.techelevator.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import ch.qos.logback.core.net.SyslogOutputStream;
@@ -12,6 +13,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -71,6 +73,20 @@ public class AuthenticationController {
         } catch (UsernameNotFoundException e) {
             System.out.println("error");
         }
+    }
+//added this logout ? might need new classes ?
+    @PostMapping("/logout")
+    public ResponseEntity<Void> logout(HttpServletRequest request) {
+        // Get the authentication object from the security context
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+        // If the user is authenticated, invalidate their session and clear the security context
+        if (authentication != null && authentication.isAuthenticated()) {
+            new SecurityContextLogoutHandler().logout(request, null, authentication);
+        }
+
+        // Return a successful response with no content
+        return ResponseEntity.ok().build();
     }
 
 }

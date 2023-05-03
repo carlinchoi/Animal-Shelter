@@ -15,7 +15,6 @@
 
               <div class="input-container">
                 <p style="font-weight: bold; margin-bottom: 1%">Pet Name</p>
-
                 <q-input
                   filled
                   v-model="pet.petName"
@@ -26,7 +25,6 @@
                 >
                   <template v-slot:prepend>
                     <q-icon name="pets" />
-
                   </template>
                 </q-input>
               </div>

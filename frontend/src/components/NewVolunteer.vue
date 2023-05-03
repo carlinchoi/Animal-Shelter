@@ -6,11 +6,11 @@
           <div id="register">
             <q-form @submit.prevent="submitForm" ref="registerForm">
               <div class="my-inputs">
-                <h1
+                <h3
                   style="font-weight: bold; margin-bottom: 1%; margin-top: 1%"
                 >
                   Volunteer Application
-                </h1>
+                </h3>
                 <q-separator />
 
                 <div class="input-container">
@@ -24,7 +24,7 @@
                     style="width: 100%"
                   >
                     <template v-slot:prepend>
-                      <q-icon name="person-outline" />
+                      <q-icon name="person" />
                     </template>
                   </q-input>
                 </div>
@@ -39,7 +39,7 @@
                     style="width: 100%"
                   >
                     <template v-slot:prepend>
-                      <q-icon name="person-outline" />
+                      <q-icon name="person" />
                     </template>
                   </q-input>
                 </div>
@@ -54,7 +54,7 @@
                     style="width: 100%"
                   >
                     <template v-slot:prepend>
-                      <q-icon name="mail-outline" />
+                      <q-icon name="mail" />
                     </template>
                   </q-input>
                 </div>
@@ -71,7 +71,7 @@
                     style="width: 100%"
                   >
                     <template v-slot:prepend>
-                      <q-icon name="call-outline" />
+                      <q-icon name="call" />
                     </template>
                   </q-input>
                 </div>

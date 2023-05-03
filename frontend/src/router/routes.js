@@ -16,6 +16,11 @@ const routes = [
     component: () => import('src/pages/AddNewPetPage.vue')
   },
   {
+    name: 'VolunteerRegister',
+    path:'/volunteer-register',
+    component: () => import('src/pages/VolunteerRegisterPage.vue')
+  },
+  {
     name: 'newVolunteer',
     path: '/new-volunteer',
     component: () => import('src/pages/NewVolunteerPage.vue')
