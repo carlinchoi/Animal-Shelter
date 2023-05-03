@@ -17,7 +17,7 @@
       <q-btn color="primary" label="Account">
         <q-menu>
           <q-list dense style="min-width: 100px">
-            <q-item clickable v-close-popup>
+            <q-item clickable v-close-popup :to="{name: 'ViewVolunteers'}">
               <q-item-section>View Volunteers</q-item-section>
             </q-item>
             <q-item clickable v-close-popup>

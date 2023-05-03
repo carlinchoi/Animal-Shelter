@@ -81,9 +81,6 @@
                   />
                 </div>
               </div>
-              <div role="alert" v-if="registrationErrors">
-              {{ registrationErrorMsg }}
-            </div>
             </q-form>
           </div>
         </div>
@@ -129,7 +126,7 @@ export default {
           .then((response) => {
             if (response.status == 201) {
               this.$router.push({
-                path: "/",
+                path: "/newVolunteer",
                 query: { registration: "success" },
               });
             }

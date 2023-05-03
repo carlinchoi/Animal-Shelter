@@ -1,23 +1,25 @@
 <template>
   <q-layout view="hHh lpr fFf" >
     <AppHeader />
-      <AdoptedPets/>
+      <view-volunteers/>
     <AppFooter />
   </q-layout>
 
 </template>
 
 <script>
-import AdoptedPets from '../components/AdoptedPets.vue'
+import ViewVolunteers from 'src/components/ViewVolunteers.vue'
 import AppFooter from '../components/AppFooter.vue'
 import AppHeader from '../components/AppHeader.vue'
 
 export default {
   name: 'AdoptedPetsLayout',
   components: {
-    AdoptedPets,
+    ViewVolunteers,
     AppFooter,
     AppHeader
   }
 }
 </script>
+,
+    ViewVolunteers

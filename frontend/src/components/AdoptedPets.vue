@@ -1,8 +1,8 @@
 <template>
   <div id="q-app">
-    <div>
+    <div style="margin-top: 4%;">
       <h3 class="text-center" style="font-weight: bold">
-        Browse Our Adopted Pets
+        Celebrate Our Adopted Pets!
       </h3>
     </div>
     <div class="q-flex q-justify-center">

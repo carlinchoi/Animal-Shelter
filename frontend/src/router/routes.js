@@ -25,6 +25,11 @@ const routes = [
     path: '/new-volunteer',
     component: () => import('src/pages/NewVolunteerPage.vue')
 },
+{
+  name: 'ViewVolunteers',
+  path: '/view-volunteers',
+  component: () => import('src/pages/ViewVolunteersPage.vue')
+},
 
   // Always leave this as last one,
   // but you can also remove it
