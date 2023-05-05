@@ -23,6 +23,9 @@
             <q-item clickable v-close-popup>
               <q-item-section>Approve Pending Volunteers</q-item-section>
             </q-item>
+            <q-item clickable v-close-popup :to="{name: 'loginPage'}">
+              <q-item-section>Login</q-item-section>
+            </q-item>
             <q-separator></q-separator>
             <q-item clickable>
               <q-item-section>Log Out</q-item-section>

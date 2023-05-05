@@ -8,7 +8,8 @@ package com.techelevator.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
+//username: rockvilleanimalshelter@gmail.com
+//password: p@ssword123!
 // Annotations
 @Data
 @AllArgsConstructor

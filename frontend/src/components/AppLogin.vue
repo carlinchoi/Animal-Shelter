@@ -4,12 +4,12 @@
       <q-page class="add-wrapper">
         <div class="form-wrapper">
           <div id="register">
-            <q-form @submit.prevent="register"  v-if="!showVolunteerApplication">
+            <q-form @submit.prevent="login" >
               <div class="my-inputs">
                 <h3
                   style="font-weight: bold; margin-bottom: 1%; margin-top: 1%"
                 >
-                Create Volunteer Account
+               Login
                 </h3>
 
                 <q-separator />
@@ -44,21 +44,7 @@
                     </template>
                   </q-input>
                 </div>
-                <div class="input-container">
-                  <p style="font-weight: bold; margin-bottom: 1%">Confirm Password</p>
-                  <q-input
-                    filled
-                    v-model="user.confirmPassword"
-                    label="Confirm Password"
-                    type="password"
-                    required
-                    style="width: 100%"
-                  >
-                    <template v-slot:prepend>
-                      <q-icon name="lock" />
-                    </template>
-                  </q-input>
-                </div>
+
                 <div
                   class="input-container"
                   style="display: flex; justify-content: space-between"
@@ -87,63 +73,55 @@
             </q-form>
           </div>
         </div>
-        <volunteer-application
-      v-if="showVolunteerApplication"
-      v-bind:username="user.username"
-    />
+
       </q-page>
     </q-page-container>
   </q-layout>
 </template>
-
 <script>
 import authService from "../boot/AuthService";
-// import VolunteerApplication from "../components/NewVolunteer.vue";
+import { QLayout, QPage, QPageContainer, QForm, QInput, QBtn, } from 'quasar'
 
 export default {
-  name: "volunteerRegister",
-  // components: {
-  //   VolunteerApplication,
-  // },
+  name: "loginPage",
+  components: { QLayout, QPage, QPageContainer, QForm, QInput, QBtn },
   data() {
     return {
       user: {
         username: "",
         password: "",
-        confirmPassword: "",
-        role: "PENDINGVOLUNTEER",
       },
-      registrationErrors: false,
-      registrationErrorMsg: "There were problems registering this user.",
-      showVolunteerApplication: false,
+      invalidCredentials: false,
     };
   },
-   methods: {
-    register() {
-      if (this.user.password != this.user.confirmPassword) {
-        this.registrationErrors = true;
-        this.registrationErrorMsg = "Password & Confirm Password do not match.";
-      } else {
-        authService
-          .register(this.user)
-          .then((response) => {
-            if (response.status == 201) {
-              this.$router.push({ name: 'newVolunteer', params: { username: this.user.username }})
 
+  //Reset
+  methods: {
+    login() {
+      authService
+        .login(this.user)
+        .then((response) => {
+          if (response.status == 200) {
+            this.$store.commit("SET_AUTH_TOKEN", response.data.token);
+            this.$store.commit("SET_USER", response.data.user);
+            if (response.data.user.authorities[0].name === "ROLE_APPROVED") {
+              this.$router.push("/change-password");
+            } else if (
+              response.data.user.authorities[0].name === "ROLE_PENDINGVOLUNTEER"
+            ) {
+              this.$router.push({ name: "pending-application" });
+            } else {
+              this.$router.push("/");
             }
-          })
-          .catch((error) => {
-            const response = error.response;
-            this.registrationErrors = true;
-            if (response.status === 400) {
-              this.registrationErrorMsg = "This username already exists";
-            }
-          });
-      }
-    },
-    clearErrors() {
-      this.registrationErrors = false;
-      this.registrationErrorMsg = "There were problems registering this user.";
+          }
+        })
+        .catch((error) => {
+          const response = error.response;
+
+          if (response.status === 401) {
+            this.invalidCredentials = true;
+          }
+        });
     },
   },
 };

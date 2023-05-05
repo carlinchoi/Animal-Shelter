@@ -13,7 +13,7 @@ import AppFooter from '../components/AppFooter.vue'
 import AppHeader from '../components/AppHeader.vue'
 
 export default {
-  name: 'AdoptedPetsLayout',
+  name: 'ViewVolunteersLayout',
   components: {
     ViewVolunteers,
     AppFooter,
@@ -21,5 +21,4 @@ export default {
   }
 }
 </script>
-,
-    ViewVolunteers
+

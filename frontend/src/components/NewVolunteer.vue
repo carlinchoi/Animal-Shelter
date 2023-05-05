@@ -119,7 +119,15 @@ export default {
       phone: "",
     };
   },
-  props: ["username"],
+  // mounted() {
+  //   // get the username parameter from the URL
+  //   this.username = this.$route.params.username;
+  // },
+  computed: {
+    username() {
+      return this.$route.params.username
+    }
+  },
   methods: {
     submitForm() {
       const volunteerApplication = {
@@ -129,7 +137,7 @@ export default {
         email: this.email,
         phone: this.phone,
       };
-      console.log(volunteerApplication);
+      console.log(this.username)
       const applicationEmail = {
         recipient: this.email,
         msgBody:

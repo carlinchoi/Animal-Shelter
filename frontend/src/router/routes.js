@@ -6,6 +6,11 @@ const routes = [
     component: () => import('pages/HomePage.vue')
   },
   {
+    name: 'loginPage',
+    path:'/login',
+    component: () => import('pages/LoginPage.vue')
+  },
+  {
     name:'adoptedPets',
     path:'/adopted-pets',
     component: () => import('src/pages/AdoptedPetsPage.vue')
@@ -21,10 +26,13 @@ const routes = [
     component: () => import('src/pages/VolunteerRegisterPage.vue')
   },
   {
+    path: '/new-volunteer/:username',
     name: 'newVolunteer',
-    path: '/new-volunteer',
-    component: () => import('src/pages/NewVolunteerPage.vue')
-},
+    component: () => import('src/pages/NewVolunteerPage.vue'),
+    props: true
+  },
+
+
 {
   name: 'ViewVolunteers',
   path: '/view-volunteers',
