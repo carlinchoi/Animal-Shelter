@@ -48,7 +48,7 @@ export default store(function () {
         state.user = {
           authorities: [
             {
-              name: "ROLE_USER",
+              name: "",
             },
           ],
         };
