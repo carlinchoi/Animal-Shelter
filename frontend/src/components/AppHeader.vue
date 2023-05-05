@@ -14,7 +14,7 @@
         <q-route-tab name="volunteerRegistrationRoute" label="Become a Volunteer" class="q-tab-with-margin" :to="{ name: 'VolunteerRegister'}"></q-route-tab>
       </q-tabs>
 
-      <q-btn color="primary" label="Account">
+      <q-btn color="primary" label="Account" v-if="isLoggedIn">
         <q-menu>
           <q-list dense style="min-width: 100px">
             <q-item clickable v-close-popup :to="{name: 'ViewVolunteers'}">
@@ -23,23 +23,39 @@
             <q-item clickable v-close-popup>
               <q-item-section>Approve Pending Volunteers</q-item-section>
             </q-item>
-            <q-item clickable v-close-popup :to="{name: 'loginPage'}">
-              <q-item-section>Login</q-item-section>
-            </q-item>
             <q-separator></q-separator>
-            <q-item clickable>
-              <q-item-section>Log Out</q-item-section>
+            <q-item clickable @click="logout" v-close-popup>
+              <q-item-section >Log Out</q-item-section>
             </q-item>
           </q-list>
         </q-menu>
       </q-btn>
+
+      <q-btn color="primary" label="Sign In" v-if="!isLoggedIn" :to="{ name: 'loginPage'}" />
     </q-toolbar>
   </q-header>
 </template>
 
 <script>
+import { mapMutations } from "vuex";
+
 export default {
   name: 'AppHeader',
+  computed: {
+  isLoggedIn() {
+      return (
+        this.$store.state.user.authorities[0].name.includes("ROLE_VOLUNTEER") ||
+        this.$store.state.user.authorities[0].name.includes("ROLE_ADMIN") ||
+        this.$store.state.user.authorities[0].name.includes("ROLE_USER")
+      );
+    },
+  },
+    methods: {
+    ...mapMutations(["LOGOUT"]),
+    logout() {
+      this.LOGOUT();
+    },
+  },
   data () {
     return {
       tab: 'images'
