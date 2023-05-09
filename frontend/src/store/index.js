@@ -57,13 +57,14 @@ export default store(function () {
       SET_PET_INFO(state, petData) {
         state.pets = petData;
       },
-      SET_VOLUNTEER_INFO(state, volunteerData) {
-        state.volunteers = volunteerData;
+      SET_VOLUNTEER_INFO(state, volunteers) {
+        console.log('SET_VOLUNTEER_INFO mutation called', volunteers);
+        state.volunteers = volunteers;
       },
       SET_ACTIVE_PET(state, data) {
         state.activePet = data;
       },
-      SET_PENDING_VOLANTEER_INFO(state, volunteerData) {
+      SET_PENDING_VOLUNTEER_INFO(state, volunteerData) {
         state.pendingVolunteers = volunteerData;
       },
       UPDATE_VOLUNTEER_ROLE(state, data) {
@@ -87,6 +88,7 @@ export default store(function () {
           console.log(error);
         }
       },
+    
     },
     modules: {},
     strict: process.env.DEBUGGING,
