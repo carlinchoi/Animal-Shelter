@@ -175,6 +175,83 @@ body {
   text-align: center;
 }
 
+.my-sticky-header-table {
+  margin-top: 3%;
+}
+.q-table__top,
+.q-table__bottom,
+thead tr:first-child th {
+  background-color: #329af5;
+  color: white;
+}
+
+thead tr th {
+  position: sticky;
+  z-index: 1;
+}
+
+thead tr:first-child th {
+  top: 0;
+}
+
+.q-table--loading thead tr:last-child th {
+  top: 48px;
+}
+
+tbody {
+  scroll-margin-top: 48px;
+}
+.q-table__control .q-select__label,
+.q-table__control .q-field__native {
+  color: white;
+}
+
+thead tr th {
+  position: sticky;
+  z-index: 1;
+  font-size: 16px;
+}
+td {
+  padding: 10px;
+}
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+tr:hover {
+  background-color: #e6e6e6;
+}
+td {
+  padding: 10px;
+  word-wrap: break-word;
+}
+.q-input__control input[type="text"] {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.q-input__control {
+  background-color: #f7f7f7;
+}
+
+.q-input__control .q-icon {
+  color: #329af5;
+}
+
+.q-table__top-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.q-search-label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.q-input__control input[type="text"]::placeholder {
+  color: #888;
+}
 
 // ... other custom styles ...
 

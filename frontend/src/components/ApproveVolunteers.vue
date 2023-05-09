@@ -8,7 +8,7 @@
         title="Volunteers List"
         :rows="filteredVolunteers"
         :columns="columns"
-        row-key="volunteer.email"
+        row-key="id"
       >
         <template v-slot:top-right>
           <q-input
@@ -23,6 +23,13 @@
             </template>
           </q-input>
         </template>
+        <template v-slot:body-status="props">
+          <q-select
+            v-model="props.row.status"
+            :options="statusOptions"
+            @input="updateStatus(props.row)"
+          />
+        </template>
       </q-table>
     </div>
   </div>
@@ -30,6 +37,7 @@
 
 <script>
 import VolunteerService from "../boot/VolunteerService.js";
+
 export default {
   name: "view-volunteers",
   data() {
@@ -77,13 +85,33 @@ export default {
           field: "role",
           sortable: true,
         },
+        {
+          name: "status",
+          required: false,
+          label: "Status",
+          align: "left",
+          field: "status",
+          sortable: false,
+        },
+      ],
+      statusOptions: [
+        { label: "Pending", value: "pending" },
+        { label: "Approved", value: "approved" },
+        { label: "Declined", value: "declined" },
       ],
     };
   },
   methods: {
     retrieveVolunteers() {
-      VolunteerService.findAllVolunteer().then((response) => {
+      VolunteerService.findAllPendingVolunteer().then((response) => {
         this.$store.commit("SET_VOLUNTEER_INFO", response.data);
+      });
+    },
+    updateStatus(volunteer, event) {
+      volunteer.status = event;
+      VolunteerService.updateVolunteerStatus(volunteer).then((response) => {
+        this.$store.commit("SET_VOLUNTEER_INFO", response.data);
+        this.retrieveVolunteers();
       });
     },
   },
