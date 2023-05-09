@@ -5,10 +5,10 @@
         class="my-sticky-header-table"
         flat
         bordered
-        title="Volunteers List"
+        title="Volunteers Approval"
         :rows="filteredVolunteers"
         :columns="columns"
-        row-key="id"
+        row-key="volunteer.email"
       >
         <template v-slot:top-right>
           <q-input
@@ -23,13 +23,15 @@
             </template>
           </q-input>
         </template>
-        <template v-slot:body-status="props">
-          <q-select
-            v-model="props.row.status"
-            :options="statusOptions"
-            @input="updateStatus(props.row)"
-          />
-        </template>
+
+        <template v-slot:body-cell-status="props">
+      <q-select
+        v-model="props.row.status"
+        :options="statusOptions"
+        emit-value
+        map-options
+      />
+    </template>
       </q-table>
     </div>
   </div>
@@ -37,13 +39,13 @@
 
 <script>
 import VolunteerService from "../boot/VolunteerService.js";
-
 export default {
-  name: "view-volunteers",
+  name: "approve-volunteers",
   data() {
     return {
       searchTerm: "",
       selectedRole: null,
+      statusOptions: ['Pending', 'Approve', 'Decline'],
       columns: [
         {
           name: "firstName",
@@ -87,17 +89,12 @@ export default {
         },
         {
           name: "status",
-          required: false,
+          required: true,
           label: "Status",
           align: "left",
           field: "status",
-          sortable: false,
+          sortable: true,
         },
-      ],
-      statusOptions: [
-        { label: "Pending", value: "pending" },
-        { label: "Approved", value: "approved" },
-        { label: "Declined", value: "declined" },
       ],
     };
   },
@@ -105,13 +102,6 @@ export default {
     retrieveVolunteers() {
       VolunteerService.findAllPendingVolunteer().then((response) => {
         this.$store.commit("SET_VOLUNTEER_INFO", response.data);
-      });
-    },
-    updateStatus(volunteer, event) {
-      volunteer.status = event;
-      VolunteerService.updateVolunteerStatus(volunteer).then((response) => {
-        this.$store.commit("SET_VOLUNTEER_INFO", response.data);
-        this.retrieveVolunteers();
       });
     },
   },
