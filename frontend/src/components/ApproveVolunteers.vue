@@ -2,7 +2,7 @@
   <div id="q-app" style="min-height: 100vh">
     <div class="q-pa-md">
       <div>
-        <h2 style="margin-bottom: 0.5rem; margin-top: 3%;">Volunteers List</h2>
+        <h2 style="margin-bottom: 0.5rem; margin-top: 3%">Volunteers List</h2>
         <div>
           <q-input
             v-model="searchTerm"
@@ -32,8 +32,8 @@
           </template>
         </q-table>
       </div>
-      </div>
     </div>
+  </div>
 </template>
 
 <script>
@@ -44,12 +44,27 @@ export default {
     return {
       searchTerm: "",
       columns: [
-        { name: "userId", label: "User ID", field: "userId",align: "left" },
-        { name: "firstName", label: "First Name", field: "firstName" ,align: "left"},
-        { name: "lastName", label: "Last Name", field: "lastName" ,align: "left"},
-        { name: "email", label: "Email", field: "email" ,align: "left"},
-        { name: "phone", label: "Phone", field: "phone" ,align: "left"},
-        { name: "role",label: "Role",ield: "role",sortable: false,align:"left" },
+        {
+          name: "firstName",
+          label: "First Name",
+          field: "firstName",
+          align: "left",
+        },
+        {
+          name: "lastName",
+          label: "Last Name",
+          field: "lastName",
+          align: "left",
+        },
+        { name: "email", label: "Email", field: "email", align: "left" },
+        { name: "phone", label: "Phone", field: "phone", align: "left" },
+        {
+          name: "role",
+          label: "Role",
+          field: "role",
+          sortable: false,
+          align: "left",
+        },
       ],
       roles: [
         { label: "Pending", value: "ROLE_PENDINGVOLUNTEER" },
@@ -61,7 +76,7 @@ export default {
   methods: {
     retrieveVolunteers() {
       VolunteerService.findAllPendingVolunteer().then((response) => {
-        this.$store.commit("SET_VOLUNTEER_INFO", response.data);
+        this.$store.commit("SET_PENDING_VOLUNTEER_INFO", response.data);
       });
     },
     updateStatus(volunteer) {
@@ -73,7 +88,7 @@ export default {
   },
   computed: {
     volunteers() {
-      return this.$store.state.volunteers;
+      return this.$store.state.pendingVolunteers;
     },
     filteredVolunteers() {
       let filtered = this.volunteers;
@@ -96,5 +111,3 @@ export default {
   },
 };
 </script>
-
-
