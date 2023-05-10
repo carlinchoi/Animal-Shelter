@@ -58,7 +58,6 @@ export default store(function () {
         state.pets = petData;
       },
       SET_VOLUNTEER_INFO(state, volunteers) {
-        console.log('SET_VOLUNTEER_INFO mutation called', volunteers);
         state.volunteers = volunteers;
       },
       SET_ACTIVE_PET(state, data) {
@@ -88,7 +87,7 @@ export default store(function () {
           console.log(error);
         }
       },
-    
+
     },
     modules: {},
     strict: process.env.DEBUGGING,

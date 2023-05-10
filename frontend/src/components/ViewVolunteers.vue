@@ -1,29 +1,26 @@
 <template>
   <div id="q-app" style="min-height: 100vh">
     <div class="q-pa-md">
-      <q-table
-        class="my-sticky-header-table"
-        flat
-        bordered
-        title="Volunteers List"
-        :rows="filteredVolunteers"
-        :columns="columns"
-        row-key="volunteer.email"
-      >
-        <template v-slot:top-right>
+      <div>
+        <h2 style="margin-bottom: 0.5rem; margin-top: 3%;">Volunteers List</h2>
+        <div>
           <q-input
-            borderless
-            dense
-            debounce="300"
             v-model="searchTerm"
-            placeholder="Search"
-          >
-            <template v-slot:append>
-              <q-icon name="search"></q-icon>
-            </template>
-          </q-input>
-        </template>
-      </q-table>
+            outlined
+            label="Search Volunteers by First or Last Name"
+            clearable
+          />
+        </div>
+        <q-table
+          class="my-sticky-header-table"
+          flat
+          bordered
+          :rows="filteredVolunteers"
+          :columns="columns"
+          row-key="volunteer.email"
+        >
+        </q-table>
+      </div>
     </div>
   </div>
 </template>
@@ -124,3 +121,5 @@ export default {
   },
 };
 </script>
+
+

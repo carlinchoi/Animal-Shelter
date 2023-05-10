@@ -1,100 +1,60 @@
 <template>
   <div id="q-app" style="min-height: 100vh">
     <div class="q-pa-md">
-      <q-table
-        class="my-sticky-header-table"
-        flat
-        bordered
-        title="Volunteers Approval"
-        :rows="filteredVolunteers"
-        :columns="columns"
-        row-key="volunteer.email"
-      >
-        <template v-slot:top-right>
+      <div>
+        <h2 style="margin-bottom: 0.5rem; margin-top: 3%;">Volunteers List</h2>
+        <div>
           <q-input
-            borderless
-            dense
-            debounce="300"
             v-model="searchTerm"
-            placeholder="Search"
-          >
-            <template v-slot:append>
-              <q-icon name="search"></q-icon>
-            </template>
-          </q-input>
-        </template>
-
-        <template v-slot:body-cell-status="props">
-      <q-select
-        v-model="props.row.status"
-        :options="statusOptions"
-        emit-value
-        map-options
-      />
-    </template>
-      </q-table>
+            outlined
+            label="Search Volunteers by First or Last Name"
+            clearable
+          />
+        </div>
+        <q-table
+          class="my-sticky-header-table"
+          flat
+          bordered
+          :rows="filteredVolunteers"
+          :columns="columns"
+          row-key="volunteer.email"
+        >
+          <template v-slot:body-cell-role="props">
+            <q-td :props="props">
+              <q-select
+                v-model="props.row.role"
+                :options="roles"
+                outlined
+                dense
+                @input="updateStatus(props.row)"
+              />
+            </q-td>
+          </template>
+        </q-table>
+      </div>
+      </div>
     </div>
-  </div>
 </template>
 
 <script>
 import VolunteerService from "../boot/VolunteerService.js";
 export default {
-  name: "approve-volunteers",
+  name: "view-volunteers",
   data() {
     return {
       searchTerm: "",
-      selectedRole: null,
-      statusOptions: ['Pending', 'Approve', 'Decline'],
       columns: [
-        {
-          name: "firstName",
-          required: true,
-          label: "First Name",
-          align: "left",
-          field: "firstName",
-          sortable: true,
-        },
-        {
-          name: "lastName",
-          required: true,
-          label: "Last Name",
-          align: "left",
-          field: "lastName",
-          sortable: true,
-        },
-        {
-          name: "email",
-          required: true,
-          label: "Email",
-          align: "left",
-          field: "email",
-          sortable: true,
-        },
-        {
-          name: "phone",
-          required: true,
-          label: "Phone",
-          align: "left",
-          field: "phone",
-          sortable: true,
-        },
-        {
-          name: "role",
-          required: true,
-          label: "Role",
-          align: "left",
-          field: "role",
-          sortable: true,
-        },
-        {
-          name: "status",
-          required: true,
-          label: "Status",
-          align: "left",
-          field: "status",
-          sortable: true,
-        },
+        { name: "userId", label: "User ID", field: "userId",align: "left" },
+        { name: "firstName", label: "First Name", field: "firstName" ,align: "left"},
+        { name: "lastName", label: "Last Name", field: "lastName" ,align: "left"},
+        { name: "email", label: "Email", field: "email" ,align: "left"},
+        { name: "phone", label: "Phone", field: "phone" ,align: "left"},
+        { name: "role",label: "Role",ield: "role",sortable: false,align:"left" },
+      ],
+      roles: [
+        { label: "Pending", value: "ROLE_PENDINGVOLUNTEER" },
+        { label: "Approved", value: "ROLE_APPROVED" },
+        { label: "Declined", value: "ROLE_DECLINED" },
       ],
     };
   },
@@ -102,6 +62,12 @@ export default {
     retrieveVolunteers() {
       VolunteerService.findAllPendingVolunteer().then((response) => {
         this.$store.commit("SET_VOLUNTEER_INFO", response.data);
+      });
+    },
+    updateStatus(volunteer) {
+      VolunteerService.updateVolunteerStatus(volunteer).then((response) => {
+        this.$store.commit("SET_VOLUNTEER_INFO", response.data);
+        this.retrieveVolunteers();
       });
     },
   },
@@ -119,19 +85,7 @@ export default {
               .includes(this.searchTerm.toLowerCase()) ||
             volunteer.lastName
               .toLowerCase()
-              .includes(this.searchTerm.toLowerCase()) ||
-            volunteer.email
-              .toLowerCase()
-              .includes(this.searchTerm.toLowerCase()) ||
-            volunteer.phone
-              .toLowerCase()
               .includes(this.searchTerm.toLowerCase())
-        );
-      }
-
-      if (this.selectedRole) {
-        filtered = filtered.filter(
-          (volunteer) => volunteer.role === this.selectedRole
         );
       }
       return filtered;
@@ -142,3 +96,5 @@ export default {
   },
 };
 </script>
+
+

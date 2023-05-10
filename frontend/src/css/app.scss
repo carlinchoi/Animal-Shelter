@@ -176,7 +176,7 @@ body {
 }
 
 .my-sticky-header-table {
-  margin-top: 3%;
+  margin-top: 0.5%;
 }
 .q-table__top,
 .q-table__bottom,
@@ -243,11 +243,7 @@ td {
   align-items: center;
 }
 
-.q-search-label {
-  font-size: 14px;
-  font-weight: bold;
-  margin-bottom: 8px;
-}
+
 
 .q-input__control input[type="text"]::placeholder {
   color: #888;
