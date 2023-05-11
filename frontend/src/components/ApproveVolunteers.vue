@@ -21,13 +21,7 @@
         >
           <template v-slot:body-cell-role="props">
             <q-td :props="props">
-              <q-select
-                v-model="props.row.role"
-                :options="roles"
-                outlined
-                dense
-                @input="updateStatus(props.row)"
-              />
+              <CustomQSelect :cVolunteer="props.row" />
             </q-td>
           </template>
         </q-table>
@@ -38,8 +32,12 @@
 
 <script>
 import VolunteerService from "../boot/VolunteerService.js";
+import CustomQSelect from "./CustomQSelect.vue";
 export default {
   name: "view-volunteers",
+  components: {
+    CustomQSelect,
+  },
   data() {
     return {
       searchTerm: "",
@@ -81,7 +79,7 @@ export default {
     },
     updateStatus(volunteer) {
       VolunteerService.updateVolunteerStatus(volunteer).then((response) => {
-        this.$store.commit("SET_VOLUNTEER_INFO", response.data);
+        this.$store.commit("SET_PENDING_VOLUNTEER_INFO", response.data);
         this.retrieveVolunteers();
       });
     },
