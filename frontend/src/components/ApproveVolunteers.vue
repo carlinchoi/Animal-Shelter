@@ -21,7 +21,7 @@
         >
           <template v-slot:body-cell-role="props">
             <q-td :props="props">
-              <CustomQSelect :cVolunteer="props.row" />
+              <CustomQSelect :volunteer="props.row" />
             </q-td>
           </template>
         </q-table>

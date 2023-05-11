@@ -4,7 +4,7 @@
     :options="roles"
     outlined
     dense
-    v-on:update:model-value="updateStatus(volunteer, role)"
+    v-on:update:model-value="updateStatus(role)"
   />
 </template>
 
@@ -12,11 +12,10 @@
 import VolunteerService from "../boot/VolunteerService.js";
 export default {
   name: "CustomQSelect",
-  props: ["cVolunteer"],
+  props: ["volunteer"],
   data() {
     return {
-      volunteer: this.cVolunteer,
-      role: this.cVolunteer.role,
+      role: this.volunteer.role,
       roles: [
         { label: "Pending", value: "ROLE_PENDINGVOLUNTEER" },
         { label: "Approved", value: "ROLE_APPROVED" },
@@ -30,8 +29,8 @@ export default {
         this.$store.commit("SET_PENDING_VOLUNTEER_INFO", response.data);
       });
     },
-    updateStatus(volunteer, role) {
-      var finalVolunteer = { ...volunteer };
+    updateStatus(role) {
+      var finalVolunteer = { ...this.volunteer };
       finalVolunteer.role = role.value;
       VolunteerService.updateVolunteerStatus(finalVolunteer).then(
         (response) => {
