@@ -13,13 +13,9 @@
     "build": "quasar build"
   },
   "dependencies": {
-    "@quasar/extras": "^1.0.0",
-    "axios": "^1.2.1",
-    "core-js": "^3.6.5",
-    "quasar": "^2.11.10",
-    "vue": "^3.0.0",
-    "vue-router": "^4.0.0",
-    "vuex": "^4.0.1"
+    "@quasar/extras": "^1.16.3",
+    "axios": "^1.4.0",
+    "quasar": "^2.0.0"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.13.14",
@@ -45,8 +41,5 @@
     "node": ">= 12.22.1",
     "npm": ">= 6.13.4",
     "yarn": ">= 1.21.1"
-  },
-  "dependencies": {
-    "quasar": "^2.0.0"
   }
 }
