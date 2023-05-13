@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const http = axios.create({
-    baseURL: "http://localhost:9000"
+    baseURL: "ec2-18-144-64-45.us-west-1.compute.amazonaws.com"
 });
 
 export default {
@@ -13,5 +13,5 @@ export default {
     findAllAdoptions() {
         return http.get('/view-adoptions')
     }
-    
+
 }

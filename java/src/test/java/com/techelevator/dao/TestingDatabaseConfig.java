@@ -37,9 +37,9 @@ public class TestingDatabaseConfig {
     public void setup() {
         if (System.getenv("DB_HOST") == null) {
             adminDataSource = new SingleConnectionDataSource();
-            adminDataSource.setUrl("jdbc:postgresql://localhost:5432/postgres");
+            adminDataSource.setUrl("rockville.camiy8mamiwh.us-west-1.rds.amazonaws.com");
             adminDataSource.setUsername("postgres");
-            adminDataSource.setPassword("postgres1");
+            adminDataSource.setPassword("gogosing");
             adminJdbcTemplate = new JdbcTemplate(adminDataSource);
             adminJdbcTemplate.update("DROP DATABASE IF EXISTS \"" + DB_NAME + "\";");
             adminJdbcTemplate.update("CREATE DATABASE \"" + DB_NAME + "\";");
