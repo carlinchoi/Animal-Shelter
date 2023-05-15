@@ -11,3 +11,4 @@ psql -U postgres -d $DATABASE -f "$BASEDIR/data.sql" &&
 psql -U postgres -d $DATABASE -f "$BASEDIR/user.sql" &&
 psql -U postgres -d $DATABASE -f "$BASEDIR/fakeAnimals.sql" &&
 psql -U postgres -d $DATABASE -f "$BASEDIR/InsertAdminVolDummy.sql"
+
