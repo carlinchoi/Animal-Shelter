@@ -1,32 +1,31 @@
-import axios from 'axios';
+import axios from "axios";
 
 const http = axios.create({
-  baseURL: "http://18.144.64.45:9000"
+  baseURL: "/api/",
 });
 
 export default {
+  findAllPets() {
+    return http.get("/pet/all");
+  },
 
-    findAllPets() {
-        return http.get('/pet/all')
-    },
+  getPetById(petId) {
+    return http.get(`/pet/${petId}`);
+  },
 
-    getPetById(petId) {
-        return http.get(`/pet/${petId}`)
-    },
+  createPet(pet) {
+    return http.post("/pet/all", pet);
+  },
 
-    createPet(pet) {
-        return http.post('/pet/all', pet)
-    },
+  updatePet(petId, pet) {
+    return http.put(`/pet/${petId}`, pet);
+  },
 
-    updatePet(petId, pet) {
-        return http.put(`/pet/${petId}`, pet)
-    },
+  findAdoptedPets() {
+    return http.get("/pet/all-adopted");
+  },
 
-    findAdoptedPets() {
-        return http.get('/pet/all-adopted')
-    },
-
-    findAllPhotos(petId) {
-        return http.get(`/pet/pet-photos/${petId}`)
-    }
-}
+  findAllPhotos(petId) {
+    return http.get(`/pet/pet-photos/${petId}`);
+  },
+};
