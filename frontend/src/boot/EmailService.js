@@ -1,12 +1,11 @@
-import axios from 'axios';
+import axios from "axios";
 
 const http = axios.create({
-  baseURL: "http://18.144.64.45:9000"
+  baseURL: "https://d3gr9juy7lglgi.cloudfront.net",
 });
 
 export default {
-
-    sendEmail(email) {
-        return http.post('/sendMail', email)
-    }
-}
+  sendEmail(email) {
+    return http.post("/sendMail", email);
+  },
+};
