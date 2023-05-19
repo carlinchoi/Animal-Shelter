@@ -20,7 +20,7 @@
             <q-item clickable v-close-popup :to="{name: 'ViewVolunteers'}" v-if="isVolunteerOrAdmin">
               <q-item-section>View Volunteers</q-item-section>
             </q-item>
-            <q-item clickable v-close-popup :to="{name: 'ApproveVolunteers'}"  v-if="isVolunteerOrAdmin">
+            <q-item clickable v-close-popup :to="{name: 'ApproveVolunteers'}"  v-if="isAdmin">
               <q-item-section>Approve Pending Volunteers</q-item-section>
             </q-item>
             <q-separator></q-separator>
@@ -55,6 +55,14 @@ export default {
        if ( this.$store.state.user.authorities != null)
        return (
         this.$store.state.user.authorities[0].name.includes("ROLE_VOLUNTEER") ||
+        this.$store.state.user.authorities[0].name.includes("ROLE_ADMIN"))
+       else {
+        return false;
+      }
+    },
+    isAdmin() {
+       if ( this.$store.state.user.authorities != null)
+       return (
         this.$store.state.user.authorities[0].name.includes("ROLE_ADMIN"))
        else {
         return false;
