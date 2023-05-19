@@ -2,9 +2,7 @@ INSERT INTO public.users(
 	 username, password_hash, role, email, first_name, last_name, phone)
 	VALUES ('Jack', 'admin', 'ROLE_ADMIN', 'admin@gmail.com', 'Jack','Black' , '323-929-5833');
 
-INSERT INTO public.users(
-     username, password_hash, role, email, first_name, last_name, phone)
-    VALUES ('volunteer', 'password', 'ROLE_VOLUNTEER', 'volunteer@gmail.com', 'Volunteer', 'Volunteer', '252-532-9284');
+
 
 	INSERT INTO public.users(
          username, password_hash, role, email, first_name, last_name, phone)
