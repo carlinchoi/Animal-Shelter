@@ -1,12 +1,17 @@
 <template>
   <q-footer v-if="showFooter" bordered class="text-white" color="primary">
     <q-tabs no-caps active-color="orange" indicator-color="orange" class="text-white">
-      <q-tab name="images" label="Images" style="font-weight: bold; font-size: 1.5em"></q-tab>
-      <q-tab name="videos" label="Videos" style="font-weight: bold; font-size: 1.5em"></q-tab>
+      <q-tab name="Home" label="Home" style="font-weight: bold; font-size: 1.5em">
+        <router-link :to="{ name: 'homePage' }">Home</router-link>
+      </q-tab>
+      <q-tab name="FAQ" label="FAQ" style="font-weight: bold; font-size: 1.5em">
+        <router-link :to="{ name: 'faqPage' }">FAQ</router-link>
+      </q-tab>
       <q-tab name="articles" label="Articles" style="font-weight: bold; font-size: 1.5em"></q-tab>
     </q-tabs>
   </q-footer>
 </template>
+
 
 <script>
 import { debounce } from 'lodash'

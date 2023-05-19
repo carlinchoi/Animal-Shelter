@@ -45,8 +45,11 @@ const routes = [
     path: "/register-account",
     component: () => import("src/pages/RegisterNewAccountPage.vue"),
   },
-  // Always leave this as last one,
-  // but you can also remove it
+  {
+    name: "faqPage",
+    path: "/frequently-asked-questions",
+    component: () => import("src/pages/faqPage.vue"),
+  },
   {
     path: "/:catchAll(.*)*",
     component: () => import("pages/ErrorNotFound.vue"),
