@@ -65,8 +65,8 @@ export default {
         },
       ],
       roles: [
-        { label: "Pending", value: "ROLE_PENDINGVOLUNTEER" },
-        { label: "Approved", value: "ROLE_APPROVED" },
+        { label: "Pending Approval", value: "ROLE_PENDINGVOLUNTEER" },
+        { label: "Approved", value: "ROLE_VOLUNTEER" },
         { label: "Declined", value: "ROLE_DECLINED" },
       ],
     };
