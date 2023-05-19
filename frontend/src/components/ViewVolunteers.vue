@@ -2,7 +2,7 @@
   <div id="q-app" style="min-height: 100vh">
     <div class="q-pa-md">
       <div>
-        <h2 style="margin-bottom: 0.5rem; margin-top: 3%;">Volunteers List</h2>
+        <h2 style="margin-bottom: 0.5rem; margin-top: 3%">Volunteers List</h2>
         <div>
           <q-input
             v-model="searchTerm"
@@ -121,5 +121,3 @@ export default {
   },
 };
 </script>
-
-

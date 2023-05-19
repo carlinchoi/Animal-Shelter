@@ -4,7 +4,9 @@
     <div class="contact-info">
       <div class="contact-item">
         <q-icon name="email" class="contact-icon" />
-        <a href="mailto:contact@rockvilleanimalshelter.com" class="contact-link">contact@rockvilleanimalshelter.com</a>
+        <a href="mailto:contact@rockvilleanimalshelter.com" class="contact-link"
+          >contact@rockvilleanimalshelter.com</a
+        >
       </div>
       <div class="contact-item">
         <q-icon name="phone" class="contact-icon" />
@@ -17,4 +19,3 @@
     </div>
   </q-container>
 </template>
-

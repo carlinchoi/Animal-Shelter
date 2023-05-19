@@ -72,8 +72,7 @@
                     font-weight: bold;
                   "
                 >
-                  Already have an account?
-                  Log in
+                  Already have an account? Log in
                 </a>
                 <div
                   class="input-container"
@@ -112,52 +111,6 @@
       </q-page>
     </q-page-container>
   </q-layout>
-  <!-- <q-page>
-    <q-container class="q-pt-lg">
-      <q-card class="q-mx-auto" style="max-width: 400px;">
-        <q-card-section>
-          <h1 class="text-h5 text-center q-mb-md">Create Account</h1>
-          <q-form @submit.prevent="register">
-            <q-input
-              filled
-              v-model="user.username"
-              label="Username"
-              type="text"
-              required
-              dense
-            ></q-input>
-            <q-input
-              filled
-              v-model="user.password"
-              label="Password"
-              type="password"
-              required
-              dense
-            ></q-input>
-            <q-input
-              filled
-              v-model="user.confirmPassword"
-              label="Confirm Password"
-              type="password"
-              required
-              dense
-            ></q-input>
-            <q-btn
-              type="submit"
-              label="Create Account"
-              color="primary"
-              class="q-mt-md"
-              dense
-            ></q-btn>
-            <p class="text-center">
-              Already have an account?
-              <router-link :to="{ name: 'login' }">Log in.</router-link>
-            </p>
-          </q-form>
-        </q-card-section>
-      </q-card>
-    </q-container>
-  </q-page> -->
 </template>
 
 <script>

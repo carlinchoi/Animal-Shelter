@@ -125,8 +125,8 @@ export default {
   // },
   computed: {
     username() {
-      return this.$route.params.username
-    }
+      return this.$route.params.username;
+    },
   },
   methods: {
     submitForm() {
@@ -137,7 +137,7 @@ export default {
         email: this.email,
         phone: this.phone,
       };
-      console.log(this.username)
+      console.log(this.username);
       const applicationEmail = {
         recipient: this.email,
         msgBody:

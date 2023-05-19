@@ -3,15 +3,12 @@
 </template>
 
 <script>
-import VolunteerRegister from 'src/components/VolunteerRegister.vue'
+import VolunteerRegister from "src/components/VolunteerRegister.vue";
 
 export default {
   components: {
-    VolunteerRegister
-  }
-}
+    VolunteerRegister,
+  },
+};
 </script>
 
-<style>
-
-</style>

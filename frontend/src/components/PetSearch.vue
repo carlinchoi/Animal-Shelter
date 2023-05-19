@@ -33,10 +33,44 @@
       </div>
     </div>
 
-    <div class="search-container text-center" style="font-weight:bold; margin: 0;">
-      <h6>Search by Category: <span style="text-decoration: underline; cursor: pointer;" @click="selectSpecies(null)">All Pets</span>,  <span style="text-decoration: underline; cursor: pointer;" @click="selectSpecies('Dog')">Dogs</span>, <span style="text-decoration: underline; cursor: pointer;" @click="selectSpecies('Cat')">Cats</span>, <span style="text-decoration: underline; cursor: pointer;" @click="selectSpecies('Bird')">Birds</span>, <span style="text-decoration: underline; cursor: pointer;" @click="selectSpecies('Guinea Pig')">Guinea Pigs</span>, <span style="text-decoration: underline; cursor: pointer;" @click="selectSpecies('Hamster')">Hamsters</span></h6>
+    <div
+      class="search-container text-center"
+      style="font-weight: bold; margin: 0"
+    >
+      <h6>
+        Search by Category:
+        <span
+          style="text-decoration: underline; cursor: pointer"
+          @click="selectSpecies(null)"
+          >All Pets</span
+        >,
+        <span
+          style="text-decoration: underline; cursor: pointer"
+          @click="selectSpecies('Dog')"
+          >Dogs</span
+        >,
+        <span
+          style="text-decoration: underline; cursor: pointer"
+          @click="selectSpecies('Cat')"
+          >Cats</span
+        >,
+        <span
+          style="text-decoration: underline; cursor: pointer"
+          @click="selectSpecies('Bird')"
+          >Birds</span
+        >,
+        <span
+          style="text-decoration: underline; cursor: pointer"
+          @click="selectSpecies('Guinea Pig')"
+          >Guinea Pigs</span
+        >,
+        <span
+          style="text-decoration: underline; cursor: pointer"
+          @click="selectSpecies('Hamster')"
+          >Hamsters</span
+        >
+      </h6>
     </div>
-
   </div>
   <div class="q-pa-md row q-gutter-md justify-left text-center pets-container">
     <div v-for="pet in filteredPets" :key="pet.petId">

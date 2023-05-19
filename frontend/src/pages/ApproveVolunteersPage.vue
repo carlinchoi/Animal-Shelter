@@ -3,15 +3,11 @@
 </template>
 
 <script>
-import ApproveVolunteersLayout from '../layouts/ApproveVolunteersLayout.vue';
+import ApproveVolunteersLayout from "../layouts/ApproveVolunteersLayout.vue";
 
 export default {
   components: {
-    ApproveVolunteersLayout
-  }
-}
+    ApproveVolunteersLayout,
+  },
+};
 </script>
-
-<style>
-
-</style>

@@ -3,15 +3,11 @@
 </template>
 
 <script>
-import AdoptedPetsLayout from '../layouts/AdoptedPetsLayout.vue';
+import AdoptedPetsLayout from "../layouts/AdoptedPetsLayout.vue";
 
 export default {
   components: {
-  AdoptedPetsLayout
-}
-}
+    AdoptedPetsLayout,
+  },
+};
 </script>
-
-<style>
-
-</style>

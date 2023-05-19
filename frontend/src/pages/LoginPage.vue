@@ -3,16 +3,11 @@
 </template>
 
 <script>
-import loginPage from 'src/components/AppLogin.vue'
+import loginPage from "src/components/AppLogin.vue";
 
 export default {
   components: {
-    loginPage
-  }
-}
+    loginPage,
+  },
+};
 </script>
-
-<style>
-
-</style>
-

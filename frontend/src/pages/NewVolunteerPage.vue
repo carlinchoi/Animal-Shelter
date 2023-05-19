@@ -1,13 +1,12 @@
 <template>
-  <newVolunteer/>
+  <newVolunteer />
 </template>
 
 <script>
-import newVolunteer from 'src/components/NewVolunteer.vue';
+import newVolunteer from "src/components/NewVolunteer.vue";
 export default {
   components: {
-    newVolunteer
-  }
-
-}
+    newVolunteer,
+  },
+};
 </script>

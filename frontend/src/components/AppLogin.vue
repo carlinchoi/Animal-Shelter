@@ -47,13 +47,24 @@
                 <a
                   class="q-mt-md q-link"
                   @click="$router.push('/register-account')"
-                  style="text-decoration: underline; cursor: pointer; margin-top: -1%; font-size:17px; font-weight: bold;"
+                  style="
+                    text-decoration: underline;
+                    cursor: pointer;
+                    margin-top: -1%;
+                    font-size: 17px;
+                    font-weight: bold;
+                  "
                 >
                   Create New Account
                 </a>
                 <div
                   class="input-container"
-                  style="display: flex; justify-content: space-between; margin-top: -3%; margin-bottom: 0%;"
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: -3%;
+                    margin-bottom: 0%;
+                  "
                 >
                   <q-btn
                     class="q-mt-md"
@@ -84,7 +95,6 @@
     </q-page-container>
   </q-layout>
 </template>
-
 
 <script>
 import authService from "../boot/AuthService";

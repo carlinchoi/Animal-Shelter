@@ -3,15 +3,12 @@
 </template>
 
 <script>
-import ViewVolunteersLayout from 'src/layouts/ViewVolunteersLayout.vue'
+import ViewVolunteersLayout from "src/layouts/ViewVolunteersLayout.vue";
 
 export default {
   components: {
-    ViewVolunteersLayout
-  }
-}
+    ViewVolunteersLayout,
+  },
+};
 </script>
 
-<style>
-
-</style>

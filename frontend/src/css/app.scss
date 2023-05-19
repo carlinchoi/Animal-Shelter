@@ -40,7 +40,6 @@
   max-width: 50%;
 }
 
-
 header {
   font-size: 3em;
 }
@@ -64,14 +63,16 @@ header nav a {
   object-fit: fill;
 }
 
-
 .search-input .q-field__native {
   text-align: left;
 }
 
 .pets-container {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* Change this number to adjust the number of columns */
+  grid-template-columns: repeat(
+    5,
+    1fr
+  ); /* Change this number to adjust the number of columns */
   gap: 16px;
 
   margin-left: 10%;
@@ -113,12 +114,11 @@ body {
   width: 100%;
   max-width: 20%;
   padding: 1%;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   margin: 0 auto;
   border: 1px solid #cccccc;
   border-radius: 5px;
   text-align: left;
-
 }
 
 .my-card .text-h6 {
@@ -148,7 +148,6 @@ body {
   align-items: center;
 }
 
-
 .form-row {
   display: flex;
   justify-content: space-between;
@@ -169,7 +168,7 @@ body {
 }
 
 .submission-status {
-  background-color: #4CAF50; /* Green */
+  background-color: #4caf50; /* Green */
   color: white;
   padding: 10px;
   text-align: center;
@@ -248,12 +247,8 @@ td {
   margin-right: 10%;
 }
 
-
-
 .q-input__control input[type="text"]::placeholder {
   color: #888;
 }
 
 // ... other custom styles ...
-
-

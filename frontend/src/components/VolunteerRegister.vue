@@ -4,12 +4,12 @@
       <q-page class="add-wrapper">
         <div class="form-wrapper">
           <div id="register">
-            <q-form @submit.prevent="register"  v-if="!showVolunteerApplication">
+            <q-form @submit.prevent="register" v-if="!showVolunteerApplication">
               <div class="my-inputs">
                 <h3
                   style="font-weight: bold; margin-bottom: 1%; margin-top: 1%"
                 >
-                Create Volunteer Account
+                  Create Volunteer Account
                 </h3>
 
                 <q-separator />
@@ -45,7 +45,9 @@
                   </q-input>
                 </div>
                 <div class="input-container">
-                  <p style="font-weight: bold; margin-bottom: 1%">Confirm Password</p>
+                  <p style="font-weight: bold; margin-bottom: 1%">
+                    Confirm Password
+                  </p>
                   <q-input
                     filled
                     v-model="user.confirmPassword"
@@ -82,15 +84,15 @@
                 </div>
               </div>
               <div role="alert" v-show="registrationErrors">
-              {{ registrationErrorMsg }}
-            </div>
+                {{ registrationErrorMsg }}
+              </div>
             </q-form>
           </div>
         </div>
         <volunteer-application
-      v-if="showVolunteerApplication"
-      v-bind:username="user.username"
-    />
+          v-if="showVolunteerApplication"
+          v-bind:username="user.username"
+        />
       </q-page>
     </q-page-container>
   </q-layout>
@@ -118,7 +120,7 @@ export default {
       showVolunteerApplication: false,
     };
   },
-   methods: {
+  methods: {
     register() {
       if (this.user.password != this.user.confirmPassword) {
         this.registrationErrors = true;
@@ -128,8 +130,10 @@ export default {
           .register(this.user)
           .then((response) => {
             if (response.status == 201) {
-              this.$router.push({ name: 'newVolunteer', params: { username: this.user.username }})
-
+              this.$router.push({
+                name: "newVolunteer",
+                params: { username: this.user.username },
+              });
             }
           })
           .catch((error) => {

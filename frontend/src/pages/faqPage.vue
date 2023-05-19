@@ -3,12 +3,11 @@
 </template>
 
 <script>
-import FaqLayout from 'src/layouts/FaqLayout.vue'
+import FaqLayout from "src/layouts/FaqLayout.vue";
 
 export default {
   components: {
-    FaqLayout
-  }
-}
+    FaqLayout,
+  },
+};
 </script>
-
