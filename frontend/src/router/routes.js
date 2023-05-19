@@ -51,6 +51,11 @@ const routes = [
     component: () => import("src/pages/faqPage.vue"),
   },
   {
+    name: "contactPage",
+    path: "/contact-us",
+    component: () => import("src/pages/contactPage.vue"),
+  },
+  {
     path: "/:catchAll(.*)*",
     component: () => import("pages/ErrorNotFound.vue"),
   },

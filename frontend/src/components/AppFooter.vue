@@ -1,17 +1,15 @@
 <template>
   <q-footer v-if="showFooter" bordered class="text-white" color="primary">
     <q-tabs no-caps active-color="orange" indicator-color="orange" class="text-white">
-      <q-tab name="Home" label="Home" style="font-weight: bold; font-size: 1.5em">
-        <router-link :to="{ name: 'homePage' }">Home</router-link>
+      <q-tab name="Home" label="Home" style="font-weight: bold; font-size: 1.5em" @click="goToHomePage">
       </q-tab>
-      <q-tab name="FAQ" label="FAQ" style="font-weight: bold; font-size: 1.5em">
-        <router-link :to="{ name: 'faqPage' }">FAQ</router-link>
+      <q-tab name="FAQ" label="FAQ" style="font-weight: bold; font-size: 1.5em" @click="goToFAQPage">
       </q-tab>
-      <q-tab name="articles" label="Articles" style="font-weight: bold; font-size: 1.5em"></q-tab>
+      <q-tab name="Contact" label="Contact-Us" style="font-weight: bold; font-size: 1.5em" @click="goToContactPage">
+      </q-tab>
     </q-tabs>
   </q-footer>
 </template>
-
 
 <script>
 import { debounce } from 'lodash'
@@ -31,6 +29,15 @@ export default {
       } else {
         this.showFooter = false
       }
+    },
+    goToHomePage() {
+      this.$router.push({ name: 'homePage' });
+    },
+    goToFAQPage() {
+      this.$router.push({ name: 'faqPage' });
+    },
+    goToContactPage() {
+      this.$router.push({ name: 'contactPage' });
     }
   },
   mounted() {
