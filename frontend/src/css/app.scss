@@ -246,6 +246,26 @@ td {
   margin-left: 10%;
   margin-right: 10%;
 }
+.contact-container {
+  max-width: 30%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+.contact-card {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact-label-text {
+  font-weight: bold;
+}
+
+.contact-text {
+  margin-top: 1%;
+}
+
+
 
 .q-input__control input[type="text"]::placeholder {
   color: #888;

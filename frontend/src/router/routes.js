@@ -53,7 +53,7 @@ const routes = [
   {
     name: "contactPage",
     path: "/contact-us",
-    component: () => import("src/pages/contactPage.vue"),
+    component: () => import("src/pages/ContactPage.vue"),
   },
   {
     path: "/:catchAll(.*)*",
