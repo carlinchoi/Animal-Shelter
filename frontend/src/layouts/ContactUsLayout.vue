@@ -14,7 +14,7 @@ import AppFooter from "../components/AppFooter.vue";
 import AppHeader from "../components/AppHeader.vue";
 
 export default {
-  name: "FaqLayout",
+  name: "ContactUsLayout",
   components: {
     ContactUs,
     AppFooter,
