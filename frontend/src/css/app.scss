@@ -10,8 +10,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 35%;
+  flex-wrap: wrap;
+  margin-right: 6.5%;
 }
+
 
 .q-tab-right {
   margin-left: auto;

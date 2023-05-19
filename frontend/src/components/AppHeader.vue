@@ -1,14 +1,14 @@
 <template>
   <q-header class="text-black bg-white" elevated>
-    <q-toolbar>
-      <q-avatar>
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTet9ewjLhjRL3uQUvKqGCeIdZqreI1Csmxow&usqp=CAU"
-        />
-      </q-avatar>
-
-      <q-toolbar-title>Rockville Animal Shelter</q-toolbar-title>
-
+    <q-toolbar class="q-toolbar-centered">
+      <div class="q-toolbar-title-wrapper">
+        <div class="q-avatar-title-wrapper">
+          <q-avatar>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTet9ewjLhjRL3uQUvKqGCeIdZqreI1Csmxow&usqp=CAU" />
+          </q-avatar>
+          <q-toolbar-title class="q-toolbar-title-custom">Rockville Animal Shelter</q-toolbar-title>
+        </div>
+      </div>
       <q-tabs v-model="tab" class="q-tabs-centered">
         <q-route-tab
           name="homeRoute"
@@ -130,3 +130,28 @@ export default {
   },
 };
 </script>
+
+<style>
+.q-toolbar-centered {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.q-toolbar-title-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.q-avatar-title-wrapper {
+  display: flex;
+  align-items: center;
+  margin-right: 10px; /* Adjust the margin as needed */
+}
+
+.q-toolbar-title-custom {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+</style>
