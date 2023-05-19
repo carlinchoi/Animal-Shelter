@@ -4,12 +4,12 @@
       <q-page class="add-wrapper">
         <div class="form-wrapper">
           <div id="register">
-            <q-form @submit.prevent="login" >
+            <q-form @submit.prevent="login">
               <div class="my-inputs">
                 <h3
                   style="font-weight: bold; margin-bottom: 1%; margin-top: 1%"
                 >
-               Login
+                  Login
                 </h3>
 
                 <q-separator />
@@ -44,10 +44,16 @@
                     </template>
                   </q-input>
                 </div>
-
+                <a
+                  class="q-mt-md q-link"
+                  @click="$router.push('/register-account')"
+                  style="text-decoration: underline; cursor: pointer; margin-top: -1%; font-size:17px; font-weight: bold;"
+                >
+                  Create New Account
+                </a>
                 <div
                   class="input-container"
-                  style="display: flex; justify-content: space-between"
+                  style="display: flex; justify-content: space-between; margin-top: -3%; margin-bottom: 0%;"
                 >
                   <q-btn
                     class="q-mt-md"
@@ -67,20 +73,22 @@
                   />
                 </div>
               </div>
+
               <div role="alert" v-show="registrationErrors">
-              {{ registrationErrorMsg }}
-            </div>
+                {{ registrationErrorMsg }}
+              </div>
             </q-form>
           </div>
         </div>
-
       </q-page>
     </q-page-container>
   </q-layout>
 </template>
+
+
 <script>
 import authService from "../boot/AuthService";
-import { QLayout, QPage, QPageContainer, QForm, QInput, QBtn, } from 'quasar'
+import { QLayout, QPage, QPageContainer, QForm, QInput, QBtn } from "quasar";
 
 export default {
   name: "loginPage",

@@ -17,10 +17,10 @@
       <q-btn color="primary" label="Account" v-if="isLoggedIn">
         <q-menu>
           <q-list dense style="min-width: 100px">
-            <q-item clickable v-close-popup :to="{name: 'ViewVolunteers'}">
+            <q-item clickable v-close-popup :to="{name: 'ViewVolunteers'}" v-if="isVolunteerOrAdmin">
               <q-item-section>View Volunteers</q-item-section>
             </q-item>
-            <q-item clickable v-close-popup :to="{name: 'ApproveVolunteers'}">
+            <q-item clickable v-close-popup :to="{name: 'ApproveVolunteers'}"  v-if="isVolunteerOrAdmin">
               <q-item-section>Approve Pending Volunteers</q-item-section>
             </q-item>
             <q-separator></q-separator>
@@ -30,7 +30,6 @@
           </q-list>
         </q-menu>
       </q-btn>
-
       <q-btn color="primary" label="Sign In" v-if="!isLoggedIn" :to="{ name: 'loginPage'}" />
     </q-toolbar>
   </q-header>
@@ -48,6 +47,15 @@ export default {
         this.$store.state.user.authorities[0].name.includes("ROLE_VOLUNTEER") ||
         this.$store.state.user.authorities[0].name.includes("ROLE_ADMIN") ||
         this.$store.state.user.authorities[0].name.includes("ROLE_USER"))
+       else {
+        return false;
+      }
+    },
+    isVolunteerOrAdmin() {
+       if ( this.$store.state.user.authorities != null)
+       return (
+        this.$store.state.user.authorities[0].name.includes("ROLE_VOLUNTEER") ||
+        this.$store.state.user.authorities[0].name.includes("ROLE_ADMIN"))
        else {
         return false;
       }
