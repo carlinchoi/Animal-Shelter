@@ -36,7 +36,7 @@ Run the command mvn spring-boot:run in the java folder of the project to start t
 Navigate to the client folder and run the command quasar dev to start the front-end server
 Open your browser and navigate to http://localhost:8080
 Demo
-You can view a live demo of this project here: https://animal-shelter-demo.herokuapp.com/
+You can view a live demo of this project here: [Animal Shelter/](https://www.rockvilleanimalshelter.com/)
 
 License
 This project is licensed under the MIT License - see the LICENSE file for details.
