@@ -34,7 +34,7 @@ To run this project locally, you'll need to have Java, Maven, and PostgreSQL ins
 ```shell
 git clone https://github.com/carlinchoi/Animal-Shelter.git
 2. Navigate to the `java/database` folder and run the command to create the database and tables:
-
+```
 3. Edit the `application.properties` file in the `java/src/main/resources` folder with your database credentials.
 
 4. Run the following command in the `java` folder of the project to start the back-end server:
