@@ -31,7 +31,8 @@ This project is built using the following technologies:
 To run this project locally, you'll need to have Java, Maven, and PostgreSQL installed on your machine. Follow these steps:
 
 1. Clone this repository to your local directory:
-
+```shell
+git clone https://github.com/carlinchoi/Animal-Shelter.git
 2. Navigate to the `java/database` folder and run the command to create the database and tables:
 
 3. Edit the `application.properties` file in the `java/src/main/resources` folder with your database credentials.
